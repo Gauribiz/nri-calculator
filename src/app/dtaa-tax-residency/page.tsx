@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import Disclaimer from "@/components/Disclaimer";
 import { getCategory } from "@/lib/categories";
+import SubstantialPresenceCalculator from "@/components/calculators/SubstantialPresenceCalculator";
+import IndiaResidencyCalculator from "@/components/calculators/IndiaResidencyCalculator";
+import DtaaReliefEstimator from "@/components/calculators/DtaaReliefEstimator";
 
 const category = getCategory("dtaa-tax-residency")!;
 
@@ -22,9 +25,17 @@ export default function DtaaTaxResidencyPage() {
         {category.description}
       </p>
 
-      <p className="max-w-2xl text-zinc-500 dark:text-zinc-500">
-        Detailed guidance and calculators for this topic are coming soon.
+      <p className="max-w-2xl text-sm text-zinc-500 dark:text-zinc-500">
+        The three tools below apply general, well-established test formulas.
+        Each one flags what it does not model — review those notes, and the
+        disclaimer above, before relying on a result.
       </p>
+
+      <div className="flex flex-col gap-6">
+        <SubstantialPresenceCalculator />
+        <IndiaResidencyCalculator />
+        <DtaaReliefEstimator />
+      </div>
     </div>
   );
 }
