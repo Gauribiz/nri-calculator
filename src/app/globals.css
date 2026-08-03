@@ -1,8 +1,39 @@
 @import "tailwindcss";
 
+/*
+ * Design system tokens for the NRI Calculator brand: a deep navy/indigo
+ * primary (deliberately darker and less saturated than a generic "fintech
+ * blue"), a single muted saffron/gold accent used sparingly, and warm
+ * neutral grays (Tailwind's built-in `stone` scale) instead of pure
+ * black/white for body text and backgrounds. See docs/decisions/0004 for
+ * the reasoning behind these specific choices.
+ */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #faf9f7;
+  --foreground: #24211b;
+
+  --color-primary-50: #f0f2f8;
+  --color-primary-100: #dde1ee;
+  --color-primary-200: #bcc3dd;
+  --color-primary-300: #94a0c7;
+  --color-primary-400: #6b76ac;
+  --color-primary-500: #4d5891;
+  --color-primary-600: #3a4275;
+  --color-primary-700: #2d3460;
+  --color-primary-800: #23294c;
+  --color-primary-900: #1a1e3a;
+  --color-primary-950: #11132a;
+
+  --color-gold-50: #fbf3e4;
+  --color-gold-100: #f5e3c0;
+  --color-gold-200: #eccb8d;
+  --color-gold-300: #e0ac5c;
+  --color-gold-400: #cf8f3a;
+  --color-gold-500: #b8752b;
+  --color-gold-600: #965d22;
+  --color-gold-700: #74461a;
+  --color-gold-800: #543212;
+  --color-gold-900: #38210c;
 }
 
 @theme inline {
@@ -10,17 +41,40 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  --color-primary-50: var(--color-primary-50);
+  --color-primary-100: var(--color-primary-100);
+  --color-primary-200: var(--color-primary-200);
+  --color-primary-300: var(--color-primary-300);
+  --color-primary-400: var(--color-primary-400);
+  --color-primary-500: var(--color-primary-500);
+  --color-primary-600: var(--color-primary-600);
+  --color-primary-700: var(--color-primary-700);
+  --color-primary-800: var(--color-primary-800);
+  --color-primary-900: var(--color-primary-900);
+  --color-primary-950: var(--color-primary-950);
+
+  --color-gold-50: var(--color-gold-50);
+  --color-gold-100: var(--color-gold-100);
+  --color-gold-200: var(--color-gold-200);
+  --color-gold-300: var(--color-gold-300);
+  --color-gold-400: var(--color-gold-400);
+  --color-gold-500: var(--color-gold-500);
+  --color-gold-600: var(--color-gold-600);
+  --color-gold-700: var(--color-gold-700);
+  --color-gold-800: var(--color-gold-800);
+  --color-gold-900: var(--color-gold-900);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #14120e;
+    --foreground: #ece8e0;
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
 }

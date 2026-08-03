@@ -33,17 +33,24 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-white text-zinc-900 dark:bg-black dark:text-zinc-100">
-        <header className="border-b border-zinc-200 dark:border-zinc-800">
+      <body className="min-h-full flex flex-col bg-background text-foreground">
+        <header className="border-b border-stone-200 bg-white dark:border-primary-900 dark:bg-primary-950">
           <nav className="mx-auto flex max-w-4xl flex-wrap items-center gap-x-6 gap-y-2 px-6 py-4 text-sm">
-            <Link href="/" className="font-semibold">
+            <Link
+              href="/"
+              className="flex items-center gap-1.5 font-semibold tracking-tight text-primary-900 dark:text-primary-50"
+            >
               NRI Calculator
+              <span
+                aria-hidden="true"
+                className="inline-block h-1.5 w-1.5 rounded-full bg-gold-500"
+              />
             </Link>
             {categories.map((category) => (
               <Link
                 key={category.slug}
                 href={`/${category.slug}`}
-                className="text-zinc-600 hover:text-zinc-950 dark:text-zinc-400 dark:hover:text-zinc-50"
+                className="text-stone-600 transition-colors hover:text-primary-800 dark:text-primary-200/70 dark:hover:text-primary-50"
               >
                 {category.shortTitle}
               </Link>
@@ -53,13 +60,16 @@ export default function RootLayout({
 
         <main className="flex flex-1 flex-col">{children}</main>
 
-        <footer className="border-t border-zinc-200 px-6 py-6 text-sm text-zinc-500 dark:border-zinc-800 dark:text-zinc-500">
+        <footer className="border-t border-stone-200 bg-white px-6 py-6 text-sm text-stone-500 dark:border-primary-900 dark:bg-primary-950 dark:text-primary-200/60">
           <div className="mx-auto flex max-w-4xl flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
             <p>
               &copy; {new Date().getFullYear()} NRI Calculator. General
               information only, US-India corridor.
             </p>
-            <Link href="/disclaimer" className="underline hover:no-underline">
+            <Link
+              href="/disclaimer"
+              className="text-gold-700 underline hover:no-underline dark:text-gold-300"
+            >
               Disclaimer
             </Link>
           </div>

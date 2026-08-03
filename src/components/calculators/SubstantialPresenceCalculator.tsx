@@ -45,7 +45,7 @@ export default function SubstantialPresenceCalculator() {
         />
       </div>
 
-      <div className="flex flex-col gap-1 rounded-md bg-zinc-50 p-4 dark:bg-zinc-900">
+      <div className="flex flex-col gap-1 rounded-lg bg-stone-50 p-4 dark:bg-primary-900/20">
         <ResultRow
           label="Weighted total (current + 1/3 + 1/6)"
           value={`${result.weightedTotal.toFixed(1)} days`}
@@ -58,14 +58,19 @@ export default function SubstantialPresenceCalculator() {
           label="Substantial Presence Test result"
           value={
             result.meetsSubstantialPresenceTest
-              ? "Meets the test — likely a US resident alien for tax purposes"
+              ? "Meets the test"
               : "Does not meet the test"
           }
-          emphasis
+          status={result.meetsSubstantialPresenceTest ? "favorable" : "neutral"}
         />
+        {result.meetsSubstantialPresenceTest && (
+          <p className="mt-1 text-xs text-stone-500 dark:text-primary-300/60">
+            Likely a US resident alien for tax purposes.
+          </p>
+        )}
       </div>
 
-      <p className="text-xs text-zinc-500 dark:text-zinc-500">
+      <p className="text-xs text-stone-500 dark:text-primary-300/60">
         This is one of two independent US residency tests (the other is the
         Green Card test, not covered here) and figures shown are for
         reference only — verify against irs.gov before relying on the
