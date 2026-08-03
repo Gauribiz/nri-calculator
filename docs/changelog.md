@@ -2,6 +2,34 @@
 
 All notable changes to NRI Calculator, in reverse chronological order.
 
+## 2026-08-03 — FA2020 Rs 15L/120-day disclosure on the India residency tool (nric-001b)
+
+Follow-up to nric-001's fact-verification pass: the India residential
+status calculator (`src/components/calculators/IndiaResidencyCalculator.tsx`)
+already disclosed that it doesn't model the Finance Act 2020 income-linked
+threshold, but that disclosure was easy to miss in the intro text. It's
+now a prominent, conditional callout.
+
+- Checking "citizen or PIO visiting India" now reveals an optional
+  "India-sourced income this financial year (excluding foreign-source
+  income)" input, used only to drive the note below — it is not fed into
+  `calculateIndiaResidencyStatus`.
+- Below that field, a callout always explains the Rs 15 lakh/120-day rule.
+  It escalates from a neutral note to a highlighted warning once the
+  entered income exceeds Rs 15 lakh, making clear the calculator itself
+  still applies the 182-day threshold and does not recalculate the
+  second test for this case.
+- No change to `src/lib/calculators/indiaResidency.ts` — this is a
+  disclosure improvement only, not a claim that the tool now models
+  FA2020's income-linked threshold. See ADR 0003 for the reasoning.
+- Verified with `npm run lint`, `npm run build`, and a Playwright smoke
+  test confirming the field/callout are hidden until the checkbox is
+  checked, and that the strong-warning variant only appears once income
+  exceeds Rs 15 lakh.
+- **Still needs Ajinkya's fact-verification pass**: the Rs 15 lakh figure
+  and the 120-day figure are asserted from general knowledge of the
+  Finance Act 2020 amendment, not fetched from incometax.gov.in this run.
+
 ## 2026-08-03 — DTAA & tax residency calculators (nric-001)
 
 Built the three calculators scoped for the DTAA/tax-residency category

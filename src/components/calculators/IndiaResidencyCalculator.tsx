@@ -15,6 +15,12 @@ const STATUS_LABEL: Record<string, string> = {
   ror: "Resident and Ordinarily Resident (ROR)",
 };
 
+// Finance Act 2020: for a visiting citizen/PIO whose India-sourced income
+// (excluding foreign-source income) exceeds this amount, the relaxed
+// second-test threshold drops from 182 to 120 days. Disclosure only — the
+// calculation below still applies 182 days; see indiaResidency.ts's header.
+const FA2020_INCOME_THRESHOLD_INR = 1_500_000;
+
 export default function IndiaResidencyCalculator() {
   const [currentYearDays, setCurrentYearDays] = useState(0);
   const [precedingFourYearsDays, setPrecedingFourYearsDays] = useState(0);
@@ -23,6 +29,7 @@ export default function IndiaResidencyCalculator() {
     useState(0);
   const [daysInPrecedingSevenYears, setDaysInPrecedingSevenYears] =
     useState(0);
+  const [indiaSourceIncomeInr, setIndiaSourceIncomeInr] = useState(0);
 
   const result = calculateIndiaResidencyStatus({
     currentYearDays,
@@ -31,6 +38,8 @@ export default function IndiaResidencyCalculator() {
     yearsNonResidentInPrecedingTen,
     daysInPrecedingSevenYears,
   });
+
+  const incomeExceeds15L = indiaSourceIncomeInr > FA2020_INCOME_THRESHOLD_INR;
 
   return (
     <CalculatorShell
@@ -69,6 +78,44 @@ export default function IndiaResidencyCalculator() {
         checked={isCitizenOrPioVisiting}
         onChange={setIsCitizenOrPioVisiting}
       />
+
+      {isCitizenOrPioVisiting && (
+        <div className="flex flex-col gap-2">
+          <NumberField
+            label="India-sourced income this financial year, excluding foreign-source income (optional — only used for the note below)"
+            value={indiaSourceIncomeInr}
+            onChange={setIndiaSourceIncomeInr}
+            suffix="₹"
+          />
+          <div
+            className={
+              incomeExceeds15L
+                ? "rounded-md border border-amber-400 bg-amber-50 p-3 text-sm text-amber-900 dark:border-amber-700 dark:bg-amber-950 dark:text-amber-200"
+                : "rounded-md border border-zinc-200 bg-zinc-50 p-3 text-sm text-zinc-600 dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-400"
+            }
+          >
+            {incomeExceeds15L ? (
+              <>
+                <strong>Your India-sourced income exceeds ₹15 lakh.</strong>{" "}
+                Under the Finance Act 2020 amendment, the relaxed threshold
+                for a visiting citizen/PIO in this situation is 120 days,
+                not 182. This calculator still applies 182 days below — it
+                does not recalculate the second test for the income-linked
+                threshold. Verify against incometax.gov.in for your
+                specific year before relying on this.
+              </>
+            ) : (
+              <>
+                If your India-sourced income (excluding foreign-source
+                income) exceeds ₹15 lakh this year, the Finance Act 2020
+                amendment lowers the applicable relaxed threshold to 120
+                days, not 182 — verify against incometax.gov.in for your
+                specific year.
+              </>
+            )}
+          </div>
+        </div>
+      )}
 
       <div className="flex flex-col gap-1 rounded-md bg-zinc-50 p-4 dark:bg-zinc-900">
         <ResultRow
