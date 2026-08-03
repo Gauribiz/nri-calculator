@@ -2,6 +2,56 @@
 
 All notable changes to NRI Calculator, in reverse chronological order.
 
+## 2026-08-03 — DTAA & tax residency calculators (nric-001)
+
+Built the three calculators scoped for the DTAA/tax-residency category
+page (`src/app/dtaa-tax-residency/page.tsx`), replacing its "coming soon"
+placeholder text. The `Disclaimer` component continues to render near the
+top of the page, unchanged, per CLAUDE.md rule 3.
+
+- **US Substantial Presence Test day-counter**
+  (`src/lib/calculators/substantialPresenceTest.ts` +
+  `src/components/calculators/SubstantialPresenceCalculator.tsx`) — the
+  standard IRC §7701(b)(3) weighted-day formula (current year + 1/3 prior
+  year + 1/6 year before that, ≥183, with a 31-day current-year floor).
+  Does not model exempt-individual days or the closer-connection
+  exception.
+- **India residential status / RNOR tool**
+  (`src/lib/calculators/indiaResidency.ts` +
+  `src/components/calculators/IndiaResidencyCalculator.tsx`) — the two
+  basic Income Tax Act section 6 tests (182 days, or 60+365 days with a
+  182-day substitute for citizens/PIOs visiting India) plus the RNOR
+  refinement (9-of-10-years or 729-days-in-7-years). Does **not** model
+  the Finance Act 2020 deemed-residency rule or the income-linked
+  120-day threshold for citizens/PIOs with India income over Rs 15 lakh
+  — flagged inline in the tool itself.
+- **DTAA relief (foreign tax credit) estimator**
+  (`src/lib/calculators/dtaaRelief.ts` +
+  `src/components/calculators/DtaaReliefEstimator.tsx`) — general ordinary
+  credit-method mechanic (credit capped at domestic tax on the same
+  income) per DTAA Article 25. Takes the domestic tax rate as user input
+  rather than asserting a rate; does not model income baskets, Form
+  67/Form 1116 procedural requirements, or PFIC treatment.
+- Added a shared `CalculatorShell`/`NumberField`/`CheckboxField`/
+  `ResultRow` set (`src/components/calculators/CalculatorShell.tsx`) used
+  by all three, to avoid duplicating the same form/result layout three
+  times.
+- All calculation logic is pure, client-side, no persistence — consistent
+  with ADR 0001's "no database yet" consequence.
+- **Needs Ajinkya's fact-verification pass before publishing**: every
+  figure above (183/31-day SPT thresholds, 182/60/365-day and
+  9-of-10/729-day India tests, the Article 25 credit-cap mechanic) is
+  asserted from general knowledge of the respective statutes/treaty, not
+  fetched from a live authoritative source this run. Verify against
+  irs.gov, incometax.gov.in, and the treaty text before treating any of
+  these three tools as publish-ready. Each tool also has its own inline
+  caveat text calling out what it deliberately does not model.
+- Verified with `npm run lint`, `npm run build` (all 4 category pages +
+  home + disclaimer still prerender statically), and a live
+  `npm run start` + Playwright smoke test confirming the disclaimer
+  renders above the calculators and that both the SPT and FTC
+  calculators produce correct results for known test cases.
+
 ## 2026-08-03 — Initial Next.js scaffold
 
 First build pass on the repo, which previously contained only a README.
