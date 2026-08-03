@@ -1,0 +1,24 @@
+{
+  "_comment": "Single source of truth for the PreToolUse guard. Copied into each repo's .claude/hooks/ on every fresh VM checkout since routine runs don't persist local state. Edit here in kathakar/orchestrator-state, never edit the copy inside a project repo directly. v2: patterns rewritten to POSIX ERE only (no \\s, no \\b, no lookahead) so they work identically under GNU grep, BSD grep, and ugrep. Supabase migration logic moved out of this file into pretooluse-guard.sh directly, since it needs an explicit allow-check rather than a lookahead. v3: no script-side change to this file's structure, but pretooluse-guard.sh no longer serializes id/pattern/reason into one delimited string per entry -- see that file's header comment for why (v2's IFS=$'\\x01' silently extracted nothing on stock macOS bash 3.2.57).",
+
+  "bash_deny_patterns": [
+    { "id": "prod-git-push", "pattern": "git[[:space:]]+push[[:space:]].*(origin[[:space:]]+(main|master|production)|--force)", "reason": "Production branch push or force-push requires explicit human approval." },
+    { "id": "vercel-prod-deploy", "pattern": "vercel([[:space:]]+deploy)?[[:space:]]+.*--prod", "reason": "Production Vercel deploy requires explicit human approval." },
+    { "id": "adsense-etsy-payout", "pattern": "(adsense|etsy).*(payout|payment.?method|bank.?(account|detail))", "reason": "Payout/bank settings changes require explicit human approval." },
+    { "id": "wise-remitly-credential", "pattern": "(wise|remitly).*(api.?key|credential|token|secret|password)", "reason": "Affiliate/payment credential changes require explicit human approval." },
+    { "id": "financial-data-real-path", "pattern": "/financial-data-real([/[:space:]]|$)", "reason": "Real financial data path is off-limits to unattended writes/reads outside approved read patterns." }
+  ],
+
+  "file_path_deny_patterns": [
+    { "id": "financial-data-real-write", "pattern": "^/?financial-data-real/.*", "reason": "Writes under /financial-data-real require explicit human approval." },
+    { "id": "env-secrets", "pattern": "[.]env([.]production)?$", "reason": "Environment/secret files are off-limits to unattended edits." }
+  ],
+
+  "notes": [
+    "Supabase migration/reset/push blocking is NOT in this file -- see pretooluse-guard.sh, which blocks any supabase db push/reset/migration unless the command mentions 'staging'. That needed an explicit allow-check, not a regex lookahead, because negative lookahead is PCRE-only and both GNU grep -E and ugrep -E reject it.",
+    "This is the deny-list ONLY. Allow-by-default for everything else.",
+    "Matching is intentionally broad/conservative (over-blocking is cheap, a missed production action is not). Tighten patterns only after seeing false positives in violations.log.",
+    "v1 bug (fixed in v2): the extraction loop used jq's @tsv filter, which escapes literal backslashes by doubling them. read -r doesn't undo that, so every \\s/\\b-based pattern silently stopped matching anything. v2 avoids this by using POSIX character classes instead of \\s/\\b, and by extracting fields via jq's join() instead of @tsv.",
+    "v2 bug (fixed in v3, found testing KLA on stock macOS bash 3.2.57): v2 joined id/pattern/reason with the byte 0x01 and split them back out with IFS=$'\\x01' read. That byte is CTLESC, which bash's own word-expansion code treats specially, and on that bash build the read silently produced an empty pattern every time -- both deny-pattern loops became permanent no-ops, and only the hand-written Supabase check (which never went through this loop) still worked. v3 removes delimiter-based parsing entirely: pretooluse-guard.sh now indexes into each array by position and pulls id/pattern/reason with separate jq calls, so there is no multi-field string for any shell to mis-split."
+  ]
+}
