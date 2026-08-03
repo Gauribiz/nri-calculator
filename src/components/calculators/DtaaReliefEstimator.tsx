@@ -47,7 +47,7 @@ export default function DtaaReliefEstimator() {
         />
       </div>
 
-      <div className="flex flex-col gap-1 rounded-md bg-zinc-50 p-4 dark:bg-zinc-900">
+      <div className="flex flex-col gap-1 rounded-lg bg-stone-50 p-4 dark:bg-primary-900/20">
         <ResultRow
           label="Domestic tax on this income (before credit)"
           value={currencyFormatter.format(result.domesticTaxOnIncome)}
@@ -67,7 +67,7 @@ export default function DtaaReliefEstimator() {
         />
       </div>
 
-      <p className="text-xs text-zinc-500 dark:text-zinc-500">
+      <p className="text-xs text-stone-500 dark:text-primary-300/60">
         Does not model income-basket/resourcing rules, India Rule 128
         procedural requirements (e.g. Form 67 filing deadlines), US Form
         1116 category limitations, PFIC treatment of Indian mutual funds,

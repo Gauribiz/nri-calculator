@@ -2,6 +2,53 @@
 
 All notable changes to NRI Calculator, in reverse chronological order.
 
+## 2026-08-03 — Design system foundation: color, typography, shared components (nric-001c)
+
+Purely visual/component-layer pass — no changes to any calculation logic
+in `src/lib/calculators/`.
+
+- Added Tailwind theme tokens (`src/app/globals.css`): a `primary`
+  navy/indigo scale and a single muted `gold` accent, plus warm
+  off-white/near-black `--background`/`--foreground` values in place of
+  pure white/black. Body/neutral surfaces elsewhere use Tailwind's
+  built-in `stone` scale instead of `zinc`.
+- `CalculatorShell` is now an elevated card (shadow, rounded corners,
+  more padding) instead of a plain bordered box.
+- `ResultRow` gained an optional `status: "favorable" | "warning" |
+  "neutral"` prop rendering a colored pill (soft green / amber / warm
+  gray — no red, per the site's YMYL nature) instead of plain bold text.
+  Wired into the three live calculators' headline results; the DTAA
+  estimator's dollar-amount result keeps plain `emphasis` styling since a
+  badge doesn't fit a currency figure. See ADR 0004 for the specific
+  favorable/warning/neutral judgment calls per calculator.
+- `NumberField`/`CheckboxField` gained an optional `hint` prop wired to a
+  new `InfoTooltip` component (CSS-only hover/focus tooltip, accessible
+  fallback via `aria-label`) — not yet used by any existing field.
+- Added `HowCalculated` (a zero-JS `<details>` disclosure for
+  methodology text) and `SourceCitation`/`VerifiedStamp` (citation links
+  and a "Verified against [source], [date]" stamp) — built and exported,
+  not yet wired into any calculator's content. `nric-001d` is the task
+  scoped to apply these to the DTAA/tax-residency page specifically.
+- Restyled `Disclaimer` into a trust-badge/callout treatment (icon,
+  shadow, tighter hierarchy) using the new `gold` tokens. Content and
+  `role="note"`/`aria-label` are unchanged; position is unchanged — still
+  renders near the top of the page, above the calculators, per CLAUDE.md
+  rule 3.
+- Updated `src/app/layout.tsx`'s header/footer to the new navy/gold
+  identity.
+- Left `zinc-*` classes as-is on the home page, `/disclaimer` page, and
+  the three still-placeholder category pages — out of scope for this
+  component-layer pass; see ADR 0004's consequences.
+- Verified with `npm run lint` (clean), `npm run build` (all 7 routes
+  still prerender statically), and a live `npm run start` + Playwright
+  smoke test in both light and dark color schemes confirming the
+  disclaimer's position, badge colors/logic, and that all three
+  calculators' numeric outputs are unchanged from before this pass
+  (including the ADR 0003 FA2020 income-threshold callout).
+- No content/figures were added or changed in this pass — nothing new to
+  flag for Ajinkya's fact-verification queue beyond what ADR 0002/0003
+  already flagged.
+
 ## 2026-08-03 — FA2020 Rs 15L/120-day disclosure on the India residency tool (nric-001b)
 
 Follow-up to nric-001's fact-verification pass: the India residential

@@ -90,8 +90,8 @@ export default function IndiaResidencyCalculator() {
           <div
             className={
               incomeExceeds15L
-                ? "rounded-md border border-amber-400 bg-amber-50 p-3 text-sm text-amber-900 dark:border-amber-700 dark:bg-amber-950 dark:text-amber-200"
-                : "rounded-md border border-zinc-200 bg-zinc-50 p-3 text-sm text-zinc-600 dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-400"
+                ? "rounded-lg border border-gold-400 bg-gold-50 p-3 text-sm text-gold-900 dark:border-gold-700 dark:bg-gold-900/30 dark:text-gold-200"
+                : "rounded-lg border border-stone-200 bg-stone-50 p-3 text-sm text-stone-600 dark:border-primary-900 dark:bg-primary-900/20 dark:text-primary-300/70"
             }
           >
             {incomeExceeds15L ? (
@@ -117,7 +117,7 @@ export default function IndiaResidencyCalculator() {
         </div>
       )}
 
-      <div className="flex flex-col gap-1 rounded-md bg-zinc-50 p-4 dark:bg-zinc-900">
+      <div className="flex flex-col gap-1 rounded-lg bg-stone-50 p-4 dark:bg-primary-900/20">
         <ResultRow
           label="Second-test day threshold applied"
           value={`${result.appliedSecondTestThresholdDays} days`}
@@ -129,11 +129,11 @@ export default function IndiaResidencyCalculator() {
         <ResultRow
           label="Residential status"
           value={STATUS_LABEL[result.status]}
-          emphasis
+          status={result.status === "rnor" ? "warning" : "neutral"}
         />
       </div>
 
-      <p className="text-xs text-zinc-500 dark:text-zinc-500">
+      <p className="text-xs text-stone-500 dark:text-primary-300/60">
         Thresholds and exceptions here reflect the general rule as commonly
         summarized — verify current-year figures against incometax.gov.in
         or with a chartered accountant before relying on this.
