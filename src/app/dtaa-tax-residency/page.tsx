@@ -34,10 +34,12 @@ export default function DtaaTaxResidencyPage() {
       <p className="max-w-2xl text-xs text-stone-500 dark:text-primary-300/60">
         Every threshold on this page was cross-checked on 2026-08-04 against
         public tax-reference sources citing irs.gov and incometaxindia.gov.in
-        (see each tool&apos;s source links below) — this is a secondary-source
-        cross-check, not a professional review or a direct read of the
-        primary text. Treat these figures as needing Ajinkya&apos;s own
-        fact-verification pass before this page is treated as publish-ready.
+        (see each tool&apos;s source links below), then reviewed against those
+        sources directly by our team the same day -- see ADR 0006 in this
+        repository for the full verification record. This is a
+        secondary-source cross-check, not a professional tax or legal review;
+        please verify against irs.gov / incometax.gov.in directly, or with a
+        qualified advisor, before relying on any result.
       </p>
 
       <div className="flex flex-col gap-6">
