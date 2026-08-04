@@ -2,6 +2,81 @@
 
 All notable changes to NRI Calculator, in reverse chronological order.
 
+## 2026-08-04 — Investment/repatriation calculators (nric-003)
+
+Orientation confirmed `nri-calculator.phase` implied an active queue and
+identified `nric-003` (investment/repatriation calculators) as the single
+highest-priority queued task — `nric-001` through `nric-001e`, `nric-002`,
+and `nric-005` were already done or (for `nric-002`) already had an open
+PR. Cross-checked `project-docs-index/nri-calculator/changelog.md` against
+`orchestrator-state/state.json`'s `task_queue` before starting
+implementation, per the process-gap lesson from the `nric-002` duplicate
+incident (see `architecture_notes.state_json_staleness_incident_2026_08_04`
+in `orchestrator-state`) — no existing work found for `nric-003`, so this
+is not a duplicate. Confirmed the PreToolUse guard is live via a read-only
+clone (`pretooluse-guard.sh` git mode `100755`, `.claude/settings.json`
+wires it to `Bash|Write|Edit`).
+
+Built two tools on `/investments-repatriation`, replacing the "coming
+soon" placeholder:
+
+- **Repatriation headroom estimator**
+  (`src/lib/calculators/repatriationLimit.ts` +
+  `src/components/calculators/RepatriationLimitCalculator.tsx`) — tracks
+  remaining headroom under RBI's USD 1 million per financial year
+  facility for remittance of assets (NRO accounts and most movable/
+  financial asset sale proceeds), and confirms NRE/FCNR balances are not
+  subject to that ceiling. Does not model the RBI-permission route for
+  amounts above the ceiling, the separate two-property cap on
+  repatriating residential real estate sale proceeds, or Form 15CA/15CB
+  mechanics.
+- **US tax treatment of Indian mutual funds: PFIC explainer**
+  (`src/lib/calculators/pficFilingCheck.ts` +
+  `src/components/calculators/PficFilingChecker.tsx`) — explains the
+  Section 1291 default "excess distribution" regime and why QEF/
+  mark-to-market elections are usually unavailable for Indian mutual
+  funds, plus a narrow Form 8621 de minimis filing-exception check
+  ($25,000 / $50,000 married filing jointly / $5,000 if held through
+  another PFIC). Deliberately does **not** compute any Section 1291 tax
+  or interest — see ADR 0009 for why a fuller tax-liability calculator
+  was judged too high-liability for a general-information YMYL page.
+
+Per the task's explicit "extra disclaimer emphasis" requirement (this
+category is flagged high-complexity/high-liability), added an additional
+amber callout on the page directly below the standard `Disclaimer`
+component — never replacing or moving it, still first per CLAUDE.md rule
+3 — plus a second, PFIC-specific amber callout inside
+`PficFilingChecker` itself. Also fixed the page wrapper's leftover
+`zinc-*` heading class to the `stone`/`primary` design-system tokens
+while rewriting this file (small, no new dependency, matches every other
+launched page).
+
+Did not add a "Download result as PDF" affordance — `nric-001e` scoped
+that specifically to the DTAA/tax-residency calculators as a follow-up,
+not a standing requirement for every future calculator (same call
+`nric-002` made).
+
+**Both new figures need Ajinkya's fact-verification pass** before
+publishing: the USD 1,000,000/FY repatriation ceiling (RBI Master
+Direction No. 13 — Remittance of Assets) and the $25,000/$50,000/$5,000
+Form 8621 de minimis filing thresholds were cross-checked via live web
+search this pass against multiple independent secondary sources with no
+discrepancies found, but direct fetches of rbi.org.in and irs.gov were
+not attempted this pass — verify against those sources directly, and
+with a qualified US tax preparer for the PFIC content specifically,
+before treating either tool as publish-ready.
+
+Verified with `npm run lint` (clean), `npm run build` (all 7 routes
+still prerender statically), and a headless Playwright smoke test
+against the built production server confirming: the disclaimer and
+extra-caution callout both render above the calculators; the repatriation
+tool correctly flags an $800,000-already-repatriated + $300,000-requested
+combination as $100,000 over the limit, and correctly reports NRE/FCNR as
+not subject to the ceiling; and the PFIC checker correctly reports "likely
+not required" at $0 aggregate value, "likely required" once value exceeds
+$25,000, and "likely required" regardless of value once a distribution/
+disposition is marked — with no console errors. Added ADR 0009.
+
 ## 2026-08-04 — Download result as PDF for the DTAA/tax-residency calculators (nric-001e)
 
 No changes to calculation logic in `src/lib/calculators/` — this is a new
