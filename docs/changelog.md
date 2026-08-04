@@ -2,6 +2,34 @@
 
 All notable changes to NRI Calculator, in reverse chronological order.
 
+## 2026-08-04 — Download result as PDF for the DTAA/tax-residency calculators (nric-001e)
+
+No changes to calculation logic in `src/lib/calculators/` — this is a new
+UI affordance only, calculator outputs are unchanged.
+
+- Added a "Download result as PDF" button under each of the three
+  DTAA/tax-residency calculators' result sections (SPT day-counter, India
+  residency/RNOR tool, DTAA relief estimator), via a new shared
+  `DownloadPdfButton` component (`src/components/calculators/`).
+- Added `jspdf` (^4.2.1) as a new dependency, dynamically imported
+  (`await import("jspdf")`) inside the click handler so it's code-split
+  into its own chunk and adds nothing to the initial page bundle — the
+  production build's first-load JS for every route is unchanged from
+  before this pass. See ADR 0007 for the library evaluation (why jsPDF's
+  own text API over `html2canvas`-style DOM rasterization, and why a
+  dependency was chosen over a browser-native print-to-PDF flow).
+- Each generated PDF includes the calculator's title, the exact inputs
+  and results shown on screen at click time, the same "not professional
+  advice" disclaimer text as the on-page `Disclaimer` component (new
+  shared `pdfDisclaimer.ts` constant), and the calculator's source links
+  — so the downloaded file is self-contained and carries the same
+  compliance notice as the page it came from.
+- Verified with `npm run lint` (clean), `npm run build` (all 7 routes
+  still prerender statically, first-load JS sizes unchanged), and a
+  headless Playwright smoke test against the built production server
+  confirming all three buttons trigger a real file download producing a
+  valid, non-empty single-page PDF, with no console errors.
+
 ## 2026-08-04 — Apply design system to the DTAA/tax-residency page (nric-001d)
 
 No changes to calculation logic in `src/lib/calculators/` — verified with
