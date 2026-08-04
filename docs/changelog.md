@@ -2,6 +2,62 @@
 
 All notable changes to NRI Calculator, in reverse chronological order.
 
+## 2026-08-04 — NRE/NRO & TDS calculators (nric-002)
+
+Built the three calculators scoped for the NRE/NRO & TDS category page
+(`src/app/nre-nro-tds/page.tsx`), replacing its "coming soon" placeholder
+text. The `Disclaimer` component continues to render near the top of the
+page, unchanged, per CLAUDE.md rule 3. All three reuse the existing
+`CalculatorShell`/`NumberField`/`CheckboxField`/`ResultRow`,
+`HowCalculated`, `SourceCitation`, and `DownloadPdfButton` components from
+`nric-001c`/`nric-001e` — no new shared components or dependencies.
+
+- **NRE vs NRO account chooser**
+  (`src/lib/calculators/nreNroChooser.ts` +
+  `src/components/calculators/NreNroChooser.tsx`) — a fund-sourcing rule:
+  foreign-source funds need an NRE account, India-source income needs an
+  NRO account, having both means needing both accounts. Does not compare
+  the two account types' interest-taxability or repatriation-limit
+  differences, joint-account rules, or FCNR(B)/RFC alternatives.
+- **TDS on NRO interest calculator**
+  (`src/lib/calculators/nroInterestTds.ts` +
+  `src/components/calculators/NroInterestTdsCalculator.tsx`) — section 195
+  TDS at 30% (or 15% under the India-US DTAA Article 11 general rate, if
+  claimed with PAN on file) plus 4% health & education cess. Does not
+  model surcharge or the DTAA's 10%/0% rates for approved institutions/
+  government loans. For a missing PAN, deliberately does not assert
+  whether a DTAA rate survives section 206AA's floor — that's a disputed,
+  case-law-dependent question (see ADR 0008) — and applies the
+  conservative domestic rate with an inline note instead.
+- **Form 15CA / 15CB checker** (`src/lib/calculators/form15caCb.ts` +
+  `src/components/calculators/Form15caCbChecker.tsx`) — a Rule 37BB
+  decision tree over the exempt-list, chargeable-to-tax, AO-certificate,
+  and ₹5 lakh-threshold facts, returning which Form 15CA part applies and
+  whether Form 15CB is also needed. Does not reproduce Rule 37BB's 33-item
+  exempt list or determine chargeability itself — both are taken as
+  user-supplied facts.
+- All calculation logic is pure, client-side, no persistence — consistent
+  with ADR 0001's "no database yet" consequence.
+- **Needs Ajinkya's fact-verification pass before publishing**: this run
+  did a live web-search cross-check of every figure above (30%/15%/4%
+  rates, the ₹5 lakh Part A/B/C/D threshold, Rule 37BB's 33-item list
+  count, section 206AA's 20% floor) against independent secondary tax-
+  reference sources, with no discrepancies found — but a direct
+  `incometaxindia.gov.in` fetch was blocked (HTTP 403), so this remains a
+  secondary-source cross-check, not a professional review or a direct
+  primary-source read. See ADR 0008 for the full verification record and
+  the reasoning behind the no-PAN/DTAA-override judgment call.
+- Verified with `npm run lint` (clean), `npm run build` (all 7 routes
+  still prerender statically), and a headless Playwright smoke test
+  against the built production server: the chooser correctly recommends
+  NRE-only/NRO-only/both based on the two checkboxes; the TDS calculator
+  produces ₹31,200 TDS on ₹100,000 gross interest at the domestic
+  30%+cess rate and ₹15,600 at the 15%+cess DTAA rate; the Form 15CA/15CB
+  checker returns Part A only at a ₹3 lakh chargeable remittance with no
+  AO certificate, Part C plus Form 15CB at ₹8 lakh, and "neither form
+  required" when the exempt-list checkbox is checked — with no console
+  errors.
+
 ## 2026-08-04 — Download result as PDF for the DTAA/tax-residency calculators (nric-001e)
 
 No changes to calculation logic in `src/lib/calculators/` — this is a new
