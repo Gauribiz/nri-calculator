@@ -7,6 +7,8 @@ import {
   NumberField,
   ResultRow,
 } from "./CalculatorShell";
+import { HowCalculated } from "./HowCalculated";
+import { SourceCitation } from "./SourceCitation";
 
 export default function SubstantialPresenceCalculator() {
   const [currentYearDays, setCurrentYearDays] = useState(0);
@@ -76,6 +78,30 @@ export default function SubstantialPresenceCalculator() {
         reference only — verify against irs.gov before relying on the
         result.
       </p>
+
+      <HowCalculated>
+        <p>
+          Weighted total = current-year days + (days one year ago × ⅓) +
+          (days two years ago × ⅙). You meet the Substantial Presence Test
+          if that weighted total is at least 183 and you were present at
+          least 31 days in the current year (IRC §7701(b)(3)).
+        </p>
+        <p className="mt-2">
+          Not modeled: &quot;exempt individual&quot; days (certain F/J/M/Q
+          visa statuses don&apos;t count toward the test) and the
+          closer-connection-to-a-foreign-country exception, either of which
+          can change the real outcome — see ADR 0002.
+        </p>
+      </HowCalculated>
+
+      <SourceCitation
+        sources={[
+          {
+            label: "IRS: Substantial Presence Test",
+            href: "https://www.irs.gov/individuals/international-taxpayers/substantial-presence-test",
+          },
+        ]}
+      />
     </CalculatorShell>
   );
 }

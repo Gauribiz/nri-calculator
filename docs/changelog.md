@@ -2,6 +2,50 @@
 
 All notable changes to NRI Calculator, in reverse chronological order.
 
+## 2026-08-04 — Apply design system to the DTAA/tax-residency page (nric-001d)
+
+No changes to calculation logic in `src/lib/calculators/` — verified with
+a live smoke test that all three calculators' numeric outputs are
+unchanged (245/0/0 test-vector days still yields a 245.0-day weighted
+total and the "meets the test" badge).
+
+- `src/app/dtaa-tax-residency/page.tsx`: replaced leftover `zinc-*`
+  classes with the `stone`/`primary` design-system tokens (ADR 0004 left
+  this page's wrapper out of scope; this pass finishes it). Disclaimer
+  position unchanged — still renders first, above the intro text, per
+  CLAUDE.md rule 3.
+- Wired the existing `HowCalculated` component into all three calculators
+  (SPT day-counter, India residency/RNOR tool, DTAA relief estimator),
+  restating each tool's already-coded formula and not-modeled list from
+  ADR 0002/0003 — no new claims, just surfacing what was already decided.
+- Wired `SourceCitation` into all three calculators, linking to the real
+  IRS/incometaxindia.gov.in pages found via this session's live web
+  search cross-check (see ADR 0005) — irs.gov's Substantial Presence Test
+  and Foreign Tax Credit pages, incometaxindia.gov.in's residential-status
+  and double-taxation-relief pages.
+- Did **not** wire `VerifiedStamp`'s "Verified against X, date" claim as
+  the task described. The task assumed a fact-verification pass had
+  already completed this session; ADR 0002 shows that never happened
+  (figures were asserted from general knowledge, not fetched live). This
+  run did do a real live cross-check via web search — every coded
+  threshold matched independent tax-reference sources with no
+  discrepancies — but a direct `irs.gov` fetch was blocked (HTTP 403) and
+  this is still a secondary-source cross-check, not a professional
+  review. An unqualified "Verified" badge on public YMYL tax content would
+  overclaim, so added a plain-text note instead, stating exactly what was
+  cross-checked, when, and that it still needs Ajinkya's own
+  fact-verification pass. Full reasoning in ADR 0005.
+- Did not add a "download result as PDF" affordance — it needs a new npm
+  dependency, a real scope expansion beyond a styling/apply pass per the
+  task's own framing. Filed as follow-up task `nric-001e` in
+  `orchestrator-state` instead of building it now.
+- Verified with `npm run lint` (clean), `npm run build` (all 7 routes
+  still prerender statically), and a live `npm run start` + Playwright
+  smoke test confirming the disclaimer's position, all three
+  `HowCalculated`/`SourceCitation` blocks render and expand correctly,
+  no `zinc-*` classes remain on the page, and calculator outputs are
+  unchanged from before this pass.
+
 ## 2026-08-03 — Design system foundation: color, typography, shared components (nric-001c)
 
 Purely visual/component-layer pass — no changes to any calculation logic

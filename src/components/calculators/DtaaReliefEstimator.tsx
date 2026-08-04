@@ -7,6 +7,8 @@ import {
   NumberField,
   ResultRow,
 } from "./CalculatorShell";
+import { HowCalculated } from "./HowCalculated";
+import { SourceCitation } from "./SourceCitation";
 
 const currencyFormatter = new Intl.NumberFormat("en-US", {
   maximumFractionDigits: 2,
@@ -74,6 +76,36 @@ export default function DtaaReliefEstimator() {
         or carryover of unused credit. Verify against irs.gov,
         incometax.gov.in, and the treaty text before relying on this.
       </p>
+
+      <HowCalculated>
+        <p>
+          Estimates relief under the ordinary foreign tax credit method used
+          by Article 25 of the India-US DTAA: the credit for foreign tax
+          paid is capped at whichever is lower — the foreign tax actually
+          paid, or the domestic tax otherwise due on that same income. Net
+          additional domestic tax = domestic tax on the income − creditable
+          foreign tax (floored at zero).
+        </p>
+        <p className="mt-2">
+          Not modeled: income-basket/resourcing rules, India&apos;s Rule 128
+          procedural requirements (e.g. Form 67 filing deadline), US Form
+          1116 category limitations, PFIC treatment of Indian mutual funds,
+          or carryover of unused credit — see ADR 0002.
+        </p>
+      </HowCalculated>
+
+      <SourceCitation
+        sources={[
+          {
+            label: "Income Tax Dept.: Double Taxation Relief",
+            href: "https://www.incometaxindia.gov.in/w/double-taxation-relief",
+          },
+          {
+            label: "IRS: Foreign Tax Credit",
+            href: "https://www.irs.gov/individuals/international-taxpayers/foreign-tax-credit",
+          },
+        ]}
+      />
     </CalculatorShell>
   );
 }
