@@ -8,6 +8,8 @@ import {
   NumberField,
   ResultRow,
 } from "./CalculatorShell";
+import { HowCalculated } from "./HowCalculated";
+import { SourceCitation } from "./SourceCitation";
 
 const STATUS_LABEL: Record<string, string> = {
   "non-resident": "Non-Resident (NR)",
@@ -138,6 +140,36 @@ export default function IndiaResidencyCalculator() {
         summarized — verify current-year figures against incometax.gov.in
         or with a chartered accountant before relying on this.
       </p>
+
+      <HowCalculated>
+        <p>
+          Under Income Tax Act section 6, you&apos;re a resident if you meet
+          Test A (present in India ≥182 days this financial year) or Test B
+          (present ≥60 days this year — relaxed to 182 days for a visiting
+          citizen/PIO not primarily here for other business — and ≥365 days
+          across the preceding 4 financial years).
+        </p>
+        <p className="mt-2">
+          If resident, you&apos;re RNOR rather than ordinarily resident if
+          you were non-resident in at least 9 of the preceding 10 financial
+          years, or present 729 days or fewer in the preceding 7 financial
+          years.
+        </p>
+        <p className="mt-2">
+          Not modeled: the Finance Act 2020 deemed-residency rule for
+          citizens with no tax domicile elsewhere, and year-specific CBDT
+          travel relaxations — see ADR 0002 and ADR 0003.
+        </p>
+      </HowCalculated>
+
+      <SourceCitation
+        sources={[
+          {
+            label: "Income Tax Dept.: Residential Status",
+            href: "https://www.incometaxindia.gov.in/w/residential-status",
+          },
+        ]}
+      />
     </CalculatorShell>
   );
 }
