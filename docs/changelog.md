@@ -2,6 +2,78 @@
 
 All notable changes to NRI Calculator, in reverse chronological order.
 
+## 2026-08-04 — NRE/NRO & TDS calculators (nric-002)
+
+Built the three calculators scoped for the NRE/NRO & TDS category page
+(`src/app/nre-nro-tds/page.tsx`), replacing its "coming soon" placeholder
+text. The `Disclaimer` component continues to render near the top of the
+page, unchanged, per CLAUDE.md rule 3.
+
+- **NRE vs. NRO chooser** (`src/lib/calculators/nreNroChooser.ts` +
+  `src/components/calculators/NreNroChooser.tsx`) — a decision aid over
+  FEMA-eligibility, funds-source (foreign/India/both), and
+  repatriability-need inputs, recommending NRE, NRO, both, or flagging
+  FEMA-status uncertainty. Does not check actual FEMA residency status or
+  account-opening KYC eligibility.
+- **TDS on NRO account interest**
+  (`src/lib/calculators/nroInterestTds.ts` +
+  `src/components/calculators/NroInterestTdsCalculator.tsx`) — statutory
+  flat 30% non-resident withholding rate plus 4% cess (31.2% effective)
+  by default, with an optional user-supplied lower rate for certified
+  DTAA/treaty cases, mirroring `dtaaRelief.ts`'s existing pattern of
+  taking a rate as input rather than asserting one. Does not model
+  surcharge (income-slab-dependent) or ITR-filed refunds of excess TDS.
+- **Form 15CA/15CB checker** (`src/lib/calculators/form15caChecker.ts` +
+  `src/components/calculators/Form15caChecker.tsx`) — the ₹5 lakh
+  aggregate-per-financial-year threshold separating Form 15CA Part A
+  (no CA certificate) from Part C + Form 15CB (CA-certified), plus Part
+  B for remittances with an existing Assessing Officer
+  certificate/order, and a user-supplied "on the Rule 37BB exempt list"
+  checkbox rather than checking that list itself. Does not aggregate
+  multiple remittances across the year or model Form 15CA Part D.
+- Added a shared `CalculatorShell`/`NumberField`/`CheckboxField`/
+  `ResultRow`/`HowCalculated`/`SourceCitation` usage consistent with the
+  DTAA/tax-residency page — no new shared components needed. Did not add
+  a "Download result as PDF" affordance: `nric-001e` scoped that
+  specifically to the DTAA/tax-residency calculators as a follow-up
+  task, not as a standing requirement for every future calculator: see
+  ADR 0008.
+- **Significant finding, flagged prominently on the page itself, not
+  just here**: a live web-search cross-check this run surfaced that
+  India's **Income-tax Act, 2025 came into force on 1 April 2026**,
+  repealing the Income Tax Act, 1961, for tax years from FY 2026-27
+  onward — and today (2026-08-04) falls within FY 2026-27. The
+  rates/thresholds used here are corroborated by current public
+  tax-reference sources and believed to carry over substantively, but
+  the specific 1961-Act section numbers this page's explanatory text
+  references (e.g. Section 195) have **not** been individually
+  re-verified against the new Act's renumbered sections — a prominent
+  callout on the page itself says so. See ADR 0008 for the full
+  reasoning, including a flag that this same gap likely also affects the
+  already-published `dtaa-tax-residency` page's own section citations,
+  which is out of this task's scope to fix (one task per run) but worth
+  a dedicated follow-up task.
+- **Needs Ajinkya's fact-verification pass before publishing**: every
+  rate/threshold above (30%/4% cess NRO TDS, the NRE exemption, the ₹5
+  lakh Form 15CA/15CB threshold) is corroborated by a live web-search
+  cross-check this run against multiple independent tax-reference
+  sources (with no discrepancies found), but a direct
+  incometax.gov.in fetch was blocked (HTTP 403, same as ADR 0005/0006's
+  prior experience) — this remains a secondary-source cross-check, not
+  a professional review. Verify against incometax.gov.in and RBI's FEMA
+  master directions directly, or with a qualified advisor, before
+  relying on any result — and see the note above specifically on
+  section-number citations under the new Act.
+- Verified with `npm run lint` (clean), `npm run build` (all 7 routes
+  still prerender statically), and a live `npm run start` + Playwright
+  smoke test confirming the disclaimer's position and correct outputs
+  for hand-picked test vectors: ₹1,00,000 NRO interest at the default
+  rate withholds exactly ₹31,200 (net ₹68,800); a ₹3,00,000 remittance
+  needs only Form 15CA Part A, an ₹8,00,000 one needs Part C + 15CB; the
+  chooser recommends NRE for foreign-sourced funds, NRO for India-sourced
+  funds, and flags FEMA-status uncertainty when the NRI/PIO box is
+  unchecked — with no console errors.
+
 ## 2026-08-04 — Download result as PDF for the DTAA/tax-residency calculators (nric-001e)
 
 No changes to calculation logic in `src/lib/calculators/` — this is a new
