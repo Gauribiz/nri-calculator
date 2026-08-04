@@ -8,8 +8,10 @@ import {
   NumberField,
   ResultRow,
 } from "./CalculatorShell";
+import { DownloadPdfButton } from "./DownloadPdfButton";
 import { HowCalculated } from "./HowCalculated";
 import { SourceCitation } from "./SourceCitation";
+import { PDF_DISCLAIMER } from "./pdfDisclaimer";
 
 const STATUS_LABEL: Record<string, string> = {
   "non-resident": "Non-Resident (NR)",
@@ -134,6 +136,71 @@ export default function IndiaResidencyCalculator() {
           status={result.status === "rnor" ? "warning" : "neutral"}
         />
       </div>
+
+      <DownloadPdfButton
+        fileName="india-residential-status-result.pdf"
+        calculatorTitle="India residential status & RNOR tool"
+        inputs={[
+          {
+            label: "Days present in India this financial year",
+            value: `${currentYearDays} days`,
+          },
+          {
+            label: "Days present in India, preceding 4 financial years",
+            value: `${precedingFourYearsDays} days`,
+          },
+          {
+            label: "Citizen/PIO visiting India (182-day relaxed threshold)",
+            value: isCitizenOrPioVisiting ? "Yes" : "No",
+          },
+          ...(isCitizenOrPioVisiting
+            ? [
+                {
+                  label: "India-sourced income this financial year",
+                  value: `₹${indiaSourceIncomeInr}`,
+                },
+              ]
+            : []),
+          {
+            label: "Years NOT resident, of the preceding 10 financial years",
+            value: `${yearsNonResidentInPrecedingTen} years`,
+          },
+          {
+            label: "Days present in India, preceding 7 financial years",
+            value: `${daysInPrecedingSevenYears} days`,
+          },
+        ]}
+        results={[
+          {
+            label: "Second-test day threshold applied",
+            value: `${result.appliedSecondTestThresholdDays} days`,
+          },
+          {
+            label: "Meets basic resident test",
+            value: result.metBasicResidentTest ? "Yes" : "No",
+          },
+          {
+            label: "Residential status",
+            value: STATUS_LABEL[result.status],
+          },
+          ...(incomeExceeds15L
+            ? [
+                {
+                  label: "Note",
+                  value:
+                    "India-sourced income exceeds Rs 15 lakh — FA2020 lowers the relaxed threshold to 120 days, not applied above.",
+                },
+              ]
+            : []),
+        ]}
+        disclaimer={PDF_DISCLAIMER}
+        sources={[
+          {
+            label: "Income Tax Dept.: Residential Status",
+            href: "https://www.incometaxindia.gov.in/w/residential-status",
+          },
+        ]}
+      />
 
       <p className="text-xs text-stone-500 dark:text-primary-300/60">
         Thresholds and exceptions here reflect the general rule as commonly

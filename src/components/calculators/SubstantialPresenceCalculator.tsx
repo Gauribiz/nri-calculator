@@ -7,8 +7,10 @@ import {
   NumberField,
   ResultRow,
 } from "./CalculatorShell";
+import { DownloadPdfButton } from "./DownloadPdfButton";
 import { HowCalculated } from "./HowCalculated";
 import { SourceCitation } from "./SourceCitation";
+import { PDF_DISCLAIMER } from "./pdfDisclaimer";
 
 export default function SubstantialPresenceCalculator() {
   const [currentYearDays, setCurrentYearDays] = useState(0);
@@ -71,6 +73,39 @@ export default function SubstantialPresenceCalculator() {
           </p>
         )}
       </div>
+
+      <DownloadPdfButton
+        fileName="substantial-presence-test-result.pdf"
+        calculatorTitle="US Substantial Presence Test day-counter"
+        inputs={[
+          { label: "Current year", value: `${currentYearDays} days` },
+          { label: "1 year ago", value: `${priorYearDays} days` },
+          { label: "2 years ago", value: `${yearBeforePriorDays} days` },
+        ]}
+        results={[
+          {
+            label: "Weighted total (current + 1/3 + 1/6)",
+            value: `${result.weightedTotal.toFixed(1)} days`,
+          },
+          {
+            label: "Current-year minimum (31 days) met",
+            value: result.meetsCurrentYearMinimum ? "Yes" : "No",
+          },
+          {
+            label: "Substantial Presence Test result",
+            value: result.meetsSubstantialPresenceTest
+              ? "Meets the test"
+              : "Does not meet the test",
+          },
+        ]}
+        disclaimer={PDF_DISCLAIMER}
+        sources={[
+          {
+            label: "IRS: Substantial Presence Test",
+            href: "https://www.irs.gov/individuals/international-taxpayers/substantial-presence-test",
+          },
+        ]}
+      />
 
       <p className="text-xs text-stone-500 dark:text-primary-300/60">
         This is one of two independent US residency tests (the other is the

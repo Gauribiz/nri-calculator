@@ -7,8 +7,10 @@ import {
   NumberField,
   ResultRow,
 } from "./CalculatorShell";
+import { DownloadPdfButton } from "./DownloadPdfButton";
 import { HowCalculated } from "./HowCalculated";
 import { SourceCitation } from "./SourceCitation";
+import { PDF_DISCLAIMER } from "./pdfDisclaimer";
 
 const currencyFormatter = new Intl.NumberFormat("en-US", {
   maximumFractionDigits: 2,
@@ -68,6 +70,54 @@ export default function DtaaReliefEstimator() {
           emphasis
         />
       </div>
+
+      <DownloadPdfButton
+        fileName="dtaa-relief-estimate-result.pdf"
+        calculatorTitle="DTAA relief (foreign tax credit) estimator"
+        inputs={[
+          {
+            label: "Foreign-source income",
+            value: currencyFormatter.format(foreignSourceIncome),
+          },
+          {
+            label: "Tax already paid on it abroad",
+            value: currencyFormatter.format(foreignTaxPaid),
+          },
+          {
+            label: "Domestic tax rate on this income",
+            value: `${domesticTaxRatePercent}%`,
+          },
+        ]}
+        results={[
+          {
+            label: "Domestic tax on this income (before credit)",
+            value: currencyFormatter.format(result.domesticTaxOnIncome),
+          },
+          {
+            label: "Creditable foreign tax",
+            value: currencyFormatter.format(result.creditableForeignTax),
+          },
+          {
+            label: "Foreign tax paid but not creditable",
+            value: currencyFormatter.format(result.nonCreditableForeignTax),
+          },
+          {
+            label: "Net additional domestic tax due",
+            value: currencyFormatter.format(result.netAdditionalDomesticTax),
+          },
+        ]}
+        disclaimer={PDF_DISCLAIMER}
+        sources={[
+          {
+            label: "Income Tax Dept.: Double Taxation Relief",
+            href: "https://www.incometaxindia.gov.in/w/double-taxation-relief",
+          },
+          {
+            label: "IRS: Foreign Tax Credit",
+            href: "https://www.irs.gov/individuals/international-taxpayers/foreign-tax-credit",
+          },
+        ]}
+      />
 
       <p className="text-xs text-stone-500 dark:text-primary-300/60">
         Does not model income-basket/resourcing rules, India Rule 128
