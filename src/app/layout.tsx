@@ -55,6 +55,18 @@ export default function RootLayout({
                 {category.shortTitle}
               </Link>
             ))}
+            <Link
+              href="/blog"
+              className="text-stone-600 transition-colors hover:text-primary-800 dark:text-primary-200/70 dark:hover:text-primary-50"
+            >
+              Blog
+            </Link>
+            <Link
+              href="/faq"
+              className="text-stone-600 transition-colors hover:text-primary-800 dark:text-primary-200/70 dark:hover:text-primary-50"
+            >
+              FAQ
+            </Link>
           </nav>
         </header>
 
