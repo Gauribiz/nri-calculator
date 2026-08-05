@@ -474,6 +474,463 @@ export const articles: Article[] = [
       "selling-property-in-india-as-nri-ltcg-vs-stcg",
     ],
   },
+
+  // --- DTAA / Tax Residency cluster (batch 2) ---
+  {
+    slug: "rnor-status-explained-for-returning-nris",
+    clusterSlug: "dtaa-tax-residency",
+    title: "RNOR Status: The Tax Bridge Returning NRIs Often Miss",
+    description:
+      "Coming back to India for good doesn't flip your tax status overnight — RNOR is a transitional status that can shield your foreign income for a few extra years, if you know it exists.",
+    dek: "Moving back to India usually means becoming a tax resident again. RNOR status is the buffer most returning NRIs don't realize they're entitled to.",
+    sections: [
+      {
+        paragraphs: [
+          "Residency in India isn't just resident-or-non-resident. There's a third category — Resident but Not Ordinarily Resident (RNOR) — that sits between the two, and it exists specifically for people whose India ties have just changed, most commonly NRIs returning to settle back in India. Missing that RNOR applies to you can mean paying Indian tax on foreign income you didn't actually need to disclose yet.",
+        ],
+      },
+      {
+        heading: "How you qualify",
+        paragraphs: [
+          "You're eligible for RNOR status in a given financial year if you meet the general day-count test for being an Indian resident that year, and additionally satisfy either of two conditions: you were a non-resident in 9 of the 10 financial years preceding that year, or you were present in India for less than 730 days in aggregate across the 7 financial years preceding that year. Either condition is enough on its own — you don't need both.",
+          "In practice, this means someone who has spent many years abroad and then returns doesn't jump straight to full ordinary-resident status the moment they cross the resident day-count threshold — they typically pass through RNOR first, for as long as those lookback conditions keep being satisfied, generally up to about 3 financial years after the return.",
+        ],
+      },
+      {
+        heading: "Why it matters: what stays untaxed",
+        paragraphs: [
+          "The tax benefit is the point of the status: an RNOR is taxed in India only on India-sourced income and income actually received in India, the same narrow scope as a non-resident — foreign income (say, a US salary earned before the move, or continuing US investment income) stays outside India's tax net for as long as RNOR status holds. NRE and FCNR account interest, which is tax-exempt for NRIs, also generally continues to be exempt through the RNOR window.",
+          "That window closes gradually and automatically, not on a fixed calendar date — it ends whenever the lookback conditions above stop being met, which is why the day-count history matters even after you've physically moved back.",
+        ],
+      },
+      {
+        heading: "A rule change worth tracking",
+        paragraphs: [
+          "The India residency calculator on this site's DTAA & Tax Residency page already covers the Finance Act 2020 nuance where high-income visiting individuals (India income above ₹15 lakh) can face a shorter 120-day residency threshold instead of the general 182-day one. Multiple current secondary sources describe a related change taking effect under the Income-tax Act, 2025 (in force from financial year 2026-27) that extends a comparable 120-day-plus-prior-ties test more broadly to this RNOR determination for high-income individuals. Because this site has not independently verified that provision against the Act's official text, treat it as a flag to check your own facts against the current law directly — or with a CA — rather than a settled figure.",
+        ],
+      },
+    ],
+    relatedSlugs: [
+      "nri-or-resident-how-tax-residency-works",
+      "dual-status-tax-return-year-you-move",
+    ],
+  },
+  {
+    slug: "dual-status-tax-return-year-you-move",
+    clusterSlug: "dtaa-tax-residency",
+    title: "Dual-Status Tax Returns: Filing for the Year You Move",
+    description:
+      "The calendar year you move to or from the US, you may owe two different tax treatments in the same return — here's what a dual-status year actually means for filing.",
+    dek: "Moving countries mid-year doesn't just change where you live. On the US side, it can split a single tax year into two different filing regimes.",
+    sections: [
+      {
+        paragraphs: [
+          "Most years, a US filer is cleanly either a resident alien or a nonresident alien for the whole year. The year you actually move — arriving to take up residency, or departing for good — is often the exception: you can be a nonresident for part of the year and a resident for the rest, which the IRS calls dual-status. It changes how the return is structured, not just what boxes get checked.",
+        ],
+      },
+      {
+        heading: "What actually changes",
+        paragraphs: [
+          "For the part of the year you're a resident, you're taxed on worldwide income, the same as any US resident. For the part of the year you're a nonresident, you're taxed only on US-source income. A dual-status year isn't one Form 1040 — it's a combination filing (a 1040 paired with a 1040-NR statement, or the reverse, depending on which status applies at year-end), and several standard resident-year conveniences, like claiming the standard deduction or filing jointly with a spouse, generally aren't available in a dual-status year without a separate election.",
+        ],
+      },
+      {
+        heading: "The First-Year Choice election",
+        paragraphs: [
+          "If you arrive mid-year and wouldn't otherwise pass the Substantial Presence Test until the following year, the First-Year Choice election can let you be treated as a dual-status resident starting partway through the arrival year instead of waiting until you clearly qualify — but only if you're present for at least 31 consecutive days in the current year and present for at least 75% of the days from that 31-day period through the end of the year. It's an election you make, not something that applies automatically.",
+        ],
+      },
+      {
+        paragraphs: [
+          "This is exactly the kind of transition-year situation where the Substantial Presence Test calculator on this site's DTAA & Tax Residency page is most useful — not just for a yes/no answer, but for pinning down the specific day-count that determines whether a dual-status year applies to you at all, and where your residency starting date falls within it.",
+        ],
+      },
+    ],
+    relatedSlugs: [
+      "substantial-presence-test-explained",
+      "rnor-status-explained-for-returning-nris",
+      "form-8833-treaty-based-return-disclosure",
+    ],
+  },
+  {
+    slug: "form-8833-treaty-based-return-disclosure",
+    clusterSlug: "dtaa-tax-residency",
+    title: "Form 8833: Disclosing a Treaty-Based Position on Your US Return",
+    description:
+      "Claiming a DTAA benefit that overrides the default US tax treatment isn't just a number on your return — the IRS generally requires you to say so explicitly, on Form 8833.",
+    dek: "Using a treaty article to reduce your US tax isn't automatic paperwork-free relief. In most cases, you have to formally disclose that you're doing it.",
+    sections: [
+      {
+        paragraphs: [
+          "When you rely on a provision of the India-US DTAA to reduce or modify what you'd otherwise owe under standard US tax law, the IRS generally wants that position disclosed, not just reflected silently in a lower number on your return. Form 8833 (Treaty-Based Return Position Disclosure) is that disclosure mechanism, required under Internal Revenue Code Section 6114 for a treaty-based position that overrides domestic law.",
+        ],
+      },
+      {
+        heading: "What counts as a disclosable position",
+        paragraphs: [
+          "A treaty-based position is one where you're claiming the treaty changes an outcome the Internal Revenue Code would otherwise produce — for example, treaty-based relief on a specific income category, or leaning on the treaty's residency tie-breaker article when you'd otherwise be treated as a dual resident. Not every treaty-related claim requires the form; the instructions carve out specific routine situations from the disclosure requirement, so it's worth checking the current Form 8833 instructions for whether your particular claim is one of the exceptions before assuming you need to file it.",
+        ],
+      },
+      {
+        heading: "The penalty for skipping it",
+        paragraphs: [
+          "Failing to file a required Form 8833 carries its own penalty — currently $1,000 for an individual — and notably, that penalty applies even if the underlying treaty position was completely valid and correctly reduced your tax. In other words, this isn't a penalty for claiming the wrong benefit; it's a penalty for claiming a real benefit without the paperwork that says you're claiming it. The IRS can waive it for reasonable cause, but that's a case made after the fact, not a substitute for filing on time.",
+        ],
+      },
+      {
+        paragraphs: [
+          "Form 8833 is a disclosure, not a calculation — it doesn't replace working out the treaty relief amount itself. The DTAA relief estimator on this site's DTAA & Tax Residency page walks through the credit-method math for a given income and foreign tax paid; whether that specific position also triggers a Form 8833 filing obligation depends on the treaty article involved and is worth confirming with a preparer familiar with treaty disclosure rules.",
+        ],
+      },
+    ],
+    relatedSlugs: [
+      "claiming-dtaa-relief-credit-vs-exemption",
+      "dual-status-tax-return-year-you-move",
+    ],
+  },
+
+  // --- NRE/NRO & TDS cluster (batch 2) ---
+  {
+    slug: "fcnr-deposits-explained",
+    clusterSlug: "nre-nro-tds",
+    title: "FCNR Deposits: The NRI Account That Sidesteps Rupee Risk",
+    description:
+      "NRE and NRO aren't the only account types available to NRIs — FCNR deposits let you earn interest in foreign currency without ever converting to rupees.",
+    dek: "Every NRE/NRO comparison skips a third option. FCNR deposits hold your money in dollars (or another foreign currency) the whole way through — no rupee exposure at all.",
+    sections: [
+      {
+        paragraphs: [
+          "NRE and NRO accounts both hold funds in rupees, which means both carry rupee exchange-rate exposure even when the underlying money originated abroad. FCNR (Foreign Currency Non-Resident) deposits are structured differently on purpose: the deposit is held, and earns interest, in a foreign currency — commonly USD, GBP, EUR, JPY, or CAD — with no conversion to rupees at any point in the deposit's life.",
+        ],
+      },
+      {
+        heading: "What makes it different",
+        paragraphs: [
+          "Because the principal never becomes rupees, an FCNR deposit isn't affected by rupee depreciation or appreciation the way an NRE fixed deposit is — you get back the same foreign-currency amount plus interest, regardless of what the exchange rate did in between. The trade-off is structural: FCNR accounts are term deposits only (no savings-account version), with a minimum tenure of one year, so this isn't a place to park funds you might need to move on short notice.",
+        ],
+      },
+      {
+        heading: "Tax and repatriation",
+        paragraphs: [
+          "FCNR interest is tax-exempt in India, with no TDS withheld — the same treatment as NRE interest — and both the principal and accrued interest are freely repatriable, without the annual ceiling that applies to NRO funds.",
+        ],
+      },
+      {
+        paragraphs: [
+          "The NRE vs. NRO chooser on this site's NRE/NRO & TDS page focuses on the two rupee-denominated account types; if currency risk on the principal itself is your main concern rather than just repatriability, FCNR is the option worth asking your bank's NRI desk about directly, since exact currency options and rates vary by bank.",
+        ],
+      },
+    ],
+    relatedSlugs: [
+      "nre-vs-nro-accounts-which-do-you-need",
+      "nri-investment-options-in-india-overview",
+    ],
+  },
+  {
+    slug: "do-nris-need-to-file-indian-tax-return",
+    clusterSlug: "nre-nro-tds",
+    title: "Do NRIs With No India Income Still Need to File an ITR?",
+    description:
+      "Not having a salary in India doesn't automatically mean nothing to file — a handful of specific triggers can make an Indian tax return mandatory even for NRIs with minimal India ties.",
+    dek: "\"No India income, no India filing\" is mostly true for NRIs — until one of a short list of specific triggers applies. Here's what to check before assuming you're in the clear.",
+    sections: [
+      {
+        paragraphs: [
+          "For an NRI with genuinely no India-sourced income in a financial year, filing an Indian income tax return is generally not mandatory. But \"no salary\" isn't the same as \"no filing trigger\" — several other conditions can make a return mandatory even for someone whose only India connection is a bank account or a small investment.",
+        ],
+      },
+      {
+        heading: "The core trigger: income above the exemption limit",
+        paragraphs: [
+          "Filing becomes mandatory once your total taxable India-sourced income for the year exceeds the basic exemption limit for NRIs (India-sourced rent, interest, capital gains, and similar income all count toward this, even without a salary). The exact rupee threshold has moved with recent tax law changes, so check the current-year figure rather than assuming a prior year's number still applies.",
+        ],
+      },
+      {
+        heading: "Triggers that apply regardless of total income",
+        paragraphs: [
+          "A few conditions force a filing requirement independent of whether your total income crosses the exemption limit at all: short-term capital gains on listed equity shares, equity-oriented mutual fund units, or business trust units; TDS or TCS on your India income exceeding ₹25,000 in the financial year; and depositing more than ₹1 crore in aggregate across current accounts. Any one of these on its own is enough to require a return, even if every other figure on your India side looks minor.",
+        ],
+      },
+      {
+        paragraphs: [
+          "The triggers, at a glance:",
+        ],
+        list: [
+          "India-sourced income above the exemption limit for the year — file",
+          "Any short-term capital gains on listed equity/equity MF/business trust units — file, regardless of total income",
+          "TDS or TCS on India income over ₹25,000 in the financial year — file",
+          "Over ₹1 crore deposited across current accounts in the year — file",
+          "None of the above, and genuinely no India income — filing is typically not mandatory, but may still be worth doing voluntarily to claim back excess TDS",
+        ],
+      },
+      {
+        paragraphs: [
+          "The TDS-on-NRO-interest calculator on this site's NRE/NRO & TDS page is a useful starting point for the second-most-common trigger NRIs hit — interest income and the TDS withheld on it — even when the underlying interest amount itself looks small.",
+        ],
+      },
+    ],
+    relatedSlugs: [
+      "tds-on-nro-interest-explained",
+      "nre-vs-nro-accounts-which-do-you-need",
+    ],
+  },
+  {
+    slug: "tds-on-rent-paid-to-nri-landlord",
+    clusterSlug: "nre-nro-tds",
+    title: "TDS on Rent Paid to an NRI Landlord: What Tenants Must Withhold",
+    description:
+      "Renting an apartment from an NRI landlord comes with a compliance obligation most tenants don't expect — and it starts from the very first rupee of rent.",
+    dek: "If your landlord is an NRI, you — the tenant — are on the hook for withholding tax on the rent. There's no minimum threshold, and the paperwork is genuinely different from renting from a resident.",
+    sections: [
+      {
+        paragraphs: [
+          "When a tenant in India rents from a resident landlord, TDS on rent only kicks in above a specified threshold, and the rate is relatively modest. When the landlord is an NRI, Section 195 applies instead, and the obligation looks very different: the tenant must deduct TDS on the rent from the first rupee paid, with no minimum exemption amount, at a materially higher rate.",
+        ],
+      },
+      {
+        heading: "The rate and the mechanics",
+        paragraphs: [
+          "The default TDS rate on rent paid to an NRI landlord runs to roughly 30% of the rent plus applicable cess (commonly cited around 31.2% all-in), deducted at whichever comes first — when the rent is credited to the landlord or when it's actually paid. That deducted amount has to be deposited with the government by the 7th of the following month, using the standard TDS challan, and the tenant generally needs to obtain a TAN (Tax Deduction Account Number) to do this correctly — an extra registration step most individual tenants have never dealt with before.",
+        ],
+      },
+      {
+        heading: "Ways the rate can come down",
+        paragraphs: [
+          "The applicable rate can be reduced if the NRI landlord qualifies for a lower rate under the DTAA, or has obtained a lower/nil deduction certificate in advance — the same Section 197 mechanism (recently renumbered to Section 395 under the Income-tax Act, 2025, per this site's Form 13 explainer) used for NRI property-sale TDS. Without that certificate in hand, tenants generally default to withholding at the full statutory rate, since they have no independent way to verify a lower rate applies.",
+        ],
+      },
+      {
+        paragraphs: [
+          "This obligation sits on the tenant, not the landlord — which is exactly why it surprises people who've only ever rented from resident landlords before. If you're the tenant, this is worth raising with the landlord (or a CA) before the first rent payment, not after.",
+        ],
+      },
+    ],
+    relatedSlugs: [
+      "tds-on-nro-interest-explained",
+      "form-13-lower-tds-certificate-worth-it",
+    ],
+  },
+
+  // --- Investments & Repatriation cluster (batch 2) ---
+  {
+    slug: "fbar-fatca-reporting-for-nris",
+    clusterSlug: "investments-repatriation",
+    title: "FBAR and FATCA: The US Reporting Rules NRIs Often Overlook",
+    description:
+      "A US person with Indian bank accounts or investments can owe two separate annual foreign-asset disclosures to the US government, entirely apart from any tax actually owed.",
+    dek: "FBAR and FATCA aren't taxes — they're disclosures. But the penalties for missing either one can be steep, and the two have different thresholds and different forms.",
+    sections: [
+      {
+        paragraphs: [
+          "If you're a US person (citizen, green card holder, or US tax resident) holding Indian bank accounts, NRE/NRO deposits, or Indian investments, you may have two separate annual US reporting obligations that exist independently of whether you owe any additional tax: FBAR and FATCA. They're often confused for each other, but they're different filings, with different thresholds, going to different places.",
+        ],
+      },
+      {
+        heading: "FBAR: a single, low threshold",
+        paragraphs: [
+          "FBAR (FinCEN Form 114) applies once the combined value of your foreign financial accounts — across all accounts, all countries — exceeds $10,000 at any point during the year, even briefly. It's filed electronically with FinCEN, not attached to your tax return, and the threshold doesn't vary by filing status or where you live.",
+        ],
+      },
+      {
+        heading: "FATCA: higher and more variable thresholds",
+        paragraphs: [
+          "FATCA reporting (Form 8938, filed with your tax return) uses meaningfully higher thresholds than FBAR, and — unlike FBAR — the exact number depends on your filing status and whether you live in the US or abroad, ranging from the tens of thousands of dollars up into the hundreds of thousands for a married couple living overseas. FATCA also covers a broader range of assets than FBAR — not just accounts, but certain foreign investments and interests held outside a traditional account. Check the current Form 8938 instructions for the exact figure that applies to your filing status and residence, since it's a multi-tier table, not one number.",
+        ],
+      },
+      {
+        paragraphs: [
+          "It's entirely possible to owe both filings for the same accounts in the same year — FBAR and FATCA aren't a choice between the two. And this is separate from PFIC reporting: if your Indian holdings include mutual funds, the PFIC filing-threshold checker on this page addresses that distinct obligation, which layers on top of, not instead of, FBAR/FATCA.",
+        ],
+      },
+    ],
+    relatedSlugs: [
+      "pfic-rules-for-nris-mutual-fund-trap",
+      "gifting-money-india-us-tax-rules",
+    ],
+  },
+  {
+    slug: "nps-for-nris-explained",
+    clusterSlug: "investments-repatriation",
+    title: "NPS for NRIs: Who Can Invest, and How Repatriation Works",
+    description:
+      "The National Pension System is open to NRIs, but not to everyone with Indian roots — and the repatriation rules for it depend on which account funded your contributions.",
+    dek: "NPS eligibility for NRIs comes with an exception that trips people up, and repatriation isn't a single blanket rule the way it is for some other investments.",
+    sections: [
+      {
+        paragraphs: [
+          "The National Pension System (NPS) — India's government-regulated retirement savings scheme — is open to NRIs on broadly the same terms as resident Indians, with a PAN and standard KYC required, and a Tier-I account (the primary retirement account) available with a modest minimum contribution.",
+        ],
+      },
+      {
+        heading: "The eligibility exception worth knowing",
+        paragraphs: [
+          "Eligibility is based on Indian citizenship, not on the broader Person of Indian Origin (PIO) or Overseas Citizen of India (OCI) status — OCIs, PIOs, and HUFs are generally not eligible to open an NPS account, unlike some other NRI investment routes covered elsewhere on this site that extend more broadly to PIO/OCI holders. If your Indian-origin status is OCI rather than citizenship, this is worth confirming directly before assuming NPS is available to you.",
+        ],
+      },
+      {
+        heading: "Funding and repatriation",
+        paragraphs: [
+          "Contributions must come through an NRE or NRO account, and which one you use determines the repatriation treatment: funds contributed via NRE follow the free-repatriation rule that applies to NRE money generally, while funds contributed via NRO are subject to the standard NRO repatriation ceiling and documentation. The eventual pension or withdrawal amount itself is repatriable, and — as with most Indian retirement schemes — a portion of the corpus (commonly cited around 40%) is required to be used to purchase an annuity at retirement rather than withdrawn as a lump sum.",
+        ],
+      },
+      {
+        paragraphs: [
+          "NPS repatriation is governed by RBI/FEMA rules layered on top of the scheme's own regulator (PFRDA), which is a different combination of rules than the repatriation headroom estimator on this page (built around NRO's general ceiling) directly models — treat NPS as its own category rather than assuming the general NRO estimator captures its specifics.",
+        ],
+      },
+    ],
+    relatedSlugs: [
+      "nri-investment-options-in-india-overview",
+      "nri-repatriation-limits-explained",
+    ],
+  },
+  {
+    slug: "gifting-money-india-us-tax-rules",
+    clusterSlug: "investments-repatriation",
+    title: "Gifting Money Between India and the US: What Each Side Taxes",
+    description:
+      "A gift from a parent in India to a child in the US touches two completely different rulebooks — India's recipient-side gift tax, and a separate US reporting obligation.",
+    dek: "India and the US don't tax cross-border family gifts the same way, or even ask the same question. Here's what each side actually looks at.",
+    sections: [
+      {
+        paragraphs: [
+          "Gifting money across the India-US corridor — most commonly a parent in India sending money to a child settled in the US, or the reverse — runs into two entirely separate rule sets: India's income-tax treatment of gifts on the recipient's side, and a US information-reporting requirement that applies regardless of whether any US tax is actually owed on the gift itself.",
+        ],
+      },
+      {
+        heading: "India's side: it depends who's giving",
+        paragraphs: [
+          "Under Section 56(2)(x) of the Income-tax Act, gifts received from a defined list of \"relatives\" (parents, spouse, siblings, and certain other specified relations) are fully exempt from tax in India regardless of amount. Gifts from anyone outside that relative definition are taxable as the recipient's income once they exceed ₹50,000 in aggregate for the financial year, generally taxed at the recipient's slab rate. Whether someone counts as a \"relative\" under this specific definition is worth checking carefully — it's narrower than the everyday meaning of family.",
+        ],
+      },
+      {
+        heading: "The US side: reporting, not gift tax, for the recipient",
+        paragraphs: [
+          "On the US side, a gift received from a foreign person generally isn't income to the recipient and doesn't trigger US income tax by itself — but if you're a US person receiving gifts from a nonresident alien (or a foreign estate) totaling more than $100,000 in a year, you're required to report it on Form 3520, itemizing each individual gift over $5,000. Gifts from multiple foreign individuals who are related to each other (say, both parents) are aggregated together against that $100,000 threshold, not counted separately per giver. Missing this filing carries a real penalty — commonly cited at up to 25% of the gift's value — even though no tax was actually due on the gift itself.",
+        ],
+      },
+      {
+        paragraphs: [
+          "The two sides of this don't cancel each other out or need to match: India's ₹50,000/relative-exemption test and the US's $100,000 Form 3520 reporting threshold are independent tests answering different questions, and a transfer can clear one comfortably while still needing attention on the other.",
+        ],
+      },
+    ],
+    relatedSlugs: [
+      "fbar-fatca-reporting-for-nris",
+      "nri-repatriation-limits-explained",
+    ],
+  },
+
+  // --- Real Estate Capital Gains cluster (batch 2) ---
+  {
+    slug: "section-54-54ec-exemptions-for-nris",
+    clusterSlug: "real-estate-capital-gains",
+    title: "Section 54/54EC: How NRIs Can Reduce Tax on a Property Sale by Reinvesting",
+    description:
+      "NRIs get the same reinvestment-based capital gains exemptions residents do — reinvesting in another home, or in specified bonds, can meaningfully cut what's owed on a property sale.",
+    dek: "The LTCG on an Indian property sale doesn't have to be the final number. Reinvesting the gain, in the right window, can bring it down to zero.",
+    sections: [
+      {
+        paragraphs: [
+          "Once a property sale is classified as long-term (see our LTCG vs. STCG explainer for the 24-month line), NRIs have access to the same reinvestment-based exemptions available to resident sellers — most commonly Section 54 (reinvesting in another residential property) and Section 54EC (reinvesting in specified capital gains bonds). Neither is automatic; both require action within a specific window after the sale.",
+        ],
+      },
+      {
+        heading: "Section 54: buying or building another home",
+        paragraphs: [
+          "If the gain is reinvested into purchasing a residential property in India within one year before or two years after the sale (or constructing one within three years of the sale), the reinvested portion of the LTCG is exempt. If the new property costs less than the full gain, only the invested amount is exempt — the shortfall is still taxed. A once-in-a-lifetime option allows reinvesting into two residential properties instead of one, but only if the total gain is below a specified cap, and there's a separate overall ceiling on how much gain can be exempted this way — both figures worth confirming against the current-year rules rather than assuming a number from a prior year still holds.",
+        ],
+      },
+      {
+        heading: "Section 54EC: bonds instead of property",
+        paragraphs: [
+          "For sellers who don't want to reinvest in another property, Section 54EC allows LTCG specifically from land or a building to be exempted by investing in specified bonds (typically issued by government-backed infrastructure institutions) within six months of the sale date — subject to an annual cap on how much can go into these bonds per financial year. This route doesn't tie up funds in another property, but the bonds themselves come with their own lock-in period and lower yield than most alternative investments, which is the trade-off for the tax exemption.",
+        ],
+      },
+      {
+        paragraphs: [
+          "The LTCG/STCG classifier on this site's Real Estate Capital Gains page calculates the underlying gain these exemptions apply to; it doesn't currently model the Section 54/54EC reinvestment math itself, so treat the exemption calculation as a manual next step once you have the classifier's gain figure.",
+        ],
+      },
+    ],
+    relatedSlugs: [
+      "selling-property-in-india-as-nri-ltcg-vs-stcg",
+      "selling-inherited-property-in-india-as-nri",
+    ],
+  },
+  {
+    slug: "selling-inherited-property-in-india-as-nri",
+    clusterSlug: "real-estate-capital-gains",
+    title: "Selling Inherited Property in India as an NRI: What Actually Changes",
+    description:
+      "The capital gains math on an inherited property doesn't start over when you inherit it — the original owner's cost and purchase date both carry forward to you.",
+    dek: "Inheriting a property doesn't reset its tax history. The person who sells it isn't always the person whose original purchase price and date still matter.",
+    sections: [
+      {
+        paragraphs: [
+          "When an NRI inherits property in India and later sells it, a common assumption is that the \"cost\" for capital gains purposes is the property's value at the time it was inherited. That's not how it works: for inherited property, the cost of acquisition carried forward is the original owner's actual purchase cost — not the fair market value on the date you inherited it.",
+        ],
+      },
+      {
+        heading: "The holding period carries over too",
+        paragraphs: [
+          "The same carryover applies to the holding period: it's measured from when the original owner acquired the property, not from the date you inherited it. That means a property inherited quite recently can still qualify as long-term (and get LTCG treatment) if the original owner held it for decades — the clock never resets at inheritance.",
+        ],
+      },
+      {
+        heading: "The pre-2001 exception",
+        paragraphs: [
+          "If the original owner acquired the property before April 1, 2001, current rules allow electing the fair market value as of April 1, 2001 as the cost basis instead of the actual historical purchase price — generally a favorable option for older properties, but one that requires a registered valuer's certificate to support the claimed value, not just an informal estimate.",
+        ],
+      },
+      {
+        paragraphs: [
+          "None of this changes how TDS is withheld at the point of sale: the Section 195 TDS estimator on this site's Real Estate Capital Gains page still applies the same way, withholding on the full sale consideration regardless of whether the property was purchased or inherited — the inheritance only affects the gain calculation itself, not the buyer's withholding obligation.",
+        ],
+      },
+    ],
+    relatedSlugs: [
+      "selling-property-in-india-as-nri-ltcg-vs-stcg",
+      "section-195-tds-on-nri-property-sales",
+      "section-54-54ec-exemptions-for-nris",
+    ],
+  },
+  {
+    slug: "tcs-lrs-and-nri-remittances-explained",
+    clusterSlug: "real-estate-capital-gains",
+    title: "Does TCS Apply to NRI Money Transfers? Clearing Up the LRS Confusion",
+    description:
+      "Headlines about TCS on foreign remittances are describing a rule for resident Indians sending money abroad — not NRIs repatriating money out of India, which is a different regime entirely.",
+    dek: "\"TCS on foreign remittance\" news is about resident Indians sending money out under LRS. If you're an NRI moving property-sale proceeds out of India, that's not the rule you're under.",
+    sections: [
+      {
+        paragraphs: [
+          "It's a genuinely common point of confusion: news coverage about Tax Collected at Source (TCS) on foreign remittances is describing the Liberalised Remittance Scheme (LRS), an RBI framework that governs how resident Indians send money out of India — for education, travel, investments, and similar purposes. NRIs repatriating funds out of India, including property-sale proceeds, are not operating under LRS at all.",
+        ],
+      },
+      {
+        heading: "Why the distinction holds",
+        paragraphs: [
+          "FEMA classifies NRIs as non-residents, and LRS is specifically a scheme for residents remitting funds abroad — it simply doesn't apply to an NRI moving their own money out of India. That means the TCS rates and thresholds attached to LRS (which have their own periodic changes NRIs sometimes see referenced in the news and mistakenly assume apply to them) are not the rule governing an NRI's repatriation.",
+        ],
+      },
+      {
+        heading: "What NRIs are actually subject to instead",
+        paragraphs: [
+          "NRI repatriation runs through the mechanisms covered elsewhere on this site: freely repatriable NRE funds, the annual RBI ceiling on NRO funds (with Form 15CA/15CB documentation), and — for property sale proceeds specifically — the Section 195 TDS withheld by the buyer at the time of sale, plus whatever the seller's actual tax liability turns out to be once a return is filed. None of these are LRS or its TCS regime.",
+        ],
+      },
+      {
+        paragraphs: [
+          "If you've seen a TCS rate or threshold quoted somewhere and are trying to work out whether it affects your own property-sale repatriation as an NRI, the short answer from current guidance is: that rate almost certainly describes LRS for residents, not your situation. The repatriation headroom estimator and Section 195 TDS estimator on this site's Investments & Repatriation and Real Estate Capital Gains pages reflect the rules that actually apply to NRIs instead.",
+        ],
+      },
+    ],
+    relatedSlugs: [
+      "nri-repatriation-limits-explained",
+      "section-195-tds-on-nri-property-sales",
+    ],
+  },
 ];
 
 export function getArticle(slug: string): Article | undefined {
