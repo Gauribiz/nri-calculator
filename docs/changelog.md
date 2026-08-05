@@ -2,6 +2,79 @@
 
 All notable changes to NRI Calculator, in reverse chronological order.
 
+## 2026-08-05 — Blog/FAQ content pass, batch 1 (nric-006)
+
+Orientation confirmed `nri-calculator.phase` implied an active queue and
+identified `nric-006` (blog/FAQ content pass) as the only queued task —
+`nric-001` through `nric-005` were all done (`nric-002` and `nric-004`
+still had open PRs #9/#12 at the time of this pass). Duplicate-run check:
+the most recent `nri-calculator` entry in `orchestrator-state/state.json`'s
+`run_history` (2026-08-05T02:00:00Z) described completing `nric-004`, not
+`nric-006`, so this pass is not a duplicate trigger. Cross-checked
+`project-docs-index/nri-calculator/changelog.md` for any existing
+`nric-006` work before starting — none found. Confirmed the PreToolUse
+guard is live via a read-only clone (`pretooluse-guard.sh` git mode
+`100755`, `.claude/settings.json` wires it to `Bash|Write|Edit`).
+
+`nric-006`'s own wording ("25-30 interlinked articles per topic cluster")
+implies roughly 100-120 articles across the site's four clusters — not
+achievable in one unattended pass without either padding with thin
+content or making unverified factual claims at scale. See ADR 0011 for
+the full reasoning. This pass instead built the reusable infrastructure
+plus a real first batch:
+
+- **`/blog`** — index page grouped by topic cluster, `Disclaimer` near
+  the top per CLAUDE.md rule 3.
+- **`/blog/[slug]`** — statically generated article pages
+  (`generateStaticParams`, consistent with the rest of the site), each
+  with `Disclaimer` near the top, a link back to its cluster's
+  calculator page, and 2-3 related-article links.
+- **`/faq`** — a 12-question FAQ page spanning all four clusters,
+  `Disclaimer` near the top, each answer linking to its fuller article
+  where one exists.
+- **12 articles** (3 per cluster — `src/lib/blog/articles.ts`) and
+  **12 FAQ entries** (`src/lib/blog/faqs.ts`), interlinked within each
+  cluster and cross-cluster where genuinely relevant (e.g., the
+  repatriation article links to the NRE/NRO account-choice article).
+- **`/blog` and `/faq` added to the top-level nav** (`layout.tsx`).
+- **"Related reading" section added to all four category pages**
+  (`dtaa-tax-residency`, `nre-nro-tds`, `investments-repatriation`,
+  `real-estate-capital-gains`), linking to that cluster's new articles —
+  appended after existing content, without moving or displacing the
+  `Disclaimer` component's required top-of-page position.
+
+Content is structured TypeScript data rather than a CMS/MDX pipeline —
+this project has no database, and adding a content-pipeline dependency
+for a first batch would be scope expansion beyond what `nric-006` asked
+for.
+
+**Needs Ajinkya's fact-verification pass before publishing**: every
+structural/conceptual claim in this batch (NRE interest exemption,
+Substantial Presence Test weighting, PFIC default treatment, Section 195
+withholding-on-full-consideration, RBI's NRO repatriation ceiling, and
+others) was cross-checked via live web search against multiple
+independent secondary tax-reference sources, with no discrepancies
+found, but no direct irs.gov / incometaxindia.gov.in fetch was attempted
+this pass — same access constraint as ADR 0005/0006/0008/0009/0010.
+Where a specific number is already implemented and flagged in an
+existing calculator, these articles point to that calculator rather than
+restating the figure, to avoid maintaining it in two places.
+
+Verified with `npm run lint` (clean), `npm run build` (all article/FAQ/
+blog routes prerender statically, 23 total generated pages), and a
+headless Playwright smoke test (installed as a throwaway devDependency,
+reverted before this commit) confirming: disclaimer renders near the top
+of `/blog`, every article, `/faq`, and all four category pages; nav
+exposes `/blog` and `/faq`; article and FAQ interlinking resolves; an
+unknown `/blog/<slug>` 404s; no console/page errors.
+
+`nric-006` is **not** marked fully done against its own 25-30/cluster
+target — see `orchestrator-state/state.json`, which records this batch
+and queues `nric-006b` to continue the build in future passes.
+
+- `docs/changelog.md` — this entry.
+- `docs/decisions/0011-blog-faq-content-pass-scope.md` — new ADR.
+
 ## 2026-08-04 — Investment/repatriation calculators (nric-003)
 
 Orientation confirmed `nri-calculator.phase` implied an active queue and
