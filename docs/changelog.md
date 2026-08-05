@@ -2,6 +2,80 @@
 
 All notable changes to NRI Calculator, in reverse chronological order.
 
+## 2026-08-05 — Real estate capital gains calculators (nric-004)
+
+Orientation confirmed `nri-calculator.phase` implied an active queue and
+identified `nric-004` (real estate capital gains calculators) as the
+single highest-priority queued task — `nric-001` through `nric-001e` and
+`nric-005` were done, `nric-002` had an open PR (#9), and `nric-003`'s PR
+#11 had just been merged to `main` by Ajinkya's wife (confirmed via the
+GitHub API: `merged: true`, `merged_by: gauribiz08-cell`, same day as this
+pass). Cross-checked `project-docs-index/nri-calculator/changelog.md`
+against `orchestrator-state/state.json`'s `task_queue` before starting
+implementation, per the process-gap lesson from the `nric-002` duplicate
+incident — no existing work found for `nric-004`, so this pass is not a
+duplicate. Confirmed the PreToolUse guard is live via a read-only clone
+(`pretooluse-guard.sh` git mode `100755`, `.claude/settings.json` wires it
+to `Bash|Write|Edit`).
+
+Built three tools on `/real-estate-capital-gains`, replacing the "coming
+soon" placeholder:
+
+- **LTCG/STCG classifier for a property sale**
+  (`src/lib/calculators/realEstateCapitalGains.ts` +
+  `src/components/calculators/RealEstateCapitalGainsCalculator.tsx`) —
+  classifies a sale as long-term (>24 months held) or short-term, computes
+  the unindexed capital gain, and for LTCG estimates tax at the flat
+  12.5% rate introduced by the Finance (No. 2) Act, 2024. Does not offer
+  the Act's 20%-with-indexation grandfathering option, since that option
+  is restricted to resident individuals/HUFs and does not apply to NRIs.
+  Does not assert a rupee STCG tax figure (slab-rate dependent), and does
+  not model Section 50C/43CA stamp-duty-value substitution, Section
+  54/54EC/54F exemptions, surcharge/cess on the LTCG figure, or
+  foreign-currency acquisition-cost rules.
+- **Section 195 TDS-on-NRI-property-sale estimator**
+  (`src/lib/calculators/nriPropertySaleTds.ts` +
+  `src/components/calculators/NriPropertySaleTdsCalculator.tsx`) —
+  estimates TDS withheld on the *full sale consideration* (12.5% LTCG /
+  30% STCG default + 4% cess, or a user-entered certified rate). Does not
+  model surcharge, since neither a buyer nor this tool can know the
+  seller's total income.
+- **Form 13 (lower/nil TDS certificate) explainer**
+  (`src/lib/calculators/form13LowerTds.ts` +
+  `src/components/calculators/Form13Explainer.tsx`) — compares default
+  Section 195 TDS against the user's own estimate of actual tax owed to
+  gauge whether applying for a lower-deduction certificate is likely
+  worth it. **Flags a significant finding**: under the Income-tax Act,
+  2025 (in force from FY 2026-27 onward — this pass's own run date),
+  Form 13 is renumbered **Form 128** and Section 197 is renumbered
+  **Section 395**, extending the renumbering gap `nric-002`'s PR #9 first
+  flagged and called "worth a dedicated follow-up." See ADR 0010 for the
+  full reasoning, including why no extra page-level "high complexity"
+  callout was added (unlike `nric-003` — that task explicitly requested
+  one; this one didn't, per CLAUDE.md rule 4) and why PDF export wasn't
+  added (consistent with `nric-002`/`nric-003`'s same call).
+
+**All figures need Ajinkya's fact-verification pass**: the 12.5% LTCG
+rate and its NRI scoping, the 24-month LTCG/STCG threshold, the Section
+195 TDS mechanics and 4% cess simplification, the 15% surcharge cap on
+capital-gains-type income, and the Form 13 → Form 128 / Section 197 →
+Section 395 renumbering were cross-checked via live web search this pass
+against multiple independent secondary sources with no discrepancies
+found, but no direct incometaxindia.gov.in fetch was attempted — see
+[deployment.md](../../project-docs-index/nri-calculator/deployment.md)
+for the standing verification posture.
+
+Verified with `npm run lint` (clean), `npm run build` (all 7 routes still
+prerender statically), and a headless Playwright smoke test against the
+built production server confirming disclaimer position, correct outputs
+across LTCG/STCG/loss/certificate/comparison branches for all three tools
+(see ADR 0010 for exact test vectors), and no console errors. Opened
+[PR #12](https://github.com/Gauribiz/nri-calculator/pull/12) — unmerged,
+awaiting Ajinkya's review AND his own fact-verification pass.
+
+- Added `docs/decisions/0010-real-estate-capital-gains-scope-and-form13.md`.
+- No `data-model.md` change — no schema exists or was added.
+
 ## 2026-08-04 — Investment/repatriation calculators (nric-003)
 
 Orientation confirmed `nri-calculator.phase` implied an active queue and

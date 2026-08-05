@@ -1,0 +1,140 @@
+"use client";
+
+import { useState } from "react";
+import { estimateNriPropertySaleTds } from "@/lib/calculators/nriPropertySaleTds";
+import {
+  CalculatorShell,
+  CheckboxField,
+  NumberField,
+  ResultRow,
+} from "./CalculatorShell";
+import { HowCalculated } from "./HowCalculated";
+import { SourceCitation } from "./SourceCitation";
+
+const inrFormatter = new Intl.NumberFormat("en-IN", {
+  maximumFractionDigits: 0,
+});
+
+export default function NriPropertySaleTdsCalculator() {
+  const [saleConsiderationInr, setSaleConsiderationInr] = useState(0);
+  const [isLongTerm, setIsLongTerm] = useState(true);
+  const [hasLowerDeductionCertificate, setHasLowerDeductionCertificate] =
+    useState(false);
+  const [certifiedRatePercent, setCertifiedRatePercent] = useState(0);
+
+  const result = estimateNriPropertySaleTds({
+    saleConsiderationInr,
+    isLongTerm,
+    hasLowerDeductionCertificate,
+    certifiedRatePercent,
+  });
+
+  return (
+    <CalculatorShell
+      title="Section 195 TDS-on-NRI-property-sale estimator"
+      intro="Estimates the TDS a buyer must withhold under Section 195 when buying property from an NRI seller — applied to the full sale consideration, not just the gain, unless a lower-deduction certificate is held."
+    >
+      <NumberField
+        label="Sale consideration (full sale price)"
+        value={saleConsiderationInr}
+        onChange={setSaleConsiderationInr}
+        suffix="₹"
+        hint="TDS under Section 195 applies to the entire sale price, unlike a normal capital-gains tax which applies only to the gain."
+      />
+
+      <fieldset className="flex flex-col gap-2 text-sm">
+        <legend className="mb-1 text-stone-700 dark:text-primary-100">
+          Holding period
+        </legend>
+        <label className="flex items-center gap-2 text-stone-700 dark:text-primary-100">
+          <input
+            type="radio"
+            name="nri-tds-holding-period"
+            checked={isLongTerm}
+            onChange={() => setIsLongTerm(true)}
+            className="accent-gold-500"
+          />
+          Long-term (held more than 24 months)
+        </label>
+        <label className="flex items-center gap-2 text-stone-700 dark:text-primary-100">
+          <input
+            type="radio"
+            name="nri-tds-holding-period"
+            checked={!isLongTerm}
+            onChange={() => setIsLongTerm(false)}
+            className="accent-gold-500"
+          />
+          Short-term (held 24 months or less)
+        </label>
+      </fieldset>
+
+      <CheckboxField
+        label="I have a Form 13 lower/nil-deduction certificate"
+        checked={hasLowerDeductionCertificate}
+        onChange={setHasLowerDeductionCertificate}
+        hint="See the Form 13 tool below if you don't have one yet."
+      />
+
+      {hasLowerDeductionCertificate && (
+        <NumberField
+          label="Certified rate on your certificate"
+          value={certifiedRatePercent}
+          onChange={setCertifiedRatePercent}
+          suffix="%"
+        />
+      )}
+
+      <div className="flex flex-col gap-1 rounded-lg bg-stone-50 p-4 dark:bg-primary-900/20">
+        <ResultRow
+          label={
+            result.usedCertifiedRate
+              ? "Certified TDS rate"
+              : "Default TDS rate (base + 4% cess, no certificate)"
+          }
+          value={`${result.effectiveRatePercent.toFixed(2)}%`}
+        />
+        <ResultRow
+          label="Estimated TDS to be withheld"
+          value={`₹${inrFormatter.format(result.estimatedTdsInr)}`}
+          emphasis
+        />
+      </div>
+
+      <p className="text-xs text-stone-500 dark:text-primary-300/60">
+        Does not model surcharge (10%-15% for capital-gains-type income,
+        depending on your total income — a buyer generally cannot know
+        this), so an actual TDS certificate or return will typically show a
+        somewhat higher effective rate than shown here. Also does not model
+        the buyer&apos;s TAN requirement or Form 27Q filing. Verify against
+        incometax.gov.in before relying on this for a specific transaction.
+      </p>
+
+      <HowCalculated>
+        <p>
+          Section 195 requires the buyer to withhold TDS at the rate the
+          gain is actually taxable at, on the full sale consideration —
+          unlike the flat 1% under Section 194-IA for resident sellers.
+          Absent a lower-deduction certificate, this tool uses 12.5% for
+          long-term gains (the flat LTCG rate on real estate since the
+          Finance (No. 2) Act, 2024) and a conservative 30% for short-term
+          gains (the top slab rate, common practice when the seller&apos;s
+          actual slab is unknown), plus a flat 4% cess on top of whichever
+          base rate applies.
+        </p>
+        <p className="mt-2">
+          Not modeled: surcharge, the buyer&apos;s TAN requirement, and Form
+          27Q filing mechanics — see the ADR for this tool.
+        </p>
+      </HowCalculated>
+
+      <SourceCitation
+        sources={[
+          {
+            label: "Income Tax Dept.: TDS on sale of property",
+            href: "https://www.incometaxindia.gov.in/w/tds-on-sale-of-property",
+          },
+        ]}
+      />
+    </CalculatorShell>
+  );
+}
