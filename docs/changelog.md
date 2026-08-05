@@ -2,6 +2,64 @@
 
 All notable changes to NRI Calculator, in reverse chronological order.
 
+## 2026-08-05 — Blog/FAQ content pass, batch 2 (nric-006b)
+
+Orientation confirmed `nri-calculator.phase` implied an active queue and
+identified `nric-006b` (blog/FAQ content pass, batch 2) as the single
+highest-priority, and only, queued task — `nric-001` through `nric-006`
+were all done. Duplicate-run check: the most recent `nri-calculator`
+entry in `orchestrator-state/state.json`'s `run_history`
+(2026-08-05T12:35:00Z) described completing `nric-006` (batch 1), not
+`nric-006b`, so this pass is not a duplicate trigger. Read
+`nri-calculator/CLAUDE.md` in full — rule 3 (Disclaimer prominent
+placement) and rule 4 (no unrequested features) checked against the
+plan. Confirmed the PreToolUse guard is live via a read-only clone
+(`pretooluse-guard.sh` git mode `100755`, `.claude/settings.json` wires
+it to `Bash|Write|Edit`). No database involved
+(`supabase_project_ref_production: null`), and this task needed no
+Supabase access.
+
+Continued the `nric-006`/ADR 0011 content build with a second batch, per
+`nric-006b`'s own scope ("3-5 more articles per cluster") — see ADR 0012
+for the full reasoning on volume (3/cluster, matching batch 1's pace)
+and topic selection:
+
+- **12 new articles** (3 per cluster, `src/lib/blog/articles.ts`) and
+  **12 new FAQ entries** (`src/lib/blog/faqs.ts`) — RNOR status, dual-status
+  US returns, and Form 8833 for DTAA & Tax Residency; FCNR deposits, the
+  NRI ITR-filing-trigger checklist, and TDS on rent to an NRI landlord
+  for NRE/NRO & TDS; FBAR/FATCA, NPS eligibility, and cross-border
+  gifting for Investments & Repatriation; Section 54/54EC reinvestment
+  exemptions, inherited-property cost basis, and a TCS/LRS
+  myth-correction (LRS does not apply to NRI repatriation) for Real
+  Estate Capital Gains.
+- Every new article is interlinked within its cluster (2-3 related-article
+  links spanning batch 1 and batch 2) and inherits the existing
+  `/blog/[slug]` template's `Disclaimer` placement and category-page
+  "Related reading" wiring automatically — no page-level code changes,
+  since those are driven by `getArticlesForCluster`/`getRelatedArticles`,
+  not a hardcoded list. Batch 1's own articles/FAQs were left unedited.
+- 24 articles / 24 FAQ entries now exist total across the site (up from
+  12/12) — still short of the charter's 25-30/cluster target; a further
+  batch remains queued as a follow-up task, same ongoing-build framing as
+  ADR 0011.
+- Verified with `npm run lint` (clean), `npm run build` (35 routes now
+  generated, up from 23, all prerender statically including the 12 new
+  article pages), and a headless Playwright smoke test (throwaway
+  `--no-save` devDependency, reverted before this commit) confirming
+  `Disclaimer` placement and an `h1` on all 12 new article pages, related
+  reading links from each category page to a new batch-2 article, `/faq`
+  still renders its `Disclaimer`, an unknown `/blog/` slug still 404s,
+  and no unexpected console errors during the sweep.
+- Every factual/numeric claim in this batch was cross-checked via live
+  web search against multiple independent secondary tax-reference
+  sources, with specific figures still needing Ajinkya's own
+  fact-verification pass before publish-ready — see ADR 0012 for exactly
+  which figures are flagged as most in need of direct confirmation
+  (current NRI basic exemption limit, Form 8938's full threshold table,
+  Section 54/54F and 54EC caps, and the FY2026-27 Income-tax Act, 2025
+  RNOR/120-day provision).
+
 ## 2026-08-05 — Blog/FAQ content pass, batch 1 (nric-006)
 
 Orientation confirmed `nri-calculator.phase` implied an active queue and
