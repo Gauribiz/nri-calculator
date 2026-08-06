@@ -931,6 +931,503 @@ export const articles: Article[] = [
       "section-195-tds-on-nri-property-sales",
     ],
   },
+{
+  slug: "foreign-tax-credit-form-1116-for-nris",
+  clusterSlug: "dtaa-tax-residency",
+  title: "Foreign Tax Credit (Form 1116): How NRIs Claim Credit for Indian Tax Paid",
+  description:
+    "How US-taxpayer NRIs use IRS Form 1116 to credit Indian tax against US tax on the same income, including the income-basket rules, the credit's built-in cap, and carryover mechanics.",
+  dek: "The Foreign Tax Credit is the main tool US taxpayers with Indian-sourced income use to avoid paying tax twice on the same rupee — but it is capped, basket-by-basket, and not automatic.",
+  sections: [
+    {
+      paragraphs: [
+        "If you're a US citizen or resident (including a green card holder or someone who meets the substantial presence test) with income sourced in India — NRE/NRO interest, dividends, capital gains, or rental income — that income is taxable in both countries. India taxes it at source (often via TDS), and the US taxes its citizens and residents on worldwide income regardless of where it's earned. The Foreign Tax Credit (FTC), claimed on Form 1116, is how the US side of that double taxation gets relieved: it lets you subtract the Indian tax you already paid from your US tax bill on that same income, dollar for dollar, up to a limit.",
+        "The FTC is not a deduction — it reduces US tax liability directly, not just taxable income. But it is not unlimited either, and understanding the mechanics (which income category the credit falls into, how the cap is computed, and what happens to credit you can't use this year) matters more than simply knowing the credit exists.",
+      ],
+    },
+    {
+      heading: "Income Categories: Why the Credit Is Split Into Baskets",
+      paragraphs: [
+        "Form 1116 doesn't let you lump all foreign income and all foreign tax into one pool. Foreign income is sorted into separate categories — commonly called \"baskets\" — the two most relevant for NRIs being passive category income (interest, dividends, capital gains, rental income, most annuities) and general category income (wages, self-employment income, and most active business profits). Other baskets exist for foreign branch income and GILTI (section 951A) income, which are less commonly relevant to individual NRI filers.",
+        "A separate Form 1116 (or a separate column) is required for each basket, and the credit limitation is computed independently within each one. If your Indian tax on passive income (say, NRE FD interest and mutual fund capital gains) exceeds the US tax attributable to that passive income, the excess cannot be used to offset US tax on general-category wage income, even in the same year — it can only carry over within the passive basket.",
+      ],
+    },
+    {
+      heading: "The Credit Is Capped at the US Tax on That Foreign Income",
+      paragraphs: [
+        "The core limitation formula is: FTC limit = US tax liability × (foreign-source taxable income in that basket ÷ total worldwide taxable income). In practice, this means the credit can never exceed what the US would have taxed on that foreign income anyway — you can eliminate US tax on Indian-sourced income up to that cap, but the FTC won't refund a rupee amount of Indian tax that exceeds the corresponding US tax liability on the same income in the same basket.",
+        "This is why the FTC works cleanly when Indian tax rates and US tax rates on the same category of income are roughly comparable, but leaves residual, unused credit when Indian tax on a basket (e.g., TDS on NRO interest) is higher than the US tax that basket would generate.",
+      ],
+    },
+    {
+      heading: "Unused Credit: Carryback One Year, Carryforward Ten",
+      paragraphs: [
+        "When Indian tax paid in a basket exceeds that basket's US limitation for the year, the excess isn't lost. It can first be carried back one year and applied against unused limitation in that basket for the prior year, and whatever remains after that can be carried forward up to ten years, tracked separately for each basket using Schedule B (Form 1116) to reconcile the prior-year carryover against the current year's usage. One notable exception: unused credit in the GILTI (section 951A) category cannot be carried back or forward at all — that basket is a use-it-or-lose-it calculation each year, though this rarely affects individual NRI filers without controlled foreign corporation interests.",
+      ],
+    },
+    {
+      heading: "Why FTC, Not the Foreign Earned Income Exclusion, for Indian-Sourced Income",
+      paragraphs: [
+        "The Foreign Earned Income Exclusion (FEIE, claimed on Form 2555) only applies to earned income — wages and self-employment income from services performed abroad. It does not apply at all to passive income like NRE/NRO interest, dividends, capital gains, or rental income, which is the bulk of what a US-taxpayer NRI typically has sourced in India. For that income, FTC is the only mechanism available, not merely the preferred one.",
+        "Even for the earned-income portion some NRIs may have (for example, consulting income paid into an Indian account), electing FEIE has a real cost: once income is excluded under FEIE, no foreign tax credit can be claimed for the foreign tax paid on that same excluded income. Filers with meaningful foreign tax paid often come out ahead using FTC instead of, or on top of, a partial FEIE election, since FTC preserves the ability to credit tax already paid rather than simply removing income from the US return.",
+      ],
+    },
+  ],
+  relatedSlugs: [
+    "claiming-dtaa-relief-credit-vs-exemption",
+    "form-8833-treaty-based-return-disclosure",
+    "dtaa-tie-breaker-test-explained",
+  ],
+},
+{
+  slug: "dtaa-tie-breaker-test-explained",
+  clusterSlug: "dtaa-tax-residency",
+  title: "The DTAA Article 4 Tie-Breaker Test, Explained",
+  description:
+    "When both India and the US claim you as a tax resident in the same year, Article 4 of the India-US tax treaty resolves it through a fixed sequence: permanent home, center of vital interests, habitual abode, nationality, and mutual agreement.",
+  dek: "Dual residency isn't resolved by picking whichever country you prefer — Article 4 runs through a strict, ordered test, and most cases are settled at the very first or second step.",
+  sections: [
+    {
+      paragraphs: [
+        "It's entirely possible to be a tax resident of both India and the US in the same year under each country's own domestic rules — for instance, meeting the US substantial presence test while also crossing India's residency day-count thresholds during a transition year. When that happens, both countries could in theory tax your worldwide income, which is exactly the double-residency problem Article 4 of the India-US Double Taxation Avoidance Agreement (DTAA) is built to solve for individuals. Article 4 doesn't ask which country you'd rather be a resident of — it applies a fixed, sequential set of tests, and you stop at the first one that produces a clear answer.",
+      ],
+    },
+    {
+      heading: "Step One: Permanent Home",
+      paragraphs: [
+        "The first test asks where you have a \"permanent home available to you\" — a dwelling you can access continuously, as distinct from a place you stay only occasionally (a relative's spare room on a short visit doesn't count the same way an owned or long-term-leased home does). If a permanent home is available in only one of the two countries, that settles it immediately and the analysis stops there. It's only when a permanent home is available in both countries — a common situation for NRIs who own property in India while also maintaining a residence in the US — that you move to the next test.",
+      ],
+    },
+    {
+      heading: "Step Two: Center of Vital Interests",
+      paragraphs: [
+        "If a permanent home exists in both countries, the tie-breaker turns to where your personal and economic relations are closer — your \"center of vital interests.\" This is a genuinely factual, weighted inquiry rather than a bright-line rule. On the personal side, the location of your immediate family (spouse and dependent children) generally carries more weight than extended family or social ties. On the economic side, active involvement in business or employment — where you actually work, manage property, or draw a salary — is generally weighted more heavily than passive holdings like a portfolio of investments sitting in one country. Indian tribunals applying this test have repeatedly emphasized nucleus-family location and active business/employment ties over passive investment presence.",
+        "Center of vital interests resolves a large share of real dual-residency disputes, because it's rare for someone's family and primary economic activity to be evenly split between two countries in a way that produces a genuine tie.",
+      ],
+    },
+    {
+      heading: "Steps Three Through Five: Habitual Abode, Nationality, Mutual Agreement",
+      paragraphs: [
+        "If center of vital interests can't be determined either — or if no permanent home was available in either country at step one — the test moves to habitual abode: which country you stay in more habitually, looked at over a meaningful period rather than a single year in isolation. If that's still a tie (or you have a habitual abode in neither country), residency is assigned based on nationality — which of the two countries you hold citizenship of. And in the rare case where you're a national of both countries, or neither, the treaty punts the question to the competent authorities of India and the US to resolve directly through a mutual agreement procedure (MAP) — a government-to-government negotiation, not something an individual filer resolves alone on a return.",
+        "In practice, very few real cases reach step four or five; most are resolved at the permanent-home or center-of-vital-interests stage. But because the test is sequential, you can't skip ahead — a filer with a permanent home in only one country never even reaches the vital-interests analysis, regardless of where their family or business happens to be.",
+      ],
+    },
+  ],
+  relatedSlugs: [
+    "nri-or-resident-how-tax-residency-works",
+    "substantial-presence-test-explained",
+    "form-8833-treaty-based-return-disclosure",
+  ],
+},
+{
+  slug: "us-exit-tax-for-green-card-holders",
+  clusterSlug: "dtaa-tax-residency",
+  title: "The US Exit Tax for Long-Term Green Card Holders Returning to India",
+  description:
+    "How IRC 877A's 'covered expatriate' rules and mark-to-market exit tax can apply to long-term green card holders who give up their status to move back to India permanently.",
+  dek: "Handing back a green card after many years in the US can trigger a deemed sale of your entire worldwide portfolio — the exit tax rules apply to long-term residents, not just citizens who renounce.",
+  sections: [
+    {
+      paragraphs: [
+        "The US \"exit tax\" under IRC section 877A is usually discussed in the context of citizens renouncing US citizenship, but it applies equally to green card holders who formally give up lawful permanent resident status — a scenario directly relevant to NRIs who spent years working in the US on a green card and are now moving back to India for good. Not every returning green card holder is affected: the rules only reach \"long-term residents,\" and only long-term residents who separately meet one of three thresholds that make them a \"covered expatriate.\" Understanding both filters matters before assuming — or dismissing — an exit tax exposure.",
+      ],
+    },
+    {
+      heading: "Who Counts as a Long-Term Resident",
+      paragraphs: [
+        "You're a long-term resident for this purpose if you held a green card (lawful permanent resident status) in at least 8 of the 15 tax years ending with the year your status ends. The count is inclusive of any year in which you held the green card for even part of the year, so someone who obtained a green card partway through a calendar year and gives it up partway through another still counts both years toward the 8-of-15. Only long-term residents are exposed to the exit tax rules at all — someone who held a green card for, say, five years and abandons it is generally outside IRC 877A entirely, however large their net worth.",
+      ],
+    },
+    {
+      heading: "The Three Covered Expatriate Tests",
+      paragraphs: [
+        "A long-term resident becomes a \"covered expatriate\" — the status that actually triggers exit tax consequences — by meeting any one of three tests as of the expatriation date. The net worth test is met if your worldwide net worth is $2 million or more; unlike the other thresholds, this figure is fixed by statute and has not been adjusted for inflation, so it captures a wider share of long-tenured green card holders over time, particularly those with appreciated Indian or US real estate, retirement accounts, or employer stock. The average annual net income tax liability test is met if your average US federal income tax liability over the five tax years before expatriation exceeds an inflation-adjusted threshold — figures in this range are revised annually by the IRS, so confirm the exact threshold for your specific expatriation year against the current IRS revenue procedure before relying on it (this could not be directly verified against IRS.gov in this pass; see note below). The certification test is met — regardless of net worth or income — if you fail to certify on Form 8854 that you've complied with all US federal tax obligations for the five years preceding expatriation.",
+        "Meeting any single one of the three tests makes you a covered expatriate; you don't need to fail all three. A long-term resident well under the net-worth threshold can still become a covered expatriate purely by failing to certify five years of clean tax compliance on Form 8854.",
+      ],
+    },
+    {
+      heading: "The Mark-to-Market Exit Tax Itself",
+      paragraphs: [
+        "For a covered expatriate, section 877A imposes a mark-to-market regime: you're treated as if you sold your entire worldwide asset portfolio — Indian and US real estate, equities, mutual funds, business interests, essentially everything you own — at fair market value on the day before your green card status ends, and any net deemed gain above an inflation-adjusted exclusion amount is taxed as if realized. That exclusion amount is also revised annually by the IRS and needs direct confirmation for the relevant expatriation year before relying on it (see note below). The exclusion applies once, against your total net deemed gain across all covered assets combined, not separately per asset, and deemed losses on some assets offset deemed gains on others within that calculation. Separate, more complex rules apply to deferred compensation, specified tax-deferred accounts, and interests in certain trusts, so a long-term green card holder with employer retirement plans or foreign trust interests should treat those categories as a distinct sub-analysis rather than assuming the standard mark-to-market rule covers them.",
+      ],
+    },
+  ],
+  relatedSlugs: [
+    "rnor-status-explained-for-returning-nris",
+    "dual-status-tax-return-year-you-move",
+    "nri-or-resident-how-tax-residency-works",
+  ],
+},
+{
+  slug: "nro-to-nre-transfer-explained",
+  clusterSlug: "nre-nro-tds",
+  title: "Can You Move Money From an NRO Account to an NRE Account?",
+  description:
+    "Yes — but transferring NRO funds into an NRE account isn't a workaround for NRO's usual restrictions. It draws on the same annual RBI ceiling and requires the same Form 15CA/15CB documentation as remitting NRO funds abroad directly.",
+  dek: "Moving NRO money into an NRE account can feel like a shortcut to free repatriability. It's really the same NRO rules, applied one step earlier.",
+  sections: [
+    {
+      paragraphs: [
+        "NRE and NRO accounts serve different purposes, but they aren't sealed off from each other: RBI rules do allow transferring funds from an NRO account into an NRE account, and it's a genuinely common move for NRIs who've accumulated India-sourced income — rent, dividends, maturing deposits — across one or more NRO accounts and want to consolidate it before sending it abroad. The appeal is obvious: once money sits in an NRE account, it's freely repatriable, without the ceiling and paperwork that apply to NRO funds.",
+        "What trips people up is treating the transfer itself as a way around those NRO restrictions. It isn't. The transfer is itself a form of repatriation of NRO funds under FEMA, and it's governed by the same rules that would apply if you were remitting that money directly out of India.",
+      ],
+    },
+    {
+      heading: "The annual ceiling still applies",
+      paragraphs: [
+        "NRO funds — current income and other eligible balances — can be moved out of India (or into an NRE account, which amounts to the same thing under FEMA) up to an annual ceiling commonly cited as USD 1 million per financial year, applied per remitter rather than per account. Multiple NRO accounts don't create separate headroom, and a transfer into NRE uses up the same yearly allowance that a direct outward remittance would. Confirm the current figure and its exact composition (current income vs. accumulated balances) before relying on it, since RBI circular details are easy to misstate secondhand.",
+        "Our repatriation headroom estimator on the Investments & Repatriation page tracks how much of that ceiling a given remittance amount would use — an NRO-to-NRE transfer counts against it the same way an outward transfer does.",
+      ],
+    },
+    {
+      heading: "The same paperwork, even for a domestic-looking transfer",
+      paragraphs: [
+        "Because the transfer is treated as repatriation of NRO funds, banks require the same documentation they'd ask for on an outward remittance: Form 15CA (the remitter's declaration) and, for larger or taxable amounts, Form 15CB (a chartered accountant's certificate confirming the applicable tax has been accounted for). It's easy to assume that moving money between two of your own accounts at the same bank should be simpler than sending it abroad — banks generally don't treat it that way, precisely because the destination account changes the funds' repatriation status.",
+        "The Form 15CA/15CB checker on the NRE/NRO & TDS page estimates which part of the form applies to a given amount; it's a reasonable starting point for an NRO-to-NRE transfer as well as an outward remittance, since the underlying trigger is the same.",
+      ],
+    },
+    {
+      heading: "Not every NRO rupee qualifies",
+      paragraphs: [
+        "The funds being transferred generally need to be current income (rent, dividends, pension, interest, and similar) or other RBI-eligible NRO balances, with applicable Indian tax already paid or accounted for — the transfer isn't a mechanism for moving money whose tax position hasn't been settled. This is also why the move is common specifically as a pre-repatriation step: it lets an NRI consolidate multiple, smaller India-sourced credits into one freely repatriable pool before initiating the actual transfer abroad, rather than filing separate 15CA/15CB paperwork for each individual remittance.",
+      ],
+    },
+  ],
+  relatedSlugs: [
+    "nre-vs-nro-accounts-which-do-you-need",
+    "form-15ca-15cb-explained",
+    "tds-on-nro-fixed-deposits",
+  ],
+},
+{
+  slug: "tds-on-nro-fixed-deposits",
+  clusterSlug: "nre-nro-tds",
+  title: "TDS on NRO Fixed Deposits: Why It's Higher Than You'd Expect",
+  description:
+    "NRO fixed deposit interest is taxed at source from the very first rupee, at a rate well above what most resident FDs face — here's why, and how a treaty rate can bring it down before the money is even credited.",
+  dek: "There's no basic exemption on NRO FD interest, and no threshold before TDS kicks in. The default withholding rate is steep by design — but it isn't always the rate you actually owe.",
+  sections: [
+    {
+      paragraphs: [
+        "A resident's fixed deposit interest is only subject to TDS once it crosses a threshold in a financial year, and even then at a modest rate, while resident savings account interest isn't subject to TDS at all. NRO fixed deposits work differently: because Section 194A (the resident TDS-on-interest provision, with its exemption threshold and savings-account carve-out) doesn't apply to non-residents, NRO interest — savings or fixed deposit — falls instead under Section 195, which has no equivalent basic exemption. Whatever interest an NRO FD credits, some of it is withheld before it ever reaches the account holder.",
+      ],
+    },
+    {
+      heading: "The default rate",
+      paragraphs: [
+        "Bank NRI-desk pages commonly cite a flat 30% TDS rate on NRO FD interest by default, before adding applicable surcharge and a 4% health and education cess. Note that this figure isn't perfectly uniform across sources — at least one tax-reference source describes Section 195 interest withholding closer to 20% plus surcharge/cess as a general rate — so treat 30% as the widely-cited figure for NRO FD interest specifically, but confirm the exact current rate (and the surcharge slab, which depends on the account holder's total income and can range considerably) before assuming a single all-in percentage.",
+      ],
+    },
+    {
+      heading: "Unlocking the treaty rate instead of waiting for a refund",
+      paragraphs: [
+        "The default domestic rate isn't necessarily the rate the India-US DTAA (or India's treaty with another country of residence) actually allows on interest income. Submitting a Tax Residency Certificate (TRC) from your country of residence, along with Form 10F and your PAN, to the bank before the interest is credited can let the bank apply the lower treaty rate at source instead of the default rate — avoiding the wait for a refund entirely. Submitted after the interest has already been credited, this generally doesn't work retroactively; the overpayment then has to be recovered by filing an Indian income tax return instead.",
+        "The TDS-on-NRO-interest calculator on the NRE/NRO & TDS page lets you compare the default withholding scenario against a certified treaty rate, to see the actual difference in net proceeds on a given FD interest amount.",
+      ],
+    },
+    {
+      heading: "Why FDs feel like the sharper end of this",
+      paragraphs: [
+        "NRO savings and NRO fixed deposit interest are taxed under the same Section 195 mechanism, so the underlying rule isn't actually different between the two. What usually makes it more noticeable on an FD is scale: FD interest tends to be a larger, more concentrated sum credited on a defined schedule, so the absence of any exemption threshold shows up as a bigger visible deduction than it does on the smaller, incremental interest a savings account generates.",
+      ],
+    },
+  ],
+  relatedSlugs: [
+    "tds-on-nro-interest-explained",
+    "nre-vs-nro-accounts-which-do-you-need",
+    "pan-card-for-nris-explained",
+  ],
+},
+{
+  slug: "pan-card-for-nris-explained",
+  clusterSlug: "nre-nro-tds",
+  title: "PAN Card for NRIs: When You Need One, and How to Apply From Abroad",
+  description:
+    "A PAN isn't optional once TDS, an NRO/NRE account, or an Indian investment enters the picture — here's when NRIs actually need one, how to apply from outside India, and mistakes that quietly cause problems later.",
+  dek: "Almost every NRI financial move in India — opening an account, buying a mutual fund, receiving rent — runs into the same requirement: a PAN. Here's what actually triggers the need for one, and how to get it right the first time.",
+  sections: [
+    {
+      paragraphs: [
+        "PAN (Permanent Account Number) isn't just an Indian tax-filing formality — it's the identifier Indian banks, registrars, and the tax department use to track every transaction where tax withholding applies. For NRIs, that reach is broad: opening an NRO or NRE account, buying property, investing in mutual funds or listed securities, and any transaction where TDS is deducted (which, as covered elsewhere on this site, includes NRO interest and rent paid to an NRI landlord) all generally require a PAN.",
+      ],
+    },
+    {
+      heading: "Which form you use is about citizenship, not residence",
+      paragraphs: [
+        "Under the longstanding rules, the form split on citizenship rather than country of residence: Form 49A was for Indian citizens (including NRIs holding an Indian passport), while Form 49AA was for foreign citizens, including Persons of Indian Origin (PIO) and Overseas Citizens of India (OCI) who are not Indian citizens. Multiple secondary sources report this was restructured under the Income-tax Act, 2025 into four separate forms — commonly cited as Form 93 (Indian-citizen individuals), Form 94 (Indian non-individual entities), Form 95 (individuals who are not Indian citizens), and Form 96 (foreign non-individual entities) — effective from April 2026. Because this site hasn't independently verified the new form numbers against the Income Tax Department's own text, confirm the current form name and number before applying rather than relying on the 49A/49AA terminology, which several sources describe as retired for new applications (existing PANs issued under the old forms reportedly remain valid).",
+      ],
+    },
+    {
+      heading: "Applying from outside India",
+      paragraphs: [
+        "NRIs can apply without being physically present in India, submitting the application online (via NSDL/Protean or UTIITSL) along with photocopies — not originals — of a passport for identity and date of birth, and an overseas address proof, such as a recent utility bill, bank statement, residence permit, or foreign driving licence. Along with the physical card being mailed, applicants generally also receive a PDF e-PAN by email once the application is processed — a downloadable, valid copy distinct from the physical card. This routine e-PAN copy is separate from the 'Instant e-PAN' service, which is Aadhaar-based, requires roughly 182 or more days of physical presence in India in the preceding year, and is generally not available to NRIs at all.",
+      ],
+    },
+    {
+      heading: "Common mistakes",
+      paragraphs: [
+        "Two mistakes come up repeatedly. First, applying under, or letting an old PAN persist under, resident status instead of updating it to reflect NRI status once residency changes — this can cause mismatches on transactions that check residency status, such as the TDS rate a bank or property registrar applies. Second, assuming Aadhaar-PAN linking rules apply the same way they do to residents: NRIs are generally described as exempt from the mandatory linking requirement, largely because most don't hold an Aadhaar number at all — but the exemption isn't reported consistently as unconditional, with some sources noting an NRI who does hold an Aadhaar may still be expected to link it, and NRIs whose PAN went inoperative over this confusion have had to petition their jurisdictional Assessing Officer with proof of NRI status to reactivate it. Given how much the guidance on this specific point varies by source, confirm your own Aadhaar-linking obligation directly on the income tax portal rather than assuming from general NRI commentary.",
+      ],
+    },
+    {
+      paragraphs: [
+        "A PAN issued correctly under NRI status is also what the treaty-rate and refund mechanics in our TDS pieces assume is already in place — the TDS-on-NRO-interest calculator and Form 15CA/15CB checker on the NRE/NRO & TDS page both rely on a valid PAN being on file.",
+      ],
+    },
+  ],
+  relatedSlugs: [
+    "nre-vs-nro-accounts-which-do-you-need",
+    "tds-on-nro-fixed-deposits",
+    "form-15ca-15cb-explained",
+  ],
+},
+{
+  slug: "nri-demat-accounts-pis-vs-non-pis",
+  clusterSlug: "investments-repatriation",
+  title: "NRI Demat Accounts: PIS vs. Non-PIS Routes for Buying Indian Shares",
+  description:
+    "Buying listed Indian shares as an NRI runs through two different regulatory tracks — PIS for repatriable NRE-linked investing, non-PIS for NRO-funded holdings — and the distinction still matters even as the rules around it keep shifting.",
+  dek: "Two demat routes, two different account plumbings, two different repatriation outcomes. The PIS/non-PIS split is one of the more RBI-rulebook-heavy corners of NRI investing.",
+  sections: [
+    {
+      paragraphs: [
+        "NRIs who want to buy and sell shares listed on Indian stock exchanges — as opposed to mutual funds, which don't require this — have historically had to route those trades through the RBI's Portfolio Investment Scheme (PIS), a designated-bank-branch mechanism that lets the RBI track and cap aggregate foreign/NRI ownership in Indian-listed companies in something close to real time. A separate, non-PIS route exists for NRO-funded, non-repatriable equity investing. The two aren't interchangeable, and using the wrong one for your situation can create compliance headaches later, not just a suboptimal setup.",
+      ],
+    },
+    {
+      heading: "The PIS route: NRE-linked and repatriable",
+      paragraphs: [
+        "Under PIS, an NRI opens a designated PIS account linked to their NRE savings account at an RBI-authorized bank, and gets a PIS permission letter that lets a specific demat/trading account route delivery-based equity trades through that one designated bank branch. Because the funding sits in an NRE account, gains and sale proceeds under this route are generally repatriable, which is the main reason NRIs choose it over the alternative. Every PIS trade is reported by the bank to the RBI, which is how the regulator monitors sector-wise and company-wise foreign shareholding caps.",
+      ],
+    },
+    {
+      heading: "The non-PIS route: NRO-funded, non-repatriable",
+      paragraphs: [
+        "The non-PIS route lets an NRI invest in listed Indian equities using NRO funds without going through the PIS permission/reporting mechanism, but the funds and proceeds are tied to the NRO account's non-repatriable-by-default character (subject to NRO's own repatriation ceiling, covered elsewhere on this site). Non-PIS is also generally the route for secondary-market transactions PIS doesn't cover in the same way, and it does not require the same designated-single-bank-branch routing that PIS does. Mutual fund purchases and IPO applications, notably, sit outside the PIS framework entirely regardless of which account funds them.",
+      ],
+    },
+    {
+      heading: "Treat the current rule status as a moving target",
+      paragraphs: [
+        "PIS requirements have changed more than once over the past several years — including adjustments to individual and aggregate foreign-investment ceilings on listed companies, and periodic simplification of the permission and reporting process — and this is genuinely one of the more fluid areas of NRI-facing RBI/FEMA regulation. Don't treat any specific procedural detail (which trades require PIS routing, what the current ownership caps are, whether a given broker's non-PIS product still requires a separate NRO sub-account) as settled without confirming it directly with your bank's NRI desk or a current RBI/FEMA circular — the mechanics described here are the structural distinction between the two routes, not a guarantee that today's procedural specifics match what's written above.",
+      ],
+    },
+  ],
+  relatedSlugs: [
+    "nri-investment-options-in-india-overview",
+    "nri-repatriation-limits-explained",
+    "pfic-rules-for-nris-mutual-fund-trap",
+  ],
+},
+{
+  slug: "us-tax-on-indian-ulips-and-insurance-plans",
+  clusterSlug: "investments-repatriation",
+  title: "US Tax on Indian ULIPs: Why the Insurance Wrapper Doesn't Save You From PFIC",
+  description:
+    "ULIPs and other India-domiciled insurance-linked investment products are commonly pulled into the same PFIC regime that catches Indian mutual funds — the insurance packaging generally doesn't change the US tax outcome.",
+  dek: "It's called insurance in India. To the IRS, if the investment component dominates, it can still look like a basket of PFICs wearing a policy wrapper.",
+  sections: [
+    {
+      paragraphs: [
+        "Unit-linked insurance plans (ULIPs) and similar India-domiciled insurance-linked investment products — where premiums are split between a small life-insurance component and a much larger fund-investing component — are widely sold in India, including to NRIs, often through India-based agents who may not be thinking about US tax consequences at all. For a US person (citizen, green card holder, or US tax resident), the label 'insurance' on the product doesn't automatically exempt it from PFIC treatment, and in practice, most Indian ULIPs are caught by the same PFIC regime covered in more depth in our companion piece on Indian mutual funds as a PFIC trap.",
+      ],
+    },
+    {
+      heading: "Why US tax law looks past the insurance wrapper",
+      paragraphs: [
+        "US tax law has its own definition of what qualifies as 'life insurance' for tax purposes (under Internal Revenue Code Section 7702), built around specific cash-value-accumulation and premium tests designed to ensure a real, dominant insurance risk component. Many Indian ULIPs fail these tests because the investment portion is large relative to the death benefit — which means the IRS doesn't respect the policy as insurance for US tax purposes at all. Once that happens, the underlying 'units' — which are themselves invested in pools of Indian equities, debt, or mutual-fund-like structures — get treated as a direct holding in one or more Passive Foreign Investment Companies, subjecting the ULIP to the same excess-distribution default tax regime and Form 8621 filing obligations as a directly-held Indian mutual fund.",
+      ],
+    },
+    {
+      heading: "A possible added layer: US excise tax on premiums",
+      paragraphs: [
+        "Separately from PFIC treatment, US law imposes an excise tax under Internal Revenue Code Section 4371 on premiums paid to foreign insurers, which in principle could apply to premiums paid into an Indian ULIP or endowment plan. The US-India income tax treaty is understood to provide a path to exemption from this excise tax for insurers, but the mechanics run through a closing agreement between the foreign insurer and the IRS rather than something an individual policyholder files directly — whether a specific Indian insurer has such an agreement in place, and whether it's relevant to your policy, is genuinely uncertain from the policyholder's side and worth raising with a cross-border tax preparer rather than assuming either way.",
+      ],
+    },
+    {
+      heading: "Why caution matters before buying, not just after",
+      paragraphs: [
+        "Because ULIPs are frequently pitched in India as tax-efficient insurance-cum-investment products — true enough under Indian tax law — NRIs who are US taxpayers can end up holding one without any of the US-side implications having been flagged by the seller. Given the PFIC default regime's punitive treatment (top marginal rate on gains regardless of your actual bracket, plus retroactive interest charges, as detailed in our mutual-fund-trap article), the more common practical advice from cross-border tax preparers is to avoid buying new ULIPs as a US taxpayer altogether, and to get an existing one reviewed for PFIC exposure and Form 8621 filing history rather than assume it's been handled.",
+      ],
+    },
+  ],
+  relatedSlugs: [
+    "pfic-rules-for-nris-mutual-fund-trap",
+    "fbar-fatca-reporting-for-nris",
+    "nri-investment-options-in-india-overview",
+  ],
+},
+{
+  slug: "us-estate-tax-exposure-for-nris",
+  clusterSlug: "investments-repatriation",
+  title: "US Estate Tax Exposure for NRIs: What Happens to US-Situs Assets at Death",
+  description:
+    "Nonresident aliens face a dramatically smaller US estate tax exemption on US-situs assets than US citizens and residents do — a distinct, death-triggered exposure separate from the lifetime gift-reporting rules covered elsewhere on this site.",
+  dek: "The gift-tax rules on this site cover money moving while you're alive. This is about what the US claims at death — and for a nonresident alien, the exemption is a fraction of what US citizens get.",
+  sections: [
+    {
+      paragraphs: [
+        "This is a different exposure from the one covered in our article on gifting money between India and the US, which deals with lifetime gift reporting (Form 3520 and similar) between living people. US estate tax is triggered at death, applies to the value of specific property the decedent owned, and — for a nonresident alien (an NRA, meaning someone who is neither a US citizen nor domiciled in the US for estate tax purposes) — comes with a far smaller shelter than most people assume, because the large exemption figures widely quoted in the US press apply to US citizens and domiciliaries, not to NRAs.",
+      ],
+    },
+    {
+      heading: "The exemption gap is large, and NRA-specific",
+      paragraphs: [
+        "The current US estate tax exemption for US citizens and domiciled residents runs into the millions of dollars per person under recent tax legislation and IRS inflation adjustments — confirm the exact current-year figure before citing it, since it changes with each inflation adjustment and legislative update. For a nonresident alien, the exemption is structurally different: NRAs get a unified credit that shelters only the first $60,000 of US-situs property, and — unlike the citizen/resident exemption — this $60,000 figure is not indexed for inflation and has stayed fixed for decades. Anything above that $60,000 in US-situs assets is exposed to US estate tax at graduated rates that top out at 40%. This is one of the more consequential and least understood traps for NRIs who hold US brokerage accounts, US real estate, or US company stock without US citizenship or a US domicile.",
+      ],
+    },
+    {
+      heading: "What counts as US-situs property",
+      paragraphs: [
+        "US-situs property for this purpose generally includes US real estate, tangible personal property physically located in the US, and — notably — stock issued by US corporations, which counts as US-situs regardless of where the shares or brokerage account are actually held or where the decedent lived. Debt obligations of US persons or entities are generally treated as US-situs too, with certain exceptions (such as some portfolio-interest-qualifying debt). By contrast, foreign real estate, shares of non-US companies, and — under commonly cited guidance — US bank deposit accounts and proceeds of a life insurance policy on the decedent's own life are generally treated as non-US-situs and outside this exposure; the deposit and life-insurance treatment in particular is fact-specific enough that it's worth confirming against current IRS guidance or with a cross-border estate attorney rather than relying on a general description.",
+      ],
+    },
+    {
+      heading: "No estate tax treaty relief between the US and India",
+      paragraphs: [
+        "Unlike lifetime income tax, where a US-India tax treaty (DTAA) exists and materially shapes outcomes, the US has estate and gift tax treaties with only a short list of countries (commonly cited examples include the UK, Germany, France, Japan, and Canada) — and India is not on that list. That matters because in some treaty relationships, an NRA's estate can claim a much larger pro-rated share of the citizen-level exemption based on the ratio of US-situs to worldwide assets; without a treaty, an NRI's estate is generally limited to the flat $60,000 shelter with no such pro-ration available. An estate that crosses the threshold is required to file Form 706-NA, and the filing threshold itself is also the fixed, non-inflation-adjusted $60,000 figure — confirm current instructions before relying on any of these figures for actual estate planning, since this is exactly the kind of number that gets casually mis-cited as 'the same as the citizen exemption' when it plainly is not.",
+      ],
+    },
+  ],
+  relatedSlugs: [
+    "gifting-money-india-us-tax-rules",
+    "fbar-fatca-reporting-for-nris",
+    "pfic-rules-for-nris-mutual-fund-trap",
+  ],
+},
+{
+  slug: "ltcg-indexation-removal-budget-2024-property",
+  clusterSlug: "real-estate-capital-gains",
+  title: "Indexation Removal on Property LTCG: What Budget 2024 Actually Changed",
+  description:
+    "India's July 2024 budget replaced the old 20%-with-indexation LTCG rate on property with a flat, lower rate — but who still gets a choice, and whether NRIs are among them, is a narrow point that has kept shifting since.",
+  dek: "The 20%-with-indexation vs. flat-rate choice on property LTCG isn't automatic for every seller — least of all for NRIs. Here's what changed, and why every number in this article needs direct confirmation before you rely on it.",
+  sections: [
+    {
+      paragraphs: [
+        "Indexation was the mechanism that adjusted a property's original purchase cost upward for inflation before computing the taxable gain, using the government's Cost Inflation Index (CII) — the longer you'd held the property, and the more inflation had moved in between, the more your effective taxable gain shrank relative to the raw difference between sale price and purchase price. It was paired, historically, with a 20% LTCG rate on property.",
+        "The Union Budget presented on July 23, 2024 proposed removing that indexation benefit for most long-term capital assets, including property, in exchange for a lower flat rate applied to the un-indexed gain instead. That single change upended a planning assumption a lot of long-time property owners, NRIs included, had been building their expected tax bill around for years.",
+      ],
+    },
+    {
+      heading: "What indexation used to do",
+      paragraphs: [
+        "Under the pre-2024 approach, you'd look up the CII value for your year of purchase and your year of sale, use the ratio between them to inflate your original cost, and subtract that inflated cost — not the raw historical price — from your sale price to arrive at the taxable gain. For property held many years through periods of meaningful inflation, this could shrink the taxable gain substantially compared to simply subtracting the original purchase price, which is exactly why the 20% rate paired with indexation was, for a lot of long-held property, more favorable than it looks on paper.",
+      ],
+    },
+    {
+      heading: "The flat rate, and the (partial, resident-only) grandfathering",
+      paragraphs: [
+        "As enacted through the Finance (No. 2) Act, 2024, the default computation for property LTCG on transfers from July 23, 2024 onward became a flat, lower rate — commonly reported as 12.5% — applied without indexation. After public pushback on the original all-or-nothing proposal, an amendment added a comparison right, but a narrow one: for property acquired before July 23, 2024, resident individuals and HUFs can pay the lower of the old 20%-with-indexation figure or the new flat-rate figure, computed both ways and whichever comes out lower.",
+        "Multiple current secondary tax-advisory sources report that this resident-only dual-option comparison is not extended to non-resident sellers, including NRIs — meaning an NRI selling property acquired well before July 2024 would, on this reading, still compute LTCG only under the new flat-rate rule, with no indexation-based comparison available at all. This site's own LTCG vs. STCG explainer already flags the same NRI exclusion as something worth double-checking rather than assuming. Given how narrow this eligibility clause is, how recently it was amended, and how often narrow clauses like this get restated across secondary sources without being re-anchored to the primary statutory text each time, treat the NRI-exclusion point specifically as unconfirmed by this article and requiring direct verification against the Income-tax Act's current text, or a CA, before it informs any actual filing or sale-pricing decision.",
+      ],
+    },
+    {
+      heading: "Why the answer is still 'compute both ways' where the option exists",
+      paragraphs: [
+        "Even setting the NRI-eligibility question aside, the entire point of an indexation-vs-flat-rate comparison is that the better outcome depends entirely on your own numbers — how long you held the property, how much the CII moved across that specific holding period, and how much of your gain is genuine appreciation versus inflation catching up to the price. There's no shortcut answer that holds across sellers; a property with strong real appreciation over a low-inflation stretch can come out ahead under the flat rate, while a longer hold through a high-inflation period can favor the indexed 20% path where that comparison is actually available to the seller.",
+        "This area has already seen one legislative reversal within weeks of the original Budget 2024 proposal, and the specific question of NRI eligibility for the dual-option comparison is exactly the kind of detail that could see further clarification. Treat every rate, date, and eligibility rule in this article — and any figure a generic online calculator gives you — as a starting point for your CA to confirm against the current-year Act text, not a final number to build a sale decision around.",
+      ],
+    },
+    {
+      paragraphs: [
+        "The LTCG/STCG classifier on this site's Real Estate Capital Gains page applies the flat, no-indexation computation consistent with the post-Budget-2024 default; it does not attempt to model the resident-only grandfathering comparison or its precise current eligibility rules, both of which should be confirmed separately before you rely on the classifier's output for a sale involving property acquired before July 23, 2024.",
+      ],
+    },
+  ],
+  relatedSlugs: [
+    "selling-property-in-india-as-nri-ltcg-vs-stcg",
+    "selling-inherited-property-in-india-as-nri",
+    "joint-property-ownership-nri-capital-gains",
+  ],
+},
+{
+  slug: "repatriating-property-sale-proceeds",
+  clusterSlug: "real-estate-capital-gains",
+  title: "Repatriating Property Sale Proceeds From India: The NRI-Specific Process",
+  description:
+    "Moving money out of India after selling property involves its own RBI ceiling, its own CA certification step, and a direct handoff from the TDS already withheld at sale — distinct from general NRO repatriation rules.",
+  dek: "Selling the property is only half of it. Getting the proceeds out of India runs through its own USD 1 million ceiling, its own paperwork, and the TDS the buyer already withheld.",
+  sections: [
+    {
+      paragraphs: [
+        "This site's general repatriation-limits explainer covers the broad NRO ceiling that applies to rental income, dividends, and other India-sourced income. Property sale proceeds sit inside that same broad framework, but carry enough property-specific wrinkles — how the property was originally funded, a near-mandatory CA certificate, and a direct handoff from the TDS already withheld at sale — that they're worth walking through on their own.",
+      ],
+    },
+    {
+      heading: "How the property was funded changes the ceiling",
+      paragraphs: [
+        "If the property was originally purchased using foreign-currency funds remitted through banking channels, or paid for out of an NRE or FCNR account, current guidance describes NRIs as able to repatriate the full sale proceeds — not capped at USD 1 million — subject to documenting that original foreign-currency funding. Several secondary sources describe this full-repatriation route as limited to a set number of residential properties (two is a figure that recurs across multiple sources) before later sales fall under the general ceiling instead; this specific property-count limit is not independently confirmed here against the RBI's Master Direction and should be checked directly before relying on it.",
+        "Where the property was instead purchased using rupee funds (an NRO account, or Indian-sourced income generally) or was acquired by inheritance, repatriation of the sale proceeds is capped at USD 1 million per financial year, out of the NRO account. That ceiling is an aggregate one across all your eligible remittances for the year — not a separate USD 1 million allowance per property or per transaction — so it's worth checking what you've already repatriated in the same financial year before assuming the full headroom is available to this sale.",
+      ],
+    },
+    {
+      heading: "The CA certification step",
+      paragraphs: [
+        "Before a bank will release an outward remittance, the Income-tax Act requires certification that applicable tax has been accounted for: Form 15CB, a chartered accountant's certificate, paired with Form 15CA, the remitter's own online declaration — the same two-form mechanism covered in more general terms on this site's Form 15CA/15CB explainer. For property sale proceeds specifically, the amounts involved and the fact that this is squarely a taxable capital-account remittance mean this almost always lands in the fuller Part C-plus-15CB bracket rather than the simplified small-remittance path, even when the underlying gain itself turns out to be modest.",
+      ],
+    },
+    {
+      heading: "How this interacts with the TDS already withheld",
+      paragraphs: [
+        "By the time you're ready to repatriate, the buyer has typically already withheld TDS under Section 195 — generally on the full sale consideration, as covered in this site's Section 195 explainer, not just on the gain. The certifying CA's job at the 15CB stage is largely to confirm the tax position looks accounted for, referencing that withheld TDS, rather than to independently relitigate your total liability the way filing an actual return does. If the TDS withheld turns out to be larger than what you'll actually owe once your real cost basis and gain are worked out, that excess isn't released early through the 15CB process — it's recovered only by filing an Indian income tax return and claiming a refund, or, for a future sale, by front-loading the correction with a lower/nil TDS certificate obtained before the sale closes.",
+      ],
+    },
+    {
+      paragraphs: [
+        "The Section 195 TDS estimator and Form 13 explainer on the Real Estate Capital Gains page both feed directly into this chain — the withholding figure they estimate is generally what a 15CB certificate will reference. Confirm the current property-count limit on the full-repatriation route, and the exact document checklist, directly with your bank's NRI desk before setting a remittance timeline around either.",
+      ],
+    },
+  ],
+  relatedSlugs: [
+    "section-195-tds-on-nri-property-sales",
+    "form-13-lower-tds-certificate-worth-it",
+    "ltcg-indexation-removal-budget-2024-property",
+  ],
+},
+{
+  slug: "joint-property-ownership-nri-capital-gains",
+  clusterSlug: "real-estate-capital-gains",
+  title: "Joint Property Ownership and NRI Capital Gains: How the Tax Actually Splits",
+  description:
+    "When co-owners sell property together, the capital gains tax and TDS are meant to follow each owner's actual registered share — not get lumped together as if there's one seller.",
+  dek: "Two names on the sale deed doesn't mean an automatic 50/50 tax split. Here's how gains and TDS are actually meant to divide among co-owners, and where the paperwork commonly breaks.",
+  sections: [
+    {
+      paragraphs: [
+        "Joint ownership is common among NRI families — spouses who bought a property together, siblings who inherited one jointly, a parent added to a title for convenience. A common assumption when that property is sold is that the gain, and the tax on it, splits evenly between the co-owners simply because there are multiple names on the document. That assumption isn't reliable, and getting it wrong can leave one co-owner over- or under-reporting their own share.",
+      ],
+    },
+    {
+      heading: "Gains follow the ownership share on record, not a default split",
+      paragraphs: [
+        "The capital gain, and the tax on it, is meant to be attributed to each co-owner in proportion to their actual documented share of ownership — as reflected on the title or sale deed, or established by the specific terms of an inheritance or gift — not automatically halved, or split evenly by head count, just because a property has multiple registered owners. A 70/30 registered share means a 70/30 split of the sale consideration, cost basis, and resulting gain between the two co-owners, with each reporting and being taxed on their own proportionate share. For jointly inherited property, this site's inherited-property explainer covers how the underlying cost and holding period carry forward from the original owner in the first place — a question that sits upstream of, and separate from, how the resulting gain then divides among the co-owners.",
+      ],
+    },
+    {
+      heading: "TDS is meant to be deducted co-owner by co-owner",
+      paragraphs: [
+        "Section 195 TDS is meant to be applied separately against each NRI co-owner's own share of the sale consideration, not once against the whole sale price as if there were a single seller. Where a sale involves a mix of resident and NRI co-owners, the correct approach described by tax-advisory sources is seller-wise: the resident co-owner's share is subject to the resident-seller TDS provision (typically the lower rate under Section 194-IA), while the NRI co-owner's share is subject to the higher Section 195 rate — each computed separately against that owner's own portion of the consideration, and deposited against that owner's own PAN.",
+      ],
+    },
+    {
+      heading: "Where this breaks down in practice",
+      paragraphs: [
+        "Buyers unfamiliar with mixed resident/NRI joint ownership sometimes default to withholding against a single PAN — often whichever co-owner is easiest to reach, or the resident co-owner — applying one rate to the entire sale price. That under-withholds relative to what Section 195 actually requires on the NRI co-owner's share, and leaves that co-owner's own Form 26AS without a matching TDS credit, which surfaces later as a reconciliation problem once each co-owner separately files a return and expects to claim their own credit against their own share of tax due. Getting a written breakdown of each co-owner's share, PAN, and residency status in front of the buyer and their bank before closing — not after — is the practical fix.",
+      ],
+    },
+    {
+      paragraphs: [
+        "This same logic carries through to exemptions: each co-owner independently decides whether and how to claim Section 54 or 54EC against their own share of the gain, so one co-owner reinvesting doesn't automatically shield another co-owner's share (see this site's Section 54/54EC explainer). The Section 195 TDS estimator on the Real Estate Capital Gains page is built around a single seller's consideration and gain; for a joint sale, the practical approach is to run it once per co-owner, using that co-owner's own share of the price and cost basis rather than the sale's combined totals.",
+      ],
+    },
+  ],
+  relatedSlugs: [
+    "section-195-tds-on-nri-property-sales",
+    "section-54-54ec-exemptions-for-nris",
+    "ltcg-indexation-removal-budget-2024-property",
+  ],
+},
 ];
 
 export function getArticle(slug: string): Article | undefined {

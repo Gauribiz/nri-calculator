@@ -192,6 +192,102 @@ export const faqs: Faq[] = [
       "No — that TCS applies under the Liberalised Remittance Scheme (LRS), which is specifically for resident Indians sending money abroad. NRIs are non-residents under FEMA, so LRS doesn't apply to them at all. NRI repatriation instead runs through NRE's free repatriation, the NRO annual ceiling with Form 15CA/15CB, or, for property sales, Section 195 TDS — none of which involve LRS or its TCS rates.",
     relatedArticleSlug: "tcs-lrs-and-nri-remittances-explained",
   },
+{
+  id: "how-is-the-foreign-tax-credit-capped",
+  clusterSlug: "dtaa-tax-residency",
+  question: "Is there a limit on how much Indian tax I can credit using Form 1116?",
+  answer:
+    "Yes. The Foreign Tax Credit is capped separately for each income \"basket\" (passive vs. general category) at the US tax attributable to that basket's foreign-source income — it can eliminate US tax on that income but can't refund Indian tax beyond that cap. Credit you can't use in the current year because of this cap isn't lost: it carries back one year and then forward up to ten years within the same basket.",
+  relatedArticleSlug: "foreign-tax-credit-form-1116-for-nris",
+},
+{
+  id: "what-is-the-dtaa-tie-breaker-test",
+  clusterSlug: "dtaa-tax-residency",
+  question: "What happens if both India and the US treat me as a tax resident in the same year?",
+  answer:
+    "Article 4 of the India-US DTAA resolves it through a fixed, sequential tie-breaker test: first where you have a permanent home available, then (if that's tied) where your personal and economic relations are closer (center of vital interests), then habitual abode, then nationality, and finally — only if all else ties — a government-to-government mutual agreement procedure. Most real cases are resolved at the first or second step.",
+  relatedArticleSlug: "dtaa-tie-breaker-test-explained",
+},
+{
+  id: "who-has-to-pay-the-us-exit-tax",
+  clusterSlug: "dtaa-tax-residency",
+  question: "Do all green card holders owe exit tax when they give up their green card?",
+  answer:
+    "No. The exit tax under IRC 877A only applies to \"long-term residents\" — those who held a green card in at least 8 of the last 15 tax years — and even then, only if you separately meet one of three \"covered expatriate\" tests: net worth of $2 million or more, average annual US tax liability over an inflation-adjusted threshold, or failure to certify five years of tax compliance on Form 8854. A long-term resident who is a covered expatriate faces a mark-to-market deemed sale of their worldwide assets, with only the gain above an annually adjusted exclusion amount taxed.",
+  relatedArticleSlug: "us-exit-tax-for-green-card-holders",
+},
+{
+  id: "can-i-transfer-nro-funds-to-nre",
+  clusterSlug: "nre-nro-tds",
+  question: "Can I transfer money from my NRO account into my NRE account?",
+  answer:
+    "Yes, RBI rules allow it, but it isn't a way around the usual NRO restrictions — the transfer counts as repatriation of NRO funds under FEMA. It draws on the same annual RBI ceiling (commonly cited as USD 1 million per financial year; confirm the current figure) that applies to NRO remittances generally, and requires the same Form 15CA/15CB documentation. Only current income or other RBI-eligible NRO balances with tax already accounted for typically qualify.",
+  relatedArticleSlug: "nro-to-nre-transfer-explained",
+},
+{
+  id: "why-is-nro-fd-tds-so-high",
+  clusterSlug: "nre-nro-tds",
+  question: "Why is TDS on my NRO fixed deposit so high?",
+  answer:
+    "Unlike a resident FD, NRO FD interest has no basic exemption threshold — TDS under Section 195 applies from the first rupee, commonly cited at a flat 30% plus surcharge and cess (confirm the current rate and surcharge slabs, which vary by income level). Submitting a Tax Residency Certificate and Form 10F to your bank in advance can unlock a lower DTAA treaty rate at source instead; without that, the excess is only recoverable later by filing an Indian tax return.",
+  relatedArticleSlug: "tds-on-nro-fixed-deposits",
+},
+{
+  id: "does-an-nri-need-a-pan-card",
+  clusterSlug: "nre-nro-tds",
+  question: "Does an NRI need a PAN card?",
+  answer:
+    "Yes, in most cases that involve money — opening an NRO or NRE account, buying property or mutual funds, or any transaction where TDS applies (NRO interest, rent paid to an NRI landlord) generally requires a PAN. NRIs can apply from abroad without an Aadhaar number, using overseas address and identity proof, but should apply under NRI status rather than letting an old resident-status PAN carry forward.",
+  relatedArticleSlug: "pan-card-for-nris-explained",
+},
+{
+  id: "do-i-need-pis-to-buy-indian-shares-as-nri",
+  clusterSlug: "investments-repatriation",
+  question: "Do I need a PIS account to buy Indian shares as an NRI?",
+  answer:
+    "It depends on funding and repatriability. The PIS route, linked to your NRE account through a designated bank branch, is the historical mechanism for repatriable equity investing and remains widely used, while a non-PIS route exists for NRO-funded, non-repatriable equity investing. RBI rules in this area have been adjusted more than once in recent years (including foreign-ownership ceiling changes), so confirm the current requirement with your bank's NRI desk before assuming either route applies to your situation.",
+  relatedArticleSlug: "nri-demat-accounts-pis-vs-non-pis",
+},
+{
+  id: "are-ulips-a-pfic-problem-for-us-taxes",
+  clusterSlug: "investments-repatriation",
+  question: "I'm a US person with an Indian ULIP — is that a PFIC problem like mutual funds?",
+  answer:
+    "Very likely, yes. If the ULIP's investment component is large relative to its death benefit, it commonly fails the US tax definition of life insurance, and the IRS looks through the insurance wrapper to the underlying fund-like holdings, which typically get treated as PFICs. That triggers the same punitive default tax treatment and Form 8621 filing obligations covered in our mutual-fund PFIC article, and separately, premiums may also implicate a foreign-insurance excise tax whose India-treaty exemption mechanics don't run through the policyholder directly.",
+  relatedArticleSlug: "us-tax-on-indian-ulips-and-insurance-plans",
+},
+{
+  id: "does-us-estate-tax-apply-to-nris",
+  clusterSlug: "investments-repatriation",
+  question: "Does US estate tax apply to NRIs, even if they're not US citizens?",
+  answer:
+    "Yes, if the NRI owns US-situs property — such as US real estate or US corporate stock — at death. Nonresident aliens get a unified credit that shelters only $60,000 of US-situs assets (not inflation-adjusted, unlike the much larger exemption for US citizens/residents), with amounts above that taxed at rates up to 40%. There's no US-India estate tax treaty to soften this the way treaties do for some other countries, so confirm current thresholds and situs rules with a cross-border estate attorney rather than relying on general figures.",
+  relatedArticleSlug: "us-estate-tax-exposure-for-nris",
+},
+{
+  id: "does-ltcg-indexation-still-apply-to-property",
+  clusterSlug: "real-estate-capital-gains",
+  question: "Does the old indexation benefit still apply when I sell property in India?",
+  answer:
+    "Not by default anymore — since the Finance (No. 2) Act, 2024, property LTCG is generally computed under a flat, lower rate (commonly cited as 12.5%) without indexation, for transfers from July 23, 2024 onward. A comparison against the old 20%-with-indexation figure was restored for resident individuals/HUFs on property acquired before that date, but multiple sources report this dual-option comparison does not extend to NRIs. Given how recently and how many times this area has been amended, confirm the current rule directly against the Income-tax Act's text or with a CA before relying on any specific rate here.",
+  relatedArticleSlug: "ltcg-indexation-removal-budget-2024-property",
+},
+{
+  id: "how-much-property-sale-money-can-nri-repatriate",
+  clusterSlug: "real-estate-capital-gains",
+  question: "How much money can I actually move out of India after selling my property?",
+  answer:
+    "It depends on how the property was originally funded. Purchased with foreign-currency funds through an NRE/FCNR account, current guidance describes the full sale proceeds as repatriable, though this route is reported by several sources as limited to a set number of properties (confirm the exact number with your bank). Otherwise, repatriation is capped at USD 1 million per financial year via the NRO account — an aggregate cap across all your remittances that year, not per property — and requires Form 15CA/15CB certification on top of the Section 195 TDS the buyer already withheld at sale.",
+  relatedArticleSlug: "repatriating-property-sale-proceeds",
+},
+{
+  id: "how-is-capital-gains-tax-split-among-joint-owners",
+  clusterSlug: "real-estate-capital-gains",
+  question: "If a property has multiple owners, is the capital gains tax split evenly among them?",
+  answer:
+    "No — it follows each co-owner's actual registered ownership share, not an even or head-count split, unless that registered share genuinely is 50/50. Section 195 TDS is likewise meant to be deducted separately per co-owner's own share of the sale price and their own PAN, not lumped together as if there's one seller. In practice, buyers sometimes withhold against a single PAN at a single rate for the whole sale, which under-withholds an NRI co-owner's share and creates a mismatch each co-owner has to reconcile when filing their own return.",
+  relatedArticleSlug: "joint-property-ownership-nri-capital-gains",
+},
 ];
 
 export function getFaqsForCluster(clusterSlug: string): Faq[] {

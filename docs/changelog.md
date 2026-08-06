@@ -2,6 +2,63 @@
 
 All notable changes to NRI Calculator, in reverse chronological order.
 
+## 2026-08-06 — Blog/FAQ content pass, batch 3 (nric-006c)
+
+Orientation confirmed `nri-calculator.phase` implied an active queue and
+identified `nric-006c` (blog/FAQ content pass, batch 3) as the single
+highest-priority, and only, queued task. Duplicate-run check: the most
+recent `nri-calculator` entry in `orchestrator-state/state.json`'s
+`run_history` (2026-08-05T15:10:00Z) described completing `nric-006b`
+(batch 2), not `nric-006c`, so this pass is not a duplicate trigger.
+Confirmed PR #14 (batch 2) is merged via the live GitHub API, per the
+task's own instruction not to trust the state file's note on this.
+Read `nri-calculator/CLAUDE.md` in full — rule 3 (Disclaimer prominent
+placement) and rule 4 (no unrequested features) checked against the
+plan. Confirmed the PreToolUse guard is live via a read-only clone
+(`pretooluse-guard.sh` git mode `100755`, `.claude/settings.json` wires
+it to `Bash|Write|Edit`). No database involved
+(`supabase_project_ref_production: null`), and this task needed no
+Supabase access.
+
+Continued the `nric-006`/`nric-006b`/ADR 0011/0012 content build with a
+third batch, per `nric-006c`'s own scope ("3-5 more articles per
+cluster") — see ADR 0013 for the full reasoning on volume (3/cluster,
+matching batches 1-2's pace) and topic selection:
+
+- **12 new articles** (3 per cluster, `src/lib/blog/articles.ts`) and
+  **12 new FAQ entries** (`src/lib/blog/faqs.ts`) — the Foreign Tax
+  Credit (Form 1116), the DTAA Article 4 tie-breaker test, and the US
+  exit tax for long-term green card holders for DTAA & Tax Residency;
+  NRO-to-NRE transfers, TDS on NRO fixed deposits, and PAN cards for
+  NRIs for NRE/NRO & TDS; PIS vs. non-PIS demat accounts, US tax on
+  Indian ULIPs (PFIC exposure), and US estate tax exposure for NRAs for
+  Investments & Repatriation; the Budget 2024 property LTCG indexation
+  removal, repatriating property sale proceeds, and joint-property-
+  ownership capital gains/TDS splitting for Real Estate Capital Gains.
+- Every new article is interlinked within its cluster (2-3
+  related-article links spanning batches 1-3) and inherits the existing
+  `/blog/[slug]` template's `Disclaimer` placement and category-page
+  "Related reading" wiring automatically — no page-level code changes,
+  since those are driven by `getArticlesForCluster`/`getRelatedArticles`.
+- Research this pass was split across four independent parallel passes
+  (one per cluster), each cross-checking its own topics via live web
+  search. IRS.gov and incometax.gov.in direct fetches were unavailable
+  (HTTP 403) throughout, so figures rely on convergent reputable
+  secondary sources rather than a directly-read primary source — flagged
+  per-article, and summarized in ADR 0013, with a notably longer list of
+  figures needing Ajinkya's direct verification than prior batches,
+  since several topics (the Budget 2024 property-LTCG indexation
+  change especially, plus IRC 877A's inflation-indexed exit-tax
+  thresholds and the PAN-form restructuring) are recently-changed or
+  annually-adjusted rules rather than stable, long-standing figures.
+- Verified with `npm ci`, `npx tsc --noEmit`, `npm run lint` (clean),
+  and `npm run build` — 47 static routes generated (up from 35),
+  including 36 `/blog/[slug]` article pages (up from 24), all
+  prerendering statically. Slug/id uniqueness and every
+  `relatedSlugs`/`relatedArticleSlug` cross-reference were checked
+  programmatically against the full merged file content — no dangling
+  references, no duplicate slugs or FAQ ids.
+
 ## 2026-08-05 — Blog/FAQ content pass, batch 2 (nric-006b)
 
 Orientation confirmed `nri-calculator.phase` implied an active queue and
