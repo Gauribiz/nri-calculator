@@ -73,6 +73,268 @@ page, unchanged, per CLAUDE.md rule 3.
   chooser recommends NRE for foreign-sourced funds, NRO for India-sourced
   funds, and flags FEMA-status uncertainty when the NRI/PIO box is
   unchecked — with no console errors.
+## 2026-08-06 — Blog/FAQ content pass, batch 3 (nric-006c)
+
+Orientation confirmed `nri-calculator.phase` implied an active queue and
+identified `nric-006c` (blog/FAQ content pass, batch 3) as the single
+highest-priority, and only, queued task. Duplicate-run check: the most
+recent `nri-calculator` entry in `orchestrator-state/state.json`'s
+`run_history` (2026-08-05T15:10:00Z) described completing `nric-006b`
+(batch 2), not `nric-006c`, so this pass is not a duplicate trigger.
+Confirmed PR #14 (batch 2) is merged via the live GitHub API, per the
+task's own instruction not to trust the state file's note on this.
+Read `nri-calculator/CLAUDE.md` in full — rule 3 (Disclaimer prominent
+placement) and rule 4 (no unrequested features) checked against the
+plan. Confirmed the PreToolUse guard is live via a read-only clone
+(`pretooluse-guard.sh` git mode `100755`, `.claude/settings.json` wires
+it to `Bash|Write|Edit`). No database involved
+(`supabase_project_ref_production: null`), and this task needed no
+Supabase access.
+
+Continued the `nric-006`/`nric-006b`/ADR 0011/0012 content build with a
+third batch, per `nric-006c`'s own scope ("3-5 more articles per
+cluster") — see ADR 0013 for the full reasoning on volume (3/cluster,
+matching batches 1-2's pace) and topic selection:
+
+- **12 new articles** (3 per cluster, `src/lib/blog/articles.ts`) and
+  **12 new FAQ entries** (`src/lib/blog/faqs.ts`) — the Foreign Tax
+  Credit (Form 1116), the DTAA Article 4 tie-breaker test, and the US
+  exit tax for long-term green card holders for DTAA & Tax Residency;
+  NRO-to-NRE transfers, TDS on NRO fixed deposits, and PAN cards for
+  NRIs for NRE/NRO & TDS; PIS vs. non-PIS demat accounts, US tax on
+  Indian ULIPs (PFIC exposure), and US estate tax exposure for NRAs for
+  Investments & Repatriation; the Budget 2024 property LTCG indexation
+  removal, repatriating property sale proceeds, and joint-property-
+  ownership capital gains/TDS splitting for Real Estate Capital Gains.
+- Every new article is interlinked within its cluster (2-3
+  related-article links spanning batches 1-3) and inherits the existing
+  `/blog/[slug]` template's `Disclaimer` placement and category-page
+  "Related reading" wiring automatically — no page-level code changes,
+  since those are driven by `getArticlesForCluster`/`getRelatedArticles`.
+- Research this pass was split across four independent parallel passes
+  (one per cluster), each cross-checking its own topics via live web
+  search. IRS.gov and incometax.gov.in direct fetches were unavailable
+  (HTTP 403) throughout, so figures rely on convergent reputable
+  secondary sources rather than a directly-read primary source — flagged
+  per-article, and summarized in ADR 0013, with a notably longer list of
+  figures needing Ajinkya's direct verification than prior batches,
+  since several topics (the Budget 2024 property-LTCG indexation
+  change especially, plus IRC 877A's inflation-indexed exit-tax
+  thresholds and the PAN-form restructuring) are recently-changed or
+  annually-adjusted rules rather than stable, long-standing figures.
+- Verified with `npm ci`, `npx tsc --noEmit`, `npm run lint` (clean),
+  and `npm run build` — 47 static routes generated (up from 35),
+  including 36 `/blog/[slug]` article pages (up from 24), all
+  prerendering statically. Slug/id uniqueness and every
+  `relatedSlugs`/`relatedArticleSlug` cross-reference were checked
+  programmatically against the full merged file content — no dangling
+  references, no duplicate slugs or FAQ ids.
+
+## 2026-08-05 — Blog/FAQ content pass, batch 2 (nric-006b)
+
+Orientation confirmed `nri-calculator.phase` implied an active queue and
+identified `nric-006b` (blog/FAQ content pass, batch 2) as the single
+highest-priority, and only, queued task — `nric-001` through `nric-006`
+were all done. Duplicate-run check: the most recent `nri-calculator`
+entry in `orchestrator-state/state.json`'s `run_history`
+(2026-08-05T12:35:00Z) described completing `nric-006` (batch 1), not
+`nric-006b`, so this pass is not a duplicate trigger. Read
+`nri-calculator/CLAUDE.md` in full — rule 3 (Disclaimer prominent
+placement) and rule 4 (no unrequested features) checked against the
+plan. Confirmed the PreToolUse guard is live via a read-only clone
+(`pretooluse-guard.sh` git mode `100755`, `.claude/settings.json` wires
+it to `Bash|Write|Edit`). No database involved
+(`supabase_project_ref_production: null`), and this task needed no
+Supabase access.
+
+Continued the `nric-006`/ADR 0011 content build with a second batch, per
+`nric-006b`'s own scope ("3-5 more articles per cluster") — see ADR 0012
+for the full reasoning on volume (3/cluster, matching batch 1's pace)
+and topic selection:
+
+- **12 new articles** (3 per cluster, `src/lib/blog/articles.ts`) and
+  **12 new FAQ entries** (`src/lib/blog/faqs.ts`) — RNOR status, dual-status
+  US returns, and Form 8833 for DTAA & Tax Residency; FCNR deposits, the
+  NRI ITR-filing-trigger checklist, and TDS on rent to an NRI landlord
+  for NRE/NRO & TDS; FBAR/FATCA, NPS eligibility, and cross-border
+  gifting for Investments & Repatriation; Section 54/54EC reinvestment
+  exemptions, inherited-property cost basis, and a TCS/LRS
+  myth-correction (LRS does not apply to NRI repatriation) for Real
+  Estate Capital Gains.
+- Every new article is interlinked within its cluster (2-3 related-article
+  links spanning batch 1 and batch 2) and inherits the existing
+  `/blog/[slug]` template's `Disclaimer` placement and category-page
+  "Related reading" wiring automatically — no page-level code changes,
+  since those are driven by `getArticlesForCluster`/`getRelatedArticles`,
+  not a hardcoded list. Batch 1's own articles/FAQs were left unedited.
+- 24 articles / 24 FAQ entries now exist total across the site (up from
+  12/12) — still short of the charter's 25-30/cluster target; a further
+  batch remains queued as a follow-up task, same ongoing-build framing as
+  ADR 0011.
+- Verified with `npm run lint` (clean), `npm run build` (35 routes now
+  generated, up from 23, all prerender statically including the 12 new
+  article pages), and a headless Playwright smoke test (throwaway
+  `--no-save` devDependency, reverted before this commit) confirming
+  `Disclaimer` placement and an `h1` on all 12 new article pages, related
+  reading links from each category page to a new batch-2 article, `/faq`
+  still renders its `Disclaimer`, an unknown `/blog/` slug still 404s,
+  and no unexpected console errors during the sweep.
+- Every factual/numeric claim in this batch was cross-checked via live
+  web search against multiple independent secondary tax-reference
+  sources, with specific figures still needing Ajinkya's own
+  fact-verification pass before publish-ready — see ADR 0012 for exactly
+  which figures are flagged as most in need of direct confirmation
+  (current NRI basic exemption limit, Form 8938's full threshold table,
+  Section 54/54F and 54EC caps, and the FY2026-27 Income-tax Act, 2025
+  RNOR/120-day provision).
+
+## 2026-08-05 — Blog/FAQ content pass, batch 1 (nric-006)
+
+Orientation confirmed `nri-calculator.phase` implied an active queue and
+identified `nric-006` (blog/FAQ content pass) as the only queued task —
+`nric-001` through `nric-005` were all done (`nric-002` and `nric-004`
+still had open PRs #9/#12 at the time of this pass). Duplicate-run check:
+the most recent `nri-calculator` entry in `orchestrator-state/state.json`'s
+`run_history` (2026-08-05T02:00:00Z) described completing `nric-004`, not
+`nric-006`, so this pass is not a duplicate trigger. Cross-checked
+`project-docs-index/nri-calculator/changelog.md` for any existing
+`nric-006` work before starting — none found. Confirmed the PreToolUse
+guard is live via a read-only clone (`pretooluse-guard.sh` git mode
+`100755`, `.claude/settings.json` wires it to `Bash|Write|Edit`).
+
+`nric-006`'s own wording ("25-30 interlinked articles per topic cluster")
+implies roughly 100-120 articles across the site's four clusters — not
+achievable in one unattended pass without either padding with thin
+content or making unverified factual claims at scale. See ADR 0011 for
+the full reasoning. This pass instead built the reusable infrastructure
+plus a real first batch:
+
+- **`/blog`** — index page grouped by topic cluster, `Disclaimer` near
+  the top per CLAUDE.md rule 3.
+- **`/blog/[slug]`** — statically generated article pages
+  (`generateStaticParams`, consistent with the rest of the site), each
+  with `Disclaimer` near the top, a link back to its cluster's
+  calculator page, and 2-3 related-article links.
+- **`/faq`** — a 12-question FAQ page spanning all four clusters,
+  `Disclaimer` near the top, each answer linking to its fuller article
+  where one exists.
+- **12 articles** (3 per cluster — `src/lib/blog/articles.ts`) and
+  **12 FAQ entries** (`src/lib/blog/faqs.ts`), interlinked within each
+  cluster and cross-cluster where genuinely relevant (e.g., the
+  repatriation article links to the NRE/NRO account-choice article).
+- **`/blog` and `/faq` added to the top-level nav** (`layout.tsx`).
+- **"Related reading" section added to all four category pages**
+  (`dtaa-tax-residency`, `nre-nro-tds`, `investments-repatriation`,
+  `real-estate-capital-gains`), linking to that cluster's new articles —
+  appended after existing content, without moving or displacing the
+  `Disclaimer` component's required top-of-page position.
+
+Content is structured TypeScript data rather than a CMS/MDX pipeline —
+this project has no database, and adding a content-pipeline dependency
+for a first batch would be scope expansion beyond what `nric-006` asked
+for.
+
+**Needs Ajinkya's fact-verification pass before publishing**: every
+structural/conceptual claim in this batch (NRE interest exemption,
+Substantial Presence Test weighting, PFIC default treatment, Section 195
+withholding-on-full-consideration, RBI's NRO repatriation ceiling, and
+others) was cross-checked via live web search against multiple
+independent secondary tax-reference sources, with no discrepancies
+found, but no direct irs.gov / incometaxindia.gov.in fetch was attempted
+this pass — same access constraint as ADR 0005/0006/0008/0009/0010.
+Where a specific number is already implemented and flagged in an
+existing calculator, these articles point to that calculator rather than
+restating the figure, to avoid maintaining it in two places.
+
+Verified with `npm run lint` (clean), `npm run build` (all article/FAQ/
+blog routes prerender statically, 23 total generated pages), and a
+headless Playwright smoke test (installed as a throwaway devDependency,
+reverted before this commit) confirming: disclaimer renders near the top
+of `/blog`, every article, `/faq`, and all four category pages; nav
+exposes `/blog` and `/faq`; article and FAQ interlinking resolves; an
+unknown `/blog/<slug>` 404s; no console/page errors.
+
+`nric-006` is **not** marked fully done against its own 25-30/cluster
+target — see `orchestrator-state/state.json`, which records this batch
+and queues `nric-006b` to continue the build in future passes.
+
+- `docs/changelog.md` — this entry.
+- `docs/decisions/0011-blog-faq-content-pass-scope.md` — new ADR.
+
+## 2026-08-04 — Investment/repatriation calculators (nric-003)
+
+Orientation confirmed `nri-calculator.phase` implied an active queue and
+identified `nric-003` (investment/repatriation calculators) as the single
+highest-priority queued task — `nric-001` through `nric-001e`, `nric-002`,
+and `nric-005` were already done or (for `nric-002`) already had an open
+PR. Cross-checked `project-docs-index/nri-calculator/changelog.md` against
+`orchestrator-state/state.json`'s `task_queue` before starting
+implementation, per the process-gap lesson from the `nric-002` duplicate
+incident (see `architecture_notes.state_json_staleness_incident_2026_08_04`
+in `orchestrator-state`) — no existing work found for `nric-003`, so this
+is not a duplicate. Confirmed the PreToolUse guard is live via a read-only
+clone (`pretooluse-guard.sh` git mode `100755`, `.claude/settings.json`
+wires it to `Bash|Write|Edit`).
+
+Built two tools on `/investments-repatriation`, replacing the "coming
+soon" placeholder:
+
+- **Repatriation headroom estimator**
+  (`src/lib/calculators/repatriationLimit.ts` +
+  `src/components/calculators/RepatriationLimitCalculator.tsx`) — tracks
+  remaining headroom under RBI's USD 1 million per financial year
+  facility for remittance of assets (NRO accounts and most movable/
+  financial asset sale proceeds), and confirms NRE/FCNR balances are not
+  subject to that ceiling. Does not model the RBI-permission route for
+  amounts above the ceiling, the separate two-property cap on
+  repatriating residential real estate sale proceeds, or Form 15CA/15CB
+  mechanics.
+- **US tax treatment of Indian mutual funds: PFIC explainer**
+  (`src/lib/calculators/pficFilingCheck.ts` +
+  `src/components/calculators/PficFilingChecker.tsx`) — explains the
+  Section 1291 default "excess distribution" regime and why QEF/
+  mark-to-market elections are usually unavailable for Indian mutual
+  funds, plus a narrow Form 8621 de minimis filing-exception check
+  ($25,000 / $50,000 married filing jointly / $5,000 if held through
+  another PFIC). Deliberately does **not** compute any Section 1291 tax
+  or interest — see ADR 0009 for why a fuller tax-liability calculator
+  was judged too high-liability for a general-information YMYL page.
+
+Per the task's explicit "extra disclaimer emphasis" requirement (this
+category is flagged high-complexity/high-liability), added an additional
+amber callout on the page directly below the standard `Disclaimer`
+component — never replacing or moving it, still first per CLAUDE.md rule
+3 — plus a second, PFIC-specific amber callout inside
+`PficFilingChecker` itself. Also fixed the page wrapper's leftover
+`zinc-*` heading class to the `stone`/`primary` design-system tokens
+while rewriting this file (small, no new dependency, matches every other
+launched page).
+
+Did not add a "Download result as PDF" affordance — `nric-001e` scoped
+that specifically to the DTAA/tax-residency calculators as a follow-up,
+not a standing requirement for every future calculator (same call
+`nric-002` made).
+
+**Both new figures need Ajinkya's fact-verification pass** before
+publishing: the USD 1,000,000/FY repatriation ceiling (RBI Master
+Direction No. 13 — Remittance of Assets) and the $25,000/$50,000/$5,000
+Form 8621 de minimis filing thresholds were cross-checked via live web
+search this pass against multiple independent secondary sources with no
+discrepancies found, but direct fetches of rbi.org.in and irs.gov were
+not attempted this pass — verify against those sources directly, and
+with a qualified US tax preparer for the PFIC content specifically,
+before treating either tool as publish-ready.
+
+Verified with `npm run lint` (clean), `npm run build` (all 7 routes
+still prerender statically), and a headless Playwright smoke test
+against the built production server confirming: the disclaimer and
+extra-caution callout both render above the calculators; the repatriation
+tool correctly flags an $800,000-already-repatriated + $300,000-requested
+combination as $100,000 over the limit, and correctly reports NRE/FCNR as
+not subject to the ceiling; and the PFIC checker correctly reports "likely
+not required" at $0 aggregate value, "likely required" once value exceeds
+$25,000, and "likely required" regardless of value once a distribution/
+disposition is marked — with no console errors. Added ADR 0009.
 
 ## 2026-08-04 — Download result as PDF for the DTAA/tax-residency calculators (nric-001e)
 
