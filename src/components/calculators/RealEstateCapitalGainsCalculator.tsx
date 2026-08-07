@@ -131,7 +131,7 @@ export default function RealEstateCapitalGainsCalculator() {
         sources={[
           {
             label: "Income Tax Dept.: Capital Gains",
-            href: "https://www.incometaxindia.gov.in/w/capital-gains",
+            href: "https://www.incometaxindia.gov.in/w/capital-gain",
           },
         ]}
       />
