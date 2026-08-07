@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Disclaimer from "@/components/Disclaimer";
 import { getCategory } from "@/lib/categories";
+import RealEstateCapitalGainsCalculator from "@/components/calculators/RealEstateCapitalGainsCalculator";
+import NriPropertySaleTdsCalculator from "@/components/calculators/NriPropertySaleTdsCalculator";
+import Form13Explainer from "@/components/calculators/Form13Explainer";
 import { getArticlesForCluster } from "@/lib/blog/articles";
 
 const category = getCategory("real-estate-capital-gains")!;
@@ -15,19 +18,21 @@ export const metadata: Metadata = {
 export default function RealEstateCapitalGainsPage() {
   return (
     <div className="mx-auto flex w-full max-w-4xl flex-1 flex-col gap-6 px-6 py-12">
-      <h1 className="text-2xl font-semibold tracking-tight">
+      <h1 className="text-2xl font-semibold tracking-tight text-primary-900 dark:text-primary-50">
         {category.title}
       </h1>
 
       <Disclaimer />
 
-      <p className="max-w-2xl text-zinc-600 dark:text-zinc-400">
+      <p className="max-w-2xl text-stone-600 dark:text-primary-200/70">
         {category.description}
       </p>
 
-      <p className="max-w-2xl text-zinc-500 dark:text-zinc-500">
-        Detailed guidance and calculators for this topic are coming soon.
-      </p>
+      <div className="flex flex-col gap-6">
+        <RealEstateCapitalGainsCalculator />
+        <NriPropertySaleTdsCalculator />
+        <Form13Explainer />
+      </div>
 
       {clusterArticles.length > 0 && (
         <div className="flex flex-col gap-3 border-t border-zinc-200 pt-6 dark:border-zinc-800">
