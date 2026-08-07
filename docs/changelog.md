@@ -2,6 +2,10 @@
 
 All notable changes to NRI Calculator, in reverse chronological order.
 
+## 2026-08-07 — Real estate capital gains corrections (nric-004 follow-up)
+
+Per Ajinkya's review against the official Income-tax Act 2025 TDS rate chart, corrected three issues in the nric-004 calculators below: the STCG default TDS rate (30% -> 20%, the definite statutory rate under Section 393(2) [Table S.No. 17(e)] / Section 196, not a conservative top-slab estimate), stale "Section 195" citations (-> Section 393(2), consistent with the renumbering already confirmed on PR #9), and three broken incometaxindia.gov.in source links (`/w/tds-on-sale-of-property` -> `/w/section-393-5` and `/w/certificate-of-lower/no-deduction-of-tax-at-source`; `/w/capital-gains` -> `/w/capital-gain`). Also resolved PR #12's merge conflicts against `main` (additive changelog entries; `real-estate-capital-gains/page.tsx` now renders the real calculators followed by PR #13's "Related reading" blog-article section, replacing the stale "coming soon" placeholder). PR left unmerged for Gauri's review per Ajinkya's instruction.
+
 ## 2026-08-05 — Real estate capital gains calculators (nric-004)
 
 Orientation confirmed `nri-calculator.phase` implied an active queue and
