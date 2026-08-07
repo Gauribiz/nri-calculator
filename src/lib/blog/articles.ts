@@ -1428,6 +1428,488 @@ export const articles: Article[] = [
     "ltcg-indexation-removal-budget-2024-property",
   ],
 },
+
+// --- batch 4 additions ---
+{
+  slug: "form-w8ben-treaty-rate-claims",
+  clusterSlug: "dtaa-tax-residency",
+  title: "Form W-8BEN: Claiming a Treaty Rate on US-Source Income",
+  description:
+    "How NRIs with US-source dividends or brokerage interest use Form W-8BEN to claim the India-US treaty's reduced withholding rate instead of the default 30%.",
+  dek: "Left blank, a US broker withholds nearly a third of your dividend at the door. Form W-8BEN is the paperwork that gets you the treaty rate instead.",
+  sections: [
+    {
+      paragraphs: [
+        "Form W-8BEN is how a non-US person certifies foreign status to a US payer — typically a brokerage — and, where applicable, claims a reduced withholding rate under a tax treaty instead of the standard 30% NRA (nonresident alien) withholding that otherwise applies by default to US-source dividends, interest, and similar payments to foreign persons. Without a valid W-8BEN on file, the default is the full 30% cut taken at source before the money ever reaches you; the form itself goes to the broker or payer, not to the IRS directly.",
+      ],
+    },
+    {
+      heading: "What the India-US treaty actually gets you",
+      paragraphs: [
+        "Multiple secondary sources describe the India-US treaty as reducing the default dividend withholding to around 25% for portfolio holdings, with a lower rate reserved for larger corporate shareholdings — a scenario that mostly doesn't apply to individual NRI investors. Treat these as commonly cited figures to confirm against the current treaty text or a preparer rather than settled numbers, since treaty schedules are precise about article and paragraph.",
+        "Interest is a more nuanced case: much US-source interest paid to nonresident aliens — including most bank deposit interest and interest on US-registered bonds — is already exempt from withholding entirely under a separate 'portfolio interest' exception in US domestic law, regardless of any treaty. The treaty's reduced-rate figures mostly matter for interest that falls outside that domestic exemption, so it's worth not assuming every brokerage interest line item needs a treaty claim to begin with.",
+      ],
+    },
+    {
+      heading: "How the claim actually gets made",
+      paragraphs: [
+        "Part I of the form identifies you and your foreign tax residence; Part II is where the treaty claim itself lives — you cite the specific treaty article and paragraph, the income type, and the reduced rate you're claiming, so the payer's system can apply it correctly rather than defaulting to 30%.",
+        "The form doesn't last forever: commonly cited guidance says a W-8BEN signed at any point in a calendar year remains valid through December 31 of the third following year, and expires immediately regardless of that schedule if your treaty-relevant facts change — for example, if you become a US tax resident under the Substantial Presence Test.",
+      ],
+    },
+    {
+      heading: "If it lapses or was never filed",
+      paragraphs: [
+        "An expired or missing W-8BEN reverts withholding to the default 30% rate until a new one is filed. This is a withholding-rate problem, not necessarily a final-liability one — over-withheld amounts are generally recoverable by filing a US nonresident return (Form 1040-NR) and claiming a refund, but that's a slower path than simply keeping the form current with your broker.",
+        "This is a separate document from Form 8833, which discloses a treaty position on your actual US return. W-8BEN establishes the treaty rate at the point of payment; it doesn't substitute for the disclosure Form 8833 may separately require if the treaty position overrides standard US tax treatment.",
+      ],
+    },
+  ],
+  relatedSlugs: [
+    "claiming-dtaa-relief-credit-vs-exemption",
+    "form-8833-treaty-based-return-disclosure",
+    "india-us-totalization-agreement-explained",
+  ],
+},
+{
+  slug: "india-us-totalization-agreement-explained",
+  clusterSlug: "dtaa-tax-residency",
+  title: "Why There's No India-US Social Security Totalization Agreement",
+  description:
+    "India and the US remain one of the few major work corridors without a Social Security totalization agreement, leaving FICA and Indian social-security contributions largely uncoordinated across a career spanning both countries.",
+  dek: "The US has totalization deals with roughly 30 countries to stop double social-security tax and stitch together benefit eligibility. India isn't one of them — and that gap has real teeth.",
+  sections: [
+    {
+      paragraphs: [
+        "A Social Security totalization agreement generally does two things: it lets someone working abroad stay on their home country's social-security system instead of paying into both, and it lets contribution years from both countries be combined to clear a benefit-eligibility threshold that neither country's contributions alone would reach. The US has this kind of agreement with roughly 30 countries — the UK, Canada, Japan, Germany, and most of the EU among them. India is not on that list.",
+      ],
+    },
+    {
+      heading: "Confirmed: no agreement is currently in force",
+      paragraphs: [
+        "Despite over a decade of intermittent talks, India and the US do not have a totalization agreement in effect as of this writing. Indian trade-body commentary has put the cost of this gap at over $1 billion a year in Social Security taxes paid by Indian firms' US-deployed employees with no offsetting benefit, and Indian government statements as recently as 2024 describe the two sides as still in dialogue rather than at a signed agreement — treat \"no agreement\" as the current status to re-check periodically rather than a permanent fact.",
+      ],
+    },
+    {
+      heading: "What that means in practice",
+      paragraphs: [
+        "Someone working in the US on an Indian company's payroll (or vice versa) generally can't rely on a totalization agreement to stay exempt from the other country's system — a US assignment typically means US Social Security (FICA, split between employee and employer) is owed in the ordinary course, on top of whatever the person continues to owe or contribute in India, without the \"stay on your home system for the assignment\" relief a totalization agreement would otherwise provide.",
+        "The benefit-eligibility side is the other, quieter cost: without an agreement, contribution years in one country generally can't be combined with the other's to clear a minimum-quarters threshold for retirement benefits. Someone who splits a career between US and Indian employment can end up with contribution history in both systems and full benefit eligibility in neither — years effectively stranded short of each country's own minimum, rather than combined into one qualifying record.",
+      ],
+    },
+    {
+      heading: "Don't confuse this with unrelated FICA exemptions",
+      paragraphs: [
+        "Certain visa categories carry their own, separate FICA exemptions under US domestic law — for example, some F-1 student and J-1 exchange-visitor categories, for a limited period. These are not totalization relief and don't depend on India having an agreement with the US; they're worth knowing about on their own terms, but shouldn't be mistaken for the broader totalization coordination this article describes.",
+      ],
+    },
+  ],
+  relatedSlugs: [
+    "nri-or-resident-how-tax-residency-works",
+    "form-w8ben-treaty-rate-claims",
+    "oci-pio-status-vs-tax-residency",
+  ],
+},
+{
+  slug: "oci-pio-status-vs-tax-residency",
+  clusterSlug: "dtaa-tax-residency",
+  title: "OCI and PIO Status Aren't Tax Residency — Here's the Actual Overlap",
+  description:
+    "OCI and PIO are immigration/civil statuses, not tax statuses, and don't by themselves determine tax residency in India or the US — though India's day-count rules do explicitly reference them in one specific place.",
+  dek: "Holding an OCI card doesn't set your tax residency in either country. It does, in one specific rule, change how many days you're allowed in India before residency kicks in.",
+  sections: [
+    {
+      paragraphs: [
+        "OCI (Overseas Citizen of India) and PIO (Person of Indian Origin, a scheme largely folded into OCI) are immigration and civil-status categories — a foreign citizen of Indian origin holding one is explicitly not an Indian citizen (India doesn't recognize dual citizenship), and the card itself confers travel and residency-type privileges, not a tax classification. It's a common and understandable mix-up: OCI cardholders sometimes assume their Indian tax treatment simply follows from the card, when in fact India's tax residency is worked out independently, on the Income Tax Act's own day-count tests, for every individual regardless of OCI status.",
+      ],
+    },
+    {
+      heading: "Where OCI/PIO status does interact with the tax rules",
+      paragraphs: [
+        "The interaction isn't nothing, though — it's narrow and specific. The Finance Act 2020 shortened-threshold rule (the 120-day residency trigger for visiting individuals with India-sourced income above the commonly cited Rs 15 lakh mark) is written to apply to \"a citizen of India or a person of Indian origin,\" meaning OCI/PIO status is exactly the hook that pulls a foreign-citizen visitor of Indian origin into that shorter day-count, rather than the general 182-day threshold that would otherwise apply to a visiting foreign national with no such origin. In that one place, the civil-status label genuinely does matter for the tax outcome — it's just not itself the tax status. This site's own residency calculator flags this nuance when the visiting-citizen/PIO box is checked.",
+      ],
+    },
+    {
+      heading: "On the US side, it's simpler: it doesn't come up at all",
+      paragraphs: [
+        "OCI/PIO status has no bearing on US tax residency, which is decided entirely independently through the Substantial Presence Test, green card status, or US citizenship. A US citizen who also holds an OCI card is a US tax resident purely on citizenship — the OCI card changes nothing about that determination, in either direction.",
+      ],
+    },
+    {
+      heading: "A related, narrower provision worth not conflating",
+      paragraphs: [
+        "Separately, Finance Act 2020 also introduced a \"deemed resident\" rule for Indian citizens with more than Rs 15 lakh of non-foreign-source income who aren't liable to tax anywhere else by reason of domicile or residence, aimed at closing a \"stateless income\" gap. Multiple sources describe this specific deeming provision as restricted to Indian citizens — not extended to OCI/PIO holders — which is the opposite direction from the 120-day rule above (that one explicitly includes PIOs; this one doesn't). Given how easy the two provisions are to conflate, and how much recent legislative attention this area has gotten, this is worth confirming directly against the current Income-tax Act text or with a CA rather than taken as settled from this summary alone.",
+      ],
+    },
+  ],
+  relatedSlugs: [
+    "rnor-status-explained-for-returning-nris",
+    "nri-or-resident-how-tax-residency-works",
+    "india-us-totalization-agreement-explained",
+  ],
+},
+{
+  slug: "premature-withdrawal-nro-fixed-deposit",
+  clusterSlug: "nre-nro-tds",
+  title: "Breaking an NRO Fixed Deposit Early: What Happens to the TDS Already Withheld",
+  description:
+    "Premature closure of an NRO fixed deposit triggers both a penalty and an interest recalculation — and untangles the TDS that was already deducted on the higher, contracted-rate interest.",
+  dek: "Break an NRO FD early and the bank doesn't just charge a penalty — it rewrites the interest you earned, which means the TDS already withheld on it needs sorting out too.",
+  sections: [
+    {
+      paragraphs: [
+        "NRO fixed deposits, unlike tax-saver FDs, generally allow premature withdrawal — a genuinely common move when an NRI needs the rupee funds sooner than planned, or wants to react to a rate change. But breaking the deposit early sets off two separate adjustments that are easy to underestimate: the bank recalculates the interest you actually earn, and a penalty is deducted from it — and because TDS was already withheld from the higher, originally-contracted interest amount, that withholding now needs to be reconciled against a lower final figure.",
+      ],
+    },
+    {
+      heading: "How the interest recalculation and penalty work",
+      paragraphs: [
+        "On premature closure, banks generally don't pay out interest at the rate you locked in when you opened the deposit. Instead, interest is recalculated at whatever rate the bank was offering, at the time of booking, for the tenure the deposit actually ran — a shorter, often lower-rate bracket — and a penalty is then deducted on top, commonly cited in the 0.5%-1% range. The exact figure, and any amount-based exemptions from it, vary by bank, so confirm your bank's specific policy before assuming a number.",
+        "Minimum holding periods before any withdrawal is permitted at all also vary; some sources describe a very short minimum (on the order of days) for NRO deposits specifically — well short of the one-year minimum tenure, and outright forfeiture of interest for withdrawal before that year, that applies to NRE deposits. Because NRO and NRE premature-withdrawal rules genuinely differ and get conflated in casual conversation, don't assume your NRO FD follows an NRE-style forfeiture rule.",
+      ],
+    },
+    {
+      heading: "What happens to the TDS already deducted",
+      paragraphs: [
+        "This is the part that catches people out. NRO interest is subject to TDS at the time of credit or payment, whichever is earlier — commonly on a quarterly cycle for FDs held long enough to span multiple quarters — so by the time you close the deposit early, TDS has typically already been deducted, and deposited with the government, on interest calculated at the original, higher contracted rate for those already-completed quarters. Once the deposit closes early and total interest is recalculated downward, the TDS already paid over for earlier quarters can end up higher than the final, lower interest figure would justify.",
+        "How individual banks true this up in practice isn't something with a single consistent answer — some descriptions suggest the bank adjusts the final interest payout and TDS certificate to reflect the recalculated interest, but where TDS for earlier quarters has already been deposited under a return that's already been filed, a bank generally has no mechanism to claw it back from that filing. Treat this as a genuine open question to raise with your specific bank at closure, not something to assume works one way or the other.",
+        "Regardless of how the bank's internal accounting nets out, the backstop is the same one that applies to any excess NRO TDS generally: if TDS actually deducted across the deposit's life exceeds your real tax liability on the recalculated interest, the difference is recoverable by filing an Indian income tax return for that year and claiming a refund. Confirm the Form 16A the bank issues after closure reflects the recalculated interest — that's the figure your return should report, not the higher, originally-projected amount.",
+      ],
+    },
+    {
+      heading: "Before you break the FD",
+      paragraphs: [
+        "Worth confirming with the bank ahead of time: the exact penalty rate for your tenure/amount slab, whether a minimum holding period must be crossed before withdrawal is allowed at all, and how the bank will handle the TDS-versus-recalculated-interest gap on your certificate. None of this changes the basic math — recalculated interest, minus penalty, minus TDS on what's actually paid — but the mechanics vary enough between banks that a quick check before initiating closure can save a confusing reconciliation later.",
+      ],
+    },
+  ],
+  relatedSlugs: [
+    "tds-on-nro-fixed-deposits",
+    "tds-on-nro-interest-explained",
+    "nre-vs-nro-accounts-which-do-you-need",
+  ],
+},
+{
+  slug: "joint-nre-nro-account-with-resident-relative",
+  clusterSlug: "nre-nro-tds",
+  title: "Joint NRE/NRO Accounts With a Resident Relative: How They Actually Work",
+  description:
+    "RBI rules let NRIs hold NRE, NRO, and FCNR accounts jointly with a resident Indian close relative on a \"Former or Survivor\" basis — but operation, tax attribution, and TDS follow rules of their own.",
+  dek: "Adding a resident parent or spouse to your NRE or NRO account is allowed — but \"joint holder\" doesn't automatically mean \"joint operator,\" or \"joint taxpayer.\"",
+  sections: [
+    {
+      paragraphs: [
+        "It's a common assumption that NRE and NRO accounts are strictly an NRI-only affair, but RBI rules explicitly permit joint holding with a resident Indian relative, on what's called a \"Former or Survivor\" basis, across NRE, NRO, and FCNR account types. The catch is in the details: who qualifies as a \"relative,\" what \"Former or Survivor\" actually allows day to day, and — the part that trips people up most — whose income the interest counts as for tax purposes.",
+      ],
+    },
+    {
+      heading: "Who qualifies, and what \"Former or Survivor\" means",
+      paragraphs: [
+        "The resident joint holder generally has to be a close relative of the NRI, using the definition in Section 2(77) of the Companies Act, 2013 — broadly, spouse, parents (including step-parents), children (including a son's wife or daughter's husband), and siblings; a friend, cousin, or business partner doesn't qualify for this specific arrangement.",
+        "\"Former or Survivor\" means the NRI (the \"Former\") is the primary holder who operates the account during their lifetime; the resident relative (the \"Survivor\") only steps into full operating rights after the NRI's death. That's distinct from a Power of Attorney, a separate mechanism some banks also allow, which lets the resident relative operate the account day-to-day while the NRI is alive — joint-holder status alone, without a PoA, generally doesn't grant that same standing. Bank practice on exactly how the two combine can differ, so confirm the specific operating rights your bank's version grants before assuming either one covers what you need.",
+      ],
+    },
+    {
+      heading: "Whose income is it, for tax purposes",
+      paragraphs: [
+        "Banks generally tag TDS against the PAN of the first-named (NRI) holder by default, which leads to a common misunderstanding: that the entire interest must therefore be taxed in the NRI's hands. TDS reporting and actual tax liability are two different questions — interest is properly taxable based on beneficial ownership (whose money actually funded the deposit), not whose name the TDS certificate cites. If the resident relative deposited their own funds into a jointly-held NRO account, their proportionate share of the interest is arguably their income, taxable at their own rates, not the NRI's higher NRO withholding rate.",
+        "Where that mismatch exists, Rule 37BA of the Income-tax Rules is the mechanism for reallocating TDS credit to the person who actually owns the income — the deductee files a declaration with the bank naming the other person and their PAN, and the bank is meant to file its TDS return accordingly. This is commonly cited by its old-Act rule number; whether it has been renumbered or reissued under the Income-tax Act, 2025 isn't something confirmed here, so check the current citation and your bank's own process before relying on it.",
+      ],
+    },
+    {
+      heading: "A restriction specific to NRE/FCNR joint accounts",
+      paragraphs: [
+        "Because NRE and FCNR accounts exist specifically to hold foreign-sourced funds, a resident joint holder generally cannot credit their own cash, cheques, or India-sourced remittances into a jointly-held NRE/FCNR account — doing so would run against the account's entire purpose under FEMA. This restriction doesn't carry over the same way to a jointly-held NRO account, since NRO accounts are meant for India-sourced income to begin with; but the underlying principle holds either way — the joint facility exists to serve the NRI's account, not to hand the resident relative an independent banking relationship of their own.",
+      ],
+    },
+  ],
+  relatedSlugs: [
+    "nre-vs-nro-accounts-which-do-you-need",
+    "nro-to-nre-transfer-explained",
+    "form-26as-reconciling-tds-credit-as-nri",
+  ],
+},
+{
+  slug: "form-26as-reconciling-tds-credit-as-nri",
+  clusterSlug: "nre-nro-tds",
+  title: "Form 26AS for NRIs: Reconciling the TDS You Actually Had Withheld",
+  description:
+    "Form 26AS is the record of TDS credit the tax department has actually received against your PAN — and for NRIs relying on third parties to withhold correctly, checking it against what was really deducted catches problems before they become refund delays.",
+  dek: "The TDS your bank or tenant deducted isn't real, tax-wise, until it shows up on your Form 26AS — here's where that credit gets lost, and how to catch it before filing.",
+  sections: [
+    {
+      paragraphs: [
+        "Form 26AS is the tax department's consolidated record of TDS and TCS credited against your PAN — in effect, a receipt showing what deductors (banks, tenants, property buyers, employers) have actually reported and deposited on your behalf, as distinct from what they told you they deducted. Since 2020, its scope has been split: the broader Annual Information Statement (AIS) now carries most of the other financial-transaction detail that used to sit inside Form 26AS, while Form 26AS itself (viewable via TRACES) has, from Assessment Year 2023-24 onward, been described as narrowing back to essentially TDS/TCS credit data. NRIs filing a return should generally check both, but 26AS is specifically the one that matters for confirming TDS credit.",
+      ],
+    },
+    {
+      heading: "Why this matters more for NRIs than residents",
+      paragraphs: [
+        "An NRI's India-sourced income — NRO interest, rent, property-sale proceeds — is almost always taxed at source by someone else: a bank, a tenant, a property buyer. The NRI has no independent way to confirm that deduction actually reached the government and got attributed to the right PAN, except by checking Form 26AS. If a credit doesn't show up there, the return generally can't claim it as tax already paid — meaning tax genuinely withheld from your income can still result in a demand notice or a stuck refund, through no fault of your own filing.",
+      ],
+    },
+    {
+      heading: "Common mismatch scenarios",
+      paragraphs: [
+        "A few patterns come up repeatedly. One is the wrong form: property buyers are supposed to use Form 26QB for a resident seller and Form 27Q for an NRI seller, and using 26QB by mistake for an NRI seller has been reported to pass through only a small fraction of the actual TDS credit, because the two forms feed different downstream systems. Another is simple PAN error: a bank teller or first-time NRI-landlord tenant misquoting or mistyping the PAN on the TDS filing, which orphans the credit under a PAN that isn't yours. A third is timing: TDS deposited late by the deductor, or deposited on time but not yet reflected because the deductor hasn't filed their quarterly TDS return (26Q/27Q) — the money can genuinely be with the government while your 26AS still shows nothing, until that return is filed.",
+      ],
+    },
+    {
+      heading: "What to do about a mismatch",
+      paragraphs: [
+        "The fix, in nearly every case, has to come from the deductor's side, not yours directly — a 26QB correction request on TRACES for a property transaction, or a request to the bank/tenant to revise their TDS return, is the standard route. Where the deductor is slow or unresponsive, escalating to your jurisdictional Assessing Officer, supported by your TDS certificate and bank/transaction records showing the deduction actually happened, is the fallback, though there's no reliable, consistently-cited timeline for how long that process typically takes — treat it as open-ended rather than a quick fix. The practical takeaway is timing: check Form 26AS well before your filing deadline, not the week of, since a correction request itself takes processing time you don't want to be racing against.",
+      ],
+    },
+  ],
+  relatedSlugs: [
+    "tds-on-nro-interest-explained",
+    "tds-on-rent-paid-to-nri-landlord",
+    "pan-card-for-nris-explained",
+  ],
+},
+{
+  slug: "form-8621-pfic-reporting-explained",
+  clusterSlug: "investments-repatriation",
+  title: "Form 8621, Explained: What Actually Happens Once You're on the Hook for PFIC Reporting",
+  description:
+    "A walkthrough of Form 8621 mechanics for US taxpayers holding Indian mutual funds — who must file, why it's one form per fund, and why the default tax treatment is harsher than most people expect.",
+  dek: "The form itself is only two pages — the tax regime behind it is where the real cost hides.",
+  sections: [
+    {
+      paragraphs: [
+        "If you've read our earlier piece on PFIC rules for Indian mutual funds, you already know the label — Passive Foreign Investment Company — gets applied to virtually every Indian mutual fund scheme once a US person holds it. What that article didn't get into is what filing actually looks like once you're past the \"yes, this applies to me\" stage. Form 8621 is the vehicle for it, and its mechanics are unusually unforgiving compared to most US information returns.",
+      ],
+    },
+    {
+      heading: "One form per fund, every year you're on the hook",
+      paragraphs: [
+        "The IRS requires a separate Form 8621 for each PFIC you hold, directly or indirectly — not one form summarizing your whole portfolio. Hold four different Indian mutual fund schemes and you're generally looking at four separate forms, each attached to your regular return. There is a de minimis exception commonly cited at $25,000 in total PFIC value ($50,000 married filing jointly, dropping to $5,000 for indirectly-held PFICs) below which you may not need to file at all — but that exception evaporates the moment you receive an \"excess distribution,\" recognize gain on a sale, or have a QEF or mark-to-market election in place. In practice, a lot of NRIs who think they're under the threshold aren't, once redemptions or partial withdrawals happen — confirm your specific numbers against current instructions with a preparer.",
+      ],
+    },
+    {
+      heading: "The default: the excess-distribution regime",
+      paragraphs: [
+        "Absent an election, gains and \"excess distributions\" (broadly, distributions well above a fund's recent average) aren't just taxed in the year you receive them. The amount is allocated ratably across your entire holding period: the portion attributed to the current year is taxed as ordinary income, and the portion attributed to each earlier year is taxed at the highest marginal rate that applied in that year, plus an interest charge running from that year's original filing deadline up to your current return. The commonly cited effect is that a long-held fund sold at a gain can generate a tax-plus-interest bill meaningfully larger than a simple capital-gains calculation would suggest — this is genuinely one of the more punitive corners of the US international tax code, and the exact arithmetic is complex enough to run past a preparer rather than estimate from a rule of thumb.",
+      ],
+    },
+    {
+      heading: "QEF and mark-to-market: available on paper, mostly unavailable in practice",
+      paragraphs: [
+        "Two elections exist to escape the default regime. A Qualified Electing Fund (QEF) election lets you be taxed annually on your share of the fund's earnings instead — but it requires the fund itself to issue a \"PFIC Annual Information Statement\" computed under US tax principles. Indian asset management companies, as best current guidance suggests, do not produce this statement for any major fund house — names repeatedly cited include HDFC, SBI, ICICI Prudential, Axis, Kotak, and Mirae. Without that statement, the QEF election generally isn't available to you, whatever your intentions. Mark-to-market is a second option, but it's restricted to \"marketable stock\" regularly traded on a qualifying exchange, and Indian mutual fund units typically don't meet that definition — though some Indian-listed ETFs might be a different case, worth confirming individually rather than assuming either way.",
+      ],
+    },
+    {
+      heading: "The compliance burden, honestly stated",
+      paragraphs: [
+        "Between per-fund filing, multi-year rate lookups, interest computation, and the fact that preparers who handle this well charge accordingly, Form 8621 compliance is genuinely one of the more expensive recurring costs of holding Indian mutual funds as a US person. None of this is a reason to panic-sell existing holdings without advice — dispositions have their own tax consequences — but it is a reason to treat \"I'll deal with PFIC reporting later\" as a more expensive deferral than it looks.",
+      ],
+    },
+  ],
+  relatedSlugs: [
+    "pfic-rules-for-nris-mutual-fund-trap",
+    "sip-investing-for-nris-nre-vs-nro",
+    "us-tax-on-indian-ulips-and-insurance-plans",
+  ],
+},
+{
+  slug: "sip-investing-for-nris-nre-vs-nro",
+  clusterSlug: "investments-repatriation",
+  title: "SIPs for NRIs: How the Funding Account Changes What You Can Bring Back",
+  description:
+    "How funding an Indian mutual fund SIP from an NRE versus NRO account changes repatriability, and why the PFIC treatment from our earlier article applies to every SIP installment, not just lump-sum investments.",
+  dek: "The mutual fund doesn't care which account you funded it from — Indian repatriation rules and US tax reporting both do.",
+  sections: [
+    {
+      paragraphs: [
+        "Systematic Investment Plans are the default way most resident Indians build mutual fund exposure, and NRIs can generally use them too — the mechanics of setting one up (KYC, PAN, bank mandate) are largely the same as for a resident investor. What differs, and what's easy to overlook when you're just enabling auto-debits, is that the account you fund the SIP from — NRE or NRO — quietly decides how much of your eventual redemption you can take out of India, and that every monthly installment separately carries the PFIC baggage from our earlier article.",
+      ],
+    },
+    {
+      heading: "NRE-funded vs. NRO-funded SIPs: the repatriation split",
+      paragraphs: [
+        "An NRE account holds foreign earnings, and investments funded from it are commonly described as fully repatriable — principal and gains alike, without a specific rupee cap, subject to standard banking documentation. An NRO account, by contrast, is meant for India-sourced income, and repatriation out of NRO-linked investments is capped — commonly cited at USD 1 million per financial year in aggregate across your NRO holdings — and requires a chartered accountant's certification (Form 15CB) and your own filing (Form 15CA) before the bank will remit. The point specific to SIPs is that the cap and paperwork attach to the source account, not to the mutual fund itself, so an NRO-funded SIP inherits the NRO account's constraints even though the fund units look identical to ones bought via NRE. If you're funding a SIP from both accounts over time, the redemption proceeds may need to be tracked back to source to know which repatriation rule applies — worth asking your bank or a CA how they expect this to be documented, since practice here isn't perfectly standardized.",
+      ],
+    },
+    {
+      heading: "The PFIC picture doesn't change — it just gets more granular",
+      paragraphs: [
+        "On the US tax side, nothing about SIP investing changes the underlying PFIC classification described in our earlier article: an Indian mutual fund scheme is still a PFIC, whether you bought units in one lump sum or across sixty monthly installments. What does change is the bookkeeping. Each SIP installment is generally treated as its own acquisition lot — its own purchase date, its own rupee NAV, its own USD conversion at that date's exchange rate, and its own holding period for computing gain when you eventually redeem. A monthly SIP running five years is, from a US tax lot-tracking perspective, up to sixty separate lots inside the same fund — still reported on a single Form 8621 per fund, but with the underlying excess-distribution or gain computation needing to account for each lot's own holding period. FIFO (first-in-first-out) is the commonly cited default ordering convention for redemptions, though it's worth confirming with a preparer whether specific identification is available and advisable in your situation.",
+      ],
+    },
+    {
+      heading: "Practical takeaways",
+      paragraphs: [
+        "If you're planning to eventually repatriate SIP proceeds, matching your funding source to your repatriation goal — NRE if you want unrestricted access later, NRO if the money is India-sourced and you're comfortable with the cap and paperwork — is worth deciding before you set up the mandate, not after redemption. And if you're already mid-SIP, keeping a running log of each installment's date, rupee amount, and exchange rate will save considerable reconstruction effort at tax-filing or redemption time.",
+      ],
+    },
+  ],
+  relatedSlugs: [
+    "pfic-rules-for-nris-mutual-fund-trap",
+    "form-8621-pfic-reporting-explained",
+    "nri-repatriation-limits-explained",
+  ],
+},
+{
+  slug: "401k-roth-ira-returning-to-india",
+  clusterSlug: "investments-repatriation",
+  title: "What Happens to Your 401(k) and Roth IRA When You Move Back to India for Good",
+  description:
+    "How India taxes US retirement accounts after an NRI becomes a resident again, why Roth IRAs are the more uncertain case, and where the US-India tax treaty does and doesn't help.",
+  dek: "The IRS and the US made peace with your Roth years ago — India hasn't necessarily gotten the memo.",
+  sections: [
+    {
+      paragraphs: [
+        "A 401(k) and a Roth IRA don't need to be touched, closed, or moved when you leave the US — both can generally sit exactly where they are, held under your existing account, indefinitely. What changes is which country's tax rules apply to them once you're a tax resident of India again, and that's where the two accounts diverge in ways that catch people off guard.",
+      ],
+    },
+    {
+      heading: "401(k) and traditional IRA: Section 89A gives you a matching deferral",
+      paragraphs: [
+        "India's default rule for foreign accounts is to tax growth as it accrues, which would be a mismatch with the US 401(k)/IRA regime that defers tax until withdrawal. Section 89A of the Income Tax Act, introduced specifically to fix this mismatch, lets residents holding retirement accounts in notified countries — the US, UK, and Canada are the countries most consistently named in current guidance — elect to have India also tax the account only on withdrawal, matching the US treatment, rather than taxing paper gains every year. The election is made annually via Form 10-EE. Get this wrong or skip the election and the commonly described consequence is that India taxes your 401(k)'s year-over-year growth on an accrual basis even though you haven't touched the money — a materially worse outcome. Whether the notified-country list has changed since last confirmed, and the exact mechanics of the Form 10-EE election, are worth checking directly rather than assuming — this is a relatively new provision and guidance is still settling.",
+      ],
+    },
+    {
+      heading: "Roth IRA: the genuinely unsettled case",
+      paragraphs: [
+        "This is where hedging matters most. A Roth IRA's US selling point — qualified withdrawals are entirely tax-free because you already paid tax on the contributions — doesn't obviously translate into Indian tax law, which has no native concept of an \"already-taxed, now permanently tax-free\" account. Some secondary sources describe Section 89A as extending to Roth IRAs on the theory that the account was opened while you were a US resident and the statute is meant to align timing generally; others flag a specific tension, namely that the relief is framed around income that is taxable on withdrawal in the foreign country — which a qualified Roth withdrawal, by design, is not — leaving it ambiguous whether the deferral election even applies, or whether India instead taxes Roth withdrawals as ordinary income or capital gains in the year received regardless of their US-tax-free status. Multiple sources describe this area as genuinely unresolved in practice, with tax professionals still working out a consistent position. Treat any confident claim about Roth IRA treatment in India — including this one — as provisional, and get a cross-border preparer's current read before making decisions, especially around Roth conversions timed to your move.",
+      ],
+    },
+    {
+      heading: "Where the US-India treaty fits — and where it doesn't",
+      paragraphs: [
+        "Article 20 of the treaty addresses private pensions and is commonly cited as giving taxing rights to your country of residence — meaning once you're an Indian resident, the treaty framework points toward India as the primary taxing jurisdiction on these distributions, not the US. But two caveats matter. First, the US \"saving clause\" generally lets the US keep taxing its own citizens and green-card holders as if the treaty didn't exist; some sources describe pension provisions as specifically carved out of the saving clause, making the treaty's residence-country rule effective even for US citizens/green-card holders, while others describe that carve-out as narrower, applying only to certain paragraphs of Article 20, not private pension annuities generally. This is a genuinely contested reading, and it matters enormously for US citizens and green-card holders specifically (as opposed to NRIs who hold neither status) — this is a case where \"confirm with a cross-border tax preparer\" isn't boilerplate, it's the actual answer. Second, even where the treaty helps avoid double taxation, it typically does so via a foreign tax credit mechanism rather than eliminating either country's filing obligation — you'd still likely file in both places.",
+      ],
+    },
+    {
+      heading: "The RNOR window as a planning consideration",
+      paragraphs: [
+        "Returning NRIs commonly qualify for RNOR status for roughly two to three financial years after their return, based on how many of the preceding years they spent outside India (see our RNOR article for the mechanics). During this window, foreign income that isn't remitted to India is commonly described as exempt from Indian tax — which some sources point to as a planning opportunity for Roth conversions or retirement account decisions made while still RNOR, on the theory that Indian tax exposure is temporarily reduced. This is worth raising with a cross-border planner well before your move rather than acting on from a general description like this one — the RNOR qualification rules themselves have reportedly seen recent changes, and getting the qualifying-year count wrong undoes the whole strategy.",
+      ],
+    },
+  ],
+  relatedSlugs: [
+    "us-estate-tax-exposure-for-nris",
+    "rnor-status-explained-for-returning-nris",
+    "nps-for-nris-explained",
+  ],
+},
+{
+  slug: "claiming-refund-excess-tds-property-sale-nri",
+  clusterSlug: "real-estate-capital-gains",
+  title: "Getting Back Excess TDS Withheld on Your Property Sale",
+  description:
+    "When a Form 13/128 certificate wasn't obtained before closing, an NRI seller can still recover TDS withheld above their actual tax liability by filing an Indian income tax return — a slower, after-the-fact route with its own timeline and paperwork.",
+  dek: "Missed the window for a lower-TDS certificate? The money isn't gone — it just takes a tax return, not a phone call, to get it back.",
+  sections: [
+    {
+      paragraphs: [
+        "If you sold Indian property as an NRI and the buyer withheld Section 195 TDS on the full sale consideration rather than the gain, you may be sitting on a refund — but only if you go and claim it. Unlike a Form 13 (recently renumbered Form 128) certificate, which corrects the withholding amount before the sale closes, this is the after-the-fact route: for sellers who either didn't apply for that certificate in time, or whose actual tax liability still came in below what was withheld even with one in place.",
+        "The mechanism is simple in principle and slower in practice: you file an Indian income tax return for the relevant financial year, report the sale and your actual capital gain, and let the return itself claim back the difference between TDS already paid and tax actually owed. Filing is required even if your total Indian income for the year is below the normal taxable threshold — a refund only gets processed if a return is filed.",
+      ],
+    },
+    {
+      heading: "The paperwork that has to line up",
+      paragraphs: [
+        "Two documents do the real work here. Form 26AS (and the newer Annual Information Statement, AIS) is the tax department's own ledger of TDS credited against your PAN — it's what the return is checked against, so if the buyer's TDS filing (Form 27Q, the non-resident-specific TDS return, not the resident-property Form 26QB) hasn't posted correctly, your claimed credit won't match and the refund stalls. Form 16A is the TDS certificate the buyer is required to issue you as proof of what was deducted; keep it, but treat Form 26AS/AIS as the authoritative record if the two ever disagree.",
+        "This is also where buyer cooperation matters more than sellers often expect: a buyer who deducted TDS under Section 195 needs their own Tax Deduction Account Number (TAN) and has to file Form 27Q correctly for your credit to show up. A sale where the buyer is disorganized about this step is a common, and frustrating, source of refund delay that has nothing to do with your own return.",
+      ],
+    },
+    {
+      heading: "How long it actually takes",
+      paragraphs: [
+        "For a straightforward return, refunds are commonly cited as arriving within roughly four to eight weeks of e-verification — but that figure is for routine cases, and property-sale returns reporting capital gains for an NRI are described by multiple sources as more likely to get pulled into scrutiny than an ordinary salary return, which can stretch the timeline to several months. Treat any specific week-count as a rough planning figure, not a guarantee, and confirm current processing patterns before relying on it for cash-flow planning around, say, a subsequent purchase abroad.",
+        "One thing works in your favor while you wait: Section 244A entitles you to interest on a delayed refund, commonly cited at 0.5% per month (or part of a month) from the start of the assessment year until the refund is issued — small compensation, but it does mean the wait isn't entirely uncompensated.",
+      ],
+    },
+    {
+      paragraphs: [
+        "This route and the Form 13/128 certificate aren't competitors so much as a before/after pair: the certificate is the tool for preventing over-withholding at the point of sale, and the refund-via-return is the fallback for whatever gap remains — whether because the certificate wasn't pursued, arrived too late, or simply didn't close the gap completely. Most NRI sellers with a meaningfully appreciated property end up using some combination of both.",
+      ],
+    },
+  ],
+  relatedSlugs: [
+    "section-195-tds-on-nri-property-sales",
+    "form-13-lower-tds-certificate-worth-it",
+    "repatriating-property-sale-proceeds",
+  ],
+},
+{
+  slug: "selling-agricultural-land-farmhouse-nri",
+  clusterSlug: "real-estate-capital-gains",
+  title: "Selling Agricultural Land, a Farmhouse, or Plantation Property You Inherited as an NRI",
+  description:
+    "NRIs generally can't buy farmland in India, but inheriting it is treated differently — and once you own it, who you're allowed to sell it to, and whether the gain is even taxable, both hinge on classifications most sellers have never heard of.",
+  dek: "You almost certainly couldn't have bought this land as an NRI. Inheriting it is a different rule — and selling it runs into restrictions and tax quirks that don't apply to any other property type.",
+  sections: [
+    {
+      paragraphs: [
+        "Under FEMA, NRIs are generally barred from purchasing agricultural land, plantation property, or a farmhouse in India — one of the few hard purchase restrictions in an otherwise fairly open property market for NRIs. Inheritance is the well-established exception: an NRI can inherit such property from a resident (or from another person who lawfully acquired it), and once inherited, the question shifts from \"can I own this\" to \"what can I do with it,\" which turns out to have its own restrictions.",
+      ],
+    },
+    {
+      heading: "Who you're actually allowed to sell it to",
+      paragraphs: [
+        "The consistent guidance across FEMA-focused sources is that an NRI holding inherited agricultural land, a farmhouse, or plantation property can generally only sell it to a person resident in India who is also an Indian citizen — not to another NRI, an OCI, or a foreign national. On top of that national-level restriction, agricultural land is also a state subject, and several states layer on their own buyer-eligibility rules — for example, sources describe Maharashtra and Gujarat as generally requiring the buyer to already be a recognized \"agriculturist,\" while Karnataka's rules were reportedly loosened by a 2020 amendment. Given how much this varies by state and how often state land laws change, confirm the current rule for the specific state where the property sits before assuming a buyer is eligible — this is not a one-size-fits-all national rule.",
+      ],
+    },
+    {
+      heading: "Whether the gain is even taxable — the rural/urban line",
+      paragraphs: [
+        "This is the detail that surprises the most sellers: India's capital-gains regime doesn't treat all agricultural land the same way. Land classified as \"rural\" agricultural land under Section 2(14)(iii) of the Income-tax Act generally isn't treated as a \"capital asset\" at all, which means its sale is generally described as falling outside capital gains tax entirely — a meaningfully different outcome from every other property type this site covers. \"Rural\" here is a location test, not a land-use test: sources describe it as based on distance from, and the population of, the nearest municipality (commonly cited thresholds include land outside all municipal limits, or within a municipality of 10,000 or fewer people, plus a tiered aerial-distance test running up to roughly 8 km for land near the largest cities) — not on whether the land is actually farmed. A fully cultivated plot can be \"urban\" for this purpose if it sits inside the wrong municipal boundary, and a barren plot can be \"rural\" if it sits outside one.",
+        "Land that falls on the \"urban\" side of that line is a capital asset like any other, taxed as LTCG or STCG depending on the holding period, under the same post-Budget-2024 flat-rate regime (and the same indexation-removal question) covered elsewhere on this site. Given how specific and change-prone the rural/urban thresholds are, treat the specific numbers here as a starting point for verification against current statutory text — not as settled fact to rely on directly.",
+      ],
+    },
+    {
+      heading: "Getting the proceeds out",
+      paragraphs: [
+        "Sale proceeds from inherited agricultural property go into an NRO account like any other India-sourced sale, subject to the same general repatriation ceiling and documentation covered in our repatriation article — there's no separate, more generous repatriation carve-out for agricultural land specifically, as far as available sources indicate.",
+      ],
+    },
+  ],
+  relatedSlugs: [
+    "selling-inherited-property-in-india-as-nri",
+    "repatriating-property-sale-proceeds",
+    "power-of-attorney-nri-property-sale",
+  ],
+},
+{
+  slug: "power-of-attorney-nri-property-sale",
+  clusterSlug: "real-estate-capital-gains",
+  title: "Power of Attorney for an NRI Property Sale: What It Does and Doesn't Change",
+  description:
+    "A Power of Attorney lets someone in India complete your property sale on your behalf, but it doesn't transfer your tax liability — TDS and capital gains still attach to you as the NRI seller, and the document itself has its own execution and registration rules.",
+  dek: "A PoA moves the paperwork burden onto someone in India. It does not move the tax bill.",
+  sections: [
+    {
+      paragraphs: [
+        "Selling property in India from abroad usually means someone has to physically show up — for registration formalities, for buyer negotiations, sometimes for multiple rounds of documentation. Rather than making repeated trips, many NRI sellers execute a Power of Attorney (PoA) authorizing a trusted person in India, often a relative, to sign and complete the sale on their behalf. It's a common and legitimate tool — but it changes who can act, not who is legally and financially on the hook for the sale.",
+      ],
+    },
+    {
+      heading: "Getting the document itself right",
+      paragraphs: [
+        "Sources broadly recommend a Special (or Specific) PoA — narrowly scoped to the particular property and transaction — over a General PoA that hands over broader authority than a single sale requires. Because the NRI seller is abroad at signing, the PoA generally needs to be executed either before a local notary, with the notarized document then apostilled if the country is a Hague Apostille Convention member (the US, UK, Singapore, and Australia are commonly cited examples), or directly before the Indian Embassy or Consulate in the seller's country of residence, which sources describe as the route that needs no separate apostille step since the embassy's own attestation is accepted in India.",
+        "Neither of those steps is the end of it. A foreign-executed PoA generally isn't usable for an Indian property transaction until it's been stamped and adjudicated in India: sources point to Section 18 of the Indian Stamp Act, 1899, as requiring the document to be presented for stamping within three months of first arriving in India, with a District Collector empowered to adjudicate the correct duty — and at least one court decision cited in these sources describes a PoA presented after that window being impounded and penalized rather than simply accepted late. Stamp duty itself is a state subject with rates that vary by state, so confirm the current requirement in the state where the property sits, and don't treat the three-month figure as something you can safely let slide.",
+      ],
+    },
+    {
+      heading: "The part a PoA cannot change",
+      paragraphs: [
+        "Whatever authority the PoA grants over signing and paperwork, it does not shift tax liability. Sources are consistent on this point: acts done by a PoA holder are legally treated as acts of the principal — the NRI seller — meaning Section 195 TDS is still calculated against the seller's status as an NRI (not the resident status of whoever holds the PoA), and the resulting capital gain is still assessed to the seller's own PAN. A PoA holder signing the sale deed doesn't make the transaction a resident-seller sale for tax purposes, and doesn't create any separate tax exposure for the PoA holder personally — the seller remains the one who owes the tax, claims any refund of excess TDS, and is named on the return.",
+      ],
+    },
+    {
+      paragraphs: [
+        "In practice, a PoA is a logistics tool, not a tax-planning one — it solves the \"I can't be there in person\" problem and leaves the Section 195 withholding, refund, and capital-gains-reporting questions exactly where they'd be if the NRI seller had signed everything personally.",
+      ],
+    },
+  ],
+  relatedSlugs: [
+    "section-195-tds-on-nri-property-sales",
+    "claiming-refund-excess-tds-property-sale-nri",
+    "joint-property-ownership-nri-capital-gains",
+  ],
+},
 ];
 
 export function getArticle(slug: string): Article | undefined {
