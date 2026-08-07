@@ -1,13 +1,13 @@
-// Estimates TDS a buyer must withhold under Section 195 when purchasing immovable
+// Estimates TDS a buyer must withhold under Section 393(2) when purchasing immovable
 // property from an NRI seller. Unlike Section 194-IA's flat 1% for resident sellers,
-// Section 195 requires the buyer to withhold at the rate the gain is actually
+// Section 393(2) requires the buyer to withhold at the rate the gain is actually
 // taxable at, applied to the FULL sale consideration (not just the gain), unless the
 // seller holds a lower/nil-deduction certificate.
 //
 // Default (no certificate) rates modeled here: 12.5% for long-term gains (property
-// held over 24 months; see realEstateCapitalGains.ts) and, since a buyer generally
-// cannot know the seller's income slab, a conservative 30% for short-term gains —
-// the top slab rate, which is common buyer/deductor practice absent a certificate.
+// held over 24 months; see realEstateCapitalGains.ts) and 20% for short-term gains
+// — the definite statutory rate under Section 393(2) [Table S. No. 17(e)], tied to
+// Section 196's short-term capital gains classification (not a buyer estimate).
 // A flat 4% health-and-education cess is added to whichever base rate applies,
 // mirroring how this site's other TDS tool (NRE/NRO & TDS category) presents its
 // rate: effective rate = base rate x 1.04.
@@ -23,7 +23,7 @@
 
 export const CESS_RATE_PERCENT = 4;
 export const LTCG_DEFAULT_TDS_RATE_PERCENT = 12.5;
-export const STCG_DEFAULT_TDS_RATE_PERCENT = 30;
+export const STCG_DEFAULT_TDS_RATE_PERCENT = 20;
 
 export type NriPropertySaleTdsInput = {
   saleConsiderationInr: number;
