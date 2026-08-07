@@ -1910,7 +1910,163 @@ export const articles: Article[] = [
     "joint-property-ownership-nri-capital-gains",
   ],
 },
-];
+{
+      slug: "form-67-foreign-tax-credit-filing-guide",
+            clusterSlug: "dtaa-tax-residency",
+            title: "Form 67: How NRIs and Returning Residents Actually Claim Foreign Tax Credit",
+            description:
+        "Knowing you're entitled to foreign tax credit under DTAA is only half the job — Form 67 is the procedural step that actually gets it into your Indian tax computation, and missing its timing derails more claims than the entitlement itself.",
+              dek: "Foreign tax credit isn't automatic. Form 67 is the document that turns a DTAA entitlement into an actual reduction in your Indian tax bill — and its deadline catches more people than the underlying rule does.",
+              sections: [
+          {
+                    paragraphs: [
+                                "Claiming DTAA relief and actually receiving it are two different things. The relief itself — credit for tax you've already paid abroad, set off against your Indian tax on the same income — is a substantive right under India's tax treaties and domestic law. But the Income Tax Department doesn't scan your foreign tax documents and apply it for you. You have to file Form 67, under Rule 128 of the Income-tax Rules, and you have to file it in a specific way, within a specific window, or the credit gets stuck.",
+                                "Form 67 matters most to people who don't fit the simple 'NRI' or 'resident' boxes cleanly in a given year: someone who moved back to India mid-year and still has US-sourced income taxed there, a resident Indian with foreign investment income subject to withholding abroad, or an RNOR with a foreign consulting contract. If you're a resident (ordinarily or not) reporting foreign-source income that India also taxes, and tax was already withheld or paid on it overseas, Form 67 is how you get credit for that overseas payment against what you owe India — separate and distinct from Form 15CA/15CB, which governs money leaving India, not credit for tax already paid on income earned abroad.",
+                              ],
+          },
+          {
+                    heading: "What actually goes into the form",
+                    paragraphs: [
+                                "Form 67 isn't a bare declaration — it requires supporting detail, and the tax department can and does query claims that don't have it. Rule 128(8) sets out what counts as acceptable proof of foreign tax paid.",
+                              ],
+                    list: [
+                                "A statement of the foreign income and the foreign tax deducted or paid on it, in the format Form 67 itself specifies",
+                                "Proof of payment — a certificate or statement from the foreign tax authority, the foreign payer (for tax deducted at source abroad), or a self-certified statement of the foreign return along with proof of payment/deduction, where the deducting authority's certificate isn't available",
+                                "Currency conversion at the Telegraphic Transfer buying rate as on the last day of the month immediately preceding the month in which the foreign tax was paid or deducted — not the date of the Indian tax filing",
+                              ],
+          },
+          {
+                    heading: "The deadline that trips people up",
+                    paragraphs: [
+                                "Rule 128(9) gives you until the end of the relevant assessment year to file Form 67, provided your return itself was filed on time under Section 139(1) or as a belated return under 139(4) — for FY2025-26/AY2026-27, that technically means you have until 31 December 2026, well after the ITR filing deadline itself. If you're filing an updated return under Section 139(8A), Form 67 needs to accompany that filing instead.",
+                                "In practice, most tax practitioners don't rely on that longer window. The return-processing system cross-checks Form 67 against the credit claimed in the ITR, and filing it well before or alongside your return avoids a mismatch notice that then has to be resolved after the fact. Treat 'end of assessment year' as the outer legal limit, not the target date.",
+                              ],
+          },
+          {
+                    heading: "What happens if you miss it anyway",
+                    paragraphs: [
+                                "A late Form 67 is not automatically fatal, and this is worth knowing before you assume a missed window means a lost credit. Multiple ITAT benches — Mumbai, Kolkata, Hyderabad, Indore — have held that Rule 128(9)'s timeline is directory rather than mandatory, on the reasoning that foreign tax credit is a substantive right under the treaty relief provisions, and a procedural rule can't extinguish a right the underlying section grants. Rule 128 itself, unlike some other provisions in the Act, doesn't contain express language disallowing the credit for a late filing.",
+                                "That case law is real, but it's relief you get on appeal, not a default outcome. The CPC's automated processing will typically deny or flag the credit first if Form 67 wasn't on record when the return was processed, leaving you to file a rectification request or, if that fails, go through appellate channels citing this line of rulings. It's an available remedy, not a substitute for filing on time.",
+                              ],
+          },
+          {
+                    heading: "The credit itself has limits",
+                    paragraphs: [
+                                "Even a correctly and timely filed Form 67 doesn't hand back a rupee-for-rupee refund of foreign tax paid. The credit is capped at the lower of the foreign tax rate or the Indian tax rate applicable to that specific income, computed country-by-country and income-by-income, and it applies only against Indian income tax, surcharge, and cess — not against interest, fees, or penalties charged under Indian law. Foreign tax that's currently under dispute abroad isn't creditable until that dispute is resolved and the tax is actually paid.",
+                                "One more thing worth flagging given how much else has shifted: under the Income-tax Act, 2025, now in force from FY2026-27, the underlying double-taxation relief provisions move from the old Sections 90, 90A, and 91 to new Sections 159 and 160, and Form 67 itself is being succeeded by Form 44 under Rule 76 of the Income-tax Rules, 2026. For the current filing season covering income earned before 1 April 2026, Form 67 and Rule 128 remain the operative mechanics — but don't assume the form number stays the same next year.",
+                              ],
+          },
+              ],
+              relatedSlugs: [
+                "claiming-dtaa-relief-credit-vs-exemption",
+                "rnor-status-explained-for-returning-nris",
+                "dual-status-tax-return-year-you-move",
+                "foreign-tax-credit-form-1116-for-nris",
+              ],
+          },
+        {
+              slug: "deemed-residency-rule-explained-who-it-hits",
+              clusterSlug: "dtaa-tax-residency",
+              title: "The Deemed Residency Rule: Which High-Income NRIs Does It Actually Catch?",
+              description:
+                      "Section 6(1A) — now Section 6(7) under the Income-tax Act, 2025 — was built to catch Indian citizens who arrange their affairs to owe tax nowhere. Most NRIs, including most people in the US, UK, or Singapore, aren't in its path at all.",
+              dek: "A Finance Act 2020 provision made 'stateless for tax purposes' a taxable status in India. Here's exactly who it reaches, and why paying tax anywhere else usually keeps you out of it entirely.",
+              sections: [
+                {
+                          paragraphs: [
+                                      "The deemed residency rule gets more anxious attention among NRIs than its actual reach justifies. It was introduced by the Finance Act 2020, originally as Section 6(1A) of the Income-tax Act, 1961, and is renumbered Section 6(7) under the Income-tax Act, 2025, now in force from FY2026-27. The provision exists to close a specific loophole: an Indian citizen who spends enough time abroad to avoid being a tax resident anywhere under a physical-presence test, and who happens to base themselves in a jurisdiction with no personal income tax, could historically go a full year owing income tax to no country at all despite substantial Indian-source income. That's the target. It is not a general tightening of NRI taxation, and it doesn't touch most people who already pay tax as residents somewhere else.",
+                                    ],
+                },
+                {
+                          heading: "The two conditions, and both have to be true",
+                          paragraphs: [
+                                      "This provision only applies to someone who is already a non-resident under India's ordinary physical-presence test — it's a backstop, not a first-line residency rule. On top of that, both of the following have to hold in the same previous year:",
+                                    ],
+                          list: [
+                                      "You are an Indian citizen (not an OCI or PIO cardholder, and not a foreign citizen of Indian origin — the rule is written narrowly to citizenship)",
+                                      "Your total income other than income from foreign sources — broadly, income accruing or arising outside India, excluding income from a business controlled or a profession set up in India — exceeds ₹15 lakh in the previous year",
+                                      "You are not liable to income tax in any other country or territory by reason of domicile, residence, or any similarly framed criterion",
+                                    ],
+                },
+                {
+                          heading: "Who this actually catches",
+                          paragraphs: [
+                                      "The clearest fact pattern is an Indian citizen based in the UAE, Bahrain, Saudi Arabia, Kuwait, or another jurisdiction that levies no personal income tax on individuals, who spends few enough days in India to avoid residency under the ordinary test, but who still earns more than ₹15 lakh a year from Indian rental income, a directorship, consulting fees routed to an Indian entity, or a business controlled from India. Because that person owes personal income tax nowhere — not in India under the ordinary test, not in their country of residence because it simply doesn't tax individuals — they fall squarely into the gap Section 6(7) was written to close.",
+                                    ],
+                },
+                {
+                          heading: "Who it doesn't touch",
+                          paragraphs: [
+                                      "This is where the rule is narrower than its reputation suggests. It does not apply to OCI holders or foreign passport holders of Indian origin — only Indian citizens. It does not apply to anyone below the ₹15 lakh Indian-income threshold, which excludes the majority of salaried NRIs. And critically, it does not apply to someone who is a genuine tax resident of another country, even a low-tax one — being 'liable to tax' by reason of residence is generally read as being within that country's tax jurisdiction on your worldwide or resident income, not as actually owing a positive tax bill after credits and deductions bring it to zero. An NRI who is a bona fide tax resident of the US, UK, Singapore, or any other jurisdiction that taxes based on residence stays outside this provision, because they are, by definition, liable to tax somewhere else.",
+                                    ],
+                },
+                {
+                          heading: "If you are caught, it's a soft landing, not full residency",
+                          paragraphs: [
+                                      "A person deemed resident under this provision is always classified as 'resident but not ordinarily resident' (RNOR), never as an ordinarily resident. That distinction does real work: RNOR status means foreign-source income stays outside India's tax net, exactly as it would for a straightforward NRI, and only Indian-source income — along with income from any business controlled or profession set up in India — becomes taxable at resident slab rates. It also means the deemed resident does not pick up Schedule FA foreign-asset disclosure obligations under the Black Money Act framework, since that requirement is tied to ordinarily-resident (ROR) status specifically, not RNOR. Deemed residents also generally fall outside DTAA tie-breaker analysis in practice, since the provision is aimed at people with no residence-based tax liability anywhere else to tie-break against in the first place. The practical effect for someone who does get caught is closer to a reclassification for a handful of Indian-source income items than a wholesale change in tax treatment.",
+                                    ],
+                },
+                    ],
+              relatedSlugs: [
+                      "nri-or-resident-how-tax-residency-works",
+                      "dtaa-tie-breaker-test-explained",
+                      "rnor-status-explained-for-returning-nris",
+                      "oci-pio-status-vs-tax-residency",
+                    ],
+        },
+        {
+              slug: "form-10f-and-trc-claiming-dtaa-benefits-in-india",
+              clusterSlug: "dtaa-tax-residency",
+              title: "Form 10F and the Tax Residency Certificate: The Paperwork Between You and Your DTAA Rate",
+              description:
+                      "A Tax Residency Certificate alone rarely gets an NRI the lower treaty rate on Indian income anymore — Form 10F (now Form 41 under the Income-tax Act, 2025) has to go with it, filed electronically, before the payment is made.",
+              dek: "The treaty rate on your Indian income isn't self-executing. Without a Tax Residency Certificate and the accompanying declaration filed on the e-filing portal, an Indian payer defaults to the higher domestic withholding rate — and getting it back later takes a refund claim.",
+              sections: [
+                {
+                          paragraphs: [
+                                      "A DTAA existing between India and your country of residence doesn't automatically get you the lower treaty rate on dividends, interest, rent, or fees for services sourced in India. The payer — a bank, a tenant, an Indian company paying a consulting invoice — has to have documentary proof in hand before they deduct tax, or they default to the higher domestic rate under the Income-tax Act. That proof is a combination of two documents: a Tax Residency Certificate (TRC) from your country of residence, and a supplementary declaration on the Indian e-filing portal, historically called Form 10F. Under the Income-tax Act, 2025, now governing FY2026-27 onward, that declaration is renumbered Form 41, filed under Section 159(8) read with Rule 75 of the Income-tax Rules, 2026 — the mechanics are the same in substance, but don't be surprised if the form name in your CA's checklist has changed from what it was last year.",
+                                    ],
+                },
+                {
+                          heading: "Why the TRC by itself stopped being enough",
+                          paragraphs: [
+                                      "For a period after DTAA relief provisions were first written, a TRC alone was treated as sufficient proof of treaty eligibility. A 2013 amendment changed that: it added a requirement that non-residents furnish additional prescribed information if the TRC itself didn't already contain it — country of residence, taxpayer identification number, period of residency, and a few other specifics that a foreign tax authority's TRC template often omits. Form 10F was introduced to capture exactly that gap-filling information. Under the new Form 41 regime, that logic has actually tightened further: rather than being required only when the TRC is missing details, the declaration is now mandatory in every case where treaty benefits are claimed, regardless of how complete the TRC already is.",
+                                    ],
+                },
+                {
+                          heading: "Getting the TRC itself",
+                          paragraphs: [
+                                      "The TRC has to come from the tax authority of your actual country of residence — the IRS issues Form 6166 for US tax residents requesting one, and HMRC has its own certificate process for UK residents; most jurisdictions with a functioning tax administration have an equivalent. It typically needs to be renewed for each relevant tax year rather than treated as a one-time document. (The reverse case — an Indian resident who needs a TRC to claim relief in a foreign country — goes through a different route domestically, applying to the jurisdictional Assessing Officer using Form 10FA and receiving Form 10FB; that's a separate process from what an NRI claiming Indian-side treaty relief needs.)",
+                                    ],
+                },
+                {
+                          heading: "What the declaration actually asks for",
+                          paragraphs: [
+                                      "Beyond the TRC, the Form 10F/Form 41 declaration collects a defined set of details the Indian tax administration wants on record independent of what the TRC template happens to include.",
+                                    ],
+                          list: [
+                                      "Status of the assessee — individual, company, firm, or other category",
+                                      "Nationality, or country/place of incorporation for a non-individual",
+                                      "Tax identification number in the country of residence, or a unique identification number if no TIN exists there",
+                                      "The specific period for which the TRC's residential status applies",
+                                      "Address in the country of residence during that period",
+                                    ],
+                },
+                {
+                          heading: "Skip it, and the cost shows up as a refund claim, not a rate cut",
+                          paragraphs: [
+                                      "Filing has been fully electronic since October 2023, including for non-residents without an Indian PAN — the e-filing portal has a dedicated registration category for 'non-residents not holding and not required to have PAN,' so lack of a PAN isn't a reason to skip this step. If the TRC and declaration aren't on file with the payer before the payment is made, the payer has no choice but to withhold at the higher default domestic rate rather than the treaty rate — this shows up often with rent paid to NRI landlords and interest or dividend payments. Getting that difference back afterward means claiming a refund through your Indian income tax return rather than simply asking the payer to correct it retroactively, which is a slower and more paperwork-heavy path than filing the TRC and Form 10F/Form 41 before the money moves in the first place.",
+                                    ],
+                },
+                    ],
+              relatedSlugs: [
+                      "claiming-dtaa-relief-credit-vs-exemption",
+                      "dtaa-tie-breaker-test-explained",
+                      "tds-on-rent-paid-to-nri-landlord",
+                      "form-w8ben-treaty-rate-claims",
+                    ],
+        },
+          ];
 
 export function getArticle(slug: string): Article | undefined {
   return articles.find((article) => article.slug === slug);
