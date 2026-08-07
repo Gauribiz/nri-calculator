@@ -73,6 +73,84 @@ page, unchanged, per CLAUDE.md rule 3.
   chooser recommends NRE for foreign-sourced funds, NRO for India-sourced
   funds, and flags FEMA-status uncertainty when the NRI/PIO box is
   unchecked — with no console errors.
+## 2026-08-06 — Blog/FAQ content pass, batch 4 (nric-006d)
+
+Orientation confirmed `nri-calculator.phase` implied an active queue and
+identified `nric-006d` (blog/FAQ content pass, batch 4) as the single
+highest-priority, and only, queued task. Duplicate-run check: the most
+recent `nri-calculator` entry in `orchestrator-state/state.json`'s
+`run_history` (2026-08-06T17:40:00Z) described completing `nric-006c`
+(batch 3), not `nric-006d`, so this pass is not a duplicate trigger.
+**Correction found this pass:** PR #15 (`nric-006c`, batch 3) is
+actually **merged to `main`** — confirmed via the GitHub API (`merged:
+true`, `merged_by: gauribiz08-cell`, merged 2026-08-06T15:22:41Z), per
+the task's own explicit instruction to re-check PR #15's status rather
+than trust the state file's "open" note. Read `nri-calculator/CLAUDE.md`
+in full — rule 3 (Disclaimer prominent placement) and rule 4 (no
+unrequested features) checked against the plan. Confirmed the
+PreToolUse guard is live via a read-only clone (`pretooluse-guard.sh`
+git mode `100755`, `.claude/settings.json` wires it to
+`Bash|Write|Edit`). No database involved
+(`supabase_project_ref_production: null`), and this task needed no
+Supabase access.
+
+Continued the `nric-006`/`nric-006b`/`nric-006c` content build with a
+fourth batch, per `nric-006d`'s own scope ("3-5 more articles per
+cluster") — see ADR 0014 for the full reasoning on volume (3/cluster,
+matching batches 1-3's pace) and topic selection:
+
+- **12 new articles** (3 per cluster, `src/lib/blog/articles.ts`) and
+  **12 new FAQ entries** (`src/lib/blog/faqs.ts`) — Form W-8BEN
+  treaty-rate claims, the (nonexistent) India-US Social Security
+  totalization agreement, and OCI/PIO status vs. tax residency for
+  DTAA & Tax Residency; premature NRO fixed-deposit withdrawal and its
+  TDS mechanics, joint NRE/NRO accounts with a resident relative, and
+  Form 26AS reconciliation for NRE/NRO & TDS; Form 8621 PFIC-reporting
+  mechanics, SIP investing (NRE vs. NRO funding), and US 401(k)/Roth IRA
+  treatment on returning to India for Investments & Repatriation;
+  claiming a refund of excess property-sale TDS, selling inherited
+  agricultural land as an NRI, and Power of Attorney mechanics for Real
+  Estate Capital Gains.
+- Research was split across four independent parallel subagent passes
+  (one per cluster), each cross-checking its own topics via live web
+  search against convergent secondary tax-reference sources —
+  irs.gov/incometax.gov.in/rbi.org.in direct fetches returned HTTP 403
+  throughout, consistent with every prior pass on this site.
+- Every new article is interlinked within its cluster (2-3
+  related-article links spanning batches 1-4) and inherits the existing
+  `/blog/[slug]` template's `Disclaimer` placement and category-page
+  "Related reading" wiring — no changes to batches 1-3's own content or
+  to the `/blog`/`/blog/[slug]`/`/faq` route code.
+- Site now has 48 articles/48 FAQs (12/cluster); remainder split into
+  new task `nric-006e` (queued in `orchestrator-state/state.json`).
+
+**Every figure in this batch still needs Ajinkya's own
+fact-verification pass before publish-ready** — see ADR 0014 for the
+full list, most notably: the Roth IRA/Section 89A interaction (flagged
+as genuinely unresolved among tax professionals, not just an
+unconfirmed number), the DTAA Article 20 "saving clause" reading for US
+citizens/green-card holders, the rural/urban agricultural-land
+capital-asset thresholds under Section 2(14)(iii), state-specific
+agricultural-land buyer-eligibility rules, the Power of Attorney
+stamping/adjudication window, and the NRO FD premature-withdrawal
+TDS-reconciliation mechanics (left as an open question in the article
+itself, since research found no single consistent answer).
+
+Verified this pass (locally, via a fresh clone) with `npm ci`, `npx tsc
+--noEmit` (clean), `npm run lint` (clean), and `npm run build` (59
+static routes, up from 47, including 48 `/blog/[slug]` article pages up
+from 36, all prerendering statically), plus a programmatic check
+confirming no duplicate article slugs/FAQ ids and no dangling
+`relatedSlugs`/`relatedArticleSlug` references. Also ran a local
+`npm run start` smoke test: all four new-batch sample pages return 200,
+an unknown slug returns 404, the blog index and FAQ page list the new
+entries, the `/dtaa-tax-residency` category page's "Related reading"
+section picks up all three new DTAA articles automatically, and the
+`Disclaimer` renders immediately above the article body on every new
+page. No new entries appeared in `.claude/hooks/violations.log` this
+pass (untracked/gitignored, no violation-triggering tool calls
+occurred), so no Gmail draft was needed.
+
 ## 2026-08-06 — Blog/FAQ content pass, batch 3 (nric-006c)
 
 Orientation confirmed `nri-calculator.phase` implied an active queue and
