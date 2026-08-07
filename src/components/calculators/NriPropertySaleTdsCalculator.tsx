@@ -31,15 +31,15 @@ export default function NriPropertySaleTdsCalculator() {
 
   return (
     <CalculatorShell
-      title="Section 195 TDS-on-NRI-property-sale estimator"
-      intro="Estimates the TDS a buyer must withhold under Section 195 when buying property from an NRI seller — applied to the full sale consideration, not just the gain, unless a lower-deduction certificate is held."
+      title="Section 393(2) TDS-on-NRI-property-sale estimator"
+      intro="Estimates the TDS a buyer must withhold under Section 393(2) when buying property from an NRI seller — applied to the full sale consideration, not just the gain, unless a lower-deduction certificate is held."
     >
       <NumberField
         label="Sale consideration (full sale price)"
         value={saleConsiderationInr}
         onChange={setSaleConsiderationInr}
         suffix="₹"
-        hint="TDS under Section 195 applies to the entire sale price, unlike a normal capital-gains tax which applies only to the gain."
+        hint="TDS under Section 393(2) applies to the entire sale price, unlike a normal capital-gains tax which applies only to the gain."
       />
 
       <fieldset className="flex flex-col gap-2 text-sm">
@@ -111,14 +111,14 @@ export default function NriPropertySaleTdsCalculator() {
 
       <HowCalculated>
         <p>
-          Section 195 requires the buyer to withhold TDS at the rate the
+          Section 393(2) requires the buyer to withhold TDS at the rate the
           gain is actually taxable at, on the full sale consideration —
           unlike the flat 1% under Section 194-IA for resident sellers.
           Absent a lower-deduction certificate, this tool uses 12.5% for
           long-term gains (the flat LTCG rate on real estate since the
-          Finance (No. 2) Act, 2024) and a conservative 30% for short-term
-          gains (the top slab rate, common practice when the seller&apos;s
-          actual slab is unknown), plus a flat 4% cess on top of whichever
+          Finance (No. 2) Act, 2024) and 20% for short-term gains — the
+          statutory rate under Section 393(2) [Table S. No. 17(e)], tied to
+          Section 196's short-term classification, plus a flat 4% cess on whichever
           base rate applies.
         </p>
         <p className="mt-2">
@@ -130,8 +130,8 @@ export default function NriPropertySaleTdsCalculator() {
       <SourceCitation
         sources={[
           {
-            label: "Income Tax Dept.: TDS on sale of property",
-            href: "https://www.incometaxindia.gov.in/w/tds-on-sale-of-property",
+            label: "Income Tax Dept.: Section 393 (TDS to non-residents)",
+            href: "https://www.incometaxindia.gov.in/w/section-393-5",
           },
         ]}
       />
