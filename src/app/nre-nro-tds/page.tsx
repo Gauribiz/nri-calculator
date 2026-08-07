@@ -42,7 +42,7 @@ export default function NreNroTdsPage() {
         15CA/15CB threshold) are corroborated by current public
         tax-reference sources and believed to carry over substantively,
         but the specific 1961-Act section numbers referenced in this
-        page&apos;s explanations (e.g. Section 195) have <strong>not</strong>{" "}
+        page&apos;s explanations (e.g. Section 195, renumbered to Section 393(2) of the Income-tax Act, 2025, effective 1 April 2026) have <strong>now</strong>{" "}
         been individually re-verified against the new Act&apos;s
         renumbered sections. Please confirm current section references
         with a qualified advisor or incometax.gov.in before citing any of
