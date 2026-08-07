@@ -32,7 +32,7 @@ export default function Form13Explainer() {
         className="rounded-lg bg-stone-50 p-4 text-sm text-stone-700 dark:bg-primary-900/20 dark:text-primary-100"
       >
         <p>
-          Because Section 195 TDS is withheld on the full sale consideration
+          Because Section 393(2) TDS is withheld on the full sale consideration
           rather than on your actual gain, the default withholding on a
           property sale is often much larger than the tax you actually owe.
           NRIs can apply under Section 197 (Form 13) for a certificate
@@ -125,8 +125,8 @@ export default function Form13Explainer() {
       <HowCalculated>
         <p>
           Estimated default TDS = sale consideration × the same default
-          rate used by the Section 195 TDS estimator above (12.5% + 4% cess
-          for long-term, 30% + 4% cess for short-term, absent a
+          rate used by the Section 393(2) TDS estimator above (12.5% + 4% cess
+          for long-term, 20% + 4% cess for short-term, the statutory rate under Section 393(2)/196, absent a
           certificate). Likely excess withheld = default TDS − your entered
           estimate of actual tax owed, floored at zero. This is a rough
           comparison to help decide whether applying is worth the effort —
@@ -143,8 +143,8 @@ export default function Form13Explainer() {
       <SourceCitation
         sources={[
           {
-            label: "Income Tax Dept.: TDS on sale of property",
-            href: "https://www.incometaxindia.gov.in/w/tds-on-sale-of-property",
+            label: "Income Tax Dept.: Certificate of lower/no TDS deduction",
+            href: "https://www.incometaxindia.gov.in/w/certificate-of-lower/no-deduction-of-tax-at-source",
           },
         ]}
       />
