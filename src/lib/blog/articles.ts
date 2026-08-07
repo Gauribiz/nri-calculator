@@ -275,7 +275,7 @@ export const articles: Article[] = [
       {
         heading: "Documentation you'll need regardless of amount",
         paragraphs: [
-          "Even within the ceiling, a remittance from an NRO account isn't a same-day online transfer in most cases: banks require Form 15CA (and often 15CB, a CA certificate) confirming the applicable tax has been paid or accounted for, before releasing funds. Property sale proceeds carry their own additional documentation given how directly they interact with Section 195 TDS.",
+          "Even within the ceiling, a remittance from an NRO account isn't a same-day online transfer in most cases: banks require Form 15CA (and often 15CB, a CA certificate) confirming the applicable tax has been paid or accounted for, before releasing funds. Property sale proceeds carry their own additional documentation given how directly they interact with Section 393(2) TDS.",
         ],
       },
       {
@@ -354,7 +354,7 @@ export const articles: Article[] = [
       {
         heading: "Real estate and government schemes",
         paragraphs: [
-          "NRIs can generally purchase residential and commercial property in India (agricultural land, plantation property, and farmhouses are typically restricted), with capital gains on eventual sale subject to the LTCG/STCG and Section 195 TDS rules covered on the Real Estate Capital Gains page. NRIs are also eligible for the National Pension System (NPS) on the same broad terms as residents, though repatriation of NPS proceeds follows its own scheme rules rather than the general NRO ceiling.",
+          "NRIs can generally purchase residential and commercial property in India (agricultural land, plantation property, and farmhouses are typically restricted), with capital gains on eventual sale subject to the LTCG/STCG and Section 393(2) TDS rules covered on the Real Estate Capital Gains page. NRIs are also eligible for the National Pension System (NPS) on the same broad terms as residents, though repatriation of NPS proceeds follows its own scheme rules rather than the general NRO ceiling.",
         ],
       },
     ],
@@ -398,27 +398,27 @@ export const articles: Article[] = [
       },
     ],
     relatedSlugs: [
-      "section-195-tds-on-nri-property-sales",
+      "section-393-2-tds-on-nri-property-sales",
       "form-13-lower-tds-certificate-worth-it",
     ],
   },
   {
-    slug: "section-195-tds-on-nri-property-sales",
+    slug: "section-393-2-tds-on-nri-property-sales",
     clusterSlug: "real-estate-capital-gains",
-    title: "Section 195 TDS on NRI Property Sales: What Buyers Withhold",
+    title: "Section 393(2) TDS on NRI Property Sales: What Buyers Withhold",
     description:
       "When a buyer purchases property from an NRI seller, they're legally required to withhold TDS on the full sale price — not just the gain. Here's why that matters.",
-    dek: "Section 195 TDS is withheld on the full sale consideration, not the profit. For a highly appreciated property, that's a very different number than sellers expect.",
+    dek: "Section 393(2) TDS is withheld on the full sale consideration, not the profit. For a highly appreciated property, that's a very different number than sellers expect.",
     sections: [
       {
         paragraphs: [
-          "Section 195 of the Income-tax Act places the withholding obligation on the buyer, not the seller, whenever the seller is a non-resident. In practice this means: when you sell Indian property as an NRI, the buyer is legally required to deduct TDS before paying you, and hand that amount over to the tax department directly.",
+          "Section 393(2) of the Income-tax Act places the withholding obligation on the buyer, not the seller, whenever the seller is a non-resident. In practice this means: when you sell Indian property as an NRI, the buyer is legally required to deduct TDS before paying you, and hand that amount over to the tax department directly.",
         ],
       },
       {
         heading: "The detail that surprises most sellers",
         paragraphs: [
-          "Unlike TDS on a resident seller (typically withheld on the sale value under a different, lower-rate provision), Section 195 TDS on an NRI seller is calculated on the full sale consideration by default — not on the capital gain. For a property that's appreciated significantly, that produces a TDS figure that can be far larger than the seller's actual tax liability on the gain, simply because the default withholding basis ignores the seller's cost.",
+          "Unlike TDS on a resident seller (typically withheld on the sale value under a different, lower-rate provision), Section 393(2) TDS on an NRI seller is calculated on the full sale consideration by default — not on the capital gain. For a property that's appreciated significantly, that produces a TDS figure that can be far larger than the seller's actual tax liability on the gain, simply because the default withholding basis ignores the seller's cost.",
         ],
       },
       {
@@ -429,7 +429,7 @@ export const articles: Article[] = [
       },
       {
         paragraphs: [
-          "The Section 195 TDS estimator on the Real Estate Capital Gains page estimates the withholding a buyer would apply on a given sale, with or without a certified lower rate, so you can see the gap between what gets withheld and what you may actually owe.",
+          "The Section 393(2) TDS estimator on the Real Estate Capital Gains page estimates the withholding a buyer would apply on a given sale, with or without a certified lower rate, so you can see the gap between what gets withheld and what you may actually owe.",
         ],
       },
     ],
@@ -448,7 +448,7 @@ export const articles: Article[] = [
     sections: [
       {
         paragraphs: [
-          "Because Section 195 TDS is withheld on the full sale consideration by default, NRI sellers with a genuinely small gain relative to the sale price can end up with a large share of their proceeds withheld — money that's technically recoverable, but only by filing an Indian tax return and waiting for a refund, which can take months. Applying to the assessing officer for a lower or nil TDS certificate (historically under Section 197, using Form 13) is the mechanism to correct the withholding amount upfront instead.",
+          "Because Section 393(2) TDS is withheld on the full sale consideration by default, NRI sellers with a genuinely small gain relative to the sale price can end up with a large share of their proceeds withheld — money that's technically recoverable, but only by filing an Indian tax return and waiting for a refund, which can take months. Applying to the assessing officer for a lower or nil TDS certificate (historically under Section 197, using Form 13) is the mechanism to correct the withholding amount upfront instead.",
         ],
       },
       {
@@ -465,12 +465,12 @@ export const articles: Article[] = [
       },
       {
         paragraphs: [
-          "The Form 13 explainer on the Real Estate Capital Gains page compares your default Section 195 withholding against your own estimated actual tax, to give a rough sense of whether the certificate is likely worth pursuing for your sale.",
+          "The Form 13 explainer on the Real Estate Capital Gains page compares your default Section 393(2) withholding against your own estimated actual tax, to give a rough sense of whether the certificate is likely worth pursuing for your sale.",
         ],
       },
     ],
     relatedSlugs: [
-      "section-195-tds-on-nri-property-sales",
+      "section-393-2-tds-on-nri-property-sales",
       "selling-property-in-india-as-nri-ltcg-vs-stcg",
     ],
   },
@@ -684,7 +684,7 @@ export const articles: Article[] = [
     sections: [
       {
         paragraphs: [
-          "When a tenant in India rents from a resident landlord, TDS on rent only kicks in above a specified threshold, and the rate is relatively modest. When the landlord is an NRI, Section 195 applies instead, and the obligation looks very different: the tenant must deduct TDS on the rent from the first rupee paid, with no minimum exemption amount, at a materially higher rate.",
+          "When a tenant in India rents from a resident landlord, TDS on rent only kicks in above a specified threshold, and the rate is relatively modest. When the landlord is an NRI, Section 393(2) applies instead, and the obligation looks very different: the tenant must deduct TDS on the rent from the first rupee paid, with no minimum exemption amount, at a materially higher rate.",
         ],
       },
       {
@@ -885,13 +885,13 @@ export const articles: Article[] = [
       },
       {
         paragraphs: [
-          "None of this changes how TDS is withheld at the point of sale: the Section 195 TDS estimator on this site's Real Estate Capital Gains page still applies the same way, withholding on the full sale consideration regardless of whether the property was purchased or inherited — the inheritance only affects the gain calculation itself, not the buyer's withholding obligation.",
+          "None of this changes how TDS is withheld at the point of sale: the Section 393(2) TDS estimator on this site's Real Estate Capital Gains page still applies the same way, withholding on the full sale consideration regardless of whether the property was purchased or inherited — the inheritance only affects the gain calculation itself, not the buyer's withholding obligation.",
         ],
       },
     ],
     relatedSlugs: [
       "selling-property-in-india-as-nri-ltcg-vs-stcg",
-      "section-195-tds-on-nri-property-sales",
+      "section-393-2-tds-on-nri-property-sales",
       "section-54-54ec-exemptions-for-nris",
     ],
   },
@@ -917,18 +917,18 @@ export const articles: Article[] = [
       {
         heading: "What NRIs are actually subject to instead",
         paragraphs: [
-          "NRI repatriation runs through the mechanisms covered elsewhere on this site: freely repatriable NRE funds, the annual RBI ceiling on NRO funds (with Form 15CA/15CB documentation), and — for property sale proceeds specifically — the Section 195 TDS withheld by the buyer at the time of sale, plus whatever the seller's actual tax liability turns out to be once a return is filed. None of these are LRS or its TCS regime.",
+          "NRI repatriation runs through the mechanisms covered elsewhere on this site: freely repatriable NRE funds, the annual RBI ceiling on NRO funds (with Form 15CA/15CB documentation), and — for property sale proceeds specifically — the Section 393(2) TDS withheld by the buyer at the time of sale, plus whatever the seller's actual tax liability turns out to be once a return is filed. None of these are LRS or its TCS regime.",
         ],
       },
       {
         paragraphs: [
-          "If you've seen a TCS rate or threshold quoted somewhere and are trying to work out whether it affects your own property-sale repatriation as an NRI, the short answer from current guidance is: that rate almost certainly describes LRS for residents, not your situation. The repatriation headroom estimator and Section 195 TDS estimator on this site's Investments & Repatriation and Real Estate Capital Gains pages reflect the rules that actually apply to NRIs instead.",
+          "If you've seen a TCS rate or threshold quoted somewhere and are trying to work out whether it affects your own property-sale repatriation as an NRI, the short answer from current guidance is: that rate almost certainly describes LRS for residents, not your situation. The repatriation headroom estimator and Section 393(2) TDS estimator on this site's Investments & Repatriation and Real Estate Capital Gains pages reflect the rules that actually apply to NRIs instead.",
         ],
       },
     ],
     relatedSlugs: [
       "nri-repatriation-limits-explained",
-      "section-195-tds-on-nri-property-sales",
+      "section-393-2-tds-on-nri-property-sales",
     ],
   },
 {
@@ -1109,13 +1109,13 @@ export const articles: Article[] = [
   sections: [
     {
       paragraphs: [
-        "A resident's fixed deposit interest is only subject to TDS once it crosses a threshold in a financial year, and even then at a modest rate, while resident savings account interest isn't subject to TDS at all. NRO fixed deposits work differently: because Section 194A (the resident TDS-on-interest provision, with its exemption threshold and savings-account carve-out) doesn't apply to non-residents, NRO interest — savings or fixed deposit — falls instead under Section 195, which has no equivalent basic exemption. Whatever interest an NRO FD credits, some of it is withheld before it ever reaches the account holder.",
+        "A resident's fixed deposit interest is only subject to TDS once it crosses a threshold in a financial year, and even then at a modest rate, while resident savings account interest isn't subject to TDS at all. NRO fixed deposits work differently: because Section 194A (the resident TDS-on-interest provision, with its exemption threshold and savings-account carve-out) doesn't apply to non-residents, NRO interest — savings or fixed deposit — falls instead under Section 393(2), which has no equivalent basic exemption. Whatever interest an NRO FD credits, some of it is withheld before it ever reaches the account holder.",
       ],
     },
     {
       heading: "The default rate",
       paragraphs: [
-        "Bank NRI-desk pages commonly cite a flat 30% TDS rate on NRO FD interest by default, before adding applicable surcharge and a 4% health and education cess. Note that this figure isn't perfectly uniform across sources — at least one tax-reference source describes Section 195 interest withholding closer to 20% plus surcharge/cess as a general rate — so treat 30% as the widely-cited figure for NRO FD interest specifically, but confirm the exact current rate (and the surcharge slab, which depends on the account holder's total income and can range considerably) before assuming a single all-in percentage.",
+        "Bank NRI-desk pages commonly cite a flat 30% TDS rate on NRO FD interest by default, before adding applicable surcharge and a 4% health and education cess. Note that this figure isn't perfectly uniform across sources — at least one tax-reference source describes Section 393(2) interest withholding closer to 20% plus surcharge/cess as a general rate — so treat 30% as the widely-cited figure for NRO FD interest specifically, but confirm the exact current rate (and the surcharge slab, which depends on the account holder's total income and can range considerably) before assuming a single all-in percentage.",
       ],
     },
     {
@@ -1128,7 +1128,7 @@ export const articles: Article[] = [
     {
       heading: "Why FDs feel like the sharper end of this",
       paragraphs: [
-        "NRO savings and NRO fixed deposit interest are taxed under the same Section 195 mechanism, so the underlying rule isn't actually different between the two. What usually makes it more noticeable on an FD is scale: FD interest tends to be a larger, more concentrated sum credited on a defined schedule, so the absence of any exemption threshold shows up as a bigger visible deduction than it does on the smaller, incremental interest a savings account generates.",
+        "NRO savings and NRO fixed deposit interest are taxed under the same Section 393(2) mechanism, so the underlying rule isn't actually different between the two. What usually makes it more noticeable on an FD is scale: FD interest tends to be a larger, more concentrated sum credited on a defined schedule, so the absence of any exemption threshold shows up as a bigger visible deduction than it does on the smaller, incremental interest a savings account generates.",
       ],
     },
   ],
@@ -1370,17 +1370,17 @@ export const articles: Article[] = [
     {
       heading: "How this interacts with the TDS already withheld",
       paragraphs: [
-        "By the time you're ready to repatriate, the buyer has typically already withheld TDS under Section 195 — generally on the full sale consideration, as covered in this site's Section 195 explainer, not just on the gain. The certifying CA's job at the 15CB stage is largely to confirm the tax position looks accounted for, referencing that withheld TDS, rather than to independently relitigate your total liability the way filing an actual return does. If the TDS withheld turns out to be larger than what you'll actually owe once your real cost basis and gain are worked out, that excess isn't released early through the 15CB process — it's recovered only by filing an Indian income tax return and claiming a refund, or, for a future sale, by front-loading the correction with a lower/nil TDS certificate obtained before the sale closes.",
+        "By the time you're ready to repatriate, the buyer has typically already withheld TDS under Section 393(2) — generally on the full sale consideration, as covered in this site's Section 393(2) explainer, not just on the gain. The certifying CA's job at the 15CB stage is largely to confirm the tax position looks accounted for, referencing that withheld TDS, rather than to independently relitigate your total liability the way filing an actual return does. If the TDS withheld turns out to be larger than what you'll actually owe once your real cost basis and gain are worked out, that excess isn't released early through the 15CB process — it's recovered only by filing an Indian income tax return and claiming a refund, or, for a future sale, by front-loading the correction with a lower/nil TDS certificate obtained before the sale closes.",
       ],
     },
     {
       paragraphs: [
-        "The Section 195 TDS estimator and Form 13 explainer on the Real Estate Capital Gains page both feed directly into this chain — the withholding figure they estimate is generally what a 15CB certificate will reference. Confirm the current property-count limit on the full-repatriation route, and the exact document checklist, directly with your bank's NRI desk before setting a remittance timeline around either.",
+        "The Section 393(2) TDS estimator and Form 13 explainer on the Real Estate Capital Gains page both feed directly into this chain — the withholding figure they estimate is generally what a 15CB certificate will reference. Confirm the current property-count limit on the full-repatriation route, and the exact document checklist, directly with your bank's NRI desk before setting a remittance timeline around either.",
       ],
     },
   ],
   relatedSlugs: [
-    "section-195-tds-on-nri-property-sales",
+    "section-393-2-tds-on-nri-property-sales",
     "form-13-lower-tds-certificate-worth-it",
     "ltcg-indexation-removal-budget-2024-property",
   ],
@@ -1407,23 +1407,23 @@ export const articles: Article[] = [
     {
       heading: "TDS is meant to be deducted co-owner by co-owner",
       paragraphs: [
-        "Section 195 TDS is meant to be applied separately against each NRI co-owner's own share of the sale consideration, not once against the whole sale price as if there were a single seller. Where a sale involves a mix of resident and NRI co-owners, the correct approach described by tax-advisory sources is seller-wise: the resident co-owner's share is subject to the resident-seller TDS provision (typically the lower rate under Section 194-IA), while the NRI co-owner's share is subject to the higher Section 195 rate — each computed separately against that owner's own portion of the consideration, and deposited against that owner's own PAN.",
+        "Section 393(2) TDS is meant to be applied separately against each NRI co-owner's own share of the sale consideration, not once against the whole sale price as if there were a single seller. Where a sale involves a mix of resident and NRI co-owners, the correct approach described by tax-advisory sources is seller-wise: the resident co-owner's share is subject to the resident-seller TDS provision (typically the lower rate under Section 194-IA), while the NRI co-owner's share is subject to the higher Section 393(2) rate — each computed separately against that owner's own portion of the consideration, and deposited against that owner's own PAN.",
       ],
     },
     {
       heading: "Where this breaks down in practice",
       paragraphs: [
-        "Buyers unfamiliar with mixed resident/NRI joint ownership sometimes default to withholding against a single PAN — often whichever co-owner is easiest to reach, or the resident co-owner — applying one rate to the entire sale price. That under-withholds relative to what Section 195 actually requires on the NRI co-owner's share, and leaves that co-owner's own Form 26AS without a matching TDS credit, which surfaces later as a reconciliation problem once each co-owner separately files a return and expects to claim their own credit against their own share of tax due. Getting a written breakdown of each co-owner's share, PAN, and residency status in front of the buyer and their bank before closing — not after — is the practical fix.",
+        "Buyers unfamiliar with mixed resident/NRI joint ownership sometimes default to withholding against a single PAN — often whichever co-owner is easiest to reach, or the resident co-owner — applying one rate to the entire sale price. That under-withholds relative to what Section 393(2) actually requires on the NRI co-owner's share, and leaves that co-owner's own Form 26AS without a matching TDS credit, which surfaces later as a reconciliation problem once each co-owner separately files a return and expects to claim their own credit against their own share of tax due. Getting a written breakdown of each co-owner's share, PAN, and residency status in front of the buyer and their bank before closing — not after — is the practical fix.",
       ],
     },
     {
       paragraphs: [
-        "This same logic carries through to exemptions: each co-owner independently decides whether and how to claim Section 54 or 54EC against their own share of the gain, so one co-owner reinvesting doesn't automatically shield another co-owner's share (see this site's Section 54/54EC explainer). The Section 195 TDS estimator on the Real Estate Capital Gains page is built around a single seller's consideration and gain; for a joint sale, the practical approach is to run it once per co-owner, using that co-owner's own share of the price and cost basis rather than the sale's combined totals.",
+        "This same logic carries through to exemptions: each co-owner independently decides whether and how to claim Section 54 or 54EC against their own share of the gain, so one co-owner reinvesting doesn't automatically shield another co-owner's share (see this site's Section 54/54EC explainer). The Section 393(2) TDS estimator on the Real Estate Capital Gains page is built around a single seller's consideration and gain; for a joint sale, the practical approach is to run it once per co-owner, using that co-owner's own share of the price and cost basis rather than the sale's combined totals.",
       ],
     },
   ],
   relatedSlugs: [
-    "section-195-tds-on-nri-property-sales",
+    "section-393-2-tds-on-nri-property-sales",
     "section-54-54ec-exemptions-for-nris",
     "ltcg-indexation-removal-budget-2024-property",
   ],
@@ -1803,7 +1803,7 @@ export const articles: Article[] = [
   sections: [
     {
       paragraphs: [
-        "If you sold Indian property as an NRI and the buyer withheld Section 195 TDS on the full sale consideration rather than the gain, you may be sitting on a refund — but only if you go and claim it. Unlike a Form 13 (recently renumbered Form 128) certificate, which corrects the withholding amount before the sale closes, this is the after-the-fact route: for sellers who either didn't apply for that certificate in time, or whose actual tax liability still came in below what was withheld even with one in place.",
+        "If you sold Indian property as an NRI and the buyer withheld Section 393(2) TDS on the full sale consideration rather than the gain, you may be sitting on a refund — but only if you go and claim it. Unlike a Form 13 (recently renumbered Form 128) certificate, which corrects the withholding amount before the sale closes, this is the after-the-fact route: for sellers who either didn't apply for that certificate in time, or whose actual tax liability still came in below what was withheld even with one in place.",
         "The mechanism is simple in principle and slower in practice: you file an Indian income tax return for the relevant financial year, report the sale and your actual capital gain, and let the return itself claim back the difference between TDS already paid and tax actually owed. Filing is required even if your total Indian income for the year is below the normal taxable threshold — a refund only gets processed if a return is filed.",
       ],
     },
@@ -1811,7 +1811,7 @@ export const articles: Article[] = [
       heading: "The paperwork that has to line up",
       paragraphs: [
         "Two documents do the real work here. Form 26AS (and the newer Annual Information Statement, AIS) is the tax department's own ledger of TDS credited against your PAN — it's what the return is checked against, so if the buyer's TDS filing (Form 27Q, the non-resident-specific TDS return, not the resident-property Form 26QB) hasn't posted correctly, your claimed credit won't match and the refund stalls. Form 16A is the TDS certificate the buyer is required to issue you as proof of what was deducted; keep it, but treat Form 26AS/AIS as the authoritative record if the two ever disagree.",
-        "This is also where buyer cooperation matters more than sellers often expect: a buyer who deducted TDS under Section 195 needs their own Tax Deduction Account Number (TAN) and has to file Form 27Q correctly for your credit to show up. A sale where the buyer is disorganized about this step is a common, and frustrating, source of refund delay that has nothing to do with your own return.",
+        "This is also where buyer cooperation matters more than sellers often expect: a buyer who deducted TDS under Section 393(2) needs their own Tax Deduction Account Number (TAN) and has to file Form 27Q correctly for your credit to show up. A sale where the buyer is disorganized about this step is a common, and frustrating, source of refund delay that has nothing to do with your own return.",
       ],
     },
     {
@@ -1828,7 +1828,7 @@ export const articles: Article[] = [
     },
   ],
   relatedSlugs: [
-    "section-195-tds-on-nri-property-sales",
+    "section-393-2-tds-on-nri-property-sales",
     "form-13-lower-tds-certificate-worth-it",
     "repatriating-property-sale-proceeds",
   ],
@@ -1895,17 +1895,17 @@ export const articles: Article[] = [
     {
       heading: "The part a PoA cannot change",
       paragraphs: [
-        "Whatever authority the PoA grants over signing and paperwork, it does not shift tax liability. Sources are consistent on this point: acts done by a PoA holder are legally treated as acts of the principal — the NRI seller — meaning Section 195 TDS is still calculated against the seller's status as an NRI (not the resident status of whoever holds the PoA), and the resulting capital gain is still assessed to the seller's own PAN. A PoA holder signing the sale deed doesn't make the transaction a resident-seller sale for tax purposes, and doesn't create any separate tax exposure for the PoA holder personally — the seller remains the one who owes the tax, claims any refund of excess TDS, and is named on the return.",
+        "Whatever authority the PoA grants over signing and paperwork, it does not shift tax liability. Sources are consistent on this point: acts done by a PoA holder are legally treated as acts of the principal — the NRI seller — meaning Section 393(2) TDS is still calculated against the seller's status as an NRI (not the resident status of whoever holds the PoA), and the resulting capital gain is still assessed to the seller's own PAN. A PoA holder signing the sale deed doesn't make the transaction a resident-seller sale for tax purposes, and doesn't create any separate tax exposure for the PoA holder personally — the seller remains the one who owes the tax, claims any refund of excess TDS, and is named on the return.",
       ],
     },
     {
       paragraphs: [
-        "In practice, a PoA is a logistics tool, not a tax-planning one — it solves the \"I can't be there in person\" problem and leaves the Section 195 withholding, refund, and capital-gains-reporting questions exactly where they'd be if the NRI seller had signed everything personally.",
+        "In practice, a PoA is a logistics tool, not a tax-planning one — it solves the \"I can't be there in person\" problem and leaves the Section 393(2) withholding, refund, and capital-gains-reporting questions exactly where they'd be if the NRI seller had signed everything personally.",
       ],
     },
   ],
   relatedSlugs: [
-    "section-195-tds-on-nri-property-sales",
+    "section-393-2-tds-on-nri-property-sales",
     "claiming-refund-excess-tds-property-sale-nri",
     "joint-property-ownership-nri-capital-gains",
   ],
