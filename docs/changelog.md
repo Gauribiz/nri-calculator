@@ -2,6 +2,21 @@
 
 All notable changes to NRI Calculator, in reverse chronological order.
 
+## 2026-08-10 -- Blog/FAQ content pass, batch 6 (nric-0086)
+
+Continued the nric-006 series with a sixth batch, per the user's selection to keep advancing content toward the charter's 25-30/cluster target after batch 5 (nric-006e) shipped -- see ADR 0016 for full topic-selection reasoning.
+
+12 new articles (3 per cluster, src/lib/blog/articles.ts) and 12 new FAQ entries (src/lib/blog/faqs.ts): US state "sticky residency" rules, Form 8802/6166, and IRS Streamlined Filing Compliance Procedures for DTAA & Tax Residency; mandatory FEMA account redesignation on becoming NRI, Section 195 vs 194J/192 TDS on NRI salary/professional income, and Section 64 clubbing of gifts to a spouse or minor child for NRE/NRO & TDS; RSU/ESPP cross-border taxation, the Section 10(10D) FA2023 high-premium carve-out, and Section 115BBH crypto/VDA taxation for Investments & Repatriation; the Capital Gains Account Scheme, Section 56(2)(x) gift taxation, and Section 24(b)/80C joint home loan deductions for Real Estate Capital Gains.
+
+Every claim was checked via live web search before drafting, per the lesson learned from the ADR 0015 fact-check pass earlier in this session. One item is flagged rather than resolved: whether DTAA relief can offset Section 115BBH's flat-rate crypto/VDA regime is unclear from public secondary sources and needs a professional's confirmation before publish.
+
+Site now has 72 articles / 72 FAQ entries (18/cluster), up from 60/60 (15/cluster) after batch 5.
+
+Ran local verification this pass (unlike batch 5, which noted this as a gap): `npx tsc --noEmit` and `npm run lint` both pass clean. `npm run build` fails only on a sandbox network restriction (next/font's Google Fonts fetch), unrelated to this batch's content changes.
+
+Added docs/decisions/0016-blog-faq-content-pass-batch-6.md.
+
+
 ## 2026-08-10 -- Blog/FAQ content pass, batch 5 (nric-006e)
 
 Orientation confirmed nri-calculator.phase implied an active queue and identified nric-006e (blog/FAQ content pass, batch 5) as the next queued task in the four-batch content build ADR 0011/0012/0013/0014 set in motion. Batch 4's own PR was still open awaiting Gauri's review at the start of this pass, consistent with the project's standing merge policy that unattended work never merges its own or a prior pass's branch.
