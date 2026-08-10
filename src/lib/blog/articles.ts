@@ -2484,6 +2484,402 @@ export const articles: Article[] = [
           
           
           
+  // --- Batch 6 additions (nric-0086) ---
+  {
+    slug: "state-tax-residency-after-moving-to-india",
+    clusterSlug: "dtaa-tax-residency",
+    title: "US State Tax Residency After Moving to India: The \"Sticky State\" Problem",
+    description:
+      "Federal tax residency isn't the only thing that follows you abroad. A handful of US states keep taxing former residents on worldwide income long after they've left the country.",
+    dek: "Breaking with the IRS doesn't automatically break with your old state's tax department. California, New York, Virginia, and a few others are notorious for still wanting a return.",
+    sections: [
+      {
+        paragraphs: [
+          "Most US states stop taxing you once you've genuinely moved away. A handful, commonly called 'sticky states' -- California, New Mexico, New York, South Carolina, and Virginia are the ones most often named -- define residency in a way that makes it unusually hard to prove you've actually left, and some of them start their own tax calculation from federal gross income before the Foreign Earned Income Exclusion is even applied. That means a return that owes the IRS nothing can still owe a sticky state real money on the same income.",
+        ],
+      },
+      {
+        heading: "Why domicile doesn't reset itself",
+        paragraphs: [
+          "The core issue is that domicile is treated as 'sticky' in tax law: once established, it continues until you affirmatively establish a new one elsewhere. Moving to India does not, by itself, change a US domicile -- several of these states will keep treating you as a resident owing tax on worldwide income until you can show you've established domicile somewhere else, ideally a no-income-tax state, before leaving the country.",
+          "California and New York both offer safe-harbor provisions for people working abroad under a genuine employment contract (roughly 546 days for California, 548 for New York), but both come with strict day-count and, if married, spousal residency conditions. Missing a technical requirement can mean losing the safe harbor entirely, not just partially.",
+        ],
+      },
+      {
+        heading: "What actually breaks the tie",
+        paragraphs: [
+          "The most reliable approach cited by cross-border preparers is establishing domicile in a no-income-tax state (Texas, Florida, Nevada, Wyoming, and South Dakota are commonly used) before the move abroad, closing out home ties, driver's licenses, and voter registration in the old state, and keeping careful records of the date domicile changed. This is a state-specific, facts-and-circumstances question -- it's worth a state tax specialist's review before assuming a move to India alone was enough.",
+        ],
+      },
+    ],
+    relatedSlugs: [
+      "dual-status-tax-return-year-you-move",
+      "streamlined-filing-compliance-procedures-nris",
+      "us-exit-tax-for-green-card-holders",
+    ],
+  },
+  {
+    slug: "form-8802-us-tax-residency-certificate",
+    clusterSlug: "dtaa-tax-residency",
+    title: "Form 8802 and Form 6166: The US Side of Claiming DTAA Benefits",
+    description:
+      "Form 10F and an Indian TRC only work if the underlying US residency certificate exists. Form 8802 is how a US-side NRI actually gets one.",
+    dek: "Indian banks and payers won't apply the DTAA rate on your say-so. They want a US Certificate of Residency -- and that starts with Form 8802, not Form 10F.",
+    sections: [
+      {
+        paragraphs: [
+          "Claiming a lower DTAA withholding rate in India -- say, 15% instead of the domestic 31.2% on NRO interest -- generally requires a Tax Residency Certificate from the country you actually live in. For someone tax-resident in the US, that means requesting Form 6166, the IRS's official Certificate of U.S. Tax Residency, and the way to request it is Form 8802, Application for United States Residency Certification.",
+        ],
+      },
+      {
+        heading: "How the request works",
+        paragraphs: [
+          "Form 8802 is filed with the IRS along with the required user fee; the IRS then issues Form 6166, a letter on Treasury stationery certifying US tax residency for the years requested. Processing typically takes 30-45 days, and can stretch toward 60 days during the January-April filing season, so the IRS's own guidance is to apply at least 45 days before the certificate is actually needed by an Indian bank, tenant, or buyer.",
+          "Form 6166 by itself is not the whole story on the Indian side: Form 10F is the self-declaration NRIs additionally file to give Indian tax authorities the specific details -- taxpayer identification number, address, period of residency -- that the TRC alone doesn't spell out. Skip either piece and the payer defaults to the higher domestic withholding rate, refundable only by filing an Indian return.",
+        ],
+      },
+      {
+        heading: "Practical timing",
+        paragraphs: [
+          "Because Form 6166 is typically requested per calendar year, and processing isn't instant, this isn't a form to think about only when a bank suddenly asks for it. Filing Form 8802 early in the year -- before an NRO fixed deposit renews or a property sale is expected to close -- avoids paying the higher rate up front and then having to chase a refund through an Indian tax return later.",
+        ],
+      },
+    ],
+    relatedSlugs: [
+      "form-10f-and-trc-claiming-dtaa-benefits-in-india",
+      "tds-on-nro-interest-explained",
+      "section-393-2-tds-on-nri-property-sales",
+    ],
+  },
+  {
+    slug: "streamlined-filing-compliance-procedures-nris",
+    clusterSlug: "dtaa-tax-residency",
+    title: "Behind on FBAR or US Tax Filings? What the Streamlined Procedures Actually Offer",
+    description:
+      "NRIs who didn't realize FBAR or a US return was required for years can often catch up penalty-free -- but only if the IRS hasn't caught up with them first.",
+    dek: "The IRS's Streamlined Filing Compliance Procedures exist specifically for non-willful taxpayers who fell behind on foreign account reporting. Willfulness, and timing, decide whether this door is still open.",
+    sections: [
+      {
+        paragraphs: [
+          "It's common for someone who moved between the US and India to discover, years later, that they should have been filing FBAR (FinCEN Form 114) or Form 8938 for Indian bank accounts, PPF, or other holdings, and simply didn't know. For taxpayers who were genuinely non-willful about it -- and who are not already under IRS audit or examination -- the Streamlined Filing Compliance Procedures exist to bring them into compliance with most penalties waived.",
+        ],
+      },
+      {
+        heading: "What 'streamlined' actually requires",
+        paragraphs: [
+          "There are two tracks: the Streamlined Domestic Offshore Procedures for taxpayers who were US residents during the relevant years, and the Streamlined Foreign Offshore Procedures for those who met the non-residency requirements. Under either, the general rule is filing the three most recent delinquent tax years' returns (regardless of how many years were actually missed) and the six most recent delinquent FBAR years, along with a signed certification of non-willfulness.",
+          "The IRS discontinued the separate Delinquent FBAR Submission Procedures as a standalone public option; for most people who are behind on FBAR specifically, Streamlined is now the relevant compliance path if they qualify, rather than a simpler standalone FBAR-only fix.",
+        ],
+      },
+      {
+        heading: "FBAR and FATCA are not the same filing",
+        paragraphs: [
+          "A frequent point of confusion: FBAR (filed with FinCEN, not the IRS, above a $10,000 aggregate foreign-account threshold) and Form 8938 under FATCA (filed with the tax return, with its own separate and generally higher thresholds) are two different requirements under two different legal authorities. Filing one does not satisfy the other, and someone catching up may need to address both. Given the certification of non-willfulness carries real legal weight, this is a case where working with a preparer experienced in cross-border compliance is worth the cost.",
+        ],
+      },
+    ],
+    relatedSlugs: [
+      "fbar-fatca-reporting-for-nris",
+      "state-tax-residency-after-moving-to-india",
+      "form-8802-us-tax-residency-certificate",
+    ],
+  },
+  {
+    slug: "resident-account-redesignation-on-becoming-nri",
+    clusterSlug: "nre-nro-tds",
+    title: "Your Old Resident Savings Account Has to Change the Day You Become an NRI",
+    description:
+      "Continuing to operate a resident savings account after becoming an NRI isn't a paperwork technicality -- it's a FEMA violation with real penalty exposure.",
+    dek: "The moment you cross into NRI status, RBI rules require converting -- not just relabeling -- your existing resident savings account. Waiting is the single most common FEMA slip NRIs make without realizing it.",
+    sections: [
+      {
+        paragraphs: [
+          "Under FEMA and RBI regulations, a person who becomes a Non-Resident Indian is required to convert their existing resident savings account into an NRO account, or close it and open an NRO account, once their residential status changes. It is not legally permissible under FEMA to continue operating an ordinary resident savings account once you qualify as an NRI, even if the bank never flags it.",
+        ],
+      },
+      {
+        heading: "When 'becoming an NRI' actually triggers",
+        paragraphs: [
+          "The trigger isn't a visa category or a round-trip ticket -- it's residential status under FEMA, generally understood as residing outside India for more than 182 days in a financial year, or having a clear intention to reside abroad for an uncertain period (for example, taking up long-term overseas employment). The RBI rule applies from that point regardless of whether the person has told their Indian bank yet.",
+        ],
+      },
+      {
+        heading: "What's actually at stake",
+        paragraphs: [
+          "This isn't a purely theoretical compliance point. Continuing to run a resident account as an NRI can attract FEMA penalties reported to run as high as three times the amount involved, and any linked fixed or recurring deposits need to be converted along with the savings account, not left as-is. Most CA and legal guidance recommends starting the conversion within roughly three months of qualifying as an NRI -- there's no statutory grace period, so the safer approach is to treat the day residency status changes as the day to start the paperwork, not the day someone happens to remember.",
+        ],
+      },
+    ],
+    relatedSlugs: [
+      "nre-vs-nro-accounts-which-do-you-need",
+      "joint-nre-nro-account-with-resident-relative",
+      "nre-nro-accounts-when-you-return-to-india",
+    ],
+  },
+  {
+    slug: "tds-on-nri-salary-and-professional-income-in-india",
+    clusterSlug: "nre-nro-tds",
+    title: "TDS on Salary or Professional Fees Paid to an NRI in India",
+    description:
+      "Section 194J's flat 10% rate for professionals doesn't apply once the recipient is a non-resident -- a different section, and usually a higher rate, takes over.",
+    dek: "An Indian company paying an NRI for consulting, directorship, or salaried work isn't looking at Section 194J's familiar 10% rate. Section 195 governs instead, and the math changes.",
+    sections: [
+      {
+        paragraphs: [
+          "For resident professionals, Section 194J is the familiar rule: a flat 10% TDS on professional or technical fees once payments cross Rs 30,000 in a year. That section applies only to residents. Once the recipient is an NRI, Section 195 takes over instead -- the general TDS-on-payments-to-non-residents provision -- and the applicable rate is no longer a flat, low percentage.",
+        ],
+      },
+      {
+        heading: "How the rate is actually set",
+        paragraphs: [
+          "Under Section 195, TDS on professional or technical fees paid to a non-resident is generally deducted at 20% (plus applicable surcharge and cess) unless a lower rate is available under the India-US DTAA and properly claimed -- which typically means the payer has the recipient's TRC and Form 10F on file before payment, the same documentation chain used for NRO interest and property sale TDS.",
+          "Salary paid to an NRI director or employee for work performed in India follows a related but distinct path: if the individual is non-resident, the payer typically deducts under Section 195 rather than the resident salary provisions of Section 192, again generally at a higher effective rate than a comparable resident employee would see, before any treaty relief is factored in.",
+        ],
+      },
+      {
+        heading: "Why this trips people up",
+        paragraphs: [
+          "The confusion usually starts because the recipient assumes the familiar resident rates (10% for professional fees, standard slab-based withholding for salary) still apply. They don't, once residency status changes -- and the excess TDS is only recoverable by filing an Indian return and claiming the difference, or by the payer applying a valid DTAA rate with the right paperwork from the start. Confirming residency status with the payer before invoicing or accepting payment avoids the higher up-front withholding entirely.",
+        ],
+      },
+    ],
+    relatedSlugs: [
+      "form-26as-reconciling-tds-credit-as-nri",
+      "advance-tax-for-nris-explained",
+      "form-10f-and-trc-claiming-dtaa-benefits-in-india",
+    ],
+  },
+  {
+    slug: "clubbing-of-income-nri-gifts-to-spouse-or-minor-child",
+    clusterSlug: "nre-nro-tds",
+    title: "Clubbing of Income: What Happens When an NRI Gifts Money to a Resident Spouse or Minor Child",
+    description:
+      "The gift itself is tax-free, but the income it later generates often isn't taxed in the recipient's hands -- Section 64's clubbing rules pull it back to the giver.",
+    dek: "Gifting to a spouse or minor child is a common way NRIs move money into India. What isn't always understood is that the income that money then earns usually gets taxed back to the NRI, not the recipient.",
+    sections: [
+      {
+        paragraphs: [
+          "Section 64 of the Income Tax Act contains India's 'clubbing of income' rules: when a person transfers an asset (including cash) to a spouse or minor child without adequate consideration, any income the transferred asset subsequently generates -- interest, dividends, capital gains -- is clubbed with, and taxed in the hands of, the person who made the transfer, not the recipient. NRIs are not exempt from this simply because the gift itself, made to a relative, is not taxable.",
+        ],
+      },
+      {
+        heading: "How it plays out in practice",
+        paragraphs: [
+          "If an NRI transfers funds into their resident spouse's NRO or savings account and the spouse invests it, the resulting interest or capital gains are clubbed back into the NRI's own Indian income and taxed at the NRI's applicable rate -- not the spouse's, even if the spouse has a lower slab. The same applies to a minor child's investments, with a narrow exemption of Rs 1,500 per child (up to two children) carved out separately. Clubbing on spousal transfers applies for as long as the marriage subsists; on minor children, until the child turns 18.",
+          "There are recognized exceptions: income the spouse or child earns through their own professional skill or effort isn't clubbed, and transfers made before the marriage existed don't trigger clubbing on that basis. Gifts to adult children or to parents fall outside Section 64's clubbing rules entirely -- the provision specifically targets spouses and minor children.",
+        ],
+      },
+      {
+        heading: "What this means for planning",
+        paragraphs: [
+          "None of this makes gifting to family in India a bad idea -- the FEMA remittance rules and the gift itself remain unaffected. It does mean the NRI should expect to report and pay tax on whatever income the gifted funds go on to earn, and should plan the TDS and advance-tax consequences of that income as if it were still their own, since for tax purposes it effectively is.",
+        ],
+      },
+    ],
+    relatedSlugs: [
+      "gifting-money-india-us-tax-rules",
+      "advance-tax-for-nris-explained",
+      "joint-nre-nro-account-with-resident-relative",
+    ],
+  },
+  {
+    slug: "espp-rsu-taxation-for-nris-us-employers",
+    clusterSlug: "investments-repatriation",
+    title: "RSU and ESPP Taxation for NRIs: Two Countries, Two Different Tax Events",
+    description:
+      "Stock compensation from a US employer doesn't wait for you to sort out your residency status -- vesting and sale can each trigger tax in a different country, on different terms.",
+    dek: "RSUs vest as salary income in India even though the grant came from a US employer. ESPP gains split into ordinary income and capital gain on the US side. Getting the sequencing wrong is how double taxation happens.",
+    sections: [
+      {
+        paragraphs: [
+          "Tech professionals moving between India and the US frequently hold RSUs or participate in an ESPP through a US employer, and the tax treatment genuinely differs by country and by event. In India, RSUs are treated as a perquisite: the fair market value at vesting is taxed as salary income, and the Indian employer is required to deduct TDS on that value even though the shares came from a foreign parent company.",
+        ],
+      },
+      {
+        heading: "Where double taxation creeps in",
+        paragraphs: [
+          "If the same RSU vesting is also taxed in the US -- for example because the US employer withholds at vesting under US rules -- the same economic event can be taxed twice unless relief is actively claimed. The India-US DTAA generally allows a foreign tax credit for US tax paid on the same income, claimed through Form 67, but that credit has to be affirmatively claimed; it isn't applied automatically.",
+          "ESPP shares add a second layer: US tax rules split the eventual gain into an ordinary-income component and a capital-gain component depending on the holding period at sale, while the India side only becomes relevant once the person is an Indian tax resident, at which point the same shares' subsequent sale is separately subject to Indian capital gains rules.",
+        ],
+      },
+      {
+        heading: "A relevant timing consideration",
+        paragraphs: [
+          "For someone returning to India who qualifies for RNOR (Resident but Not Ordinarily Resident) status, foreign-sourced income is generally not taxable in India during the RNOR period -- which makes the timing of RSU vests and ESPP sales relative to that RNOR window a genuinely material planning question, not just a compliance afterthought. This is a case where the interaction between employer withholding, DTAA credit claims, and RNOR timing is specific enough to warrant a preparer familiar with both sides.",
+        ],
+      },
+    ],
+    relatedSlugs: [
+      "foreign-tax-credit-form-1116-for-nris",
+      "form-67-foreign-tax-credit-filing-guide",
+      "rnor-status-explained-for-returning-nris",
+    ],
+  },
+  {
+    slug: "nri-life-insurance-maturity-proceeds-taxation",
+    clusterSlug: "investments-repatriation",
+    title: "Are NRI Life Insurance Maturity Proceeds Actually Tax-Free? The 2023 Change",
+    description:
+      "Section 10(10D)'s maturity exemption isn't automatic anymore for high-premium policies issued since April 2023 -- and the threshold catches more policies than people expect.",
+    dek: "NRIs get the same Section 10(10D) treatment as resident policyholders, which is good news -- until the premium crosses a threshold that quietly removes the exemption entirely.",
+    sections: [
+      {
+        paragraphs: [
+          "Life insurance maturity proceeds in India are generally exempt from tax under Section 10(10D), and NRIs are entitled to that exemption on the same terms as resident policyholders -- there's no separate, harsher rule just for non-residents. The exemption itself, however, changed materially for policies issued on or after 1 April 2023.",
+        ],
+      },
+      {
+        heading: "The high-premium carve-out",
+        paragraphs: [
+          "The Finance Act 2023 withdrew the Section 10(10D) exemption for traditional (non-ULIP) life insurance policies issued on or after 1 April 2023 where the annual premium exceeds Rs 5 lakh (aggregated across all such policies held by the same person), and for ULIPs specifically, the threshold is a lower Rs 2.5 lakh in aggregate annual premium. Cross either threshold and maturity proceeds on the affected policy become taxable, generally as capital gains rather than fully exempt income.",
+          "The death benefit exception is unaffected by any of this: proceeds paid out on the death of the insured remain fully exempt under Section 10(10D) regardless of premium size. The change targets maturity and surrender proceeds on high-premium policies specifically, not death claims.",
+        ],
+      },
+      {
+        heading: "What NRIs should check",
+        paragraphs: [
+          "Because the threshold is aggregated across all policies of the relevant type held by one person, an NRI who holds several policies purchased over the years -- possibly at different life stages, some pre-2023 -- needs to check the combined annual premium against the threshold, not just look at any single policy in isolation. Pre-April-2023 policies are unaffected by this specific change and keep their original exemption terms.",
+        ],
+      },
+    ],
+    relatedSlugs: [
+      "us-tax-on-indian-ulips-and-insurance-plans",
+      "nri-investment-options-in-india-overview",
+      "form-8621-pfic-reporting-explained",
+    ],
+  },
+  {
+    slug: "nri-crypto-virtual-digital-asset-taxation",
+    clusterSlug: "investments-repatriation",
+    title: "How India Taxes NRI Crypto Gains Under Section 115BBH",
+    description:
+      "Crypto and other virtual digital assets get their own flat-rate regime in India -- no loss set-off, no deductions beyond cost, and a TDS bite on every qualifying sale.",
+    dek: "Section 115BBH doesn't care whether the seller is resident or NRI: a flat 30% applies to virtual digital asset gains either way, with rules unusually strict even by Indian tax standards.",
+    sections: [
+      {
+        paragraphs: [
+          "Since the Finance Act 2022 introduced Section 115BBH, gains from transferring a Virtual Digital Asset (VDA) -- the term covers cryptocurrency and NFTs -- are taxed in India at a flat 30% rate, plus applicable surcharge and 4% health and education cess, regardless of the seller's residential status or how long the asset was held.",
+        ],
+      },
+      {
+        heading: "Rules that are stricter than ordinary capital gains",
+        paragraphs: [
+          "Section 115BBH is notably less forgiving than India's ordinary capital gains regime in two specific ways: only the cost of acquisition can be deducted from sale proceeds (no other expenses reduce the taxable gain), and losses from VDA transfers cannot be set off against any other income, including gains from other VDAs, and cannot be carried forward to future years. A loss on one crypto position simply cannot offset a gain on another.",
+          "Separately, Section 194S imposes a 1% TDS on VDA sales once the transaction value crosses Rs 50,000 in a year. For an NRI, that 1% TDS is not a final tax -- the 30% liability under Section 115BBH still applies in full, with the TDS credited against it when the Indian return is filed, meaning the TDS is a withholding mechanism, not a settlement.",
+        ],
+      },
+      {
+        heading: "The DTAA question",
+        paragraphs: [
+          "Because Section 115BBH is a flat-rate domestic provision rather than a standard capital gains category, whether and how DTAA relief applies to it is a more specialized question than for conventional capital gains -- this is an area worth confirming directly with a preparer experienced in Indian VDA taxation rather than assuming the same treaty mechanics used for property or securities gains apply unchanged.",
+        ],
+      },
+    ],
+    relatedSlugs: [
+      "nri-investment-options-in-india-overview",
+      "advance-tax-for-nris-explained",
+      "foreign-tax-credit-form-1116-for-nris",
+    ],
+  },
+  {
+    slug: "capital-gains-account-scheme-cgas-nri",
+    clusterSlug: "real-estate-capital-gains",
+    title: "The Capital Gains Account Scheme: What NRIs Do When Reinvestment Can't Happen Before the Tax Deadline",
+    description:
+      "Sections 54, 54EC, and 54F all require reinvesting sale proceeds within a set window -- CGAS is the parking mechanism when that window won't close before the return is due.",
+    dek: "Selling property but haven't found the replacement asset before your Indian return is due? CGAS preserves the exemption -- but only if the money goes in before the ITR deadline, not after.",
+    sections: [
+      {
+        paragraphs: [
+          "Exemptions under Sections 54, 54B, 54D, 54F, and 54G all share a structural requirement: the capital gain (or, for 54F, the net sale proceeds) has to be reinvested in a specified asset -- typically another residential property -- within a prescribed window, generally up to two years for purchase or three years for construction. When that reinvestment genuinely can't happen before the income tax return for the sale year is due, the Capital Gains Account Scheme, 1988 (CGAS) is the mechanism that keeps the exemption alive.",
+        ],
+      },
+      {
+        heading: "How CGAS actually works",
+        paragraphs: [
+          "The unutilised sale proceeds are deposited into a CGAS account at an authorised bank on or before the return's due date; that deposit itself is treated as if the reinvestment had happened, preserving the exemption provisionally. NRIs can open a CGAS account, but it has to be opened under the NRO route -- not every bank branch offers this for non-resident customers, so it's worth confirming availability before the deadline is close.",
+          "The deposited funds then have to actually be used for the qualifying purchase or construction within the same overall timeline the exemption itself allows (commonly discussed as roughly two years from the sale for purchase). Miss both the CGAS deposit deadline and the underlying reinvestment window, and the exemption is lost -- there's no second grace period once the ITR due date has passed without a deposit.",
+        ],
+      },
+      {
+        heading: "The part people get wrong",
+        paragraphs: [
+          "The most common mistake is treating the CGAS deadline as flexible because the underlying reinvestment window (two or three years) still has time left. It isn't -- the deposit has to happen by the tax return's due date for that year, which is a much nearer deadline than the reinvestment window itself, and missing it forfeits the exemption regardless of how much time remains to actually reinvest.",
+        ],
+      },
+    ],
+    relatedSlugs: [
+      "section-54-54ec-exemptions-for-nris",
+      "section-54f-exemption-nris-reinvesting-other-assets",
+      "claiming-refund-excess-tds-property-sale-nri",
+    ],
+  },
+  {
+    slug: "gifting-immovable-property-in-india-nri-tax-implications",
+    clusterSlug: "real-estate-capital-gains",
+    title: "Gifting Immovable Property in India: Stamp Duty and Tax Rules for NRIs",
+    description:
+      "A gift deed sidesteps capital gains tax on the giver's side -- but the recipient can still owe tax if the stamp duty value is high and the donor isn't a defined 'relative.'",
+    dek: "Gifting a house to family sounds simple. Whether it's actually tax-free for the person receiving it depends entirely on whether the donor counts as a 'relative' under a fairly specific legal definition.",
+    sections: [
+      {
+        paragraphs: [
+          "A gift deed transferring immovable property in India -- a house, flat, or land -- must be executed on stamp paper, signed by both donor and donee, and registered under the Registration Act, 1908 to be legally valid; stamp duty is payable on the transaction even though no money changes hands. The tax treatment on the receiving side turns on a single question: does the donor qualify as a 'relative' under Section 56(2)(x) of the Income Tax Act.",
+        ],
+      },
+      {
+        heading: "The relative exemption, and its actual scope",
+        paragraphs: [
+          "If the donor is a relative as the Act defines it -- spouse, parents, children and their spouses, siblings and their spouses, and (less obviously) an aunt or uncle being the sibling of either parent -- the gift is fully exempt from tax in the recipient's hands regardless of the property's value. If the donor falls outside that defined list, the immovable property is taxable as income to the recipient once its stamp duty value exceeds Rs 50,000, with the entire stamp duty value taxed, not just the amount above the threshold.",
+          "This makes the definition of 'relative' the whole ballgame: a gift from a close friend, a cousin, or an in-law's sibling outside the specific relationships listed can trigger tax on the full stamp duty value, even though a gift of the identical property from a parent or sibling would be entirely exempt.",
+        ],
+      },
+      {
+        heading: "Practical points for NRIs specifically",
+        paragraphs: [
+          "For an NRI donor or donee, the underlying FEMA rules on who can hold and transfer Indian immovable property still apply on top of the income tax analysis -- gifting doesn't waive them. And because clubbing of income under Section 64 can separately apply if the gift is to a spouse or minor child (see the article on clubbing for the mechanics), a gift that's exempt on receipt can still generate a tax liability for the donor once the gifted property starts producing rental income or is later sold.",
+        ],
+      },
+    ],
+    relatedSlugs: [
+      "selling-inherited-property-in-india-as-nri",
+      "clubbing-of-income-nri-gifts-to-spouse-or-minor-child",
+      "power-of-attorney-nri-property-sale",
+    ],
+  },
+  {
+    slug: "home-loan-tax-benefits-for-nri-co-owners",
+    clusterSlug: "real-estate-capital-gains",
+    title: "Home Loan Tax Benefits for NRI Co-Owners: Section 24(b) and 80C in Joint Ownership",
+    description:
+      "NRIs get the same home loan deductions as residents -- but in a joint-owner, joint-borrower setup, the deduction is capped by ownership share, not claimed in full by each person.",
+    dek: "Co-owning and co-borrowing a home loan with a family member splits the tax benefit along ownership lines, not evenly -- a distinction that trips up NRI co-owners more often than it should.",
+    sections: [
+      {
+        paragraphs: [
+          "An NRI who owns Indian property financed by a home loan is entitled to the same deductions as a resident owner: up to Rs 2 lakh per year under Section 24(b) for interest on a self-occupied property (uncapped for a let-out property, subject to the overall loss set-off rules), and up to Rs 1.5 lakh under Section 80C for principal repayment. Residency status alone doesn't restrict eligibility for either deduction.",
+        ],
+      },
+      {
+        heading: "The joint-ownership catch",
+        paragraphs: [
+          "Where the property and the loan are jointly held -- commonly an NRI with a resident parent or sibling as co-owner and co-borrower -- each person can claim Section 24(b) and 80C deductions independently, but only up to their own ownership share, not the full Rs 2 lakh and Rs 1.5 lakh limits each. A 50-50 co-owned property with a 50-50 co-borrowed loan means each co-owner's deduction is capped at their 50% share of the interest and principal actually paid, not the statutory ceiling in isolation.",
+          "Both co-ownership and co-borrowing generally need to exist together for each person to claim a deduction -- being a co-borrower on the loan without being a co-owner of the property (or the reverse) typically doesn't support an independent claim for that person.",
+        ],
+      },
+      {
+        heading: "One more wrinkle for NRIs",
+        paragraphs: [
+          "Most of these home loan deductions are only available under India's old tax regime; under the new regime (the current default), interest deductions are generally restricted to let-out properties, which changes the calculus for an NRI-owned property that sits vacant or is used only during India visits rather than rented out. Which regime applies, and whether it's worth explicitly opting for the old one, is worth checking each year rather than assuming the prior year's choice.",
+        ],
+      },
+    ],
+    relatedSlugs: [
+      "buying-property-in-india-as-nri-fema-and-buyer-tds",
+      "joint-property-ownership-nri-capital-gains",
+      "tds-on-rent-paid-to-nri-landlord",
+    ],
+  },
           ];
 
 export function getArticle(slug: string): Article | undefined {
