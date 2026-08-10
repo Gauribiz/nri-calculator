@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Geist, Geist_Mono } from "next/font/google";
 import { categories } from "@/lib/categories";
+import BackToTop from "@/components/BackToTop";
+import SiteSearch from "@/components/SiteSearch";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -67,6 +69,9 @@ export default function RootLayout({
             >
               FAQ
             </Link>
+            <div className="ml-auto">
+              <SiteSearch />
+            </div>
           </nav>
         </header>
 
@@ -86,6 +91,7 @@ export default function RootLayout({
             </Link>
           </div>
         </footer>
+        <BackToTop />
       </body>
     </html>
   );
