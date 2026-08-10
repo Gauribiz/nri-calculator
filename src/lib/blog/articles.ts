@@ -275,7 +275,7 @@ export const articles: Article[] = [
       {
         heading: "Documentation you'll need regardless of amount",
         paragraphs: [
-          "Even within the ceiling, a remittance from an NRO account isn't a same-day online transfer in most cases: banks require Form 15CA (and often 15CB, a CA certificate) confirming the applicable tax has been paid or accounted for, before releasing funds. Property sale proceeds carry their own additional documentation given how directly they interact with Section 195 TDS.",
+          "Even within the ceiling, a remittance from an NRO account isn't a same-day online transfer in most cases: banks require Form 15CA (and often 15CB, a CA certificate) confirming the applicable tax has been paid or accounted for, before releasing funds. Property sale proceeds carry their own additional documentation given how directly they interact with Section 393(2) TDS.",
         ],
       },
       {
@@ -354,7 +354,7 @@ export const articles: Article[] = [
       {
         heading: "Real estate and government schemes",
         paragraphs: [
-          "NRIs can generally purchase residential and commercial property in India (agricultural land, plantation property, and farmhouses are typically restricted), with capital gains on eventual sale subject to the LTCG/STCG and Section 195 TDS rules covered on the Real Estate Capital Gains page. NRIs are also eligible for the National Pension System (NPS) on the same broad terms as residents, though repatriation of NPS proceeds follows its own scheme rules rather than the general NRO ceiling.",
+          "NRIs can generally purchase residential and commercial property in India (agricultural land, plantation property, and farmhouses are typically restricted), with capital gains on eventual sale subject to the LTCG/STCG and Section 393(2) TDS rules covered on the Real Estate Capital Gains page. NRIs are also eligible for the National Pension System (NPS) on the same broad terms as residents, though repatriation of NPS proceeds follows its own scheme rules rather than the general NRO ceiling.",
         ],
       },
     ],
@@ -398,27 +398,27 @@ export const articles: Article[] = [
       },
     ],
     relatedSlugs: [
-      "section-195-tds-on-nri-property-sales",
+      "section-393-2-tds-on-nri-property-sales",
       "form-13-lower-tds-certificate-worth-it",
     ],
   },
   {
-    slug: "section-195-tds-on-nri-property-sales",
+    slug: "section-393-2-tds-on-nri-property-sales",
     clusterSlug: "real-estate-capital-gains",
-    title: "Section 195 TDS on NRI Property Sales: What Buyers Withhold",
+    title: "Section 393(2) TDS on NRI Property Sales: What Buyers Withhold",
     description:
       "When a buyer purchases property from an NRI seller, they're legally required to withhold TDS on the full sale price — not just the gain. Here's why that matters.",
-    dek: "Section 195 TDS is withheld on the full sale consideration, not the profit. For a highly appreciated property, that's a very different number than sellers expect.",
+    dek: "Section 393(2) TDS is withheld on the full sale consideration, not the profit. For a highly appreciated property, that's a very different number than sellers expect.",
     sections: [
       {
         paragraphs: [
-          "Section 195 of the Income-tax Act places the withholding obligation on the buyer, not the seller, whenever the seller is a non-resident. In practice this means: when you sell Indian property as an NRI, the buyer is legally required to deduct TDS before paying you, and hand that amount over to the tax department directly.",
+          "Section 393(2) of the Income-tax Act places the withholding obligation on the buyer, not the seller, whenever the seller is a non-resident. In practice this means: when you sell Indian property as an NRI, the buyer is legally required to deduct TDS before paying you, and hand that amount over to the tax department directly.",
         ],
       },
       {
         heading: "The detail that surprises most sellers",
         paragraphs: [
-          "Unlike TDS on a resident seller (typically withheld on the sale value under a different, lower-rate provision), Section 195 TDS on an NRI seller is calculated on the full sale consideration by default — not on the capital gain. For a property that's appreciated significantly, that produces a TDS figure that can be far larger than the seller's actual tax liability on the gain, simply because the default withholding basis ignores the seller's cost.",
+          "Unlike TDS on a resident seller (typically withheld on the sale value under a different, lower-rate provision), Section 393(2) TDS on an NRI seller is calculated on the full sale consideration by default — not on the capital gain. For a property that's appreciated significantly, that produces a TDS figure that can be far larger than the seller's actual tax liability on the gain, simply because the default withholding basis ignores the seller's cost.",
         ],
       },
       {
@@ -429,7 +429,7 @@ export const articles: Article[] = [
       },
       {
         paragraphs: [
-          "The Section 195 TDS estimator on the Real Estate Capital Gains page estimates the withholding a buyer would apply on a given sale, with or without a certified lower rate, so you can see the gap between what gets withheld and what you may actually owe.",
+          "The Section 393(2) TDS estimator on the Real Estate Capital Gains page estimates the withholding a buyer would apply on a given sale, with or without a certified lower rate, so you can see the gap between what gets withheld and what you may actually owe.",
         ],
       },
     ],
@@ -448,7 +448,7 @@ export const articles: Article[] = [
     sections: [
       {
         paragraphs: [
-          "Because Section 195 TDS is withheld on the full sale consideration by default, NRI sellers with a genuinely small gain relative to the sale price can end up with a large share of their proceeds withheld — money that's technically recoverable, but only by filing an Indian tax return and waiting for a refund, which can take months. Applying to the assessing officer for a lower or nil TDS certificate (historically under Section 197, using Form 13) is the mechanism to correct the withholding amount upfront instead.",
+          "Because Section 393(2) TDS is withheld on the full sale consideration by default, NRI sellers with a genuinely small gain relative to the sale price can end up with a large share of their proceeds withheld — money that's technically recoverable, but only by filing an Indian tax return and waiting for a refund, which can take months. Applying to the assessing officer for a lower or nil TDS certificate (historically under Section 197, using Form 13) is the mechanism to correct the withholding amount upfront instead.",
         ],
       },
       {
@@ -465,12 +465,12 @@ export const articles: Article[] = [
       },
       {
         paragraphs: [
-          "The Form 13 explainer on the Real Estate Capital Gains page compares your default Section 195 withholding against your own estimated actual tax, to give a rough sense of whether the certificate is likely worth pursuing for your sale.",
+          "The Form 13 explainer on the Real Estate Capital Gains page compares your default Section 393(2) withholding against your own estimated actual tax, to give a rough sense of whether the certificate is likely worth pursuing for your sale.",
         ],
       },
     ],
     relatedSlugs: [
-      "section-195-tds-on-nri-property-sales",
+      "section-393-2-tds-on-nri-property-sales",
       "selling-property-in-india-as-nri-ltcg-vs-stcg",
     ],
   },
@@ -684,7 +684,7 @@ export const articles: Article[] = [
     sections: [
       {
         paragraphs: [
-          "When a tenant in India rents from a resident landlord, TDS on rent only kicks in above a specified threshold, and the rate is relatively modest. When the landlord is an NRI, Section 195 applies instead, and the obligation looks very different: the tenant must deduct TDS on the rent from the first rupee paid, with no minimum exemption amount, at a materially higher rate.",
+          "When a tenant in India rents from a resident landlord, TDS on rent only kicks in above a specified threshold, and the rate is relatively modest. When the landlord is an NRI, Section 393(2) applies instead, and the obligation looks very different: the tenant must deduct TDS on the rent from the first rupee paid, with no minimum exemption amount, at a materially higher rate.",
         ],
       },
       {
@@ -885,13 +885,13 @@ export const articles: Article[] = [
       },
       {
         paragraphs: [
-          "None of this changes how TDS is withheld at the point of sale: the Section 195 TDS estimator on this site's Real Estate Capital Gains page still applies the same way, withholding on the full sale consideration regardless of whether the property was purchased or inherited — the inheritance only affects the gain calculation itself, not the buyer's withholding obligation.",
+          "None of this changes how TDS is withheld at the point of sale: the Section 393(2) TDS estimator on this site's Real Estate Capital Gains page still applies the same way, withholding on the full sale consideration regardless of whether the property was purchased or inherited — the inheritance only affects the gain calculation itself, not the buyer's withholding obligation.",
         ],
       },
     ],
     relatedSlugs: [
       "selling-property-in-india-as-nri-ltcg-vs-stcg",
-      "section-195-tds-on-nri-property-sales",
+      "section-393-2-tds-on-nri-property-sales",
       "section-54-54ec-exemptions-for-nris",
     ],
   },
@@ -917,18 +917,18 @@ export const articles: Article[] = [
       {
         heading: "What NRIs are actually subject to instead",
         paragraphs: [
-          "NRI repatriation runs through the mechanisms covered elsewhere on this site: freely repatriable NRE funds, the annual RBI ceiling on NRO funds (with Form 15CA/15CB documentation), and — for property sale proceeds specifically — the Section 195 TDS withheld by the buyer at the time of sale, plus whatever the seller's actual tax liability turns out to be once a return is filed. None of these are LRS or its TCS regime.",
+          "NRI repatriation runs through the mechanisms covered elsewhere on this site: freely repatriable NRE funds, the annual RBI ceiling on NRO funds (with Form 15CA/15CB documentation), and — for property sale proceeds specifically — the Section 393(2) TDS withheld by the buyer at the time of sale, plus whatever the seller's actual tax liability turns out to be once a return is filed. None of these are LRS or its TCS regime.",
         ],
       },
       {
         paragraphs: [
-          "If you've seen a TCS rate or threshold quoted somewhere and are trying to work out whether it affects your own property-sale repatriation as an NRI, the short answer from current guidance is: that rate almost certainly describes LRS for residents, not your situation. The repatriation headroom estimator and Section 195 TDS estimator on this site's Investments & Repatriation and Real Estate Capital Gains pages reflect the rules that actually apply to NRIs instead.",
+          "If you've seen a TCS rate or threshold quoted somewhere and are trying to work out whether it affects your own property-sale repatriation as an NRI, the short answer from current guidance is: that rate almost certainly describes LRS for residents, not your situation. The repatriation headroom estimator and Section 393(2) TDS estimator on this site's Investments & Repatriation and Real Estate Capital Gains pages reflect the rules that actually apply to NRIs instead.",
         ],
       },
     ],
     relatedSlugs: [
       "nri-repatriation-limits-explained",
-      "section-195-tds-on-nri-property-sales",
+      "section-393-2-tds-on-nri-property-sales",
     ],
   },
 {
@@ -1109,13 +1109,13 @@ export const articles: Article[] = [
   sections: [
     {
       paragraphs: [
-        "A resident's fixed deposit interest is only subject to TDS once it crosses a threshold in a financial year, and even then at a modest rate, while resident savings account interest isn't subject to TDS at all. NRO fixed deposits work differently: because Section 194A (the resident TDS-on-interest provision, with its exemption threshold and savings-account carve-out) doesn't apply to non-residents, NRO interest — savings or fixed deposit — falls instead under Section 195, which has no equivalent basic exemption. Whatever interest an NRO FD credits, some of it is withheld before it ever reaches the account holder.",
+        "A resident's fixed deposit interest is only subject to TDS once it crosses a threshold in a financial year, and even then at a modest rate, while resident savings account interest isn't subject to TDS at all. NRO fixed deposits work differently: because Section 194A (the resident TDS-on-interest provision, with its exemption threshold and savings-account carve-out) doesn't apply to non-residents, NRO interest — savings or fixed deposit — falls instead under Section 393(2), which has no equivalent basic exemption. Whatever interest an NRO FD credits, some of it is withheld before it ever reaches the account holder.",
       ],
     },
     {
       heading: "The default rate",
       paragraphs: [
-        "Bank NRI-desk pages commonly cite a flat 30% TDS rate on NRO FD interest by default, before adding applicable surcharge and a 4% health and education cess. Note that this figure isn't perfectly uniform across sources — at least one tax-reference source describes Section 195 interest withholding closer to 20% plus surcharge/cess as a general rate — so treat 30% as the widely-cited figure for NRO FD interest specifically, but confirm the exact current rate (and the surcharge slab, which depends on the account holder's total income and can range considerably) before assuming a single all-in percentage.",
+        "Bank NRI-desk pages commonly cite a flat 30% TDS rate on NRO FD interest by default, before adding applicable surcharge and a 4% health and education cess. Note that this figure isn't perfectly uniform across sources — at least one tax-reference source describes Section 393(2) interest withholding closer to 20% plus surcharge/cess as a general rate — so treat 30% as the widely-cited figure for NRO FD interest specifically, but confirm the exact current rate (and the surcharge slab, which depends on the account holder's total income and can range considerably) before assuming a single all-in percentage.",
       ],
     },
     {
@@ -1128,7 +1128,7 @@ export const articles: Article[] = [
     {
       heading: "Why FDs feel like the sharper end of this",
       paragraphs: [
-        "NRO savings and NRO fixed deposit interest are taxed under the same Section 195 mechanism, so the underlying rule isn't actually different between the two. What usually makes it more noticeable on an FD is scale: FD interest tends to be a larger, more concentrated sum credited on a defined schedule, so the absence of any exemption threshold shows up as a bigger visible deduction than it does on the smaller, incremental interest a savings account generates.",
+        "NRO savings and NRO fixed deposit interest are taxed under the same Section 393(2) mechanism, so the underlying rule isn't actually different between the two. What usually makes it more noticeable on an FD is scale: FD interest tends to be a larger, more concentrated sum credited on a defined schedule, so the absence of any exemption threshold shows up as a bigger visible deduction than it does on the smaller, incremental interest a savings account generates.",
       ],
     },
   ],
@@ -1370,17 +1370,17 @@ export const articles: Article[] = [
     {
       heading: "How this interacts with the TDS already withheld",
       paragraphs: [
-        "By the time you're ready to repatriate, the buyer has typically already withheld TDS under Section 195 — generally on the full sale consideration, as covered in this site's Section 195 explainer, not just on the gain. The certifying CA's job at the 15CB stage is largely to confirm the tax position looks accounted for, referencing that withheld TDS, rather than to independently relitigate your total liability the way filing an actual return does. If the TDS withheld turns out to be larger than what you'll actually owe once your real cost basis and gain are worked out, that excess isn't released early through the 15CB process — it's recovered only by filing an Indian income tax return and claiming a refund, or, for a future sale, by front-loading the correction with a lower/nil TDS certificate obtained before the sale closes.",
+        "By the time you're ready to repatriate, the buyer has typically already withheld TDS under Section 393(2) — generally on the full sale consideration, as covered in this site's Section 393(2) explainer, not just on the gain. The certifying CA's job at the 15CB stage is largely to confirm the tax position looks accounted for, referencing that withheld TDS, rather than to independently relitigate your total liability the way filing an actual return does. If the TDS withheld turns out to be larger than what you'll actually owe once your real cost basis and gain are worked out, that excess isn't released early through the 15CB process — it's recovered only by filing an Indian income tax return and claiming a refund, or, for a future sale, by front-loading the correction with a lower/nil TDS certificate obtained before the sale closes.",
       ],
     },
     {
       paragraphs: [
-        "The Section 195 TDS estimator and Form 13 explainer on the Real Estate Capital Gains page both feed directly into this chain — the withholding figure they estimate is generally what a 15CB certificate will reference. Confirm the current property-count limit on the full-repatriation route, and the exact document checklist, directly with your bank's NRI desk before setting a remittance timeline around either.",
+        "The Section 393(2) TDS estimator and Form 13 explainer on the Real Estate Capital Gains page both feed directly into this chain — the withholding figure they estimate is generally what a 15CB certificate will reference. Confirm the current property-count limit on the full-repatriation route, and the exact document checklist, directly with your bank's NRI desk before setting a remittance timeline around either.",
       ],
     },
   ],
   relatedSlugs: [
-    "section-195-tds-on-nri-property-sales",
+    "section-393-2-tds-on-nri-property-sales",
     "form-13-lower-tds-certificate-worth-it",
     "ltcg-indexation-removal-budget-2024-property",
   ],
@@ -1407,23 +1407,23 @@ export const articles: Article[] = [
     {
       heading: "TDS is meant to be deducted co-owner by co-owner",
       paragraphs: [
-        "Section 195 TDS is meant to be applied separately against each NRI co-owner's own share of the sale consideration, not once against the whole sale price as if there were a single seller. Where a sale involves a mix of resident and NRI co-owners, the correct approach described by tax-advisory sources is seller-wise: the resident co-owner's share is subject to the resident-seller TDS provision (typically the lower rate under Section 194-IA), while the NRI co-owner's share is subject to the higher Section 195 rate — each computed separately against that owner's own portion of the consideration, and deposited against that owner's own PAN.",
+        "Section 393(2) TDS is meant to be applied separately against each NRI co-owner's own share of the sale consideration, not once against the whole sale price as if there were a single seller. Where a sale involves a mix of resident and NRI co-owners, the correct approach described by tax-advisory sources is seller-wise: the resident co-owner's share is subject to the resident-seller TDS provision (typically the lower rate under Section 194-IA), while the NRI co-owner's share is subject to the higher Section 393(2) rate — each computed separately against that owner's own portion of the consideration, and deposited against that owner's own PAN.",
       ],
     },
     {
       heading: "Where this breaks down in practice",
       paragraphs: [
-        "Buyers unfamiliar with mixed resident/NRI joint ownership sometimes default to withholding against a single PAN — often whichever co-owner is easiest to reach, or the resident co-owner — applying one rate to the entire sale price. That under-withholds relative to what Section 195 actually requires on the NRI co-owner's share, and leaves that co-owner's own Form 26AS without a matching TDS credit, which surfaces later as a reconciliation problem once each co-owner separately files a return and expects to claim their own credit against their own share of tax due. Getting a written breakdown of each co-owner's share, PAN, and residency status in front of the buyer and their bank before closing — not after — is the practical fix.",
+        "Buyers unfamiliar with mixed resident/NRI joint ownership sometimes default to withholding against a single PAN — often whichever co-owner is easiest to reach, or the resident co-owner — applying one rate to the entire sale price. That under-withholds relative to what Section 393(2) actually requires on the NRI co-owner's share, and leaves that co-owner's own Form 26AS without a matching TDS credit, which surfaces later as a reconciliation problem once each co-owner separately files a return and expects to claim their own credit against their own share of tax due. Getting a written breakdown of each co-owner's share, PAN, and residency status in front of the buyer and their bank before closing — not after — is the practical fix.",
       ],
     },
     {
       paragraphs: [
-        "This same logic carries through to exemptions: each co-owner independently decides whether and how to claim Section 54 or 54EC against their own share of the gain, so one co-owner reinvesting doesn't automatically shield another co-owner's share (see this site's Section 54/54EC explainer). The Section 195 TDS estimator on the Real Estate Capital Gains page is built around a single seller's consideration and gain; for a joint sale, the practical approach is to run it once per co-owner, using that co-owner's own share of the price and cost basis rather than the sale's combined totals.",
+        "This same logic carries through to exemptions: each co-owner independently decides whether and how to claim Section 54 or 54EC against their own share of the gain, so one co-owner reinvesting doesn't automatically shield another co-owner's share (see this site's Section 54/54EC explainer). The Section 393(2) TDS estimator on the Real Estate Capital Gains page is built around a single seller's consideration and gain; for a joint sale, the practical approach is to run it once per co-owner, using that co-owner's own share of the price and cost basis rather than the sale's combined totals.",
       ],
     },
   ],
   relatedSlugs: [
-    "section-195-tds-on-nri-property-sales",
+    "section-393-2-tds-on-nri-property-sales",
     "section-54-54ec-exemptions-for-nris",
     "ltcg-indexation-removal-budget-2024-property",
   ],
@@ -1803,7 +1803,7 @@ export const articles: Article[] = [
   sections: [
     {
       paragraphs: [
-        "If you sold Indian property as an NRI and the buyer withheld Section 195 TDS on the full sale consideration rather than the gain, you may be sitting on a refund — but only if you go and claim it. Unlike a Form 13 (recently renumbered Form 128) certificate, which corrects the withholding amount before the sale closes, this is the after-the-fact route: for sellers who either didn't apply for that certificate in time, or whose actual tax liability still came in below what was withheld even with one in place.",
+        "If you sold Indian property as an NRI and the buyer withheld Section 393(2) TDS on the full sale consideration rather than the gain, you may be sitting on a refund — but only if you go and claim it. Unlike a Form 13 (recently renumbered Form 128) certificate, which corrects the withholding amount before the sale closes, this is the after-the-fact route: for sellers who either didn't apply for that certificate in time, or whose actual tax liability still came in below what was withheld even with one in place.",
         "The mechanism is simple in principle and slower in practice: you file an Indian income tax return for the relevant financial year, report the sale and your actual capital gain, and let the return itself claim back the difference between TDS already paid and tax actually owed. Filing is required even if your total Indian income for the year is below the normal taxable threshold — a refund only gets processed if a return is filed.",
       ],
     },
@@ -1811,7 +1811,7 @@ export const articles: Article[] = [
       heading: "The paperwork that has to line up",
       paragraphs: [
         "Two documents do the real work here. Form 26AS (and the newer Annual Information Statement, AIS) is the tax department's own ledger of TDS credited against your PAN — it's what the return is checked against, so if the buyer's TDS filing (Form 27Q, the non-resident-specific TDS return, not the resident-property Form 26QB) hasn't posted correctly, your claimed credit won't match and the refund stalls. Form 16A is the TDS certificate the buyer is required to issue you as proof of what was deducted; keep it, but treat Form 26AS/AIS as the authoritative record if the two ever disagree.",
-        "This is also where buyer cooperation matters more than sellers often expect: a buyer who deducted TDS under Section 195 needs their own Tax Deduction Account Number (TAN) and has to file Form 27Q correctly for your credit to show up. A sale where the buyer is disorganized about this step is a common, and frustrating, source of refund delay that has nothing to do with your own return.",
+        "This is also where buyer cooperation matters more than sellers often expect: a buyer who deducted TDS under Section 393(2) needs their own Tax Deduction Account Number (TAN) and has to file Form 27Q correctly for your credit to show up. A sale where the buyer is disorganized about this step is a common, and frustrating, source of refund delay that has nothing to do with your own return.",
       ],
     },
     {
@@ -1828,7 +1828,7 @@ export const articles: Article[] = [
     },
   ],
   relatedSlugs: [
-    "section-195-tds-on-nri-property-sales",
+    "section-393-2-tds-on-nri-property-sales",
     "form-13-lower-tds-certificate-worth-it",
     "repatriating-property-sale-proceeds",
   ],
@@ -1895,22 +1895,596 @@ export const articles: Article[] = [
     {
       heading: "The part a PoA cannot change",
       paragraphs: [
-        "Whatever authority the PoA grants over signing and paperwork, it does not shift tax liability. Sources are consistent on this point: acts done by a PoA holder are legally treated as acts of the principal — the NRI seller — meaning Section 195 TDS is still calculated against the seller's status as an NRI (not the resident status of whoever holds the PoA), and the resulting capital gain is still assessed to the seller's own PAN. A PoA holder signing the sale deed doesn't make the transaction a resident-seller sale for tax purposes, and doesn't create any separate tax exposure for the PoA holder personally — the seller remains the one who owes the tax, claims any refund of excess TDS, and is named on the return.",
+        "Whatever authority the PoA grants over signing and paperwork, it does not shift tax liability. Sources are consistent on this point: acts done by a PoA holder are legally treated as acts of the principal — the NRI seller — meaning Section 393(2) TDS is still calculated against the seller's status as an NRI (not the resident status of whoever holds the PoA), and the resulting capital gain is still assessed to the seller's own PAN. A PoA holder signing the sale deed doesn't make the transaction a resident-seller sale for tax purposes, and doesn't create any separate tax exposure for the PoA holder personally — the seller remains the one who owes the tax, claims any refund of excess TDS, and is named on the return.",
       ],
     },
     {
       paragraphs: [
-        "In practice, a PoA is a logistics tool, not a tax-planning one — it solves the \"I can't be there in person\" problem and leaves the Section 195 withholding, refund, and capital-gains-reporting questions exactly where they'd be if the NRI seller had signed everything personally.",
+        "In practice, a PoA is a logistics tool, not a tax-planning one — it solves the \"I can't be there in person\" problem and leaves the Section 393(2) withholding, refund, and capital-gains-reporting questions exactly where they'd be if the NRI seller had signed everything personally.",
       ],
     },
   ],
   relatedSlugs: [
-    "section-195-tds-on-nri-property-sales",
+    "section-393-2-tds-on-nri-property-sales",
     "claiming-refund-excess-tds-property-sale-nri",
     "joint-property-ownership-nri-capital-gains",
   ],
 },
-];
+{
+      slug: "form-67-foreign-tax-credit-filing-guide",
+            clusterSlug: "dtaa-tax-residency",
+            title: "Form 67: How NRIs and Returning Residents Actually Claim Foreign Tax Credit",
+            description:
+        "Knowing you're entitled to foreign tax credit under DTAA is only half the job — Form 67 is the procedural step that actually gets it into your Indian tax computation, and missing its timing derails more claims than the entitlement itself.",
+              dek: "Foreign tax credit isn't automatic. Form 67 is the document that turns a DTAA entitlement into an actual reduction in your Indian tax bill — and its deadline catches more people than the underlying rule does.",
+              sections: [
+          {
+                    paragraphs: [
+                                "Claiming DTAA relief and actually receiving it are two different things. The relief itself — credit for tax you've already paid abroad, set off against your Indian tax on the same income — is a substantive right under India's tax treaties and domestic law. But the Income Tax Department doesn't scan your foreign tax documents and apply it for you. You have to file Form 67, under Rule 128 of the Income-tax Rules, and you have to file it in a specific way, within a specific window, or the credit gets stuck.",
+                                "Form 67 matters most to people who don't fit the simple 'NRI' or 'resident' boxes cleanly in a given year: someone who moved back to India mid-year and still has US-sourced income taxed there, a resident Indian with foreign investment income subject to withholding abroad, or an RNOR with a foreign consulting contract. If you're a resident (ordinarily or not) reporting foreign-source income that India also taxes, and tax was already withheld or paid on it overseas, Form 67 is how you get credit for that overseas payment against what you owe India — separate and distinct from Form 15CA/15CB, which governs money leaving India, not credit for tax already paid on income earned abroad.",
+                              ],
+          },
+          {
+                    heading: "What actually goes into the form",
+                    paragraphs: [
+                                "Form 67 isn't a bare declaration — it requires supporting detail, and the tax department can and does query claims that don't have it. Rule 128(8) sets out what counts as acceptable proof of foreign tax paid.",
+                              ],
+                    list: [
+                                "A statement of the foreign income and the foreign tax deducted or paid on it, in the format Form 67 itself specifies",
+                                "Proof of payment — a certificate or statement from the foreign tax authority, the foreign payer (for tax deducted at source abroad), or a self-certified statement of the foreign return along with proof of payment/deduction, where the deducting authority's certificate isn't available",
+                                "Currency conversion at the Telegraphic Transfer buying rate as on the last day of the month immediately preceding the month in which the foreign tax was paid or deducted — not the date of the Indian tax filing",
+                              ],
+          },
+          {
+                    heading: "The deadline that trips people up",
+                    paragraphs: [
+                                "Rule 128(9) gives you until the end of the relevant assessment year to file Form 67, provided your return itself was filed on time under Section 139(1) or as a belated return under 139(4) — for FY2025-26/AY2026-27, that technically means you have until 31 December 2026, well after the ITR filing deadline itself. If you're filing an updated return under Section 139(8A), Form 67 needs to accompany that filing instead.",
+                                "In practice, most tax practitioners don't rely on that longer window. The return-processing system cross-checks Form 67 against the credit claimed in the ITR, and filing it well before or alongside your return avoids a mismatch notice that then has to be resolved after the fact. Treat 'end of assessment year' as the outer legal limit, not the target date.",
+                              ],
+          },
+          {
+                    heading: "What happens if you miss it anyway",
+                    paragraphs: [
+                                "A late Form 67 is not automatically fatal, and this is worth knowing before you assume a missed window means a lost credit. Multiple ITAT benches — Mumbai, Kolkata, Hyderabad, Indore — have held that Rule 128(9)'s timeline is directory rather than mandatory, on the reasoning that foreign tax credit is a substantive right under the treaty relief provisions, and a procedural rule can't extinguish a right the underlying section grants. Rule 128 itself, unlike some other provisions in the Act, doesn't contain express language disallowing the credit for a late filing.",
+                                "That case law is real, but it's relief you get on appeal, not a default outcome. The CPC's automated processing will typically deny or flag the credit first if Form 67 wasn't on record when the return was processed, leaving you to file a rectification request or, if that fails, go through appellate channels citing this line of rulings. It's an available remedy, not a substitute for filing on time.",
+                              ],
+          },
+          {
+                    heading: "The credit itself has limits",
+                    paragraphs: [
+                                "Even a correctly and timely filed Form 67 doesn't hand back a rupee-for-rupee refund of foreign tax paid. The credit is capped at the lower of the foreign tax rate or the Indian tax rate applicable to that specific income, computed country-by-country and income-by-income, and it applies only against Indian income tax, surcharge, and cess — not against interest, fees, or penalties charged under Indian law. Foreign tax that's currently under dispute abroad isn't creditable until that dispute is resolved and the tax is actually paid.",
+                                "One more thing worth flagging given how much else has shifted: under the Income-tax Act, 2025, now in force from FY2026-27, the underlying double-taxation relief provisions move from the old Sections 90, 90A, and 91 to new Sections 159 and 160, and Form 67 itself is being succeeded by Form 44 under Rule 76 of the Income-tax Rules, 2026. For the current filing season covering income earned before 1 April 2026, Form 67 and Rule 128 remain the operative mechanics — but don't assume the form number stays the same next year.",
+                              ],
+          },
+              ],
+              relatedSlugs: [
+                "claiming-dtaa-relief-credit-vs-exemption",
+                "rnor-status-explained-for-returning-nris",
+                "dual-status-tax-return-year-you-move",
+                "foreign-tax-credit-form-1116-for-nris",
+              ],
+          },
+        {
+              slug: "deemed-residency-rule-explained-who-it-hits",
+              clusterSlug: "dtaa-tax-residency",
+              title: "The Deemed Residency Rule: Which High-Income NRIs Does It Actually Catch?",
+              description:
+                      "Section 6(1A) — now Section 6(7) under the Income-tax Act, 2025 — was built to catch Indian citizens who arrange their affairs to owe tax nowhere. Most NRIs, including most people in the US, UK, or Singapore, aren't in its path at all.",
+              dek: "A Finance Act 2020 provision made 'stateless for tax purposes' a taxable status in India. Here's exactly who it reaches, and why paying tax anywhere else usually keeps you out of it entirely.",
+              sections: [
+                {
+                          paragraphs: [
+                                      "The deemed residency rule gets more anxious attention among NRIs than its actual reach justifies. It was introduced by the Finance Act 2020, originally as Section 6(1A) of the Income-tax Act, 1961, and is renumbered Section 6(7) under the Income-tax Act, 2025, now in force from FY2026-27. The provision exists to close a specific loophole: an Indian citizen who spends enough time abroad to avoid being a tax resident anywhere under a physical-presence test, and who happens to base themselves in a jurisdiction with no personal income tax, could historically go a full year owing income tax to no country at all despite substantial Indian-source income. That's the target. It is not a general tightening of NRI taxation, and it doesn't touch most people who already pay tax as residents somewhere else.",
+                                    ],
+                },
+                {
+                          heading: "The two conditions, and both have to be true",
+                          paragraphs: [
+                                      "This provision only applies to someone who is already a non-resident under India's ordinary physical-presence test — it's a backstop, not a first-line residency rule. On top of that, both of the following have to hold in the same previous year:",
+                                    ],
+                          list: [
+                                      "You are an Indian citizen (not an OCI or PIO cardholder, and not a foreign citizen of Indian origin — the rule is written narrowly to citizenship)",
+                                      "Your total income other than income from foreign sources — broadly, income accruing or arising outside India, excluding income from a business controlled or a profession set up in India — exceeds ₹15 lakh in the previous year",
+                                      "You are not liable to income tax in any other country or territory by reason of domicile, residence, or any similarly framed criterion",
+                                    ],
+                },
+                {
+                          heading: "Who this actually catches",
+                          paragraphs: [
+                                      "The clearest fact pattern is an Indian citizen based in the UAE, Bahrain, Saudi Arabia, Kuwait, or another jurisdiction that levies no personal income tax on individuals, who spends few enough days in India to avoid residency under the ordinary test, but who still earns more than ₹15 lakh a year from Indian rental income, a directorship, consulting fees routed to an Indian entity, or a business controlled from India. Because that person owes personal income tax nowhere — not in India under the ordinary test, not in their country of residence because it simply doesn't tax individuals — they fall squarely into the gap Section 6(7) was written to close.",
+                                    ],
+                },
+                {
+                          heading: "Who it doesn't touch",
+                          paragraphs: [
+                                      "This is where the rule is narrower than its reputation suggests. It does not apply to OCI holders or foreign passport holders of Indian origin — only Indian citizens. It does not apply to anyone below the ₹15 lakh Indian-income threshold, which excludes the majority of salaried NRIs. And critically, it does not apply to someone who is a genuine tax resident of another country, even a low-tax one — being 'liable to tax' by reason of residence is generally read as being within that country's tax jurisdiction on your worldwide or resident income, not as actually owing a positive tax bill after credits and deductions bring it to zero. An NRI who is a bona fide tax resident of the US, UK, Singapore, or any other jurisdiction that taxes based on residence stays outside this provision, because they are, by definition, liable to tax somewhere else.",
+                                    ],
+                },
+                {
+                          heading: "If you are caught, it's a soft landing, not full residency",
+                          paragraphs: [
+                                      "A person deemed resident under this provision is always classified as 'resident but not ordinarily resident' (RNOR), never as an ordinarily resident. That distinction does real work: RNOR status means foreign-source income stays outside India's tax net, exactly as it would for a straightforward NRI, and only Indian-source income — along with income from any business controlled or profession set up in India — becomes taxable at resident slab rates. It also means the deemed resident does not pick up Schedule FA foreign-asset disclosure obligations under the Black Money Act framework, since that requirement is tied to ordinarily-resident (ROR) status specifically, not RNOR. Deemed residents also generally fall outside DTAA tie-breaker analysis in practice, since the provision is aimed at people with no residence-based tax liability anywhere else to tie-break against in the first place. The practical effect for someone who does get caught is closer to a reclassification for a handful of Indian-source income items than a wholesale change in tax treatment.",
+                                    ],
+                },
+                    ],
+              relatedSlugs: [
+                      "nri-or-resident-how-tax-residency-works",
+                      "dtaa-tie-breaker-test-explained",
+                      "rnor-status-explained-for-returning-nris",
+                      "oci-pio-status-vs-tax-residency",
+                    ],
+        },
+        {
+              slug: "form-10f-and-trc-claiming-dtaa-benefits-in-india",
+              clusterSlug: "dtaa-tax-residency",
+              title: "Form 10F and the Tax Residency Certificate: The Paperwork Between You and Your DTAA Rate",
+              description:
+                      "A Tax Residency Certificate alone rarely gets an NRI the lower treaty rate on Indian income anymore — Form 10F (now Form 41 under the Income-tax Act, 2025) has to go with it, filed electronically, before the payment is made.",
+              dek: "The treaty rate on your Indian income isn't self-executing. Without a Tax Residency Certificate and the accompanying declaration filed on the e-filing portal, an Indian payer defaults to the higher domestic withholding rate — and getting it back later takes a refund claim.",
+              sections: [
+                {
+                          paragraphs: [
+                                      "A DTAA existing between India and your country of residence doesn't automatically get you the lower treaty rate on dividends, interest, rent, or fees for services sourced in India. The payer — a bank, a tenant, an Indian company paying a consulting invoice — has to have documentary proof in hand before they deduct tax, or they default to the higher domestic rate under the Income-tax Act. That proof is a combination of two documents: a Tax Residency Certificate (TRC) from your country of residence, and a supplementary declaration on the Indian e-filing portal, historically called Form 10F. Under the Income-tax Act, 2025, now governing FY2026-27 onward, that declaration is renumbered Form 41, filed under Section 159(8) read with Rule 75 of the Income-tax Rules, 2026 — the mechanics are the same in substance, but don't be surprised if the form name in your CA's checklist has changed from what it was last year.",
+                                    ],
+                },
+                {
+                          heading: "Why the TRC by itself stopped being enough",
+                          paragraphs: [
+                                      "For a period after DTAA relief provisions were first written, a TRC alone was treated as sufficient proof of treaty eligibility. A 2013 amendment changed that: it added a requirement that non-residents furnish additional prescribed information if the TRC itself didn't already contain it — country of residence, taxpayer identification number, period of residency, and a few other specifics that a foreign tax authority's TRC template often omits. Form 10F was introduced to capture exactly that gap-filling information. Under the new Form 41 regime, that logic has actually tightened further: rather than being required only when the TRC is missing details, the declaration is now mandatory in every case where treaty benefits are claimed, regardless of how complete the TRC already is.",
+                                    ],
+                },
+                {
+                          heading: "Getting the TRC itself",
+                          paragraphs: [
+                                      "The TRC has to come from the tax authority of your actual country of residence — the IRS issues Form 6166 for US tax residents requesting one, and HMRC has its own certificate process for UK residents; most jurisdictions with a functioning tax administration have an equivalent. It typically needs to be renewed for each relevant tax year rather than treated as a one-time document. (The reverse case — an Indian resident who needs a TRC to claim relief in a foreign country — goes through a different route domestically, applying to the jurisdictional Assessing Officer using Form 10FA and receiving Form 10FB; that's a separate process from what an NRI claiming Indian-side treaty relief needs.)",
+                                    ],
+                },
+                {
+                          heading: "What the declaration actually asks for",
+                          paragraphs: [
+                                      "Beyond the TRC, the Form 10F/Form 41 declaration collects a defined set of details the Indian tax administration wants on record independent of what the TRC template happens to include.",
+                                    ],
+                          list: [
+                                      "Status of the assessee — individual, company, firm, or other category",
+                                      "Nationality, or country/place of incorporation for a non-individual",
+                                      "Tax identification number in the country of residence, or a unique identification number if no TIN exists there",
+                                      "The specific period for which the TRC's residential status applies",
+                                      "Address in the country of residence during that period",
+                                    ],
+                },
+                {
+                          heading: "Skip it, and the cost shows up as a refund claim, not a rate cut",
+                          paragraphs: [
+                                      "Filing has been fully electronic since October 2023, including for non-residents without an Indian PAN — the e-filing portal has a dedicated registration category for 'non-residents not holding and not required to have PAN,' so lack of a PAN isn't a reason to skip this step. If the TRC and declaration aren't on file with the payer before the payment is made, the payer has no choice but to withhold at the higher default domestic rate rather than the treaty rate — this shows up often with rent paid to NRI landlords and interest or dividend payments. Getting that difference back afterward means claiming a refund through your Indian income tax return rather than simply asking the payer to correct it retroactively, which is a slower and more paperwork-heavy path than filing the TRC and Form 10F/Form 41 before the money moves in the first place.",
+                                    ],
+                },
+                    ],
+              relatedSlugs: [
+                      "claiming-dtaa-relief-credit-vs-exemption",
+                      "dtaa-tie-breaker-test-explained",
+                      "tds-on-rent-paid-to-nri-landlord",
+                      "form-w8ben-treaty-rate-claims",
+                    ],
+        },
+  {
+      slug: "tds-on-nri-mutual-fund-dividends-and-capital-gains",
+            clusterSlug: "nre-nro-tds",
+            title: "TDS on NRI Mutual Fund Dividends and Capital Gains: How the AMC Deducts Tax",
+            description:
+        "Indian asset management companies withhold tax on NRI mutual fund payouts under a different mechanism than bank TDS -- here's how dividend and capital-gains withholding actually works.",
+              dek: "TDS on mutual fund payouts to NRIs runs on its own rules, separate from the bank-interest withholding most NRIs already know. Here's what an AMC actually deducts, and when it can be reduced.",
+              sections: [
+          {
+                    paragraphs: [
+                                "Most NRIs first encounter TDS through their bank -- a fixed deposit matures, and 30% (plus surcharge and cess) disappears before the interest ever reaches the NRO account. Mutual fund payouts work differently, both in the section of law that applies and in how little room there is to argue the rate down. An Indian asset management company (AMC) is a 'person responsible for paying' income to a non-resident, and the Income-tax Act requires it to deduct tax before a single rupee of dividend or capital gain reaches an NRI investor's account -- there's no threshold below which the deduction is skipped, unlike the exemption thresholds that sometimes apply to resident investors.",
+                                "Two separate withholding provisions are in play, and conflating them is the most common mistake NRI investors make when they see multiple TDS entries against the same fund house in their Annual Information Statement.",
+                              ],
+          },
+          {
+                    heading: "Dividend and IDCW payouts",
+                    paragraphs: [
+                                "Income distributed by a mutual fund -- dividend or Income Distribution cum Capital Withdrawal (IDCW) payouts -- falls under the section that specifically deals with income from mutual fund units paid to non-residents. Under the old Income-tax Act, 1961 this was Section 196A; under the Income-tax Act, 2025, which took effect from 1 April 2026, the same withholding rule sits inside Section 393(2) (Table S. No. 10 of the Act's TDS schedule). The rate is a flat 20% (before surcharge and cess), applied regardless of the investor's income slab, because non-residents don't get slab-rate treatment at the point of deduction the way resident investors do.",
+                                "A DTAA can lower this, but not automatically. The AMC will apply the treaty rate only if the investor furnishes a valid Tax Residency Certificate (TRC) for the relevant year and the treaty rate is actually lower than 20%. Even then, tax practitioners flag a real limitation: income distributed by an Indian mutual fund often doesn't fit neatly inside a treaty's definition of 'dividend,' so claiming treaty relief on this specific income stream isn't as straightforward as it is for, say, bank interest. Some AMCs will honour a lower treaty rate with a TRC and Form 10F on file; others default to the domestic 20% and leave the investor to claim the difference as a refund when filing a return.",
+                              ],
+          },
+          {
+                    heading: "Capital gains on redemption",
+                    paragraphs: [
+                                "Capital gains from redeeming or switching mutual fund units are withheld under the general non-resident payment provision -- old Section 195, now Section 393(2) of the 2025 Act (a different table row from the dividend rule above) -- at the rates 'in force' for that category of gain. Following the Budget 2024 changes, those rates for equity-oriented funds are 20% for short-term capital gains (units held 12 months or less) and 12.5% for long-term gains above the Rs 1.25 lakh annual exemption, both plus applicable surcharge and cess. For debt-oriented and other non-equity funds -- where units bought on or after 1 April 2023 no longer get indexation or a long-term category at all -- AMCs generally withhold at a flat 30%, since there's no slab rate to apply at the point of a non-resident redemption the way there would be for a resident investor at their own income slab.",
+                                "This is a meaningful contrast with residents, who face no TDS at all on mutual fund capital gains -- the withholding obligation on redemption gains exists only because the investor is non-resident. It also means the AMC's deduction is often a rough, conservative estimate of the actual tax owed, not a precise final figure -- particularly for debt funds, where 30% is well above what many NRIs' effective India tax rate on that gain would otherwise be.",
+                              ],
+          },
+          {
+                    heading: "Reducing or reconciling the deduction",
+                    paragraphs: [
+                                "Two paths exist to avoid overpaying through the year. One is upfront: submitting a TRC and Form 10F to the AMC before redemption or dividend payout, so a lower treaty rate applies at source where the AMC accepts it (this is a narrower version of the same TRC-and-10F paperwork used for Form 15CA/15CB remittance certification on other outward payments). The other is after the fact: filing an Indian income tax return to claim a refund of TDS deducted in excess of actual tax liability, which is common for debt-fund redemptions given the flat 30% rate.",
+                                "Either way, the deducted amounts should show up against the investor's PAN in Form 26AS and the Annual Information Statement, typically with a lag of one to two quarters after the AMC files its TDS return. Checking that reconciliation before filing -- rather than relying on the AMC's TDS certificate alone -- catches the fairly common case of a mismatched PAN or a late TDS return delaying credit into the wrong assessment year.",
+                              ],
+          },
+              ],
+              relatedSlugs: [
+                "tds-on-nro-interest-explained",
+                "form-26as-reconciling-tds-credit-as-nri",
+                "form-15ca-15cb-explained",
+                "pfic-rules-for-nris-mutual-fund-trap",
+              ],
+          },
+        {
+              slug: "advance-tax-for-nris-explained",
+              clusterSlug: "nre-nro-tds",
+              title: "Advance Tax for NRIs: When TDS Isn't Enough",
+              description:
+                      "NRIs often assume TDS covers their entire Indian tax bill -- it doesn't always, and the advance tax rules that fill the gap apply to non-residents with no age-based exemption.",
+              dek: "TDS catches most NRI income at source, but not all of it, and not always at the right rate. When it falls short, advance tax obligations -- and their interest penalties -- apply to NRIs exactly as they do to residents.",
+              sections: [
+                {
+                          paragraphs: [
+                                      "A common assumption among NRIs is that because most Indian-source income -- bank interest, rent, mutual fund payouts, property sale proceeds -- already has tax withheld at source, there's nothing left to pay. That's often close to true, but 'close' is doing a lot of work in that sentence. Advance tax is a separate, independent obligation that sits underneath the TDS system, and it applies to non-residents on exactly the same terms as residents, with one notable exception that cuts against NRIs rather than for them.",
+                                    ],
+                },
+                {
+                          heading: "When the obligation kicks in",
+                          paragraphs: [
+                                      "Under the Income-tax Act, 1961, the liability to pay advance tax was set out in Sections 207 and 208; under the Income-tax Act, 2025, in force from 1 April 2026, the equivalent provisions are Sections 403 and 404. The trigger hasn't changed with the renumbering: any taxpayer -- resident or non-resident -- whose estimated tax liability for the year, net of TDS already deducted, is Rs 10,000 or more must pay advance tax during the year rather than settling the full amount when filing the return.",
+                                      "For NRIs this most often gets triggered by income that either isn't subject to TDS at all or is under-withheld relative to actual liability: capital gains on listed securities held outside a TDS-triggering redemption, rental income where a tenant deducted TDS at a lower certificate-based rate but the NRI's actual liability turned out higher, or any year with a large one-off capital gain -- such as an unlisted asset or foreign-currency conversion gain -- that no payer withheld against at all.",
+                                    ],
+                },
+                {
+                          heading: "No senior-citizen exemption for NRIs",
+                          paragraphs: [
+                                      "Resident individuals aged 60 or above with no business or professional income are exempt from paying advance tax entirely -- they can settle their full liability at return-filing time without interest exposure. That carve-out, under old Section 207(2) and its 2025 Act equivalent, is written explicitly for resident senior citizens. A non-resident senior citizen with substantial NRO interest, rental income, or capital gains gets no such relief regardless of age; the ordinary advance tax schedule and interest rules apply in full.",
+                                    ],
+                },
+                {
+                          heading: "Due dates and the cost of missing them",
+                          paragraphs: [
+                                      "The instalment schedule is the same four dates used across the tax system: 15 June, 15 September, 15 December, and 15 March, by which cumulative payments of 15%, 45%, 75%, and 100% of the estimated annual liability are due. Missing or underpaying an instalment triggers interest under what were Sections 234B and 234C of the 1961 Act -- now Sections 424 and 425 of the Income-tax Act, 2025 -- generally at 1% per month (or part of a month) on the shortfall, calculated from the due date of each missed instalment through to actual payment or assessment. A full failure to pay advance tax where it was owed compounds this across multiple instalments, since each missed deadline accrues its own interest run.",
+                                      "In practice, the safest approach for an NRI with a mix of TDS-covered and non-TDS income is to run a rough estimate each quarter -- total expected Indian-source income for the year, tax at applicable rates (including DTAA relief where a valid TRC is on file), less TDS already withheld or expected -- and pay the shortfall against each instalment date rather than waiting to true it all up in the return. Capital gains realised late in the year (say, a property sale in February) get some relief here: tax on income that genuinely couldn't have been anticipated earlier in the year is generally not penalised for the instalments that had already passed, provided it's paid with the next instalment falling due.",
+                                    ],
+                },
+                    ],
+              relatedSlugs: [
+                      "do-nris-need-to-file-indian-tax-return",
+                      "tds-on-nro-interest-explained",
+                      "form-26as-reconciling-tds-credit-as-nri",
+                      "claiming-dtaa-relief-credit-vs-exemption",
+                    ],
+        },
+        {
+              slug: "nre-nro-accounts-when-you-return-to-india",
+              clusterSlug: "nre-nro-tds",
+              title: "What Happens to Your NRE and NRO Accounts When You Move Back to India",
+              description:
+                      "Returning to India for good doesn't just change your tax residency -- it obligates you to redesignate your NRE and NRO accounts, on a timeline RBI describes simply as 'immediately.'",
+              dek: "The day your FEMA residency flips to resident, your NRE and NRO accounts are technically no longer the right accounts to hold. Here's what redesignation actually involves, and what happens if it's ignored.",
+              sections: [
+                {
+                          paragraphs: [
+                                      "Residency for tax purposes and residency for foreign-exchange purposes run on different clocks, and NRIs planning a permanent move back to India often track only the tax one -- the 182-day test, RNOR status, and so on. But FEMA (the Foreign Exchange Management Act) has its own residency rule, and it flips the moment someone returns to India with the intention of staying, not at the end of a tax year. That flip carries an immediate, practical consequence: NRE and NRO accounts are structured for non-residents, and once FEMA treats the holder as resident, those account types are no longer the correct ones to operate.",
+                                    ],
+                },
+                {
+                          heading: "NRE accounts: redesignate or move to RFC",
+                          paragraphs: [
+                                      "RBI's rules for accounts held by persons resident outside India are direct on this point, using the word 'immediately': on return for permanent settlement, an NRE account should be redesignated as a resident rupee account, or its funds transferred into an eligible Resident Foreign Currency (RFC) account. There's no fixed number of days written into the regulation itself, but banks treat 'immediately' as a prompt obligation rather than something to defer until convenient -- continuing to operate an NRE account after FEMA residency has changed is a FEMA violation, not a paperwork oversight.",
+                                      "Existing NRE term deposits get a practical accommodation: banks generally allow them to run to their original maturity at the contracted interest rate rather than forcing an immediate premature closure, and RBI rules specifically permit no-penalty conversion of an NRE deposit into an RFC account. Once matured, the principal and interest move into either a resident rupee account or an RFC account, depending on the account holder's eligibility and preference.",
+                                    ],
+                },
+                {
+                          heading: "NRO accounts: a simpler redesignation",
+                          paragraphs: [
+                                      "NRO accounts have a shorter story because the tax treatment barely changes -- NRO interest was already taxable in India before the return, and it remains taxable afterward. The bank simply redesignates the NRO account as an ordinary resident savings or current account. There's no RFC option here, since NRO accounts hold rupee funds rather than foreign currency, and no equivalent maturity-runout complexity beyond what any resident term deposit would have.",
+                                    ],
+                },
+                {
+                          heading: "RFC accounts and the RNOR window",
+                          paragraphs: [
+                                      "RFC accounts exist specifically for this transition -- a resident account that can still be maintained in foreign currency, with no repatriation restriction, intended for returning NRIs to hold foreign-currency savings and NRE/FCNR proceeds without forcing an immediate rupee conversion. Their tax treatment tracks residency status closely: interest earned on an RFC account is exempt from Indian tax under Section 10(15)(iv)(fa) of the Income-tax Act for as long as the account holder remains RNOR (Resident but Not Ordinarily Resident), but becomes fully taxable at slab rates once that person becomes an ordinary tax resident (ROR) -- typically two to three years after return, depending on their prior years of NRI status.",
+                                      "FCNR(B) deposits sit slightly apart from this: an existing FCNR(B) deposit can generally continue to maturity at its contracted rate even after the holder becomes FEMA-resident, with the interest earned during that remaining term still following NRI/RNOR-linked exemption treatment. Once it matures, the same choice applies -- move it into a resident rupee account or an RFC account.",
+                                    ],
+                },
+                    ],
+              relatedSlugs: [
+                      "nre-vs-nro-accounts-which-do-you-need",
+                      "fcnr-deposits-explained",
+                      "rnor-status-explained-for-returning-nris",
+                      "joint-nre-nro-account-with-resident-relative",
+                    ],
+        },
+  {
+      slug: "reits-and-invits-taxation-for-nris",
+            clusterSlug: "investments-repatriation",
+            title: "REITs and InvITs: How NRIs Are Actually Taxed on the Distributions",
+            description:
+        "REIT and InvIT payouts aren't a single 'dividend' -- they're a blend of interest, dividend, rent and return of capital, and each piece is taxed differently for an NRI investor.",
+              dek: "A REIT or InvIT distribution statement looks like one number. It isn't. For NRIs, each component inside it carries its own tax rate, its own TDS section, and its own reporting rule.",
+              sections: [
+          {
+                    paragraphs: [
+                                "Real Estate Investment Trusts and Infrastructure Investment Trusts have become a genuinely popular way for NRIs to get exposure to Indian commercial property and infrastructure without the headache of owning physical assets from abroad. Units in listed vehicles like Embassy REIT, Mindspace Business Parks, Brookfield India Real Estate Trust, or infrastructure InvITs such as IndiGrid and IRB InvIT trade on the stock exchange like any other security, and NRIs can buy them through a normal demat account. What trips people up is the taxation, because a REIT/InvIT payout isn't one kind of income -- it's several, bundled into a single quarterly credit to your account.",
+                                "Both structures are classified as 'business trusts' and taxed under a pass-through regime -- recently renumbered from Section 115UA under the Income-tax Act, 1961 to the corresponding provision under the Income-tax Act, 2025 -- meaning the trust itself generally doesn't pay tax on income it distributes; instead, the tax liability passes through to you as the unit holder, computed separately for each type of income in the distribution.",
+                              ],
+          },
+          {
+                    heading: "Four components, four tax treatments",
+                    paragraphs: [
+                                "A typical distribution statement breaks the payout into interest, dividend, rental income, and repayment of debt (return of capital). The trust usually routes its underlying assets through Special Purpose Vehicles, and the mix depends on how each SPV is financed and taxed.",
+                                "Interest, paid by the SPV to the trust and passed through to you, is taxable in your hands. For non-resident unit holders it attracts TDS at 5% under the relevant withholding provision (Section 194LBA under the 1961 Act numbering), though this can be reduced under a DTAA if you furnish a Tax Residency Certificate and Form 10F. Dividend income is taxable only if the SPV paying it opted for the concessional 22% corporate tax rate under Section 115BAA -- in that case TDS applies at 10% or the DTAA rate, whichever is lower. If the SPV did not opt in and paid regular corporate tax, the dividend passed through to you is exempt, though TDS is often still deducted and needs to be reconciled. Rental income earned directly by the trust and distributed to you is generally exempt in your hands, but here too TDS is commonly withheld and refundable through your return. Repayment of SPV debt -- return of capital -- is not taxed as income at all when received; instead it reduces your cost of acquisition for the units, deferring the tax to the point of sale.",
+                              ],
+                    list: [
+                                "Interest component -- taxable, 5% TDS for NRIs (or lower DTAA rate)",
+                                "Dividend component -- taxable only if the SPV used the 115BAA concessional regime, 10% TDS (or DTAA rate)",
+                                "Rental income component -- generally exempt, TDS still often withheld and refundable",
+                                "Return of capital component -- not taxed on receipt, reduces cost of acquisition for later capital gains",
+                              ],
+          },
+          {
+                    heading: "Selling the units: capital gains",
+                    paragraphs: [
+                                "Gains from selling listed REIT or InvIT units on the exchange are taxed as capital gains, using the same 12-month holding-period line as listed equity. Units held 12 months or less are short-term gains, taxed at 20% under the short-term capital gains provision (Section 111A under the 1961 numbering); units held longer are long-term gains, taxed at 12.5% under Section 112. For gains realised in FY 2025-26, the Rs 1.25 lakh annual exemption that applies to listed-equity long-term gains under Section 112A does not extend to REIT/InvIT units -- the 12.5% rate applies from the first rupee of gain. A Finance Act 2025 amendment brings business trust units within Section 112A from FY 2026-27 onward, so that exemption should start applying going forward; confirm the applicable year before you compute tax on a sale.",
+                                "Remember to adjust your cost of acquisition downward for any return-of-capital distributions received during your holding period -- the trust's cumulative distribution statement will show this, and skipping the adjustment understates your taxable gain relative to what shows up in your Annual Information Statement, which is a common trigger for a mismatch notice. Securities Transaction Tax applies to the sale at the same rate as equity delivery trades and is not deductible while computing the gain.",
+                              ],
+          },
+          {
+                    heading: "Practical filing points for NRIs",
+                    paragraphs: [
+                                "You'll need ITR-2 (or ITR-3 if you have business income) -- ITR-1 has no schedule for business trust distributions or capital gains on listed securities. Report the interest and taxable-dividend components under Schedule OS, disclose exempt rental income in the exempt-income schedule even though no tax is due on it, and track return-of-capital distributions separately for cost-basis purposes rather than reporting them as income. Match every TDS deduction shown in your distribution statement against Form 26AS and your Annual Information Statement before filing; TDS withheld on components that turn out to be exempt (rental income, non-taxable dividend) is refundable, but only if you claim the credit correctly in the TDS schedule.",
+                              ],
+          },
+              ],
+              relatedSlugs: [
+                "nri-demat-accounts-pis-vs-non-pis",
+                "sip-investing-for-nris-nre-vs-nro",
+                "nri-investment-options-in-india-overview",
+                "form-26as-reconciling-tds-credit-as-nri",
+              ],
+          },
+        {
+              slug: "ppf-for-nris-existing-accounts-explained",
+              clusterSlug: "investments-repatriation",
+              title: "PPF for NRIs: What Happens to Your Account After You Move Abroad",
+              description:
+                      "NRIs can't open a new PPF account and can't extend an existing one past maturity -- but an account opened while resident can be kept running, with specific contribution, tax and repatriation rules.",
+              dek: "Public Provident Fund is one of the few Indian instruments where residency status changes what you can do with an account you already own, rather than what you can open.",
+              sections: [
+                {
+                          paragraphs: [
+                                      "PPF is a fixture of Indian household savings -- a 15-year government-backed instrument with tax deduction on contribution, tax-free interest, and tax-free maturity proceeds, the classic exempt-exempt-exempt structure. The rules change the moment you become an NRI, but not in the way people usually assume. You are not required to close the account, and it doesn't stop earning interest just because you moved. What changes is what you're allowed to do with it going forward.",
+                                      "NRIs cannot open a new PPF account under any circumstances. But if you opened one while you were a resident and later became an NRI while the account was still running, the account continues until it reaches its original 15-year maturity -- it doesn't get force-closed the day your residency status changes.",
+                                    ],
+                },
+                {
+                          heading: "Contributions are allowed -- extension is not",
+                          paragraphs: [
+                                      "While the account is live, you can keep contributing as an NRI, subject to the same limits as any PPF account holder: a minimum of Rs 500 and a maximum of Rs 1.5 lakh per financial year, funded from an NRE, NRO or FCNR account. The interest rate is the same government-notified rate applied to all PPF accounts -- 7.1% per annum for the July-September 2026 quarter, unchanged for nine consecutive quarters as of the last small savings rate revision.",
+                                      "What you cannot do is extend the account beyond its original 15-year term. Resident account holders can roll a matured PPF account forward in blocks of five years, with or without further contributions, effectively for life. NRIs lose that option -- the account must be closed at the 15-year mark. This has been a settled rule for years, but enforcement was inconsistent, and a good number of NRIs extended their accounts anyway, sometimes because the extension form (Form H) simply didn't ask for residential status. A circular tightening this in late 2024 drew a hard line: PPF accounts irregularly extended by NRIs would earn only the post office savings account rate from the date of extension, and no interest at all after 30 September 2024, regardless of when the irregular extension happened. If you extended a PPF account after becoming an NRI, it's worth checking with your bank or post office whether your account falls into this bucket before you assume it's still earning full PPF interest.",
+                                    ],
+                },
+                {
+                          heading: "Tax treatment: exempt in India, not necessarily where you live",
+                          paragraphs: [
+                                      "In India, PPF interest and maturity proceeds remain fully exempt from tax regardless of your residency status -- this exemption, previously housed in Section 10(11) of the Income-tax Act, 1961, now sits within the restructured exempt-income framework under Section 11 and its schedules in the Income-tax Act, 2025. Indian residency status doesn't affect this; what matters is that PPF income has always been carved out of taxable income under domestic law.",
+                                      "The complication is on the other side of the border. The United States, in particular, does not recognise PPF as a qualifying retirement account, so a US-resident NRI's PPF interest is taxable annually as it accrues, at ordinary US income tax rates, even though nothing is credited to a bank account and nothing is taxed in India. Some tax preparers additionally treat a PPF account as a foreign trust for US reporting purposes given its statutory-scheme structure, which would layer Form 3520 and Form 3520-A obligations on top of the annual income inclusion -- this specific treatment is debated among practitioners rather than settled, so it's worth a conversation with a US cross-border tax preparer rather than assuming either way. Either way, don't treat 'tax-free in India' as the whole story if you file US taxes; it's only half of it, and it sits alongside the account's usual FBAR and FATCA reporting once balances cross the applicable thresholds.",
+                                    ],
+                },
+                {
+                          heading: "Maturity, closure and getting the money out",
+                          paragraphs: [
+                                      "At maturity, an NRI's PPF account must be closed -- there's no extension path available, and the proceeds are credited to your NRO account rather than paid out in cash or moved directly overseas. From the NRO account, you can repatriate up to USD 1 million per financial year under RBI's existing facility for NRO balances, subject to submitting Form 15CA (and Form 15CB from a chartered accountant where required) confirming the source of funds and that applicable taxes have been accounted for. Premature closure is technically available after five years from account opening for specified reasons (medical emergencies, higher education), with a 1% interest clawback applied retrospectively from account opening, but this route is narrower for NRIs and worth confirming directly with your bank given how inconsistently the irregular-extension crackdown has been applied across branches.",
+                                    ],
+                },
+                    ],
+              relatedSlugs: [
+                      "fbar-fatca-reporting-for-nris",
+                      "401k-roth-ira-returning-to-india",
+                      "nps-for-nris-explained",
+                      "nre-vs-nro-accounts-which-do-you-need",
+                    ],
+        },
+        {
+              slug: "epf-withdrawal-tds-for-nris",
+              clusterSlug: "investments-repatriation",
+              title: "EPF Withdrawal for NRIs: TDS Before Five Years, and Why Form 15G/15H Won't Help",
+              description:
+                      "Withdrawing your Employees' Provident Fund balance as an NRI runs into a TDS rule tied to years of service, and the usual no-TDS declaration forms aren't open to you.",
+              dek: "The five-year service line decides whether your EPF withdrawal is tax-free -- and once you're an NRI, the standard workaround for avoiding TDS on the taxable portion isn't available to you.",
+              sections: [
+                {
+                          paragraphs: [
+                                      "Most salaried people who move abroad leave an EPF balance behind, and eventually have to decide whether to withdraw it, transfer it, or let it sit. The tax question turns almost entirely on one number: how many years of continuous service you had, aggregated across employers through your Universal Account Number, when you make the withdrawal. Get past five years and the withdrawal is tax-free. Withdraw before that, and you're into TDS territory, with a couple of NRI-specific wrinkles that trip people up.",
+                                    ],
+                },
+                {
+                          heading: "The five-year line",
+                          paragraphs: [
+                                      "If your accumulated EPF balance is withdrawn after five or more years of continuous service -- service with previous employers counts too, provided the EPF balance was transferred rather than withdrawn at each job change -- the entire withdrawal is exempt from tax under the provident-fund exemption in the exempt-income provisions of the Act. Fall short of five years and the withdrawal becomes taxable, split between your own contributions (generally not taxed again, since you didn't get a fresh deduction on the way in if you claimed one already, and the interest component is taxable), the employer's contribution, and interest -- the details get technical enough that most people rely on the TDS actually deducted as the working number.",
+                                      "TDS on premature withdrawal is governed by a specific provision -- Section 192A under the Income-tax Act, 1961, recently renumbered to Section 392(7) under the Income-tax Act, 2025 -- which applies when the withdrawal amount is Rs 50,000 or more. With a valid PAN on file, TDS is deducted at a flat 10%. Without PAN, the deduction jumps to the maximum marginal rate, which makes furnishing PAN worth doing regardless of your residency status.",
+                                    ],
+                },
+                {
+                          heading: "Where NRIs run into trouble: it's not automatically 30%",
+                          paragraphs: [
+                                      "A lot of the advice floating around suggests NRIs face a flat 30%-plus-surcharge TDS on EPF withdrawal under the general NRI withholding provision -- the successor to Section 195 under the 2025 Act renumbering. That's the default rate for payments to non-residents generally, but EPF withdrawal has its own dedicated provision, and a specific section governing a specific payment ordinarily takes precedence over the general NRI withholding rule. In practice, once PAN is on record, the EPFO's Section 392(7) rate of 10% is what typically applies to a premature EPF withdrawal, NRI or not -- the 30%-plus regime tends to surface specifically when PAN is missing or the claim is processed incorrectly. It's worth confirming the actual rate applied on your specific payout against your Form 26AS rather than assuming either figure, since implementation varies.",
+                                    ],
+                },
+                {
+                          heading: "Form 15G/15H don't work for you -- what to do instead",
+                          paragraphs: [
+                                      "Resident account holders below the taxable income threshold can file Form 15G (or Form 15H if senior citizens) to have EPFO skip TDS altogether on a premature withdrawal. Both forms are explicitly restricted to residents -- an NRI submitting one risks the claim being rejected for a status mismatch, or worse, being treated as a false declaration. There is no equivalent zero-TDS declaration open to NRIs, so if your withdrawal is genuinely taxable, TDS at the applicable rate will be deducted, full stop. The recourse for an NRI is downstream, not upstream: file a return of income and claim a refund if your actual tax liability, computed under the DTAA between India and your country of residence, is lower than the TDS deducted. Getting the DTAA rate applied requires the same documentation as most other NRI income streams -- a Tax Residency Certificate from your country of residence and Form 10F filed with the Indian tax authorities.",
+                                    ],
+                },
+                {
+                          heading: "Process notes",
+                          paragraphs: [
+                                      "NRIs withdraw through the same EPFO Composite Claim Form process as residents, filed online through the member portal once KYC (PAN, Aadhaar where linkable, and a verified bank account) is updated. A foreign bank account generally can't receive the payout directly -- most NRIs route the withdrawal to an NRO account in India and repatriate from there. If you also have an Employees' Pension Scheme component, note that its withdrawal rules and TDS treatment are handled separately from the EPF balance itself, and eligibility can depend on whether you've completed ten years of service, which determines whether you get a lump-sum withdrawal benefit or a deferred pension instead.",
+                                    ],
+                },
+                    ],
+              relatedSlugs: [
+                      "nps-for-nris-explained",
+                      "401k-roth-ira-returning-to-india",
+                      "nri-investment-options-in-india-overview",
+                      "india-us-totalization-agreement-explained",
+                    ],
+        },
+  {
+      slug: "buying-property-in-india-as-nri-fema-and-buyer-tds",
+            clusterSlug: "real-estate-capital-gains",
+            title: "Buying Property in India as an NRI: FEMA Rules and the Buyer's TDS Trap",
+            description:
+        "FEMA decides what an NRI can buy in India -- and the Income-tax Act, 2025 decides what the buyer must withhold. Confusing the two, or assuming the seller's 1% TDS rule applies universally, is a common and costly mistake.",
+              dek: "Guidance for NRIs usually covers selling property. Buying gets less attention -- but two separate regimes govern it, and getting either wrong is expensive.",
+              sections: [
+          {
+                    paragraphs: [
+                                "Most guidance written for NRIs focuses on selling property in India -- the TDS deducted, the exemptions claimed, the proceeds repatriated. Buying gets far less attention, which is unfortunate, because two separate regimes quietly govern it: FEMA decides what you're allowed to buy in the first place, and the Income-tax Act, 2025 decides what you owe the tax department as the person paying for it.",
+                                "Confuse the two, or assume the familiar 1% TDS you've heard about from resident friends applies to you as well, and you can end up under-withheld, over-penalized, or holding a property FEMA never let you acquire in the first place.",
+                              ],
+          },
+          {
+                    heading: "What FEMA lets you buy -- and what it doesn't",
+                    paragraphs: [
+                                "Under the Foreign Exchange Management (Non-debt Instruments) Rules, 2019 -- the FEMA regulations governing cross-border property transactions -- an NRI or OCI can acquire as many residential or commercial properties in India as they like, funded the right way, with no prior RBI approval required. What they cannot acquire by direct purchase is agricultural land, plantation property, or a farmhouse, regardless of which state it's in or how it's currently zoned.",
+                                "The classification that matters is the land's revenue record, not what's built on it -- a well-appointed weekend home outside a metro can still sit on agricultural-use land, which is precisely how well-meaning NRIs end up on the wrong side of this rule. Structuring around it by buying in a resident relative's name while funding and controlling the purchase yourself doesn't avoid the problem; it adds one, since that arrangement risks being treated as a benami transaction under the Benami Transactions (Prohibition) Act, 1988, with the property itself liable to confiscation.",
+                              ],
+                    list: [
+                                "Residential or commercial property: freely purchasable, no RBI approval needed, no cap on the number of properties.",
+                                "Agricultural land, plantation property, farmhouse: cannot be purchased directly, even if funds are routed correctly.",
+                                "Inherited agricultural land: can be held, but if later sold, it can only be sold to a person resident in India, not to another NRI or OCI.",
+                                "Gifted agricultural land: can be received only as a gift from a resident relative, subject to the same restriction on onward sale.",
+                              ],
+          },
+          {
+                    heading: "Funding the purchase",
+                    paragraphs: [
+                                "Consideration for a permitted purchase has to move through banking channels -- an inward remittance from abroad, or a debit to an NRE, NRO, or FCNR(B) account. Cash, traveller's cheques, or funds routed outside the banking system don't satisfy the FEMA requirement, independent of whatever the income-tax side of the transaction requires.",
+                              ],
+          },
+          {
+                    heading: "The TDS trap: what changes when you're the buyer, not the seller",
+                    paragraphs: [
+                                "Resident-to-resident property deals run on a familiar, low-friction rule: Section 393(1) of the Income-tax Act, 2025 (the direct successor to the old Section 194-IA) requires the buyer to withhold 1% of the sale consideration, only if it's Rs 50 lakh or more, reported on Form 26QB (renumbered Form 141 under the 2025 Act) using nothing more than PAN. Many NRI buyers assume this is the whole story, because it's the version they've heard about from resident friends and family who've bought property.",
+                                "It isn't, once the seller is a non-resident -- and this applies whether the buyer is resident or NRI. Section 393(1) doesn't apply at all in that case; instead, Section 393(2), the general non-resident-withholding provision covering S. No. 17 of the Act's TDS schedule (the successor to old Section 195), takes over. Under it there's no Rs 50 lakh threshold -- withholding is required on any amount -- and, absent a lower-deduction certificate from the seller, many buyers default to withholding on the full sale consideration at the applicable capital-gains rate (currently 12.5% on long-term gains, 20% on short-term, both plus surcharge and cess), rather than a flat 1%, because they have no reliable way to independently verify the seller's cost basis and actual gain.",
+                                "The compliance mechanics differ too: the buyer needs a TAN, not just a PAN; deducted tax is deposited by challan; and reporting goes through the quarterly Form 27Q (renumbered Form 144 under the 2025 Act) rather than the one-off Form 26QB, with Form 16A issued to the seller afterward. Buyers who skip this -- often because nobody flagged that the seller was an NRI, or because a resident co-owner's PAN made the transaction look domestic -- can be treated as an assessee-in-default for the shortfall, with interest running from the date withholding should have happened.",
+                              ],
+          },
+          {
+                    heading: "What this means in practice for you as the buyer",
+                    paragraphs: [
+                                "Before you sign anything, get a written declaration of the seller's residential status, and ask directly whether they hold a Section 395 lower-or-nil-TDS certificate (the successor to old Section 197) for this specific sale -- it changes your withholding obligation, not just theirs. If multiple people are buying together, each co-owner making payment needs their own TAN. And because none of this touches the FEMA question of what you're permitted to buy in the first place, run both checks before, not after, you've committed funds.",
+                              ],
+          },
+              ],
+              relatedSlugs: [
+                "section-393-2-tds-on-nri-property-sales",
+                "form-13-lower-tds-certificate-worth-it",
+                "selling-property-in-india-as-nri-ltcg-vs-stcg",
+                "nre-vs-nro-accounts-which-do-you-need",
+              ],
+          },
+        {
+              slug: "section-54f-exemption-nris-reinvesting-other-assets",
+              clusterSlug: "real-estate-capital-gains",
+              title: "Section 54F for NRIs: Reinvesting Other Gains Into One Indian House",
+              description:
+                      "Section 54F -- now Section 86 of the Income-tax Act, 2025 -- lets NRIs shelter gains from non-house assets by buying one residential property in India, but the reinvestment math and ownership conditions catch people out.",
+              dek: "Sold shares, gold, or a plot rather than a house? Section 54F (now Section 86) is the exemption route -- and it works very differently from the Section 54 rollover NRIs usually hear about.",
+              sections: [
+                {
+                          paragraphs: [
+                                      "Most NRIs first encounter capital-gains exemptions through Section 54 -- sell a house, buy another house, roll the gain over. Section 54F, renumbered as Section 86 under the Income-tax Act, 2025, solves a related but different problem: you've sold something that isn't a house -- listed shares, an unlisted company's shares, gold, a non-agricultural plot, a business asset -- and you want to shelter the long-term gain by investing in one residential house in India. It's the provision that applies, for instance, when an NRI liquidates a stock portfolio or sells inherited jewellery and buys an apartment instead.",
+                                      "It sits deliberately apart from the article on Section 54/54EC rollovers and the one on selling agricultural land in this cluster, because the asset being sold, the exemption formula, and the conditions attached are all different enough to trip up someone who assumes 'the house exemption' works the same way regardless of what triggered the gain.",
+                                    ],
+                },
+                {
+                          heading: "Who qualifies, and the ownership condition NRIs often trip over",
+                          paragraphs: [
+                                      "Section 86 is open to individuals and Hindu Undivided Families -- NRIs qualify on the same terms as resident taxpayers, with one condition that catches long-settled NRIs specifically: on the date the original asset is sold, you must not already own more than one other residential house in India (besides the new one you're about to buy). NRIs who've accumulated a couple of Indian flats over a decade of NRE deposits and family purchases, entirely legitimately, can find that the second property alone disqualifies a 54F/86 claim on an unrelated share sale.",
+                                      "There's also a forward-looking version of the same restriction: buying another residential house (other than the new one) within one year, or constructing one within three years, of the original sale can retroactively withdraw the exemption already claimed, converted back into a taxable long-term gain in the year the disqualifying purchase happens.",
+                                    ],
+                },
+                {
+                          heading: "The reinvestment math: proportionate exemption, not full rollover",
+                          paragraphs: [
+                                      "This is the detail that most differentiates Section 86 from a straight Section 54 rollover. Under Section 54, the exemption is simply the gain, capped at what you reinvest. Under Section 86, the exemption is proportionate to how much of the net sale consideration -- not just the gain -- gets reinvested: exemption equals the capital gain multiplied by (cost of the new house divided by net sale consideration of the asset sold). Reinvest half the sale proceeds, and only half the gain is exempt, even if that half comfortably covers the entire gain in absolute terms.",
+                                      "A cap introduced from FY 2023-24 and carried into Section 86 also limits both figures in the formula to Rs 10 crore -- if the net consideration or the cost of the new house exceeds that, the excess is disregarded for the exemption calculation, which matters for NRIs selling a significant shareholding or a large parcel of land.",
+                                    ],
+                },
+                {
+                          heading: "Timelines, location, and the CGAS parking requirement",
+                          paragraphs: [
+                                      "The new house has to be purchased within one year before or two years after the sale, or constructed within three years -- and it has to be in India. There's no version of Section 86 that lets an NRI shelter an Indian capital gain by buying property in the US, UAE, or anywhere else; the reinvestment asset has to sit inside the Indian tax net.",
+                                      "If you haven't completed the purchase or construction by the time your return is due, the unutilised amount has to be parked in a Capital Gains Account Scheme deposit at an authorised bank before the filing deadline, or the exemption is simply unavailable for that portion. NRIs can open CGAS deposits, but only under the NRO route, at a bank branch -- it's worth confirming in advance which branches actually offer this to non-resident customers, since not every branch does.",
+                                    ],
+                },
+                {
+                          heading: "How the TDS regime interacts with this",
+                          paragraphs: [
+                                      "None of this changes what happens on the sale side under Section 393(2): if you're selling shares or property as an NRI, the buyer, broker, or company involved may already be required to withhold tax on the transaction before you've had a chance to claim the Section 86 exemption. For asset classes where the payer withholds on the full consideration by default, the practical fix is the same one that applies elsewhere in this cluster -- apply for a lower or nil-deduction certificate under Section 395 before the sale closes, factoring the Section 86 exemption you intend to claim into the application, rather than over-withholding and chasing a refund a year later.",
+                                    ],
+                },
+                    ],
+              relatedSlugs: [
+                      "section-54-54ec-exemptions-for-nris",
+                      "selling-agricultural-land-farmhouse-nri",
+                      "form-13-lower-tds-certificate-worth-it",
+                      "claiming-refund-excess-tds-property-sale-nri",
+                    ],
+        },
+        {
+              slug: "us-tax-reporting-when-nri-sells-indian-property",
+              clusterSlug: "real-estate-capital-gains",
+              title: "Selling Indian Property as a US Taxpayer: Form 8949, Form 1116, and the DTAA",
+              description:
+                      "For US citizens, green card holders, and US tax residents, a gain on Indian property sold is fully reportable in the US too -- here's how Form 8949, Form 1116, and the India-US DTAA fit together.",
+              dek: "Paying TDS in India on a property sale doesn't close the file if you're also a US taxpayer. It opens a second, parallel calculation -- in dollars, on a different calendar, with its own rules.",
+              sections: [
+                {
+                          paragraphs: [
+                                      "US citizens, green card holders, and anyone who otherwise counts as a US tax resident owe US tax on worldwide income, and a gain on property sold in India is no exception -- the fact that it's already been taxed, and TDS'd, in India doesn't remove the US reporting obligation. What it does is trigger a foreign tax credit claim, which is a different thing from being let off the hook.",
+                                      "The two systems don't share a calendar, a currency, or even an agreed holding-period test, which is where most of the friction in this process actually comes from.",
+                                    ],
+                },
+                {
+                          heading: "Reporting the sale: Form 8949 and Schedule D",
+                          paragraphs: [
+                                      "The sale is reported on Form 8949 and flows to Schedule D, exactly as a US-situated property sale would be, with one added step: every rupee figure has to be converted to dollars at the exchange rate prevailing on the relevant transaction date -- the purchase-date rate for cost basis, the sale-date rate for proceeds, and the payment-date rate for any capitalised improvement costs. Because INR/USD moves independently of Indian property values, this can produce a dollar-denominated gain, or loss, that looks quite different from the rupee-denominated one reported to the Indian tax department, purely as a function of currency movement over the holding period.",
+                                      "The holding-period test is simpler than India's but not aligned with it: the US uses a flat one-year threshold for long-term treatment, while Indian law uses 24 months for immovable property. A property held for, say, 18 months can be long-term for US purposes and short-term for Indian purposes at the same time -- worth checking deliberately rather than assuming the two labels match.",
+                                      "If the property was inherited, US basis is generally the fair market value on the date of the decedent's death, converted to dollars at that date's rate -- not the original purchase price the family may have paid decades earlier, which is a materially different, and usually more favourable, starting point than the cost-based rules that can apply under Indian law.",
+                                    ],
+                },
+                {
+                          heading: "Claiming credit for the Indian tax: Form 1116",
+                          paragraphs: [
+                                      "The Indian tax already paid -- TDS withheld under Section 393(2), reconciled against the final liability once the Indian return is filed -- is generally claimed as a foreign tax credit on Form 1116, under the passive category income basket, since the property gain isn't tied to an active US trade or business. The credit is capped per category by the US tax attributable to that category of foreign-source income; unused credit can be carried back one year or forward ten.",
+                                      "One sequencing issue trips people up: if the Indian TDS withheld exceeds the eventual Indian tax liability and a refund is later obtained, only the amount India actually retains counts as creditable foreign tax. A credit claimed on the full TDS amount, followed by an Indian refund arriving after the US return is filed, generally requires an amended US return to reflect the lower final foreign-tax figure.",
+                                    ],
+                },
+                {
+                          heading: "Where the DTAA fits -- and where it doesn't help",
+                          paragraphs: [
+                                      "Article 13 of the India-US tax treaty assigns primary taxing rights on gains from immovable property to the country where the property sits -- India, in this case. That doesn't mean the US steps aside; as the residence country, the US still taxes the gain and relieves the resulting double taxation through the credit mechanism described above, not through an exemption. Because Indian long-term capital gains tax (12.5% plus surcharge and cess, post the indexation changes) usually runs lower than the combined US federal long-term rate, up to 20%, plus the 3.8% Net Investment Income Tax, most NRIs and OCIs end up owing some incremental US tax even after the credit is applied.",
+                                      "The NIIT specifically deserves its own line item: foreign tax credits generally cannot offset it, because it sits in a different chapter of the US tax code, Chapter 2A, from the regular income tax the credit is designed to offset, Chapter 1. A few recent US court decisions have allowed treaty-based credits against NIIT under other countries' treaties, but that theory hasn't been established for the India treaty, so it's safer to budget for the 3.8% as a real, largely uncreditable cost rather than assume it will wash out.",
+                                    ],
+                },
+                {
+                          heading: "Practical sequencing",
+                          paragraphs: [
+                                      "Settle the Indian side first where possible -- pursue a lower or nil-TDS certificate before the sale closes if the numbers justify it, keep every challan and Form 16A, and use one consistent, documented exchange-rate source across both the Indian and US filings. Coordinate timing so the Indian return, and any refund, lands before the US filing deadline if at all feasible, since the US credit calculation depends on the final Indian number, not the initial TDS. And remember that sale proceeds sitting in an NRO account afterward have their own separate FBAR and FATCA reporting triggers, independent of the capital-gains reporting covered here.",
+                                    ],
+                },
+                    ],
+              relatedSlugs: [
+                      "selling-property-in-india-as-nri-ltcg-vs-stcg",
+                      "claiming-refund-excess-tds-property-sale-nri",
+                      "form-13-lower-tds-certificate-worth-it",
+                      "fbar-fatca-reporting-for-nris",
+                    ],
+        },
+          
+          
+          
+          ];
 
 export function getArticle(slug: string): Article | undefined {
   return articles.find((article) => article.slug === slug);

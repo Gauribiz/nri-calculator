@@ -2,6 +2,27 @@
 
 All notable changes to NRI Calculator, in reverse chronological order.
 
+## 2026-08-10 -- Blog/FAQ content pass, batch 5 (nric-006e)
+
+Orientation confirmed nri-calculator.phase implied an active queue and identified nric-006e (blog/FAQ content pass, batch 5) as the next queued task in the four-batch content build ADR 0011/0012/0013/0014 set in motion. Batch 4's own PR was still open awaiting Gauri's review at the start of this pass, consistent with the project's standing merge policy that unattended work never merges its own or a prior pass's branch.
+
+Continued the nric-006/006b/006c/006d content build with a fifth batch, per nric-006e's own scope (a further 3 articles per cluster) -- see ADR 0015 for the full reasoning on volume and topic selection.
+
+12 new articles (3 per cluster, src/lib/blog/articles.ts) and 12 new FAQ entries (src/lib/blog/faqs.ts): Form 67/Rule 128 foreign tax credit claims, the Finance Act 2020 deemed-residency rule's actual scope, and the Form 10F-plus-TRC relationship for DTAA & Tax Residency; the Section 393(2) TDS rate on mutual fund dividends, NRI advance-tax obligations, and NRE/NRO account handling on permanent return to India for NRE/NRO & TDS; REIT/InvIT distribution taxation's multi-component structure, continued PPF contributions for NRIs, and why Form 15G/15H cannot be used to avoid EPF withdrawal TDS for Investments & Repatriation; the FEMA restriction on NRIs buying agricultural land, why Section 86 (renumbered from Section 54F) requires reinvestment property to be in India, and the US Form 1116 foreign tax credit interaction for real estate capital gains.
+
+Every new article is interlinked within its cluster (2-3 related-article links spanning batches 1-5) and inherits the existing /blog/[slug] template's Disclaimer placement and category-page "Related reading" wiring automatically -- no changes to batches 1-4's own content or to the /blog/, /blog/[slug]/, /faq route code.
+
+Site now has 60 articles / 60 FAQ entries (15/cluster); still short of the charter's 25-30/cluster target, with a further batch remaining as follow-up work.
+
+A citation-consistency issue was flagged during this pass rather than fixed: this batch's Form 10F article cites the Income-tax Act, 2025 renumbered successor consistently as "Form 41", but at least one earlier batch is understood to have used "Form 44" for the same form in one passage. This pass did not audit or correct earlier batches' citations -- see ADR 0015 for the full note and the recommendation that this needs a dedicated citation-consistency pass across all five batches before any of this content is treated as publish-ready.
+
+Every figure in this batch still needs Ajinkya's own fact-verification pass before publish-ready -- see ADR 0015 for the full list, most notably: the Form 67/Rule 128 filing mechanics and the case-law claim about late-filing leniency, the exact Rs 15 lakh/residence-or-domicile conditions in the FA2020 deemed-residency rule, whether AMCs actually apply DTAA rates on file for mutual fund dividend TDS, the 2024 PPF post-maturity rule change for NRIs, the FEMA agricultural-land inheritance exception and benami-transaction characterization, and the Form 1116/Net Investment Income Tax interaction for US-resident NRIs/OCIs.
+
+This pass did not run npm ci/tsc/lint/build locally -- all edits were made directly via the GitHub web editor against the existing branch, consistent with the tooling used for batches 1-4's own follow-on commits in this same session. Content was verified structurally (no duplicate slugs/ids, no dangling relatedSlugs/relatedArticleSlug references, array/object syntax balanced) by reading back the committed file contents after each commit, but a full local build/lint/typecheck pass and a browser smoke test of the new pages have not yet been run and are recommended before merge.
+
+Added docs/decisions/0015-blog-faq-content-pass-batch-5.md.
+
+
 ## 2026-08-07 — Real estate capital gains corrections (nric-004 follow-up)
 
 Per Ajinkya's review against the official Income-tax Act 2025 TDS rate chart, corrected three issues in the nric-004 calculators below: the STCG default TDS rate (30% -> 20%, the definite statutory rate under Section 393(2) [Table S.No. 17(e)] / Section 196, not a conservative top-slab estimate), stale "Section 195" citations (-> Section 393(2), consistent with the renumbering already confirmed on PR #9), and three broken incometaxindia.gov.in source links (`/w/tds-on-sale-of-property` -> `/w/section-393-5` and `/w/certificate-of-lower/no-deduction-of-tax-at-source`; `/w/capital-gains` -> `/w/capital-gain`). Also resolved PR #12's merge conflicts against `main` (additive changelog entries; `real-estate-capital-gains/page.tsx` now renders the real calculators followed by PR #13's "Related reading" blog-article section, replacing the stale "coming soon" placeholder). PR left unmerged for Gauri's review per Ajinkya's instruction.

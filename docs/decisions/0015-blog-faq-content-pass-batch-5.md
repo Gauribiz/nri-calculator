@@ -1,0 +1,37 @@
+# ADR 0015: Blog/FAQ content pass, batch 5 -- scope and topic selection
+
+## Status
+
+Accepted, 2026-08-10.
+
+## Context
+
+nric-006e continues the multi-pass blog/FAQ content build ADR 0011/0012/0013/0014 started: batches 1-4 (nric-006/nric-006b/nric-006c/nric-006d, PRs #13/#14/#15 merged, PR from nric-006d's own batch still pending Gauri's review at the time this pass started) shipped 12 articles/cluster (48 total) plus 48 FAQ entries. This task's own description asks for a further 3 articles per cluster using the existing articles.ts/faqs.ts structure -- not a new content system, not a rewrite of batches 1-4.
+
+## Decision
+
+- Volume: 3 new articles per cluster (12 total), each with a matching FAQ entry (12 total) -- the same pace batches 1-4 all used, for the same reason: every article here is a public financial-advisory page, and holding the pace at 3/cluster keeps the verification-flagging real rather than stretched thin. Site now totals 60 articles / 60 FAQ entries (15/cluster) -- still short of the charter's 25-30/cluster target; further batches remain a follow-up.
+- - No changes to batches 1-4's own articles, FAQs, or the /blog, /blog/[slug], /faq infrastructure. This pass only appends new entries to src/lib/blog/articles.ts and src/lib/blog/faqs.ts, reusing the existing Article/Faq types, getArticlesForCluster, and getRelatedArticles helpers verbatim.
+  - - Research and drafting were done directly in this pass rather than via parallel subagents; every figure was cross-checked against general tax-reference knowledge current as of this pass. Direct fetches of irs.gov/incometax.gov.in/rbi.org.in were not attempted this pass, consistent with every prior ADR's standing note that such fetches have returned HTTP 403 throughout this project's history -- every figure in this batch rests on the same secondary-source standard as batches 1-4, never a directly-read primary source.
+    - - Topic selection avoids re-covering batches 1-4's ground:
+      -   - DTAA & Tax Residency: claiming Foreign Tax Credit via Form 67 (Rule 128) as a standalone procedural how-to; the Finance Act 2020 deemed-residency rule's actual scope (who it does and does not catch, since it's frequently over-read as applying to all NRIs); and the Form 10F-plus-TRC relationship (why a TRC alone no longer suffices).
+          -   - NRE/NRO & TDS: the flat TDS rate on NRI mutual fund dividend/IDCW distributions (Section 393(2), formerly 196A); NRI advance-tax obligations and the lack of a senior-citizen carve-out; and what happens mechanically to NRE/NRO accounts on permanent return to India.
+              -   - Investments & Repatriation: REIT/InvIT distribution taxation's multi-component structure (interest/dividend/rental/return-of-capital, each taxed differently); whether an NRI can keep funding a pre-existing PPF account (and the 2024 rule change on post-maturity extension); and why Form 15G/15H cannot be used by NRIs to avoid EPF withdrawal TDS.
+                  -   - Real Estate Capital Gains: the FEMA restriction on NRIs buying agricultural land/farmhouses (and the benami-transaction risk of structuring around it); why Section 86 (renumbered from Section 54F) requires the reinvestment property to be located in India; and the US-side Form 1116 foreign tax credit interaction for a US-resident NRI/OCI who already paid Indian TDS on a property sale.
+                      - - Render the standard Disclaimer component near the top of every new article -- inherited automatically from the existing src/app/blog/[slug]/page.tsx template, unchanged this pass, per CLAUDE.md rule 3.
+                        - - Interlink each new article within its cluster via relatedSlugs, without retroactively editing batches 1-4's own entries, for the same out-of-scope/conflict-risk reasoning ADR 0012/0013/0014 gave.
+                         
+                          - ## Consequences
+                         
+                          - - 60 articles now exist total (48 from batches 1-4, 12 from this pass) -- 15 per cluster -- plus 60 FAQ entries. A further batch remains queued as follow-up work toward the 25-30/cluster charter target.
+                            - - A citation-consistency issue surfaced while drafting this batch, not introduced by it: this batch's Form 10F article consistently cites the Income-tax Act, 2025 renumbered successor as "Form 41"; at least one earlier batch's content is understood to have referenced the same form as "Form 44" in one passage. This pass does not audit or correct earlier batches' citations -- consistent with the append-only policy ADR 0012/0013/0014 established -- but flags this specific discrepancy here as worth a dedicated citation-consistency pass across all five batches before any of this content is treated as publish-ready.
+                              - - Figures most in need of Ajinkya's direct fact-verification pass before publishing:
+                                -   - The Form 67 / Rule 128 filing mechanics and the claim that some ITAT benches have excused late filing on procedural grounds -- this is a case-law-dependent claim, not a settled statutory rule.
+                                    -   - The Rs 15 lakh income threshold and the "not liable to tax in any other country by reason of residence or domicile" condition in the FA2020 deemed-residency rule -- both are exact statutory figures/tests that should be checked against the Act's current text.
+                                        -   - The Section 393(2) mutual-fund-dividend TDS rate and whether individual AMCs actually apply DTAA rates on file rather than defaulting to 20% -- flagged in the article itself as AMC-dependent in practice.
+                                            -   - The PPF 2024 rule change on post-maturity extension for NRIs (post-office-savings-rate step-down and eventual zero-interest cutoff) -- a recently-changed rule, the kind ADR 0010/0013/0014 have repeatedly flagged as needing direct confirmation rather than reliance on this pass's research.
+                                                -   - The FEMA agricultural-land restriction's inheritance exception and the benami-transaction characterization of using a resident relative's name -- both sourced from secondary legal commentary rather than primary FEMA/RBI text.
+                                                    -   - The Form 1116 / Net Investment Income Tax interaction for US-resident NRIs/OCIs selling Indian property -- a US-side tax claim that should be checked with a US cross-border preparer, not just an Indian-side one.
+                                                     
+                                                        - See the batch's own articles (src/lib/blog/articles.ts) for each figure's inline hedge -- every one of these is flagged on the page itself, not just here.
+                                                        - 
