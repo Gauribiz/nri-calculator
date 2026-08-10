@@ -2327,6 +2327,161 @@ export const articles: Article[] = [
                       "india-us-totalization-agreement-explained",
                     ],
         },
+  {
+      slug: "buying-property-in-india-as-nri-fema-and-buyer-tds",
+            clusterSlug: "real-estate-capital-gains",
+            title: "Buying Property in India as an NRI: FEMA Rules and the Buyer's TDS Trap",
+            description:
+        "FEMA decides what an NRI can buy in India -- and the Income-tax Act, 2025 decides what the buyer must withhold. Confusing the two, or assuming the seller's 1% TDS rule applies universally, is a common and costly mistake.",
+              dek: "Guidance for NRIs usually covers selling property. Buying gets less attention -- but two separate regimes govern it, and getting either wrong is expensive.",
+              sections: [
+          {
+                    paragraphs: [
+                                "Most guidance written for NRIs focuses on selling property in India -- the TDS deducted, the exemptions claimed, the proceeds repatriated. Buying gets far less attention, which is unfortunate, because two separate regimes quietly govern it: FEMA decides what you're allowed to buy in the first place, and the Income-tax Act, 2025 decides what you owe the tax department as the person paying for it.",
+                                "Confuse the two, or assume the familiar 1% TDS you've heard about from resident friends applies to you as well, and you can end up under-withheld, over-penalized, or holding a property FEMA never let you acquire in the first place.",
+                              ],
+          },
+          {
+                    heading: "What FEMA lets you buy -- and what it doesn't",
+                    paragraphs: [
+                                "Under the Foreign Exchange Management (Non-debt Instruments) Rules, 2019 -- the FEMA regulations governing cross-border property transactions -- an NRI or OCI can acquire as many residential or commercial properties in India as they like, funded the right way, with no prior RBI approval required. What they cannot acquire by direct purchase is agricultural land, plantation property, or a farmhouse, regardless of which state it's in or how it's currently zoned.",
+                                "The classification that matters is the land's revenue record, not what's built on it -- a well-appointed weekend home outside a metro can still sit on agricultural-use land, which is precisely how well-meaning NRIs end up on the wrong side of this rule. Structuring around it by buying in a resident relative's name while funding and controlling the purchase yourself doesn't avoid the problem; it adds one, since that arrangement risks being treated as a benami transaction under the Benami Transactions (Prohibition) Act, 1988, with the property itself liable to confiscation.",
+                              ],
+                    list: [
+                                "Residential or commercial property: freely purchasable, no RBI approval needed, no cap on the number of properties.",
+                                "Agricultural land, plantation property, farmhouse: cannot be purchased directly, even if funds are routed correctly.",
+                                "Inherited agricultural land: can be held, but if later sold, it can only be sold to a person resident in India, not to another NRI or OCI.",
+                                "Gifted agricultural land: can be received only as a gift from a resident relative, subject to the same restriction on onward sale.",
+                              ],
+          },
+          {
+                    heading: "Funding the purchase",
+                    paragraphs: [
+                                "Consideration for a permitted purchase has to move through banking channels -- an inward remittance from abroad, or a debit to an NRE, NRO, or FCNR(B) account. Cash, traveller's cheques, or funds routed outside the banking system don't satisfy the FEMA requirement, independent of whatever the income-tax side of the transaction requires.",
+                              ],
+          },
+          {
+                    heading: "The TDS trap: what changes when you're the buyer, not the seller",
+                    paragraphs: [
+                                "Resident-to-resident property deals run on a familiar, low-friction rule: Section 393(1) of the Income-tax Act, 2025 (the direct successor to the old Section 194-IA) requires the buyer to withhold 1% of the sale consideration, only if it's Rs 50 lakh or more, reported on Form 26QB (renumbered Form 141 under the 2025 Act) using nothing more than PAN. Many NRI buyers assume this is the whole story, because it's the version they've heard about from resident friends and family who've bought property.",
+                                "It isn't, once the seller is a non-resident -- and this applies whether the buyer is resident or NRI. Section 393(1) doesn't apply at all in that case; instead, Section 393(2), the general non-resident-withholding provision covering S. No. 17 of the Act's TDS schedule (the successor to old Section 195), takes over. Under it there's no Rs 50 lakh threshold -- withholding is required on any amount -- and, absent a lower-deduction certificate from the seller, many buyers default to withholding on the full sale consideration at the applicable capital-gains rate (currently 12.5% on long-term gains, 20% on short-term, both plus surcharge and cess), rather than a flat 1%, because they have no reliable way to independently verify the seller's cost basis and actual gain.",
+                                "The compliance mechanics differ too: the buyer needs a TAN, not just a PAN; deducted tax is deposited by challan; and reporting goes through the quarterly Form 27Q (renumbered Form 144 under the 2025 Act) rather than the one-off Form 26QB, with Form 16A issued to the seller afterward. Buyers who skip this -- often because nobody flagged that the seller was an NRI, or because a resident co-owner's PAN made the transaction look domestic -- can be treated as an assessee-in-default for the shortfall, with interest running from the date withholding should have happened.",
+                              ],
+          },
+          {
+                    heading: "What this means in practice for you as the buyer",
+                    paragraphs: [
+                                "Before you sign anything, get a written declaration of the seller's residential status, and ask directly whether they hold a Section 395 lower-or-nil-TDS certificate (the successor to old Section 197) for this specific sale -- it changes your withholding obligation, not just theirs. If multiple people are buying together, each co-owner making payment needs their own TAN. And because none of this touches the FEMA question of what you're permitted to buy in the first place, run both checks before, not after, you've committed funds.",
+                              ],
+          },
+              ],
+              relatedSlugs: [
+                "section-393-2-tds-on-nri-property-sales",
+                "form-13-lower-tds-certificate-worth-it",
+                "selling-property-in-india-as-nri-ltcg-vs-stcg",
+                "nre-vs-nro-accounts-which-do-you-need",
+              ],
+          },
+        {
+              slug: "section-54f-exemption-nris-reinvesting-other-assets",
+              clusterSlug: "real-estate-capital-gains",
+              title: "Section 54F for NRIs: Reinvesting Other Gains Into One Indian House",
+              description:
+                      "Section 54F -- now Section 86 of the Income-tax Act, 2025 -- lets NRIs shelter gains from non-house assets by buying one residential property in India, but the reinvestment math and ownership conditions catch people out.",
+              dek: "Sold shares, gold, or a plot rather than a house? Section 54F (now Section 86) is the exemption route -- and it works very differently from the Section 54 rollover NRIs usually hear about.",
+              sections: [
+                {
+                          paragraphs: [
+                                      "Most NRIs first encounter capital-gains exemptions through Section 54 -- sell a house, buy another house, roll the gain over. Section 54F, renumbered as Section 86 under the Income-tax Act, 2025, solves a related but different problem: you've sold something that isn't a house -- listed shares, an unlisted company's shares, gold, a non-agricultural plot, a business asset -- and you want to shelter the long-term gain by investing in one residential house in India. It's the provision that applies, for instance, when an NRI liquidates a stock portfolio or sells inherited jewellery and buys an apartment instead.",
+                                      "It sits deliberately apart from the article on Section 54/54EC rollovers and the one on selling agricultural land in this cluster, because the asset being sold, the exemption formula, and the conditions attached are all different enough to trip up someone who assumes 'the house exemption' works the same way regardless of what triggered the gain.",
+                                    ],
+                },
+                {
+                          heading: "Who qualifies, and the ownership condition NRIs often trip over",
+                          paragraphs: [
+                                      "Section 86 is open to individuals and Hindu Undivided Families -- NRIs qualify on the same terms as resident taxpayers, with one condition that catches long-settled NRIs specifically: on the date the original asset is sold, you must not already own more than one other residential house in India (besides the new one you're about to buy). NRIs who've accumulated a couple of Indian flats over a decade of NRE deposits and family purchases, entirely legitimately, can find that the second property alone disqualifies a 54F/86 claim on an unrelated share sale.",
+                                      "There's also a forward-looking version of the same restriction: buying another residential house (other than the new one) within one year, or constructing one within three years, of the original sale can retroactively withdraw the exemption already claimed, converted back into a taxable long-term gain in the year the disqualifying purchase happens.",
+                                    ],
+                },
+                {
+                          heading: "The reinvestment math: proportionate exemption, not full rollover",
+                          paragraphs: [
+                                      "This is the detail that most differentiates Section 86 from a straight Section 54 rollover. Under Section 54, the exemption is simply the gain, capped at what you reinvest. Under Section 86, the exemption is proportionate to how much of the net sale consideration -- not just the gain -- gets reinvested: exemption equals the capital gain multiplied by (cost of the new house divided by net sale consideration of the asset sold). Reinvest half the sale proceeds, and only half the gain is exempt, even if that half comfortably covers the entire gain in absolute terms.",
+                                      "A cap introduced from FY 2023-24 and carried into Section 86 also limits both figures in the formula to Rs 10 crore -- if the net consideration or the cost of the new house exceeds that, the excess is disregarded for the exemption calculation, which matters for NRIs selling a significant shareholding or a large parcel of land.",
+                                    ],
+                },
+                {
+                          heading: "Timelines, location, and the CGAS parking requirement",
+                          paragraphs: [
+                                      "The new house has to be purchased within one year before or two years after the sale, or constructed within three years -- and it has to be in India. There's no version of Section 86 that lets an NRI shelter an Indian capital gain by buying property in the US, UAE, or anywhere else; the reinvestment asset has to sit inside the Indian tax net.",
+                                      "If you haven't completed the purchase or construction by the time your return is due, the unutilised amount has to be parked in a Capital Gains Account Scheme deposit at an authorised bank before the filing deadline, or the exemption is simply unavailable for that portion. NRIs can open CGAS deposits, but only under the NRO route, at a bank branch -- it's worth confirming in advance which branches actually offer this to non-resident customers, since not every branch does.",
+                                    ],
+                },
+                {
+                          heading: "How the TDS regime interacts with this",
+                          paragraphs: [
+                                      "None of this changes what happens on the sale side under Section 393(2): if you're selling shares or property as an NRI, the buyer, broker, or company involved may already be required to withhold tax on the transaction before you've had a chance to claim the Section 86 exemption. For asset classes where the payer withholds on the full consideration by default, the practical fix is the same one that applies elsewhere in this cluster -- apply for a lower or nil-deduction certificate under Section 395 before the sale closes, factoring the Section 86 exemption you intend to claim into the application, rather than over-withholding and chasing a refund a year later.",
+                                    ],
+                },
+                    ],
+              relatedSlugs: [
+                      "section-54-54ec-exemptions-for-nris",
+                      "selling-agricultural-land-farmhouse-nri",
+                      "form-13-lower-tds-certificate-worth-it",
+                      "claiming-refund-excess-tds-property-sale-nri",
+                    ],
+        },
+        {
+              slug: "us-tax-reporting-when-nri-sells-indian-property",
+              clusterSlug: "real-estate-capital-gains",
+              title: "Selling Indian Property as a US Taxpayer: Form 8949, Form 1116, and the DTAA",
+              description:
+                      "For US citizens, green card holders, and US tax residents, a gain on Indian property sold is fully reportable in the US too -- here's how Form 8949, Form 1116, and the India-US DTAA fit together.",
+              dek: "Paying TDS in India on a property sale doesn't close the file if you're also a US taxpayer. It opens a second, parallel calculation -- in dollars, on a different calendar, with its own rules.",
+              sections: [
+                {
+                          paragraphs: [
+                                      "US citizens, green card holders, and anyone who otherwise counts as a US tax resident owe US tax on worldwide income, and a gain on property sold in India is no exception -- the fact that it's already been taxed, and TDS'd, in India doesn't remove the US reporting obligation. What it does is trigger a foreign tax credit claim, which is a different thing from being let off the hook.",
+                                      "The two systems don't share a calendar, a currency, or even an agreed holding-period test, which is where most of the friction in this process actually comes from.",
+                                    ],
+                },
+                {
+                          heading: "Reporting the sale: Form 8949 and Schedule D",
+                          paragraphs: [
+                                      "The sale is reported on Form 8949 and flows to Schedule D, exactly as a US-situated property sale would be, with one added step: every rupee figure has to be converted to dollars at the exchange rate prevailing on the relevant transaction date -- the purchase-date rate for cost basis, the sale-date rate for proceeds, and the payment-date rate for any capitalised improvement costs. Because INR/USD moves independently of Indian property values, this can produce a dollar-denominated gain, or loss, that looks quite different from the rupee-denominated one reported to the Indian tax department, purely as a function of currency movement over the holding period.",
+                                      "The holding-period test is simpler than India's but not aligned with it: the US uses a flat one-year threshold for long-term treatment, while Indian law uses 24 months for immovable property. A property held for, say, 18 months can be long-term for US purposes and short-term for Indian purposes at the same time -- worth checking deliberately rather than assuming the two labels match.",
+                                      "If the property was inherited, US basis is generally the fair market value on the date of the decedent's death, converted to dollars at that date's rate -- not the original purchase price the family may have paid decades earlier, which is a materially different, and usually more favourable, starting point than the cost-based rules that can apply under Indian law.",
+                                    ],
+                },
+                {
+                          heading: "Claiming credit for the Indian tax: Form 1116",
+                          paragraphs: [
+                                      "The Indian tax already paid -- TDS withheld under Section 393(2), reconciled against the final liability once the Indian return is filed -- is generally claimed as a foreign tax credit on Form 1116, under the passive category income basket, since the property gain isn't tied to an active US trade or business. The credit is capped per category by the US tax attributable to that category of foreign-source income; unused credit can be carried back one year or forward ten.",
+                                      "One sequencing issue trips people up: if the Indian TDS withheld exceeds the eventual Indian tax liability and a refund is later obtained, only the amount India actually retains counts as creditable foreign tax. A credit claimed on the full TDS amount, followed by an Indian refund arriving after the US return is filed, generally requires an amended US return to reflect the lower final foreign-tax figure.",
+                                    ],
+                },
+                {
+                          heading: "Where the DTAA fits -- and where it doesn't help",
+                          paragraphs: [
+                                      "Article 13 of the India-US tax treaty assigns primary taxing rights on gains from immovable property to the country where the property sits -- India, in this case. That doesn't mean the US steps aside; as the residence country, the US still taxes the gain and relieves the resulting double taxation through the credit mechanism described above, not through an exemption. Because Indian long-term capital gains tax (12.5% plus surcharge and cess, post the indexation changes) usually runs lower than the combined US federal long-term rate, up to 20%, plus the 3.8% Net Investment Income Tax, most NRIs and OCIs end up owing some incremental US tax even after the credit is applied.",
+                                      "The NIIT specifically deserves its own line item: foreign tax credits generally cannot offset it, because it sits in a different chapter of the US tax code, Chapter 2A, from the regular income tax the credit is designed to offset, Chapter 1. A few recent US court decisions have allowed treaty-based credits against NIIT under other countries' treaties, but that theory hasn't been established for the India treaty, so it's safer to budget for the 3.8% as a real, largely uncreditable cost rather than assume it will wash out.",
+                                    ],
+                },
+                {
+                          heading: "Practical sequencing",
+                          paragraphs: [
+                                      "Settle the Indian side first where possible -- pursue a lower or nil-TDS certificate before the sale closes if the numbers justify it, keep every challan and Form 16A, and use one consistent, documented exchange-rate source across both the Indian and US filings. Coordinate timing so the Indian return, and any refund, lands before the US filing deadline if at all feasible, since the US credit calculation depends on the final Indian number, not the initial TDS. And remember that sale proceeds sitting in an NRO account afterward have their own separate FBAR and FATCA reporting triggers, independent of the capital-gains reporting covered here.",
+                                    ],
+                },
+                    ],
+              relatedSlugs: [
+                      "selling-property-in-india-as-nri-ltcg-vs-stcg",
+                      "claiming-refund-excess-tds-property-sale-nri",
+                      "form-13-lower-tds-certificate-worth-it",
+                      "fbar-fatca-reporting-for-nris",
+                    ],
+        },
+          
           
           
           ];
