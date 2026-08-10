@@ -118,7 +118,7 @@ export default function NriPropertySaleTdsCalculator() {
           long-term gains (the flat LTCG rate on real estate since the
           Finance (No. 2) Act, 2024) and 20% for short-term gains — the
           statutory rate under Section 393(2) [Table S. No. 17(e)], tied to
-          Section 196's short-term classification, plus a flat 4% cess on whichever
+          Section 196&apos;s short-term classification, plus a flat 4% cess on whichever
           base rate applies.
         </p>
         <p className="mt-2">
