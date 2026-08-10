@@ -69,6 +69,12 @@ export default function RootLayout({
             >
               FAQ
             </Link>
+            <Link
+              href="/tools"
+              className="text-stone-600 transition-colors hover:text-primary-800 dark:text-primary-200/70 dark:hover:text-primary-50"
+            >
+              Tools
+            </Link>
             <div className="ml-auto">
               <SiteSearch />
             </div>

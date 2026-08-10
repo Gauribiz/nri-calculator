@@ -1,6 +1,7 @@
 import { categories } from "@/lib/categories";
 import { articles } from "@/lib/blog/articles";
 import { faqs } from "@/lib/blog/faqs";
+import { tools } from "@/lib/tools";
 
 export type SearchResultType = "category" | "article" | "faq" | "tool";
 
@@ -46,6 +47,17 @@ function buildIndex(): SearchIndexEntry[] {
       subtitle: faq.answer,
       href: `/faq#${faq.id}`,
       keywords: `${faq.question} ${faq.answer}`.toLowerCase(),
+    });
+  }
+
+  for (const tool of tools) {
+    entries.push({
+      id: `tool-${tool.slug}`,
+      type: "tool",
+      title: tool.title,
+      subtitle: tool.description,
+      href: `/tools#${tool.slug}`,
+      keywords: `${tool.title} ${tool.description}`.toLowerCase(),
     });
   }
 

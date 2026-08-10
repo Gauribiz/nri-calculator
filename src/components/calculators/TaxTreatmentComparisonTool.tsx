@@ -1,0 +1,103 @@
+"use client";
+
+import { useState } from "react";
+import { INSTRUMENT_TAX_PROFILES } from "@/lib/calculators/taxTreatmentComparison";
+import { CalculatorShell, CheckboxField } from "./CalculatorShell";
+import { SourceCitation } from "./SourceCitation";
+
+function InfoField({ label, value }: { label: string; value: string }) {
+  return (
+    <div className="flex flex-col gap-0.5 text-sm">
+      <span className="text-xs font-medium uppercase tracking-wide text-stone-500 dark:text-primary-300/60">
+        {label}
+      </span>
+      <span className="text-stone-700 dark:text-primary-100">{value}</span>
+    </div>
+  );
+}
+
+export default function TaxTreatmentComparisonTool() {
+  const [selected, setSelected] = useState<Record<string, boolean>>(
+    () =>
+      Object.fromEntries(
+        INSTRUMENT_TAX_PROFILES.map((profile) => [profile.id, true])
+      )
+  );
+
+  const toggle = (id: string) =>
+    setSelected((current) => ({ ...current, [id]: !current[id] }));
+
+  const visibleProfiles = INSTRUMENT_TAX_PROFILES.filter(
+    (profile) => selected[profile.id]
+  );
+
+  return (
+    <CalculatorShell
+      title="Tax treatment comparison tool"
+      intro="Side-by-side reference on how common NRI investment types are taxed in India: income tax on ongoing returns, capital gains treatment, TDS withheld at source, and repatriation rules. General information, not tax advice — pick the instruments you hold to compare."
+    >
+      <fieldset className="grid gap-2 text-sm sm:grid-cols-2">
+        <legend className="mb-1 text-stone-700 dark:text-primary-100">
+          Instruments to compare
+        </legend>
+        {INSTRUMENT_TAX_PROFILES.map((profile) => (
+          <CheckboxField
+            key={profile.id}
+            label={profile.label}
+            checked={Boolean(selected[profile.id])}
+            onChange={() => toggle(profile.id)}
+          />
+        ))}
+      </fieldset>
+
+      <div className="flex flex-col gap-4">
+        {visibleProfiles.length === 0 && (
+          <p className="text-sm text-stone-500 dark:text-primary-300/70">
+            Select at least one instrument above to see its tax treatment.
+          </p>
+        )}
+        {visibleProfiles.map((profile) => (
+          <div
+            key={profile.id}
+            className="flex flex-col gap-3 rounded-lg border border-stone-200 bg-stone-50 p-4 dark:border-primary-900 dark:bg-primary-900/20"
+          >
+            <h3 className="text-sm font-semibold text-primary-900 dark:text-primary-50">
+              {profile.label}
+            </h3>
+            <InfoField
+              label="Income tax (interest/dividends)"
+              value={profile.incomeTaxTreatment}
+            />
+            <InfoField
+              label="Capital gains treatment"
+              value={profile.capitalGainsTreatment}
+            />
+            <InfoField label="TDS at source" value={profile.tdsTreatment} />
+            <InfoField label="Repatriation" value={profile.repatriability} />
+          </div>
+        ))}
+      </div>
+
+      <p className="text-xs text-stone-500 dark:text-primary-300/60">
+        Does not model DTAA relief, surcharge slabs, your overall tax
+        residency position, or Finance Act changes after this was written.
+        Rates shown match the calculators elsewhere on this site as of that
+        writing — verify current rates at incometax.gov.in before relying on
+        this for a filing or investment decision.
+      </p>
+
+      <SourceCitation
+        sources={[
+          {
+            label: "Income Tax Department: Tax rates for NRIs",
+            href: "https://www.incometax.gov.in/iec/foportal/",
+          },
+          {
+            label: "RBI: Master Direction — Remittance of Assets",
+            href: "https://www.rbi.org.in/Scripts/BS_ViewMasDirections.aspx?id=10197",
+          },
+        ]}
+      />
+    </CalculatorShell>
+  );
+}

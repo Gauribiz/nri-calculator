@@ -133,3 +133,30 @@ export function ResultRow({
     </div>
   );
 }
+
+export function DateField({
+  label,
+  value,
+  onChange,
+  hint,
+}: {
+  label: string;
+  value: string;
+  onChange: (value: string) => void;
+  hint?: string;
+}) {
+  return (
+    <label className="flex flex-col gap-1 text-sm">
+      <span className="flex items-center gap-1.5 text-stone-700 dark:text-primary-100">
+        {label}
+        {hint && <InfoTooltip text={hint} />}
+      </span>
+      <input
+        type="date"
+        value={value}
+        onChange={(event) => onChange(event.target.value)}
+        className="w-full rounded-lg border border-stone-300 bg-white px-3 py-2 tabular-nums text-stone-900 focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/20 dark:border-primary-800 dark:bg-primary-950 dark:text-primary-50"
+      />
+    </label>
+  );
+}

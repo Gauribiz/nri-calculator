@@ -34,6 +34,19 @@ export default function Home() {
           </Link>
         ))}
       </div>
+
+      <Link
+        href="/tools"
+        className="flex flex-col gap-2 rounded-lg border border-zinc-200 p-5 transition-colors hover:border-zinc-400 dark:border-zinc-800 dark:hover:border-zinc-600"
+      >
+        <h2 className="font-medium">Financial Tools</h2>
+        <p className="text-sm text-zinc-600 dark:text-zinc-400">
+          Currency impact, SIP/mutual fund XIRR, FD/RD maturity, loan
+          prepayment impact, and a tax treatment comparison across common
+          NRI investment types — general-purpose calculators alongside the
+          topic categories above.
+        </p>
+      </Link>
     </div>
   );
 }
