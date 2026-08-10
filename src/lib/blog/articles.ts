@@ -2191,6 +2191,143 @@ export const articles: Article[] = [
                       "joint-nre-nro-account-with-resident-relative",
                     ],
         },
+  {
+      slug: "reits-and-invits-taxation-for-nris",
+            clusterSlug: "investments-repatriation",
+            title: "REITs and InvITs: How NRIs Are Actually Taxed on the Distributions",
+            description:
+        "REIT and InvIT payouts aren't a single 'dividend' -- they're a blend of interest, dividend, rent and return of capital, and each piece is taxed differently for an NRI investor.",
+              dek: "A REIT or InvIT distribution statement looks like one number. It isn't. For NRIs, each component inside it carries its own tax rate, its own TDS section, and its own reporting rule.",
+              sections: [
+          {
+                    paragraphs: [
+                                "Real Estate Investment Trusts and Infrastructure Investment Trusts have become a genuinely popular way for NRIs to get exposure to Indian commercial property and infrastructure without the headache of owning physical assets from abroad. Units in listed vehicles like Embassy REIT, Mindspace Business Parks, Brookfield India Real Estate Trust, or infrastructure InvITs such as IndiGrid and IRB InvIT trade on the stock exchange like any other security, and NRIs can buy them through a normal demat account. What trips people up is the taxation, because a REIT/InvIT payout isn't one kind of income -- it's several, bundled into a single quarterly credit to your account.",
+                                "Both structures are classified as 'business trusts' and taxed under a pass-through regime -- recently renumbered from Section 115UA under the Income-tax Act, 1961 to the corresponding provision under the Income-tax Act, 2025 -- meaning the trust itself generally doesn't pay tax on income it distributes; instead, the tax liability passes through to you as the unit holder, computed separately for each type of income in the distribution.",
+                              ],
+          },
+          {
+                    heading: "Four components, four tax treatments",
+                    paragraphs: [
+                                "A typical distribution statement breaks the payout into interest, dividend, rental income, and repayment of debt (return of capital). The trust usually routes its underlying assets through Special Purpose Vehicles, and the mix depends on how each SPV is financed and taxed.",
+                                "Interest, paid by the SPV to the trust and passed through to you, is taxable in your hands. For non-resident unit holders it attracts TDS at 5% under the relevant withholding provision (Section 194LBA under the 1961 Act numbering), though this can be reduced under a DTAA if you furnish a Tax Residency Certificate and Form 10F. Dividend income is taxable only if the SPV paying it opted for the concessional 22% corporate tax rate under Section 115BAA -- in that case TDS applies at 10% or the DTAA rate, whichever is lower. If the SPV did not opt in and paid regular corporate tax, the dividend passed through to you is exempt, though TDS is often still deducted and needs to be reconciled. Rental income earned directly by the trust and distributed to you is generally exempt in your hands, but here too TDS is commonly withheld and refundable through your return. Repayment of SPV debt -- return of capital -- is not taxed as income at all when received; instead it reduces your cost of acquisition for the units, deferring the tax to the point of sale.",
+                              ],
+                    list: [
+                                "Interest component -- taxable, 5% TDS for NRIs (or lower DTAA rate)",
+                                "Dividend component -- taxable only if the SPV used the 115BAA concessional regime, 10% TDS (or DTAA rate)",
+                                "Rental income component -- generally exempt, TDS still often withheld and refundable",
+                                "Return of capital component -- not taxed on receipt, reduces cost of acquisition for later capital gains",
+                              ],
+          },
+          {
+                    heading: "Selling the units: capital gains",
+                    paragraphs: [
+                                "Gains from selling listed REIT or InvIT units on the exchange are taxed as capital gains, using the same 12-month holding-period line as listed equity. Units held 12 months or less are short-term gains, taxed at 20% under the short-term capital gains provision (Section 111A under the 1961 numbering); units held longer are long-term gains, taxed at 12.5% under Section 112. For gains realised in FY 2025-26, the Rs 1.25 lakh annual exemption that applies to listed-equity long-term gains under Section 112A does not extend to REIT/InvIT units -- the 12.5% rate applies from the first rupee of gain. A Finance Act 2025 amendment brings business trust units within Section 112A from FY 2026-27 onward, so that exemption should start applying going forward; confirm the applicable year before you compute tax on a sale.",
+                                "Remember to adjust your cost of acquisition downward for any return-of-capital distributions received during your holding period -- the trust's cumulative distribution statement will show this, and skipping the adjustment understates your taxable gain relative to what shows up in your Annual Information Statement, which is a common trigger for a mismatch notice. Securities Transaction Tax applies to the sale at the same rate as equity delivery trades and is not deductible while computing the gain.",
+                              ],
+          },
+          {
+                    heading: "Practical filing points for NRIs",
+                    paragraphs: [
+                                "You'll need ITR-2 (or ITR-3 if you have business income) -- ITR-1 has no schedule for business trust distributions or capital gains on listed securities. Report the interest and taxable-dividend components under Schedule OS, disclose exempt rental income in the exempt-income schedule even though no tax is due on it, and track return-of-capital distributions separately for cost-basis purposes rather than reporting them as income. Match every TDS deduction shown in your distribution statement against Form 26AS and your Annual Information Statement before filing; TDS withheld on components that turn out to be exempt (rental income, non-taxable dividend) is refundable, but only if you claim the credit correctly in the TDS schedule.",
+                              ],
+          },
+              ],
+              relatedSlugs: [
+                "nri-demat-accounts-pis-vs-non-pis",
+                "sip-investing-for-nris-nre-vs-nro",
+                "nri-investment-options-in-india-overview",
+                "form-26as-reconciling-tds-credit-as-nri",
+              ],
+          },
+        {
+              slug: "ppf-for-nris-existing-accounts-explained",
+              clusterSlug: "investments-repatriation",
+              title: "PPF for NRIs: What Happens to Your Account After You Move Abroad",
+              description:
+                      "NRIs can't open a new PPF account and can't extend an existing one past maturity -- but an account opened while resident can be kept running, with specific contribution, tax and repatriation rules.",
+              dek: "Public Provident Fund is one of the few Indian instruments where residency status changes what you can do with an account you already own, rather than what you can open.",
+              sections: [
+                {
+                          paragraphs: [
+                                      "PPF is a fixture of Indian household savings -- a 15-year government-backed instrument with tax deduction on contribution, tax-free interest, and tax-free maturity proceeds, the classic exempt-exempt-exempt structure. The rules change the moment you become an NRI, but not in the way people usually assume. You are not required to close the account, and it doesn't stop earning interest just because you moved. What changes is what you're allowed to do with it going forward.",
+                                      "NRIs cannot open a new PPF account under any circumstances. But if you opened one while you were a resident and later became an NRI while the account was still running, the account continues until it reaches its original 15-year maturity -- it doesn't get force-closed the day your residency status changes.",
+                                    ],
+                },
+                {
+                          heading: "Contributions are allowed -- extension is not",
+                          paragraphs: [
+                                      "While the account is live, you can keep contributing as an NRI, subject to the same limits as any PPF account holder: a minimum of Rs 500 and a maximum of Rs 1.5 lakh per financial year, funded from an NRE, NRO or FCNR account. The interest rate is the same government-notified rate applied to all PPF accounts -- 7.1% per annum for the July-September 2026 quarter, unchanged for nine consecutive quarters as of the last small savings rate revision.",
+                                      "What you cannot do is extend the account beyond its original 15-year term. Resident account holders can roll a matured PPF account forward in blocks of five years, with or without further contributions, effectively for life. NRIs lose that option -- the account must be closed at the 15-year mark. This has been a settled rule for years, but enforcement was inconsistent, and a good number of NRIs extended their accounts anyway, sometimes because the extension form (Form H) simply didn't ask for residential status. A circular tightening this in late 2024 drew a hard line: PPF accounts irregularly extended by NRIs would earn only the post office savings account rate from the date of extension, and no interest at all after 30 September 2024, regardless of when the irregular extension happened. If you extended a PPF account after becoming an NRI, it's worth checking with your bank or post office whether your account falls into this bucket before you assume it's still earning full PPF interest.",
+                                    ],
+                },
+                {
+                          heading: "Tax treatment: exempt in India, not necessarily where you live",
+                          paragraphs: [
+                                      "In India, PPF interest and maturity proceeds remain fully exempt from tax regardless of your residency status -- this exemption, previously housed in Section 10(11) of the Income-tax Act, 1961, now sits within the restructured exempt-income framework under Section 11 and its schedules in the Income-tax Act, 2025. Indian residency status doesn't affect this; what matters is that PPF income has always been carved out of taxable income under domestic law.",
+                                      "The complication is on the other side of the border. The United States, in particular, does not recognise PPF as a qualifying retirement account, so a US-resident NRI's PPF interest is taxable annually as it accrues, at ordinary US income tax rates, even though nothing is credited to a bank account and nothing is taxed in India. Some tax preparers additionally treat a PPF account as a foreign trust for US reporting purposes given its statutory-scheme structure, which would layer Form 3520 and Form 3520-A obligations on top of the annual income inclusion -- this specific treatment is debated among practitioners rather than settled, so it's worth a conversation with a US cross-border tax preparer rather than assuming either way. Either way, don't treat 'tax-free in India' as the whole story if you file US taxes; it's only half of it, and it sits alongside the account's usual FBAR and FATCA reporting once balances cross the applicable thresholds.",
+                                    ],
+                },
+                {
+                          heading: "Maturity, closure and getting the money out",
+                          paragraphs: [
+                                      "At maturity, an NRI's PPF account must be closed -- there's no extension path available, and the proceeds are credited to your NRO account rather than paid out in cash or moved directly overseas. From the NRO account, you can repatriate up to USD 1 million per financial year under RBI's existing facility for NRO balances, subject to submitting Form 15CA (and Form 15CB from a chartered accountant where required) confirming the source of funds and that applicable taxes have been accounted for. Premature closure is technically available after five years from account opening for specified reasons (medical emergencies, higher education), with a 1% interest clawback applied retrospectively from account opening, but this route is narrower for NRIs and worth confirming directly with your bank given how inconsistently the irregular-extension crackdown has been applied across branches.",
+                                    ],
+                },
+                    ],
+              relatedSlugs: [
+                      "fbar-fatca-reporting-for-nris",
+                      "401k-roth-ira-returning-to-india",
+                      "nps-for-nris-explained",
+                      "nre-vs-nro-accounts-which-do-you-need",
+                    ],
+        },
+        {
+              slug: "epf-withdrawal-tds-for-nris",
+              clusterSlug: "investments-repatriation",
+              title: "EPF Withdrawal for NRIs: TDS Before Five Years, and Why Form 15G/15H Won't Help",
+              description:
+                      "Withdrawing your Employees' Provident Fund balance as an NRI runs into a TDS rule tied to years of service, and the usual no-TDS declaration forms aren't open to you.",
+              dek: "The five-year service line decides whether your EPF withdrawal is tax-free -- and once you're an NRI, the standard workaround for avoiding TDS on the taxable portion isn't available to you.",
+              sections: [
+                {
+                          paragraphs: [
+                                      "Most salaried people who move abroad leave an EPF balance behind, and eventually have to decide whether to withdraw it, transfer it, or let it sit. The tax question turns almost entirely on one number: how many years of continuous service you had, aggregated across employers through your Universal Account Number, when you make the withdrawal. Get past five years and the withdrawal is tax-free. Withdraw before that, and you're into TDS territory, with a couple of NRI-specific wrinkles that trip people up.",
+                                    ],
+                },
+                {
+                          heading: "The five-year line",
+                          paragraphs: [
+                                      "If your accumulated EPF balance is withdrawn after five or more years of continuous service -- service with previous employers counts too, provided the EPF balance was transferred rather than withdrawn at each job change -- the entire withdrawal is exempt from tax under the provident-fund exemption in the exempt-income provisions of the Act. Fall short of five years and the withdrawal becomes taxable, split between your own contributions (generally not taxed again, since you didn't get a fresh deduction on the way in if you claimed one already, and the interest component is taxable), the employer's contribution, and interest -- the details get technical enough that most people rely on the TDS actually deducted as the working number.",
+                                      "TDS on premature withdrawal is governed by a specific provision -- Section 192A under the Income-tax Act, 1961, recently renumbered to Section 392(7) under the Income-tax Act, 2025 -- which applies when the withdrawal amount is Rs 50,000 or more. With a valid PAN on file, TDS is deducted at a flat 10%. Without PAN, the deduction jumps to the maximum marginal rate, which makes furnishing PAN worth doing regardless of your residency status.",
+                                    ],
+                },
+                {
+                          heading: "Where NRIs run into trouble: it's not automatically 30%",
+                          paragraphs: [
+                                      "A lot of the advice floating around suggests NRIs face a flat 30%-plus-surcharge TDS on EPF withdrawal under the general NRI withholding provision -- the successor to Section 195 under the 2025 Act renumbering. That's the default rate for payments to non-residents generally, but EPF withdrawal has its own dedicated provision, and a specific section governing a specific payment ordinarily takes precedence over the general NRI withholding rule. In practice, once PAN is on record, the EPFO's Section 392(7) rate of 10% is what typically applies to a premature EPF withdrawal, NRI or not -- the 30%-plus regime tends to surface specifically when PAN is missing or the claim is processed incorrectly. It's worth confirming the actual rate applied on your specific payout against your Form 26AS rather than assuming either figure, since implementation varies.",
+                                    ],
+                },
+                {
+                          heading: "Form 15G/15H don't work for you -- what to do instead",
+                          paragraphs: [
+                                      "Resident account holders below the taxable income threshold can file Form 15G (or Form 15H if senior citizens) to have EPFO skip TDS altogether on a premature withdrawal. Both forms are explicitly restricted to residents -- an NRI submitting one risks the claim being rejected for a status mismatch, or worse, being treated as a false declaration. There is no equivalent zero-TDS declaration open to NRIs, so if your withdrawal is genuinely taxable, TDS at the applicable rate will be deducted, full stop. The recourse for an NRI is downstream, not upstream: file a return of income and claim a refund if your actual tax liability, computed under the DTAA between India and your country of residence, is lower than the TDS deducted. Getting the DTAA rate applied requires the same documentation as most other NRI income streams -- a Tax Residency Certificate from your country of residence and Form 10F filed with the Indian tax authorities.",
+                                    ],
+                },
+                {
+                          heading: "Process notes",
+                          paragraphs: [
+                                      "NRIs withdraw through the same EPFO Composite Claim Form process as residents, filed online through the member portal once KYC (PAN, Aadhaar where linkable, and a verified bank account) is updated. A foreign bank account generally can't receive the payout directly -- most NRIs route the withdrawal to an NRO account in India and repatriate from there. If you also have an Employees' Pension Scheme component, note that its withdrawal rules and TDS treatment are handled separately from the EPF balance itself, and eligibility can depend on whether you've completed ten years of service, which determines whether you get a lump-sum withdrawal benefit or a deferred pension instead.",
+                                    ],
+                },
+                    ],
+              relatedSlugs: [
+                      "nps-for-nris-explained",
+                      "401k-roth-ira-returning-to-india",
+                      "nri-investment-options-in-india-overview",
+                      "india-us-totalization-agreement-explained",
+                    ],
+        },
+          
           
           ];
 
