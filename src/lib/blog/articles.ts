@@ -2066,6 +2066,132 @@ export const articles: Article[] = [
                       "form-w8ben-treaty-rate-claims",
                     ],
         },
+  {
+      slug: "tds-on-nri-mutual-fund-dividends-and-capital-gains",
+            clusterSlug: "nre-nro-tds",
+            title: "TDS on NRI Mutual Fund Dividends and Capital Gains: How the AMC Deducts Tax",
+            description:
+        "Indian asset management companies withhold tax on NRI mutual fund payouts under a different mechanism than bank TDS -- here's how dividend and capital-gains withholding actually works.",
+              dek: "TDS on mutual fund payouts to NRIs runs on its own rules, separate from the bank-interest withholding most NRIs already know. Here's what an AMC actually deducts, and when it can be reduced.",
+              sections: [
+          {
+                    paragraphs: [
+                                "Most NRIs first encounter TDS through their bank -- a fixed deposit matures, and 30% (plus surcharge and cess) disappears before the interest ever reaches the NRO account. Mutual fund payouts work differently, both in the section of law that applies and in how little room there is to argue the rate down. An Indian asset management company (AMC) is a 'person responsible for paying' income to a non-resident, and the Income-tax Act requires it to deduct tax before a single rupee of dividend or capital gain reaches an NRI investor's account -- there's no threshold below which the deduction is skipped, unlike the exemption thresholds that sometimes apply to resident investors.",
+                                "Two separate withholding provisions are in play, and conflating them is the most common mistake NRI investors make when they see multiple TDS entries against the same fund house in their Annual Information Statement.",
+                              ],
+          },
+          {
+                    heading: "Dividend and IDCW payouts",
+                    paragraphs: [
+                                "Income distributed by a mutual fund -- dividend or Income Distribution cum Capital Withdrawal (IDCW) payouts -- falls under the section that specifically deals with income from mutual fund units paid to non-residents. Under the old Income-tax Act, 1961 this was Section 196A; under the Income-tax Act, 2025, which took effect from 1 April 2026, the same withholding rule sits inside Section 393(2) (Table S. No. 10 of the Act's TDS schedule). The rate is a flat 20% (before surcharge and cess), applied regardless of the investor's income slab, because non-residents don't get slab-rate treatment at the point of deduction the way resident investors do.",
+                                "A DTAA can lower this, but not automatically. The AMC will apply the treaty rate only if the investor furnishes a valid Tax Residency Certificate (TRC) for the relevant year and the treaty rate is actually lower than 20%. Even then, tax practitioners flag a real limitation: income distributed by an Indian mutual fund often doesn't fit neatly inside a treaty's definition of 'dividend,' so claiming treaty relief on this specific income stream isn't as straightforward as it is for, say, bank interest. Some AMCs will honour a lower treaty rate with a TRC and Form 10F on file; others default to the domestic 20% and leave the investor to claim the difference as a refund when filing a return.",
+                              ],
+          },
+          {
+                    heading: "Capital gains on redemption",
+                    paragraphs: [
+                                "Capital gains from redeeming or switching mutual fund units are withheld under the general non-resident payment provision -- old Section 195, now Section 393(2) of the 2025 Act (a different table row from the dividend rule above) -- at the rates 'in force' for that category of gain. Following the Budget 2024 changes, those rates for equity-oriented funds are 20% for short-term capital gains (units held 12 months or less) and 12.5% for long-term gains above the Rs 1.25 lakh annual exemption, both plus applicable surcharge and cess. For debt-oriented and other non-equity funds -- where units bought on or after 1 April 2023 no longer get indexation or a long-term category at all -- AMCs generally withhold at a flat 30%, since there's no slab rate to apply at the point of a non-resident redemption the way there would be for a resident investor at their own income slab.",
+                                "This is a meaningful contrast with residents, who face no TDS at all on mutual fund capital gains -- the withholding obligation on redemption gains exists only because the investor is non-resident. It also means the AMC's deduction is often a rough, conservative estimate of the actual tax owed, not a precise final figure -- particularly for debt funds, where 30% is well above what many NRIs' effective India tax rate on that gain would otherwise be.",
+                              ],
+          },
+          {
+                    heading: "Reducing or reconciling the deduction",
+                    paragraphs: [
+                                "Two paths exist to avoid overpaying through the year. One is upfront: submitting a TRC and Form 10F to the AMC before redemption or dividend payout, so a lower treaty rate applies at source where the AMC accepts it (this is a narrower version of the same TRC-and-10F paperwork used for Form 15CA/15CB remittance certification on other outward payments). The other is after the fact: filing an Indian income tax return to claim a refund of TDS deducted in excess of actual tax liability, which is common for debt-fund redemptions given the flat 30% rate.",
+                                "Either way, the deducted amounts should show up against the investor's PAN in Form 26AS and the Annual Information Statement, typically with a lag of one to two quarters after the AMC files its TDS return. Checking that reconciliation before filing -- rather than relying on the AMC's TDS certificate alone -- catches the fairly common case of a mismatched PAN or a late TDS return delaying credit into the wrong assessment year.",
+                              ],
+          },
+              ],
+              relatedSlugs: [
+                "tds-on-nro-interest-explained",
+                "form-26as-reconciling-tds-credit-as-nri",
+                "form-15ca-15cb-explained",
+                "pfic-rules-for-nris-mutual-fund-trap",
+              ],
+          },
+        {
+              slug: "advance-tax-for-nris-explained",
+              clusterSlug: "nre-nro-tds",
+              title: "Advance Tax for NRIs: When TDS Isn't Enough",
+              description:
+                      "NRIs often assume TDS covers their entire Indian tax bill -- it doesn't always, and the advance tax rules that fill the gap apply to non-residents with no age-based exemption.",
+              dek: "TDS catches most NRI income at source, but not all of it, and not always at the right rate. When it falls short, advance tax obligations -- and their interest penalties -- apply to NRIs exactly as they do to residents.",
+              sections: [
+                {
+                          paragraphs: [
+                                      "A common assumption among NRIs is that because most Indian-source income -- bank interest, rent, mutual fund payouts, property sale proceeds -- already has tax withheld at source, there's nothing left to pay. That's often close to true, but 'close' is doing a lot of work in that sentence. Advance tax is a separate, independent obligation that sits underneath the TDS system, and it applies to non-residents on exactly the same terms as residents, with one notable exception that cuts against NRIs rather than for them.",
+                                    ],
+                },
+                {
+                          heading: "When the obligation kicks in",
+                          paragraphs: [
+                                      "Under the Income-tax Act, 1961, the liability to pay advance tax was set out in Sections 207 and 208; under the Income-tax Act, 2025, in force from 1 April 2026, the equivalent provisions are Sections 403 and 404. The trigger hasn't changed with the renumbering: any taxpayer -- resident or non-resident -- whose estimated tax liability for the year, net of TDS already deducted, is Rs 10,000 or more must pay advance tax during the year rather than settling the full amount when filing the return.",
+                                      "For NRIs this most often gets triggered by income that either isn't subject to TDS at all or is under-withheld relative to actual liability: capital gains on listed securities held outside a TDS-triggering redemption, rental income where a tenant deducted TDS at a lower certificate-based rate but the NRI's actual liability turned out higher, or any year with a large one-off capital gain -- such as an unlisted asset or foreign-currency conversion gain -- that no payer withheld against at all.",
+                                    ],
+                },
+                {
+                          heading: "No senior-citizen exemption for NRIs",
+                          paragraphs: [
+                                      "Resident individuals aged 60 or above with no business or professional income are exempt from paying advance tax entirely -- they can settle their full liability at return-filing time without interest exposure. That carve-out, under old Section 207(2) and its 2025 Act equivalent, is written explicitly for resident senior citizens. A non-resident senior citizen with substantial NRO interest, rental income, or capital gains gets no such relief regardless of age; the ordinary advance tax schedule and interest rules apply in full.",
+                                    ],
+                },
+                {
+                          heading: "Due dates and the cost of missing them",
+                          paragraphs: [
+                                      "The instalment schedule is the same four dates used across the tax system: 15 June, 15 September, 15 December, and 15 March, by which cumulative payments of 15%, 45%, 75%, and 100% of the estimated annual liability are due. Missing or underpaying an instalment triggers interest under what were Sections 234B and 234C of the 1961 Act -- now Sections 424 and 425 of the Income-tax Act, 2025 -- generally at 1% per month (or part of a month) on the shortfall, calculated from the due date of each missed instalment through to actual payment or assessment. A full failure to pay advance tax where it was owed compounds this across multiple instalments, since each missed deadline accrues its own interest run.",
+                                      "In practice, the safest approach for an NRI with a mix of TDS-covered and non-TDS income is to run a rough estimate each quarter -- total expected Indian-source income for the year, tax at applicable rates (including DTAA relief where a valid TRC is on file), less TDS already withheld or expected -- and pay the shortfall against each instalment date rather than waiting to true it all up in the return. Capital gains realised late in the year (say, a property sale in February) get some relief here: tax on income that genuinely couldn't have been anticipated earlier in the year is generally not penalised for the instalments that had already passed, provided it's paid with the next instalment falling due.",
+                                    ],
+                },
+                    ],
+              relatedSlugs: [
+                      "do-nris-need-to-file-indian-tax-return",
+                      "tds-on-nro-interest-explained",
+                      "form-26as-reconciling-tds-credit-as-nri",
+                      "claiming-dtaa-relief-credit-vs-exemption",
+                    ],
+        },
+        {
+              slug: "nre-nro-accounts-when-you-return-to-india",
+              clusterSlug: "nre-nro-tds",
+              title: "What Happens to Your NRE and NRO Accounts When You Move Back to India",
+              description:
+                      "Returning to India for good doesn't just change your tax residency -- it obligates you to redesignate your NRE and NRO accounts, on a timeline RBI describes simply as 'immediately.'",
+              dek: "The day your FEMA residency flips to resident, your NRE and NRO accounts are technically no longer the right accounts to hold. Here's what redesignation actually involves, and what happens if it's ignored.",
+              sections: [
+                {
+                          paragraphs: [
+                                      "Residency for tax purposes and residency for foreign-exchange purposes run on different clocks, and NRIs planning a permanent move back to India often track only the tax one -- the 182-day test, RNOR status, and so on. But FEMA (the Foreign Exchange Management Act) has its own residency rule, and it flips the moment someone returns to India with the intention of staying, not at the end of a tax year. That flip carries an immediate, practical consequence: NRE and NRO accounts are structured for non-residents, and once FEMA treats the holder as resident, those account types are no longer the correct ones to operate.",
+                                    ],
+                },
+                {
+                          heading: "NRE accounts: redesignate or move to RFC",
+                          paragraphs: [
+                                      "RBI's rules for accounts held by persons resident outside India are direct on this point, using the word 'immediately': on return for permanent settlement, an NRE account should be redesignated as a resident rupee account, or its funds transferred into an eligible Resident Foreign Currency (RFC) account. There's no fixed number of days written into the regulation itself, but banks treat 'immediately' as a prompt obligation rather than something to defer until convenient -- continuing to operate an NRE account after FEMA residency has changed is a FEMA violation, not a paperwork oversight.",
+                                      "Existing NRE term deposits get a practical accommodation: banks generally allow them to run to their original maturity at the contracted interest rate rather than forcing an immediate premature closure, and RBI rules specifically permit no-penalty conversion of an NRE deposit into an RFC account. Once matured, the principal and interest move into either a resident rupee account or an RFC account, depending on the account holder's eligibility and preference.",
+                                    ],
+                },
+                {
+                          heading: "NRO accounts: a simpler redesignation",
+                          paragraphs: [
+                                      "NRO accounts have a shorter story because the tax treatment barely changes -- NRO interest was already taxable in India before the return, and it remains taxable afterward. The bank simply redesignates the NRO account as an ordinary resident savings or current account. There's no RFC option here, since NRO accounts hold rupee funds rather than foreign currency, and no equivalent maturity-runout complexity beyond what any resident term deposit would have.",
+                                    ],
+                },
+                {
+                          heading: "RFC accounts and the RNOR window",
+                          paragraphs: [
+                                      "RFC accounts exist specifically for this transition -- a resident account that can still be maintained in foreign currency, with no repatriation restriction, intended for returning NRIs to hold foreign-currency savings and NRE/FCNR proceeds without forcing an immediate rupee conversion. Their tax treatment tracks residency status closely: interest earned on an RFC account is exempt from Indian tax under Section 10(15)(iv)(fa) of the Income-tax Act for as long as the account holder remains RNOR (Resident but Not Ordinarily Resident), but becomes fully taxable at slab rates once that person becomes an ordinary tax resident (ROR) -- typically two to three years after return, depending on their prior years of NRI status.",
+                                      "FCNR(B) deposits sit slightly apart from this: an existing FCNR(B) deposit can generally continue to maturity at its contracted rate even after the holder becomes FEMA-resident, with the interest earned during that remaining term still following NRI/RNOR-linked exemption treatment. Once it matures, the same choice applies -- move it into a resident rupee account or an RFC account.",
+                                    ],
+                },
+                    ],
+              relatedSlugs: [
+                      "nre-vs-nro-accounts-which-do-you-need",
+                      "fcnr-deposits-explained",
+                      "rnor-status-explained-for-returning-nris",
+                      "joint-nre-nro-account-with-resident-relative",
+                    ],
+        },
+          
           ];
 
 export function getArticle(slug: string): Article | undefined {
