@@ -8,7 +8,7 @@ import {
   NumberField,
   ResultRow,
 } from "./CalculatorShell";
-import { DownloadPdfButton } from "./DownloadPdfButton";
+import { DownloadResultsButton } from "./DownloadResultsButton";
 import { HowCalculated } from "./HowCalculated";
 import { SourceCitation } from "./SourceCitation";
 import { PDF_DISCLAIMER } from "./pdfDisclaimer";
@@ -137,8 +137,8 @@ export default function IndiaResidencyCalculator() {
         />
       </div>
 
-      <DownloadPdfButton
-        fileName="india-residential-status-result.pdf"
+      <DownloadResultsButton
+        fileNameBase="india-residential-status-result"
         calculatorTitle="India residential status & RNOR tool"
         inputs={[
           {

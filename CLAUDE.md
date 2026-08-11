@@ -31,9 +31,15 @@ only, deliberately stateless. Deployed on Vercel, domain via Cloudflare Registra
   task (add a 3rd currency to existing INR/USD results) is paused
   pending a decision on where live rates would come from — don't assume
   one exists when scoping related work.
-- PDF export exists only for the three DTAA/tax-residency calculators
-  (via `DownloadPdfButton` + jsPDF, dynamically imported). Not yet
-  extended to the /tools hub or the other three category pages.
+- PDF and Excel export (via `DownloadResultsButton`, jsPDF + xlsx/SheetJS,
+  both dynamically imported) now cover every numeric calculator sitewide,
+  not just the three DTAA/tax-residency calculators -- see ADR 0017. The
+  `xlsx` dependency carries two known high-severity CVEs with no fix
+  available (prototype pollution / ReDoS), both only reachable via
+  *parsing* an untrusted spreadsheet; this codebase only ever writes
+  spreadsheets it generates itself, so neither is currently exploitable
+  here, but re-evaluate this choice before ever adding a "parse an
+  uploaded spreadsheet" feature.
 - No database — fully client-side/stateless by design; adding one is a
   real product decision, not something to infer from any single task.
 - AdSense not yet applied for.
@@ -52,8 +58,7 @@ calculators; a fifth `/tools` hub with 5 general-purpose calculators
 (Currency Impact, SIP/XIRR, FD/RD Maturity, Loan Prepayment, Tax
 Treatment Comparison); a shared design system (navy/indigo + single gold
 accent, `ResultRow` status-badge pattern, tabular-nums, `HowCalculated`/
-`SourceCitation`/`VerifiedStamp` components); PDF export on the DTAA
-calculators; site-wide search, FAQ accordion, back-to-top; 60 blog
-articles + 60 FAQs across all four clusters; domain purchased, DNS
-connected, live in production.
+`SourceCitation`/`VerifiedStamp` components); PDF and Excel export on
+every numeric calculator sitewide; site-wide search, FAQ accordion,
+back-to-top; domain purchased, DNS connected, live in production.
 EOF

@@ -6,14 +6,23 @@ import {
   estimateRepatriationHeadroom,
 } from "@/lib/calculators/repatriationLimit";
 import { CalculatorShell, NumberField, ResultRow } from "./CalculatorShell";
+import { DownloadResultsButton } from "./DownloadResultsButton";
 import { HowCalculated } from "./HowCalculated";
 import { SourceCitation } from "./SourceCitation";
+import { PDF_DISCLAIMER } from "./pdfDisclaimer";
 
 const usdFormatter = new Intl.NumberFormat("en-US", {
   style: "currency",
   currency: "USD",
   maximumFractionDigits: 0,
 });
+
+const REPATRIATION_LIMIT_SOURCES = [
+  {
+    label: "RBI: Master Direction — Remittance of Assets",
+    href: "https://www.rbi.org.in/Scripts/BS_ViewMasDirections.aspx?id=10197",
+  },
+];
 
 export default function RepatriationLimitCalculator() {
   const [accountType, setAccountType] = useState<"nro" | "nre_or_fcnr">(
@@ -110,6 +119,55 @@ export default function RepatriationLimitCalculator() {
         )}
       </div>
 
+      <DownloadResultsButton
+        fileNameBase="repatriation-headroom-result"
+        calculatorTitle="Repatriation headroom estimator"
+        inputs={[
+          {
+            label: "Account type",
+            value:
+              accountType === "nro" ? "NRO account" : "NRE or FCNR account",
+          },
+          ...(result.subjectToAnnualLimit
+            ? [
+                {
+                  label: "Already repatriated this financial year",
+                  value: usdFormatter.format(alreadyRepatriatedThisFyUsd),
+                },
+                {
+                  label: "Amount requested now",
+                  value: usdFormatter.format(requestedAmountUsd),
+                },
+              ]
+            : []),
+        ]}
+        results={
+          result.subjectToAnnualLimit
+            ? [
+                {
+                  label: "Annual facility limit",
+                  value: usdFormatter.format(ANNUAL_REPATRIATION_LIMIT_USD),
+                },
+                {
+                  label: "Remaining headroom before this request",
+                  value: usdFormatter.format(result.remainingHeadroomUsd ?? 0),
+                },
+                {
+                  label: "Fits within remaining headroom?",
+                  value: result.fitsWithinLimit ? "Yes" : "No",
+                },
+              ]
+            : [
+                {
+                  label: "RBI annual ceiling",
+                  value: "Not applicable — freely repatriable",
+                },
+              ]
+        }
+        disclaimer={PDF_DISCLAIMER}
+        sources={REPATRIATION_LIMIT_SOURCES}
+      />
+
       <p className="text-xs text-stone-500 dark:text-primary-300/60">
         Does not model the RBI-permission route for amounts above the
         ceiling (e.g. medical emergencies, a child&apos;s education abroad,
@@ -139,14 +197,7 @@ export default function RepatriationLimitCalculator() {
         </p>
       </HowCalculated>
 
-      <SourceCitation
-        sources={[
-          {
-            label: "RBI: Master Direction — Remittance of Assets",
-            href: "https://www.rbi.org.in/Scripts/BS_ViewMasDirections.aspx?id=10197",
-          },
-        ]}
-      />
+      <SourceCitation sources={REPATRIATION_LIMIT_SOURCES} />
     </CalculatorShell>
   );
 }

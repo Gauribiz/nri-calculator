@@ -11,8 +11,21 @@ import {
   NumberField,
   ResultRow,
 } from "./CalculatorShell";
+import { DownloadResultsButton } from "./DownloadResultsButton";
 import { HowCalculated } from "./HowCalculated";
 import { SourceCitation } from "./SourceCitation";
+import { PDF_DISCLAIMER } from "./pdfDisclaimer";
+
+const NRO_INTEREST_TDS_SOURCES = [
+  {
+    label: "Income Tax Dept.: TDS on payments to non-residents",
+    href: "https://www.incometaxindia.gov.in/Pages/i-am/non-resident.aspx",
+  },
+  {
+    label: "IRS: Foreign Tax Credit",
+    href: "https://www.irs.gov/individuals/international-taxpayers/foreign-tax-credit",
+  },
+];
 
 const currencyFormatter = new Intl.NumberFormat("en-IN", {
   maximumFractionDigits: 2,
@@ -76,6 +89,37 @@ export default function NroInterestTdsCalculator() {
         />
       </div>
 
+      <DownloadResultsButton
+        fileNameBase="nro-interest-tds-result"
+        calculatorTitle="TDS on NRO account interest"
+        inputs={[
+          {
+            label: "NRO interest earned this financial year",
+            value: `₹${currencyFormatter.format(annualNroInterest)}`,
+          },
+          {
+            label: "Lower certified/treaty rate applied",
+            value: useLowerRate ? `${lowerRatePercent}%` : "No",
+          },
+        ]}
+        results={[
+          {
+            label: "Rate applied",
+            value: `${result.effectiveRatePercent.toFixed(2)}%`,
+          },
+          {
+            label: "TDS withheld",
+            value: `₹${currencyFormatter.format(result.tdsAmount)}`,
+          },
+          {
+            label: "Net interest credited",
+            value: `₹${currencyFormatter.format(result.netInterest)}`,
+          },
+        ]}
+        disclaimer={PDF_DISCLAIMER}
+        sources={NRO_INTEREST_TDS_SOURCES}
+      />
+
       <p className="text-xs text-stone-500 dark:text-primary-300/60">
         Does not model surcharge (income-slab-dependent, with marginal
         relief) or refunds of excess TDS via ITR filing when your actual
@@ -98,18 +142,7 @@ export default function NroInterestTdsCalculator() {
         </p>
       </HowCalculated>
 
-      <SourceCitation
-        sources={[
-          {
-            label: "Income Tax Dept.: TDS on payments to non-residents",
-            href: "https://www.incometaxindia.gov.in/Pages/i-am/non-resident.aspx",
-          },
-          {
-            label: "IRS: Foreign Tax Credit",
-            href: "https://www.irs.gov/individuals/international-taxpayers/foreign-tax-credit",
-          },
-        ]}
-      />
+      <SourceCitation sources={NRO_INTEREST_TDS_SOURCES} />
     </CalculatorShell>
   );
 }

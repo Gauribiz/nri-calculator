@@ -6,8 +6,17 @@ import {
   type DepositType,
 } from "@/lib/calculators/fdRdMaturity";
 import { CalculatorShell, NumberField, ResultRow } from "./CalculatorShell";
+import { DownloadResultsButton } from "./DownloadResultsButton";
 import { HowCalculated } from "./HowCalculated";
 import { SourceCitation } from "./SourceCitation";
+import { PDF_DISCLAIMER } from "./pdfDisclaimer";
+
+const FD_RD_MATURITY_SOURCES = [
+  {
+    label: "RBI: Master Direction — Interest Rate on Deposits",
+    href: "https://www.rbi.org.in/Scripts/BS_ViewMasDirections.aspx?id=11566",
+  },
+];
 
 const inrFormatter = new Intl.NumberFormat("en-IN", {
   maximumFractionDigits: 0,
@@ -99,6 +108,39 @@ export default function FdRdMaturityCalculator() {
         />
       </div>
 
+      <DownloadResultsButton
+        fileNameBase="fd-rd-maturity-result"
+        calculatorTitle="FD / RD maturity calculator"
+        inputs={[
+          {
+            label: "Deposit type",
+            value: depositType === "fd" ? "Fixed deposit" : "Recurring deposit",
+          },
+          {
+            label: depositType === "fd" ? "Principal amount" : "Monthly deposit",
+            value: `₹${amount}`,
+          },
+          { label: "Annual interest rate", value: `${annualRatePercent}%` },
+          { label: "Tenure", value: `${tenureMonths} months` },
+        ]}
+        results={[
+          {
+            label: depositType === "fd" ? "Principal" : "Total deposited",
+            value: `₹${inrFormatter.format(result.totalDeposited)}`,
+          },
+          {
+            label: "Maturity value",
+            value: `₹${inrFormatter.format(result.maturityValue)}`,
+          },
+          {
+            label: "Interest earned",
+            value: `₹${inrFormatter.format(result.interestEarned)} (${percentFormatter.format(result.interestEarnedPercent)}%)`,
+          },
+        ]}
+        disclaimer={PDF_DISCLAIMER}
+        sources={FD_RD_MATURITY_SOURCES}
+      />
+
       <p className="text-xs text-stone-500 dark:text-primary-300/60">
         Pre-tax estimate at a fixed rate for the full tenure. Does not model
         TDS on FD/RD interest (NRO deposit interest is subject to TDS; NRE
@@ -124,14 +166,7 @@ export default function FdRdMaturityCalculator() {
         </p>
       </HowCalculated>
 
-      <SourceCitation
-        sources={[
-          {
-            label: "RBI: Master Direction — Interest Rate on Deposits",
-            href: "https://www.rbi.org.in/Scripts/BS_ViewMasDirections.aspx?id=11566",
-          },
-        ]}
-      />
+      <SourceCitation sources={FD_RD_MATURITY_SOURCES} />
     </CalculatorShell>
   );
 }

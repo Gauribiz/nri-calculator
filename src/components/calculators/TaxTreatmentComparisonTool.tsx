@@ -3,7 +3,20 @@
 import { useState } from "react";
 import { INSTRUMENT_TAX_PROFILES } from "@/lib/calculators/taxTreatmentComparison";
 import { CalculatorShell, CheckboxField } from "./CalculatorShell";
+import { DownloadResultsButton } from "./DownloadResultsButton";
 import { SourceCitation } from "./SourceCitation";
+import { PDF_DISCLAIMER } from "./pdfDisclaimer";
+
+const TAX_TREATMENT_COMPARISON_SOURCES = [
+  {
+    label: "Income Tax Department: Tax rates for NRIs",
+    href: "https://www.incometax.gov.in/iec/foportal/",
+  },
+  {
+    label: "RBI: Master Direction — Remittance of Assets",
+    href: "https://www.rbi.org.in/Scripts/BS_ViewMasDirections.aspx?id=10197",
+  },
+];
 
 function InfoField({ label, value }: { label: string; value: string }) {
   return (
@@ -78,6 +91,39 @@ export default function TaxTreatmentComparisonTool() {
         ))}
       </div>
 
+      {visibleProfiles.length > 0 && (
+        <DownloadResultsButton
+          fileNameBase="tax-treatment-comparison-result"
+          calculatorTitle="Tax treatment comparison tool"
+          inputs={[
+            {
+              label: "Instruments compared",
+              value: visibleProfiles.map((profile) => profile.label).join(", "),
+            },
+          ]}
+          results={visibleProfiles.flatMap((profile) => [
+            {
+              label: `${profile.label} — Income tax (interest/dividends)`,
+              value: profile.incomeTaxTreatment,
+            },
+            {
+              label: `${profile.label} — Capital gains treatment`,
+              value: profile.capitalGainsTreatment,
+            },
+            {
+              label: `${profile.label} — TDS at source`,
+              value: profile.tdsTreatment,
+            },
+            {
+              label: `${profile.label} — Repatriation`,
+              value: profile.repatriability,
+            },
+          ])}
+          disclaimer={PDF_DISCLAIMER}
+          sources={TAX_TREATMENT_COMPARISON_SOURCES}
+        />
+      )}
+
       <p className="text-xs text-stone-500 dark:text-primary-300/60">
         Does not model DTAA relief, surcharge slabs, your overall tax
         residency position, or Finance Act changes after this was written.
@@ -86,18 +132,7 @@ export default function TaxTreatmentComparisonTool() {
         this for a filing or investment decision.
       </p>
 
-      <SourceCitation
-        sources={[
-          {
-            label: "Income Tax Department: Tax rates for NRIs",
-            href: "https://www.incometax.gov.in/iec/foportal/",
-          },
-          {
-            label: "RBI: Master Direction — Remittance of Assets",
-            href: "https://www.rbi.org.in/Scripts/BS_ViewMasDirections.aspx?id=10197",
-          },
-        ]}
-      />
+      <SourceCitation sources={TAX_TREATMENT_COMPARISON_SOURCES} />
     </CalculatorShell>
   );
 }

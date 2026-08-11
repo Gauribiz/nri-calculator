@@ -7,7 +7,7 @@ import {
   NumberField,
   ResultRow,
 } from "./CalculatorShell";
-import { DownloadPdfButton } from "./DownloadPdfButton";
+import { DownloadResultsButton } from "./DownloadResultsButton";
 import { HowCalculated } from "./HowCalculated";
 import { SourceCitation } from "./SourceCitation";
 import { PDF_DISCLAIMER } from "./pdfDisclaimer";
@@ -71,8 +71,8 @@ export default function DtaaReliefEstimator() {
         />
       </div>
 
-      <DownloadPdfButton
-        fileName="dtaa-relief-estimate-result.pdf"
+      <DownloadResultsButton
+        fileNameBase="dtaa-relief-estimate-result"
         calculatorTitle="DTAA relief (foreign tax credit) estimator"
         inputs={[
           {

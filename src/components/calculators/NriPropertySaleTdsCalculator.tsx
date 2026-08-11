@@ -8,12 +8,21 @@ import {
   NumberField,
   ResultRow,
 } from "./CalculatorShell";
+import { DownloadResultsButton } from "./DownloadResultsButton";
 import { HowCalculated } from "./HowCalculated";
 import { SourceCitation } from "./SourceCitation";
+import { PDF_DISCLAIMER } from "./pdfDisclaimer";
 
 const inrFormatter = new Intl.NumberFormat("en-IN", {
   maximumFractionDigits: 0,
 });
+
+const NRI_PROPERTY_SALE_TDS_SOURCES = [
+  {
+    label: "Income Tax Dept.: Section 393 (TDS to non-residents)",
+    href: "https://www.incometaxindia.gov.in/w/section-393-5",
+  },
+];
 
 export default function NriPropertySaleTdsCalculator() {
   const [saleConsiderationInr, setSaleConsiderationInr] = useState(0);
@@ -100,6 +109,43 @@ export default function NriPropertySaleTdsCalculator() {
         />
       </div>
 
+      <DownloadResultsButton
+        fileNameBase="nri-property-sale-tds-result"
+        calculatorTitle="Section 393(2) TDS-on-NRI-property-sale estimator"
+        inputs={[
+          {
+            label: "Sale consideration",
+            value: `₹${inrFormatter.format(saleConsiderationInr)}`,
+          },
+          {
+            label: "Holding period",
+            value: isLongTerm
+              ? "Long-term (more than 24 months)"
+              : "Short-term (24 months or less)",
+          },
+          {
+            label: "Form 13 lower/nil-deduction certificate",
+            value: hasLowerDeductionCertificate
+              ? `Yes — ${certifiedRatePercent}%`
+              : "No",
+          },
+        ]}
+        results={[
+          {
+            label: result.usedCertifiedRate
+              ? "Certified TDS rate"
+              : "Default TDS rate (base + 4% cess, no certificate)",
+            value: `${result.effectiveRatePercent.toFixed(2)}%`,
+          },
+          {
+            label: "Estimated TDS to be withheld",
+            value: `₹${inrFormatter.format(result.estimatedTdsInr)}`,
+          },
+        ]}
+        disclaimer={PDF_DISCLAIMER}
+        sources={NRI_PROPERTY_SALE_TDS_SOURCES}
+      />
+
       <p className="text-xs text-stone-500 dark:text-primary-300/60">
         Does not model surcharge (10%-15% for capital-gains-type income,
         depending on your total income — a buyer generally cannot know
@@ -127,14 +173,7 @@ export default function NriPropertySaleTdsCalculator() {
         </p>
       </HowCalculated>
 
-      <SourceCitation
-        sources={[
-          {
-            label: "Income Tax Dept.: Section 393 (TDS to non-residents)",
-            href: "https://www.incometaxindia.gov.in/w/section-393-5",
-          },
-        ]}
-      />
+      <SourceCitation sources={NRI_PROPERTY_SALE_TDS_SOURCES} />
     </CalculatorShell>
   );
 }

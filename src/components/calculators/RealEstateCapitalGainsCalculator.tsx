@@ -7,12 +7,21 @@ import {
   calculateRealEstateCapitalGains,
 } from "@/lib/calculators/realEstateCapitalGains";
 import { CalculatorShell, NumberField, ResultRow } from "./CalculatorShell";
+import { DownloadResultsButton } from "./DownloadResultsButton";
 import { HowCalculated } from "./HowCalculated";
 import { SourceCitation } from "./SourceCitation";
+import { PDF_DISCLAIMER } from "./pdfDisclaimer";
 
 const inrFormatter = new Intl.NumberFormat("en-IN", {
   maximumFractionDigits: 0,
 });
+
+const REAL_ESTATE_CAPITAL_GAINS_SOURCES = [
+  {
+    label: "Income Tax Dept.: Capital Gains",
+    href: "https://www.incometaxindia.gov.in/w/capital-gain",
+  },
+];
 
 export default function RealEstateCapitalGainsCalculator() {
   const [holdingPeriodMonths, setHoldingPeriodMonths] = useState(0);
@@ -96,6 +105,56 @@ export default function RealEstateCapitalGainsCalculator() {
         )}
       </div>
 
+      <DownloadResultsButton
+        fileNameBase="real-estate-capital-gains-result"
+        calculatorTitle="LTCG / STCG classifier for a property sale"
+        inputs={[
+          {
+            label: "Holding period",
+            value: `${holdingPeriodMonths} months`,
+          },
+          {
+            label: "Sale consideration",
+            value: `₹${inrFormatter.format(saleConsiderationInr)}`,
+          },
+          {
+            label: "Cost of acquisition",
+            value: `₹${inrFormatter.format(costOfAcquisitionInr)}`,
+          },
+          {
+            label: "Cost of improvement",
+            value: `₹${inrFormatter.format(costOfImprovementInr)}`,
+          },
+          {
+            label: "Transfer expenses",
+            value: `₹${inrFormatter.format(transferExpensesInr)}`,
+          },
+        ]}
+        results={[
+          {
+            label: "Classification",
+            value: result.isLongTerm
+              ? "Long-term (LTCG)"
+              : "Short-term (STCG)",
+          },
+          {
+            label: "Capital gain (unindexed)",
+            value: `₹${inrFormatter.format(result.capitalGainInr)}`,
+          },
+          result.isLongTerm
+            ? {
+                label: `Estimated LTCG tax at ${LTCG_TAX_RATE_PERCENT}% (before surcharge & cess)`,
+                value: `₹${inrFormatter.format(result.estimatedLtcgTaxInr ?? 0)}`,
+              }
+            : {
+                label: "STCG tax",
+                value: "Taxed at your income-tax slab rate — not a flat rate",
+              },
+        ]}
+        disclaimer={PDF_DISCLAIMER}
+        sources={REAL_ESTATE_CAPITAL_GAINS_SOURCES}
+      />
+
       <p className="text-xs text-stone-500 dark:text-primary-300/60">
         Does not model indexation (moot for NRIs — the Finance Act 2024
         grandfathering option to use 20% with indexation applies only to
@@ -127,14 +186,7 @@ export default function RealEstateCapitalGainsCalculator() {
         </p>
       </HowCalculated>
 
-      <SourceCitation
-        sources={[
-          {
-            label: "Income Tax Dept.: Capital Gains",
-            href: "https://www.incometaxindia.gov.in/w/capital-gain",
-          },
-        ]}
-      />
+      <SourceCitation sources={REAL_ESTATE_CAPITAL_GAINS_SOURCES} />
     </CalculatorShell>
   );
 }

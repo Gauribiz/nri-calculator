@@ -8,8 +8,17 @@ import {
   NumberField,
   ResultRow,
 } from "./CalculatorShell";
+import { DownloadResultsButton } from "./DownloadResultsButton";
 import { HowCalculated } from "./HowCalculated";
 import { SourceCitation } from "./SourceCitation";
+import { PDF_DISCLAIMER } from "./pdfDisclaimer";
+
+const SIP_XIRR_SOURCES = [
+  {
+    label: "AMFI: Mutual Fund SIP basics",
+    href: "https://www.amfiindia.com/investor-corner/knowledge-center/what-is-systematic-investment-plan.html",
+  },
+];
 
 const inrFormatter = new Intl.NumberFormat("en-IN", {
   maximumFractionDigits: 0,
@@ -104,6 +113,45 @@ export default function SipXirrCalculator() {
         )}
       </div>
 
+      {hasResult && (
+        <DownloadResultsButton
+          fileNameBase="sip-xirr-result"
+          calculatorTitle="SIP / mutual fund XIRR calculator"
+          inputs={[
+            { label: "Monthly SIP amount", value: `₹${monthlySipAmount}` },
+            { label: "SIP start date", value: startDate },
+            { label: "Current portfolio value", value: `₹${currentValueInr}` },
+          ]}
+          results={[
+            {
+              label: "Installments so far",
+              value: String(result.numberOfInstallments),
+            },
+            {
+              label: "Total invested",
+              value: `₹${inrFormatter.format(result.totalInvested)}`,
+            },
+            {
+              label: "Current value",
+              value: `₹${inrFormatter.format(result.currentValue)}`,
+            },
+            {
+              label: "Absolute gain",
+              value: `₹${inrFormatter.format(result.absoluteGain)} (${percentFormatter.format(result.absoluteGainPercent)}%)`,
+            },
+            {
+              label: "Annualised return (XIRR)",
+              value:
+                result.xirrPercent === null
+                  ? "Could not be estimated"
+                  : `${percentFormatter.format(result.xirrPercent)}%`,
+            },
+          ]}
+          disclaimer={PDF_DISCLAIMER}
+          sources={SIP_XIRR_SOURCES}
+        />
+      )}
+
       <HowCalculated>
         <p>
           Builds one cash outflow of the monthly SIP amount on each
@@ -124,14 +172,7 @@ export default function SipXirrCalculator() {
         </p>
       </HowCalculated>
 
-      <SourceCitation
-        sources={[
-          {
-            label: "AMFI: Mutual Fund SIP basics",
-            href: "https://www.amfiindia.com/investor-corner/knowledge-center/what-is-systematic-investment-plan.html",
-          },
-        ]}
-      />
+      <SourceCitation sources={SIP_XIRR_SOURCES} />
     </CalculatorShell>
   );
 }
