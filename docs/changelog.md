@@ -752,3 +752,10 @@ corridor, four advisory categories, no personalized advice).
 - Added `CLAUDE.md`, matching the format of the other two projects'
   guardrail docs.
 - `npm run build` and `npm run lint` both pass.
+
+ ## 2026-08-10
+ 
+- Refreshed CLAUDE.md: "Known open items" and "Already completed" sections
+  had gone stale since the initial scaffold commit and no longer reflected
+  shipped work (calculators, design system, PDF export, blog/FAQ, domain).
+  No functional code changed.
