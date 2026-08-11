@@ -2,6 +2,51 @@
 
 All notable changes to NRI Calculator, in reverse chronological order.
 
+## 2026-08-11 -- PDF/Excel export extended sitewide (nric-010)
+
+Extended the "Download result" pattern (previously PDF-only, live only on
+the three DTAA/tax-residency calculators since `nric-001e`) with an Excel
+option, and rolled it out to every remaining numeric calculator on the
+site in one pass rather than splitting the batch -- see ADR 0017 for the
+full reasoning, including why `xlsx` (SheetJS) was chosen over `exceljs`
+for the new Excel dependency, and why four decision-tree/checklist tools
+(`NreNroChooser`, `Form15caChecker`, `PficFilingChecker`, `Form13Explainer`)
+were left out as having no single result set to export.
+
+Renamed `DownloadPdfButton` to `DownloadResultsButton` (now renders both
+"Download as PDF" and "Download as Excel" buttons) and added it to:
+`NroInterestTdsCalculator`, `RepatriationLimitCalculator`,
+`RealEstateCapitalGainsCalculator`, `NriPropertySaleTdsCalculator`, and all
+five `/tools` hub calculators (`CurrencyImpactCalculator`,
+`SipXirrCalculator`, `FdRdMaturityCalculator`, `LoanPrepaymentCalculator`,
+`TaxTreatmentComparisonTool`). The three DTAA calculators kept their
+existing PDF export and gained the Excel option alongside it.
+
+No calculation logic changed anywhere -- this is export plumbing over
+numbers each calculator already computes and displays. No new figures were
+introduced, so this PR does not need a tax fact-verification pass.
+
+Verified with `npx tsc --noEmit` (clean), `npm run lint` (clean),
+`npm run build` (all 84 routes still prerender statically), and a headless
+Playwright smoke test against the built production server: confirmed the
+Disclaimer still renders before any download button on every affected
+page, confirmed the expected PDF+Excel button count per page, and
+exercised real downloads on three representative calculators, verifying
+the `.xlsx` output is well-formed Office Open XML.
+
+Also corrected two stale `task_queue` statuses in `orchestrator-state`
+while orienting for this run (see that repo's own run_history for detail)
+-- `nric-006e` and `nric-008` were both already merged (PRs #17 and #22)
+but still showed `open-awaiting-review`. Separately flagged, but did not
+attempt to reconstruct: a "batch 6" blog/FAQ content pass (PR #20,
+committed as `nric-0086`, 12 more articles) that was completed and merged
+with no corresponding `task_queue` entry ever created for it -- worth
+Ajinkya's attention to reconcile, not something this run should guess at.
+
+Added `docs/decisions/0017-pdf-excel-export-sitewide.md`. Updated
+CLAUDE.md's "Known open items" and "Already completed" sections to reflect
+PDF export's extension (now also Excel, now sitewide).
+
 ## 2026-08-10 -- Blog/FAQ content pass, batch 6 (nric-0086)
 
 Continued the nric-006 series with a sixth batch, per the user's selection to keep advancing content toward the charter's 25-30/cluster target after batch 5 (nric-006e) shipped -- see ADR 0016 for full topic-selection reasoning.

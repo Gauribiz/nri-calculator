@@ -3,8 +3,18 @@
 import { useState } from "react";
 import { estimateLoanPrepaymentImpact } from "@/lib/calculators/loanPrepayment";
 import { CalculatorShell, NumberField, ResultRow } from "./CalculatorShell";
+import { DownloadResultsButton } from "./DownloadResultsButton";
 import { HowCalculated } from "./HowCalculated";
 import { SourceCitation } from "./SourceCitation";
+import { PDF_DISCLAIMER } from "./pdfDisclaimer";
+
+const LOAN_PREPAYMENT_SOURCES = [
+  {
+    label:
+      "RBI: Guidelines on charging of foreclosure/prepayment charges on floating rate loans",
+    href: "https://www.rbi.org.in/Scripts/NotificationUser.aspx?Id=8104",
+  },
+];
 
 const inrFormatter = new Intl.NumberFormat("en-IN", {
   maximumFractionDigits: 0,
@@ -135,6 +145,66 @@ export default function LoanPrepaymentCalculator() {
         )}
       </div>
 
+      {!result.emiTooLowToAmortize && (
+        <DownloadResultsButton
+          fileNameBase="loan-prepayment-result"
+          calculatorTitle="Loan prepayment impact calculator"
+          inputs={[
+            {
+              label: "Current outstanding principal",
+              value: `₹${outstandingPrincipal}`,
+            },
+            { label: "Annual interest rate", value: `${annualRatePercent}%` },
+            { label: "Current monthly EMI", value: `₹${monthlyEmi}` },
+            {
+              label: "One-time prepayment amount",
+              value: `₹${prepaymentAmount}`,
+            },
+          ]}
+          results={[
+            {
+              label: "Months remaining (no prepayment)",
+              value:
+                result.monthsRemainingWithoutPrepayment !== null
+                  ? formatMonths(result.monthsRemainingWithoutPrepayment)
+                  : "—",
+            },
+            {
+              label: "Total interest remaining (no prepayment)",
+              value:
+                result.totalInterestWithoutPrepayment !== null
+                  ? `₹${inrFormatter.format(result.totalInterestWithoutPrepayment)}`
+                  : "—",
+            },
+            result.loanFullyPaidByPrepayment
+              ? { label: "After prepayment", value: "Loan fully paid off" }
+              : {
+                  label: "Months remaining (after prepayment)",
+                  value:
+                    result.monthsRemainingWithPrepayment !== null
+                      ? formatMonths(result.monthsRemainingWithPrepayment)
+                      : "—",
+                },
+            {
+              label: "Tenure shortened by",
+              value:
+                result.monthsSaved !== null
+                  ? formatMonths(Math.max(0, result.monthsSaved))
+                  : "—",
+            },
+            {
+              label: "Interest saved",
+              value:
+                result.interestSaved !== null
+                  ? `₹${inrFormatter.format(result.interestSaved)}`
+                  : "—",
+            },
+          ]}
+          disclaimer={PDF_DISCLAIMER}
+          sources={LOAN_PREPAYMENT_SOURCES}
+        />
+      )}
+
       <p className="text-xs text-stone-500 dark:text-primary-300/60">
         Assumes the interest rate stays constant over the remaining tenure
         and that the bank applies the prepayment to reduce tenure (not EMI).
@@ -155,15 +225,7 @@ export default function LoanPrepaymentCalculator() {
         </p>
       </HowCalculated>
 
-      <SourceCitation
-        sources={[
-          {
-            label:
-              "RBI: Guidelines on charging of foreclosure/prepayment charges on floating rate loans",
-            href: "https://www.rbi.org.in/Scripts/NotificationUser.aspx?Id=8104",
-          },
-        ]}
-      />
+      <SourceCitation sources={LOAN_PREPAYMENT_SOURCES} />
     </CalculatorShell>
   );
 }

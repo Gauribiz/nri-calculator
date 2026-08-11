@@ -3,8 +3,17 @@
 import { useState } from "react";
 import { estimateCurrencyImpact } from "@/lib/calculators/currencyImpact";
 import { CalculatorShell, NumberField, ResultRow } from "./CalculatorShell";
+import { DownloadResultsButton } from "./DownloadResultsButton";
 import { HowCalculated } from "./HowCalculated";
 import { SourceCitation } from "./SourceCitation";
+import { PDF_DISCLAIMER } from "./pdfDisclaimer";
+
+const CURRENCY_IMPACT_SOURCES = [
+  {
+    label: "RBI: Reference Rate Archive",
+    href: "https://www.rbi.org.in/Scripts/ReferenceRateArchive.aspx",
+  },
+];
 
 const usdFormatter = new Intl.NumberFormat("en-US", {
   style: "currency",
@@ -100,6 +109,51 @@ export default function CurrencyImpactCalculator() {
         />
       </div>
 
+      <DownloadResultsButton
+        fileNameBase="currency-impact-result"
+        calculatorTitle="Currency impact calculator"
+        inputs={[
+          { label: "Initial value", value: `₹${initialValueInr}` },
+          {
+            label: "Exchange rate on that date",
+            value: `${initialRateInrPerUsd} INR/USD`,
+          },
+          { label: "Current value", value: `₹${currentValueInr}` },
+          {
+            label: "Current exchange rate",
+            value: `${currentRateInrPerUsd} INR/USD`,
+          },
+        ]}
+        results={[
+          {
+            label: "Initial value in USD",
+            value: usdFormatter.format(result.initialValueUsd),
+          },
+          {
+            label: "Current value in USD",
+            value: usdFormatter.format(result.currentValueUsd),
+          },
+          {
+            label: "Total change in USD",
+            value: `${signedUsdFormatter.format(result.totalChangeUsd)} (${percentFormatter.format(result.totalChangePercent)}%)`,
+          },
+          {
+            label: "Real growth (asset performance, in INR)",
+            value: `${signedUsdFormatter.format(result.realGrowthUsd)} (${percentFormatter.format(result.realGrowthPercent)}%)`,
+          },
+          {
+            label: "Currency effect (rupee move vs dollar)",
+            value: `${signedUsdFormatter.format(result.currencyEffectUsd)} (${percentFormatter.format(result.currencyEffectPercent)}%)`,
+          },
+          {
+            label: "Rupee moved",
+            value: result.inrAppreciated ? "Stronger vs USD" : "Weaker vs USD",
+          },
+        ]}
+        disclaimer={PDF_DISCLAIMER}
+        sources={CURRENCY_IMPACT_SOURCES}
+      />
+
       <p className="text-xs text-stone-500 dark:text-primary-300/60">
         Assumes a single lump-sum comparison between two dates — it does not
         account for contributions or withdrawals in between, tax on gains, or
@@ -128,14 +182,7 @@ export default function CurrencyImpactCalculator() {
         </p>
       </HowCalculated>
 
-      <SourceCitation
-        sources={[
-          {
-            label: "RBI: Reference Rate Archive",
-            href: "https://www.rbi.org.in/Scripts/ReferenceRateArchive.aspx",
-          },
-        ]}
-      />
+      <SourceCitation sources={CURRENCY_IMPACT_SOURCES} />
     </CalculatorShell>
   );
 }
