@@ -12,7 +12,11 @@ import { HowCalculated } from "./HowCalculated";
 import { SourceCitation } from "./SourceCitation";
 import { PDF_DISCLAIMER } from "./pdfDisclaimer";
 
-export default function SubstantialPresenceCalculator() {
+export default function SubstantialPresenceCalculator({
+  defaultOpen,
+}: {
+  defaultOpen: boolean;
+}) {
   const [currentYearDays, setCurrentYearDays] = useState(0);
   const [priorYearDays, setPriorYearDays] = useState(0);
   const [yearBeforePriorDays, setYearBeforePriorDays] = useState(0);
@@ -25,6 +29,7 @@ export default function SubstantialPresenceCalculator() {
 
   return (
     <CalculatorShell
+      defaultOpen={defaultOpen}
       title="US Substantial Presence Test day-counter"
       intro="Enter the number of days you were physically present in the US in each of the last three years. This does not exclude exempt-individual days (e.g. certain F/J/M/Q visa statuses) or apply the closer-connection exception — both can change the real answer."
     >

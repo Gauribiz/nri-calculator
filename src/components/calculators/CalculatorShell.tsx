@@ -1,27 +1,74 @@
 import type { ReactNode } from "react";
 import { InfoTooltip } from "./InfoTooltip";
 
+/**
+ * Accordion root for every calculator (nric-014), reusing the FAQ page's
+ * own pattern (src/app/faq/page.tsx): a native <details>/<summary>, a
+ * `group`-scoped chevron, no JS state. FAQ's own details elements are
+ * independent (no `name` grouping), so multiple can be open at once --
+ * matched here deliberately, not single-open/exclusive.
+ *
+ * Collapsed state shows title + a single-line-clamped intro (via `truncate`)
+ * inside <summary>; expanding reveals the same intro in full (untruncated --
+ * several calculators' intros carry real modeling caveats, not just a
+ * teaser) followed by the calculator's own interactive content. Because
+ * <details> hides its body via the browser's native rendering rather than
+ * unmounting it, collapsing a calculator never resets any value a user has
+ * already entered -- verified, not just assumed (see PR notes).
+ *
+ * `defaultOpen` is required (not optional) so every call site has to make
+ * an explicit choice -- each page passes true for its first calculator,
+ * false for the rest. `id`, optional, is only used by the /tools page's
+ * calculators, which are deep-linked from site search (/tools#slug): the
+ * browser's native "reveal a closed <details> ancestor of the fragment
+ * target" behavior only fires when the target is a DESCENDANT of the
+ * <details>, not when the target is the <details> itself -- so `id` goes
+ * on the body content div, not the <details> element, deliberately.
+ * Verified empirically (not just per-spec), since automation navigation
+ * doesn't always exercise this the same way a real click does.
+ */
 export function CalculatorShell({
   title,
   intro,
   children,
+  defaultOpen,
+  id,
 }: {
   title: string;
   intro: string;
   children: ReactNode;
+  defaultOpen: boolean;
+  id?: string;
 }) {
   return (
-    <section className="flex flex-col gap-4 rounded-2xl border border-stone-200 bg-white p-6 shadow-sm dark:border-primary-900 dark:bg-primary-950/40">
-      <div>
-        <h2 className="text-lg font-semibold tracking-tight text-primary-900 dark:text-primary-50">
-          {title}
-        </h2>
-        <p className="mt-1 text-sm text-stone-600 dark:text-primary-200/70">
+    <details
+      open={defaultOpen}
+      className="group rounded-2xl border border-stone-200 bg-white shadow-sm dark:border-primary-900 dark:bg-primary-950/40"
+    >
+      <summary className="flex cursor-pointer list-none items-center justify-between gap-3 p-6">
+        <div className="min-w-0">
+          <h2 className="text-lg font-semibold tracking-tight text-primary-900 dark:text-primary-50">
+            {title}
+          </h2>
+          <p className="mt-1 truncate text-sm text-stone-600 dark:text-primary-200/70 group-open:hidden">
+            {intro}
+          </p>
+        </div>
+        <svg
+          aria-hidden="true"
+          viewBox="0 0 20 20"
+          className="h-4 w-4 shrink-0 fill-current text-stone-400 transition-transform group-open:rotate-180 dark:text-primary-300/70"
+        >
+          <path d="M5.23 7.21a.75.75 0 0 1 1.06.02L10 11.06l3.71-3.83a.75.75 0 1 1 1.08 1.04l-4.24 4.38a.75.75 0 0 1-1.08 0L5.21 8.27a.75.75 0 0 1 .02-1.06Z" />
+        </svg>
+      </summary>
+      <div id={id} className="flex flex-col gap-4 px-6 pb-6">
+        <p className="text-sm text-stone-600 dark:text-primary-200/70">
           {intro}
         </p>
+        {children}
       </div>
-      {children}
-    </section>
+    </details>
   );
 }
 

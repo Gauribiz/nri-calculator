@@ -16,7 +16,11 @@ const currencyFormatter = new Intl.NumberFormat("en-US", {
   maximumFractionDigits: 2,
 });
 
-export default function DtaaReliefEstimator() {
+export default function DtaaReliefEstimator({
+  defaultOpen,
+}: {
+  defaultOpen: boolean;
+}) {
   const [foreignSourceIncome, setForeignSourceIncome] = useState(0);
   const [foreignTaxPaid, setForeignTaxPaid] = useState(0);
   const [domesticTaxRatePercent, setDomesticTaxRatePercent] = useState(0);
@@ -29,6 +33,7 @@ export default function DtaaReliefEstimator() {
 
   return (
     <CalculatorShell
+      defaultOpen={defaultOpen}
       title="DTAA relief (foreign tax credit) estimator"
       intro="Estimates relief under the ordinary credit method used by Article 25 of the India-US DTAA: foreign tax on an item of income offsets domestic tax on that same income, capped at the domestic tax otherwise due. Enter your own applicable domestic rate — this tool does not assert tax rates."
     >

@@ -60,5 +60,8 @@ Treatment Comparison); a shared design system (navy/indigo + single gold
 accent, `ResultRow` status-badge pattern, tabular-nums, `HowCalculated`/
 `SourceCitation`/`VerifiedStamp` components); PDF and Excel export on
 every numeric calculator sitewide; site-wide search, FAQ accordion,
-back-to-top; domain purchased, DNS connected, live in production.
+back-to-top; every calculator on every page now collapses into an
+accordion (FAQ's own `<details>` pattern, reused via `CalculatorShell`,
+first calculator per page open by default); domain purchased, DNS
+connected, live in production.
 EOF

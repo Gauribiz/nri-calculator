@@ -29,21 +29,14 @@ export default function ToolsPage() {
       <Disclaimer />
 
       <div className="flex flex-col gap-6">
-        <div id="currency-impact">
-          <CurrencyImpactCalculator />
-        </div>
-        <div id="sip-xirr">
-          <SipXirrCalculator />
-        </div>
-        <div id="fd-rd-maturity">
-          <FdRdMaturityCalculator />
-        </div>
-        <div id="loan-prepayment">
-          <LoanPrepaymentCalculator />
-        </div>
-        <div id="tax-treatment-comparison">
-          <TaxTreatmentComparisonTool />
-        </div>
+        <CurrencyImpactCalculator id="currency-impact" defaultOpen />
+        <SipXirrCalculator id="sip-xirr" defaultOpen={false} />
+        <FdRdMaturityCalculator id="fd-rd-maturity" defaultOpen={false} />
+        <LoanPrepaymentCalculator id="loan-prepayment" defaultOpen={false} />
+        <TaxTreatmentComparisonTool
+          id="tax-treatment-comparison"
+          defaultOpen={false}
+        />
       </div>
     </div>
   );

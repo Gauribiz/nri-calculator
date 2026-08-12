@@ -18,6 +18,12 @@ const TAX_TREATMENT_COMPARISON_SOURCES = [
   },
 ];
 
+// nric-014: default to a common two-instrument comparison (NRE vs NRO
+// deposits) rather than all six -- the full list remains one click away
+// per instrument, this just avoids a wall of six cards on first load.
+// Filtering logic itself is unchanged; only which ids start checked.
+const DEFAULT_CHECKED_IDS = new Set(["nre-account", "nro-account"]);
+
 function InfoField({ label, value }: { label: string; value: string }) {
   return (
     <div className="flex flex-col gap-0.5 text-sm">
@@ -29,11 +35,20 @@ function InfoField({ label, value }: { label: string; value: string }) {
   );
 }
 
-export default function TaxTreatmentComparisonTool() {
+export default function TaxTreatmentComparisonTool({
+  defaultOpen,
+  id,
+}: {
+  defaultOpen: boolean;
+  id?: string;
+}) {
   const [selected, setSelected] = useState<Record<string, boolean>>(
     () =>
       Object.fromEntries(
-        INSTRUMENT_TAX_PROFILES.map((profile) => [profile.id, true])
+        INSTRUMENT_TAX_PROFILES.map((profile) => [
+          profile.id,
+          DEFAULT_CHECKED_IDS.has(profile.id),
+        ])
       )
   );
 
@@ -46,6 +61,8 @@ export default function TaxTreatmentComparisonTool() {
 
   return (
     <CalculatorShell
+      id={id}
+      defaultOpen={defaultOpen}
       title="Tax treatment comparison tool"
       intro="Side-by-side reference on how common NRI investment types are taxed in India: income tax on ongoing returns, capital gains treatment, TDS withheld at source, and repatriation rules. General information, not tax advice — pick the instruments you hold to compare."
     >
@@ -62,6 +79,11 @@ export default function TaxTreatmentComparisonTool() {
           />
         ))}
       </fieldset>
+
+      <p className="-mt-2 text-xs text-stone-500 dark:text-primary-300/60">
+        Showing a common comparison — check or uncheck instruments above to
+        compare others.
+      </p>
 
       <div className="flex flex-col gap-4">
         {visibleProfiles.length === 0 && (

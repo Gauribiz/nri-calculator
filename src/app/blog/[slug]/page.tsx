@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import Disclaimer from "@/components/Disclaimer";
+import { RelatedReading } from "@/components/RelatedReading";
 import { getCategory } from "@/lib/categories";
 import {
   articles,
@@ -96,29 +97,7 @@ export default async function BlogArticlePage({
         </Link>
       )}
 
-      {related.length > 0 && (
-        <div className="flex flex-col gap-3 border-t border-stone-200 pt-6 dark:border-primary-900">
-          <h2 className="text-sm font-semibold uppercase tracking-wide text-stone-500 dark:text-primary-300/60">
-            Related reading
-          </h2>
-          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-            {related.map((relatedArticle) => (
-              <Link
-                key={relatedArticle.slug}
-                href={`/blog/${relatedArticle.slug}`}
-                className="flex flex-col gap-1 rounded-xl border border-stone-200 bg-white p-4 shadow-sm transition-colors hover:border-primary-400 dark:border-primary-900 dark:bg-primary-950 dark:hover:border-primary-600"
-              >
-                <h3 className="font-medium text-primary-900 dark:text-primary-50">
-                  {relatedArticle.title}
-                </h3>
-                <p className="text-sm text-stone-600 dark:text-primary-200/70">
-                  {relatedArticle.dek}
-                </p>
-              </Link>
-            ))}
-          </div>
-        </div>
-      )}
+      <RelatedReading articles={related} />
     </div>
   );
 }

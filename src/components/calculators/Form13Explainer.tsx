@@ -10,7 +10,11 @@ const inrFormatter = new Intl.NumberFormat("en-IN", {
   maximumFractionDigits: 0,
 });
 
-export default function Form13Explainer() {
+export default function Form13Explainer({
+  defaultOpen,
+}: {
+  defaultOpen: boolean;
+}) {
   const [saleConsiderationInr, setSaleConsiderationInr] = useState(0);
   const [isLongTerm, setIsLongTerm] = useState(true);
   const [estimatedActualTaxLiabilityInr, setEstimatedActualTaxLiabilityInr] =
@@ -24,6 +28,7 @@ export default function Form13Explainer() {
 
   return (
     <CalculatorShell
+      defaultOpen={defaultOpen}
       title="Form 13 (lower/nil TDS certificate) explainer"
       intro="Explains when applying for a Form 13 lower/nil TDS certificate is worth the effort, and roughly how much default withholding it could avoid. Does not determine your actual tax liability — use the classifier tool above, or a tax preparer, to estimate that first."
     >

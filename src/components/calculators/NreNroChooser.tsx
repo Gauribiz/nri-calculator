@@ -25,7 +25,11 @@ const FUNDS_SOURCE_OPTIONS: { value: FundsSource; label: string }[] = [
   { value: "both", label: "Both — some foreign, some India-sourced" },
 ];
 
-export default function NreNroChooser() {
+export default function NreNroChooser({
+  defaultOpen,
+}: {
+  defaultOpen: boolean;
+}) {
   const [isNriOrPio, setIsNriOrPio] = useState(true);
   const [fundsSource, setFundsSource] = useState<FundsSource>("foreign");
   const [needsFullRepatriability, setNeedsFullRepatriability] =
@@ -39,6 +43,7 @@ export default function NreNroChooser() {
 
   return (
     <CalculatorShell
+      defaultOpen={defaultOpen}
       title="NRE vs. NRO: which account do you need?"
       intro="A quick decision aid based on FEMA's basic distinction between the two account types. It does not check your actual FEMA residency status or account-opening eligibility — confirm both with your bank."
     >

@@ -33,7 +33,13 @@ const signedUsdFormatter = new Intl.NumberFormat("en-US", {
   signDisplay: "exceptZero",
 });
 
-export default function CurrencyImpactCalculator() {
+export default function CurrencyImpactCalculator({
+  defaultOpen,
+  id,
+}: {
+  defaultOpen: boolean;
+  id?: string;
+}) {
   const [initialValueInr, setInitialValueInr] = useState(0);
   const [initialRateInrPerUsd, setInitialRateInrPerUsd] = useState(0);
   const [currentValueInr, setCurrentValueInr] = useState(0);
@@ -48,6 +54,8 @@ export default function CurrencyImpactCalculator() {
 
   return (
     <CalculatorShell
+      id={id}
+      defaultOpen={defaultOpen}
       title="Currency impact calculator"
       intro="Splits the USD-terms change in an INR asset's value into real growth (the asset's own performance in INR) and currency effect (the impact of the rupee moving against the dollar). Useful for seeing how much of a gain or loss was the investment itself versus the exchange rate."
     >

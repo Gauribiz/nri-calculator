@@ -24,7 +24,11 @@ const REPATRIATION_LIMIT_SOURCES = [
   },
 ];
 
-export default function RepatriationLimitCalculator() {
+export default function RepatriationLimitCalculator({
+  defaultOpen,
+}: {
+  defaultOpen: boolean;
+}) {
   const [accountType, setAccountType] = useState<"nro" | "nre_or_fcnr">(
     "nro"
   );
@@ -40,6 +44,7 @@ export default function RepatriationLimitCalculator() {
 
   return (
     <CalculatorShell
+      defaultOpen={defaultOpen}
       title="Repatriation headroom estimator"
       intro="Estimates remaining headroom under RBI's USD 1 million per financial year facility for remittance of assets. NRE/FCNR balances are freely repatriable and are not subject to this ceiling."
     >

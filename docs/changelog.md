@@ -2,6 +2,85 @@
 
 All notable changes to NRI Calculator, in reverse chronological order.
 
+## 2026-08-12 -- Layout/UX pass: accordions, nav, defaults, related reading (nric-014)
+
+Bundled four-part layout/UX pass, one PR. No calculator logic touched
+anywhere in this change -- confirmed via `git diff` before opening the PR
+that every diff is under `src/app/layout.tsx`, `src/components/`, or a
+calculator's own `<CalculatorShell>`/default-state wiring, never its
+`src/lib/calculators/*.ts` math.
+
+**Part 1 -- accordion rollout.** All 16 calculators across all 5 pages
+(`dtaa-tax-residency`, `nre-nro-tds`, `investments-repatriation`,
+`real-estate-capital-gains`, `tools`) now collapse to title + a
+single-line-clamped description, expanding on click -- reusing the FAQ
+page's own pattern (native `<details>`/`<summary>`, no JS state), not a
+new component copied from scratch. FAQ's own accordion has no `name`
+grouping (independent, multi-open) -- matched deliberately, confirmed by
+reading `src/app/faq/page.tsx` first rather than assuming single-open.
+`CalculatorShell.tsx` (used by every calculator) is now the `<details>`
+root itself, taking a required `defaultOpen` prop (the first calculator
+per page passes `true`, the rest `false`) -- this avoided hand-authoring
+a one-line description for the 11 calculators that didn't already have
+one (`truncate` on the existing `intro` text does that visually, no new
+copy). Verified empirically, not assumed: typed a value into a
+calculator, collapsed it, re-expanded it, and confirmed the derived
+result still reflected that value -- `<details>` hides its body natively
+rather than unmounting it, so React state was never at risk.
+The `/tools` page's five calculators are deep-linked from site search
+(`/tools#slug`); preserving that meant also threading an optional `id`
+prop through those five specifically. Caught and fixed a real bug here:
+the HTML spec's "reveal a closed `<details>` ancestor" behavior only
+fires when the fragment target is a *descendant* of the `<details>`, not
+when the target *is* the `<details>` -- so `id` had to move onto the body
+content div, not the `<details>` element itself, confirmed by checking
+`.open` on the actual DOM node after navigating to `/tools#loan-prepayment`
+before and after the fix.
+
+**Part 2 -- nav.** (a) "Tools" renamed to "Financial Tools" (matching that
+page's own `<h1>`) and repositioned to immediately follow the four
+category links, ahead of Blog/FAQ. (b) The nav wrapped to two lines at
+1440px and other desktop widths -- measured why (`getBoundingClientRect()`
+on every nav item: ~1146px needed, container capped at `max-w-4xl`/896px)
+rather than guessing at a fix, then widened the nav's own container only
+(`xl:max-w-7xl`, 1280px breakpoint and up), leaving the existing
+`flex-wrap` two-line degradation untouched below that. See ADR 0018 for
+why this asymmetry (nav wider than the content column beneath it) was
+judged an acceptable, deliberate call rather than tightening spacing or
+building an overflow menu. Verified in-browser at 1440px (single line),
+1280px (the breakpoint's own edge -- still single line, ~70px margin),
+and 1024px (unchanged clean two-line wrap, no regression).
+
+**Part 3 -- Tax Treatment Comparison default.** Default changed from all
+6 instruments checked to 2 ("NRE savings / fixed deposit", "NRO savings /
+fixed deposit"), plus a hint line clarifying the selection is interactive.
+The filtering logic itself (`visibleProfiles`, `toggle`) is untouched --
+confirmed live in browser that unchecking/rechecking still works exactly
+as before, this was a default-state and copy change only.
+
+**Part 4 -- Related reading cap.** The category pages (4) and the blog
+article page all had near-identical, independently-duplicated Related
+reading grid markup -- capped each at 4 visible cards (two full rows of
+the existing 2-column grid) with a client-side "Show more" via one new
+shared `src/components/RelatedReading.tsx`, rather than adding the same
+cap logic 5 times. Incidental normalization while consolidating: two of
+the five (`nre-nro-tds`, `real-estate-capital-gains`) had drifted onto an
+older `zinc`-color-token version of this same card, out of sync with the
+other three's `stone`/`primary` tokens -- a single shared component can't
+have two different colors depending on caller, so this also fixes that
+pre-existing inconsistency as a side effect, not a separate deliberate
+redesign. Verified: 18-article DTAA cluster page shows exactly 4 cards +
+"Show more (14 more)"; clicking it reveals all 18 with no page navigation.
+
+Verified: `npm run lint` (clean), `npm run build` (all 84 routes still
+prerender statically, same route count as before this change), and an
+in-browser smoke pass covering every scenario above (screenshots taken
+of the nav at 1440px and of the DTAA page showing one expanded + two
+collapsed calculators together, for PR review).
+
+Added `docs/decisions/0018-nav-single-line-width-mechanism.md`.
+
+
 ## 2026-08-11 -- PDF/Excel export extended sitewide (nric-010)
 
 Extended the "Download result" pattern (previously PDF-only, live only on

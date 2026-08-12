@@ -23,7 +23,11 @@ const REAL_ESTATE_CAPITAL_GAINS_SOURCES = [
   },
 ];
 
-export default function RealEstateCapitalGainsCalculator() {
+export default function RealEstateCapitalGainsCalculator({
+  defaultOpen,
+}: {
+  defaultOpen: boolean;
+}) {
   const [holdingPeriodMonths, setHoldingPeriodMonths] = useState(0);
   const [saleConsiderationInr, setSaleConsiderationInr] = useState(0);
   const [costOfAcquisitionInr, setCostOfAcquisitionInr] = useState(0);
@@ -40,6 +44,7 @@ export default function RealEstateCapitalGainsCalculator() {
 
   return (
     <CalculatorShell
+      defaultOpen={defaultOpen}
       title="LTCG / STCG classifier for a property sale"
       intro="Classifies a sale of Indian land/a building as long-term or short-term based on holding period, and estimates the capital gain. Property held more than 24 months is long-term (LTCG); 24 months or less is short-term (STCG)."
     >

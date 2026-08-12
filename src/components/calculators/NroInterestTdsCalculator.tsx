@@ -31,7 +31,11 @@ const currencyFormatter = new Intl.NumberFormat("en-IN", {
   maximumFractionDigits: 2,
 });
 
-export default function NroInterestTdsCalculator() {
+export default function NroInterestTdsCalculator({
+  defaultOpen,
+}: {
+  defaultOpen: boolean;
+}) {
   const [annualNroInterest, setAnnualNroInterest] = useState(0);
   const [useLowerRate, setUseLowerRate] = useState(false);
   const [lowerRatePercent, setLowerRatePercent] = useState(
@@ -46,6 +50,7 @@ export default function NroInterestTdsCalculator() {
 
   return (
     <CalculatorShell
+      defaultOpen={defaultOpen}
       title="TDS on NRO account interest"
       intro="Estimates the tax deducted at source on your NRO interest at the statutory flat rate plus cess. Does not include surcharge, which depends on your total income slab."
     >
