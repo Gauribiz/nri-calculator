@@ -24,7 +24,11 @@ const NRI_PROPERTY_SALE_TDS_SOURCES = [
   },
 ];
 
-export default function NriPropertySaleTdsCalculator() {
+export default function NriPropertySaleTdsCalculator({
+  defaultOpen = false,
+}: {
+  defaultOpen?: boolean;
+} = {}) {
   const [saleConsiderationInr, setSaleConsiderationInr] = useState(0);
   const [isLongTerm, setIsLongTerm] = useState(true);
   const [hasLowerDeductionCertificate, setHasLowerDeductionCertificate] =
@@ -40,6 +44,7 @@ export default function NriPropertySaleTdsCalculator() {
 
   return (
     <CalculatorShell
+      defaultOpen={defaultOpen}
       title="Section 393(2) TDS-on-NRI-property-sale estimator"
       intro="Estimates the TDS a buyer must withhold under Section 393(2) when buying property from an NRI seller — applied to the full sale consideration, not just the gain, unless a lower-deduction certificate is held."
     >

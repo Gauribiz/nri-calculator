@@ -20,7 +20,11 @@ const PART_LABEL: Record<Form15caPart, string> = {
   C: "Form 15CA, Part C + Form 15CB",
 };
 
-export default function Form15caChecker() {
+export default function Form15caChecker({
+  defaultOpen = false,
+}: {
+  defaultOpen?: boolean;
+} = {}) {
   const [remittanceAmount, setRemittanceAmount] = useState(0);
   const [isOnRbiExemptList, setIsOnRbiExemptList] = useState(false);
   const [hasAoCertificateOrOrder, setHasAoCertificateOrOrder] =
@@ -34,6 +38,7 @@ export default function Form15caChecker() {
 
   return (
     <CalculatorShell
+      defaultOpen={defaultOpen}
       title="Form 15CA/15CB checker"
       intro="Checks which part of Form 15CA applies to a single foreign remittance, and whether a CA-certified Form 15CB is also required, based on the Rs 5 lakh aggregate-per-year threshold."
     >

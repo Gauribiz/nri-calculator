@@ -26,7 +26,11 @@ const percentFormatter = new Intl.NumberFormat("en-US", {
   maximumFractionDigits: 1,
 });
 
-export default function FdRdMaturityCalculator() {
+export default function FdRdMaturityCalculator({
+  defaultOpen = false,
+}: {
+  defaultOpen?: boolean;
+} = {}) {
   const [depositType, setDepositType] = useState<DepositType>("fd");
   const [amount, setAmount] = useState(0);
   const [annualRatePercent, setAnnualRatePercent] = useState(0);
@@ -41,6 +45,7 @@ export default function FdRdMaturityCalculator() {
 
   return (
     <CalculatorShell
+      defaultOpen={defaultOpen}
       title="FD / RD maturity calculator"
       intro="Estimates the maturity value of a fixed deposit (lump sum) or recurring deposit (equal monthly deposits) with an Indian bank, using the standard quarterly-compounding conventions most banks apply."
     >
