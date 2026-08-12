@@ -2,6 +2,34 @@
 
 All notable changes to NRI Calculator, in reverse chronological order.
 
+## 2026-08-12 -- Real estate / layout pass (nric-014)
+
+Bundled UX/layout fixes from Ajinkya's 2026-08-11 full-site review, all
+mechanical/layout-only -- no calculation logic touched, no new figures.
+See ADR 0018 for the full reasoning.
+
+- **Accordion rollout**: every multi-calculator page (`dtaa-tax-residency`,
+  `nre-nro-tds`, `investments-repatriation`, `real-estate-capital-gains`,
+  `tools`) now shows one calculator open at a time, reusing the FAQ page's
+  native `<details>`/`<summary>` pattern via a change to the shared
+  `CalculatorShell`. First calculator on each page open by default, rest
+  collapsed. Added a small `OpenTargetDetails` helper so site search's
+  existing `/tools#slug` deep links still open the right calculator.
+- **Nav restructure**: renamed the `Tools` nav link to `Financial Tools`
+  and moved it to immediately after the four category links, ahead of
+  Blog/FAQ. Fixed the nav wrapping to two lines at 1440px by widening the
+  header's max-width at the `xl` breakpoint.
+- **Tax Treatment Comparison tool**: now defaults to 2 pre-checked
+  instruments (NRE + NRO savings/fixed deposit) instead of all 6, with a
+  hint line clarifying the selection is changeable.
+- **Related reading**: capped to 4 visible articles with a "Show more"
+  toggle, via a new shared `RelatedReading` component, on all 5 pages that
+  have this section (the four category pages plus blog articles).
+
+Verified with `npx tsc --noEmit`, `npx eslint .`, `npm run build` (all
+clean), and headless Playwright screenshots at 1280px/1440px/390px against
+the built production server.
+
 ## 2026-08-11 -- PDF/Excel export extended sitewide (nric-010)
 
 Extended the "Download result" pattern (previously PDF-only, live only on

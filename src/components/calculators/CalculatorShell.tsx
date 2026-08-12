@@ -5,23 +5,38 @@ export function CalculatorShell({
   title,
   intro,
   children,
+  defaultOpen = false,
 }: {
   title: string;
   intro: string;
   children: ReactNode;
+  defaultOpen?: boolean;
 }) {
   return (
-    <section className="flex flex-col gap-4 rounded-2xl border border-stone-200 bg-white p-6 shadow-sm dark:border-primary-900 dark:bg-primary-950/40">
-      <div>
+    <details
+      name="calculators"
+      open={defaultOpen}
+      className="group rounded-2xl border border-stone-200 bg-white shadow-sm dark:border-primary-900 dark:bg-primary-950/40"
+    >
+      <summary className="flex cursor-pointer list-none items-center justify-between gap-3 px-6 py-4">
         <h2 className="text-lg font-semibold tracking-tight text-primary-900 dark:text-primary-50">
           {title}
         </h2>
-        <p className="mt-1 text-sm text-stone-600 dark:text-primary-200/70">
+        <svg
+          aria-hidden="true"
+          viewBox="0 0 20 20"
+          className="h-4 w-4 shrink-0 fill-current text-stone-400 transition-transform group-open:rotate-180 dark:text-primary-300/70"
+        >
+          <path d="M5.23 7.21a.75.75 0 0 1 1.06.02L10 11.06l3.71-3.83a.75.75 0 1 1 1.08 1.04l-4.24 4.38a.75.75 0 0 1-1.08 0L5.21 8.27a.75.75 0 0 1 .02-1.06Z" />
+        </svg>
+      </summary>
+      <div className="flex flex-col gap-4 px-6 pb-6 pt-1">
+        <p className="text-sm text-stone-600 dark:text-primary-200/70">
           {intro}
         </p>
+        {children}
       </div>
-      {children}
-    </section>
+    </details>
   );
 }
 

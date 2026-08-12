@@ -37,7 +37,7 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col bg-background text-foreground">
         <header className="border-b border-stone-200 bg-white dark:border-primary-900 dark:bg-primary-950">
-          <nav className="mx-auto flex max-w-4xl flex-wrap items-center gap-x-6 gap-y-2 px-6 py-4 text-sm">
+          <nav className="mx-auto flex max-w-4xl flex-wrap items-center gap-x-6 gap-y-2 px-6 py-4 text-sm xl:max-w-6xl">
             <Link
               href="/"
               className="flex items-center gap-1.5 font-semibold tracking-tight text-primary-900 dark:text-primary-50"
@@ -58,6 +58,12 @@ export default function RootLayout({
               </Link>
             ))}
             <Link
+              href="/tools"
+              className="text-stone-600 transition-colors hover:text-primary-800 dark:text-primary-200/70 dark:hover:text-primary-50"
+            >
+              Financial Tools
+            </Link>
+            <Link
               href="/blog"
               className="text-stone-600 transition-colors hover:text-primary-800 dark:text-primary-200/70 dark:hover:text-primary-50"
             >
@@ -68,12 +74,6 @@ export default function RootLayout({
               className="text-stone-600 transition-colors hover:text-primary-800 dark:text-primary-200/70 dark:hover:text-primary-50"
             >
               FAQ
-            </Link>
-            <Link
-              href="/tools"
-              className="text-stone-600 transition-colors hover:text-primary-800 dark:text-primary-200/70 dark:hover:text-primary-50"
-            >
-              Tools
             </Link>
             <div className="ml-auto">
               <SiteSearch />

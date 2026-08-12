@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Disclaimer from "@/components/Disclaimer";
+import OpenTargetDetails from "@/components/OpenTargetDetails";
 import CurrencyImpactCalculator from "@/components/calculators/CurrencyImpactCalculator";
 import SipXirrCalculator from "@/components/calculators/SipXirrCalculator";
 import FdRdMaturityCalculator from "@/components/calculators/FdRdMaturityCalculator";
@@ -28,9 +29,11 @@ export default function ToolsPage() {
 
       <Disclaimer />
 
-      <div className="flex flex-col gap-6">
+      <OpenTargetDetails />
+
+      <div className="flex flex-col gap-3">
         <div id="currency-impact">
-          <CurrencyImpactCalculator />
+          <CurrencyImpactCalculator defaultOpen />
         </div>
         <div id="sip-xirr">
           <SipXirrCalculator />

@@ -28,7 +28,11 @@ function formatMonths(months: number): string {
   return `${years} yr ${remMonths} mo`;
 }
 
-export default function LoanPrepaymentCalculator() {
+export default function LoanPrepaymentCalculator({
+  defaultOpen = false,
+}: {
+  defaultOpen?: boolean;
+} = {}) {
   const [outstandingPrincipal, setOutstandingPrincipal] = useState(0);
   const [annualRatePercent, setAnnualRatePercent] = useState(0);
   const [monthlyEmi, setMonthlyEmi] = useState(0);
@@ -43,6 +47,7 @@ export default function LoanPrepaymentCalculator() {
 
   return (
     <CalculatorShell
+      defaultOpen={defaultOpen}
       title="Loan prepayment impact calculator"
       intro="Estimates how a one-time lump-sum prepayment shortens the remaining tenure and reduces total interest on an amortizing loan, keeping the EMI the same — the default prepayment treatment most Indian banks apply."
     >

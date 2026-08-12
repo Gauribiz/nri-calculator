@@ -7,6 +7,8 @@ import { DownloadResultsButton } from "./DownloadResultsButton";
 import { SourceCitation } from "./SourceCitation";
 import { PDF_DISCLAIMER } from "./pdfDisclaimer";
 
+const DEFAULT_SELECTED_IDS = new Set(["nre-account", "nro-account"]);
+
 const TAX_TREATMENT_COMPARISON_SOURCES = [
   {
     label: "Income Tax Department: Tax rates for NRIs",
@@ -29,11 +31,18 @@ function InfoField({ label, value }: { label: string; value: string }) {
   );
 }
 
-export default function TaxTreatmentComparisonTool() {
+export default function TaxTreatmentComparisonTool({
+  defaultOpen = false,
+}: {
+  defaultOpen?: boolean;
+} = {}) {
   const [selected, setSelected] = useState<Record<string, boolean>>(
     () =>
       Object.fromEntries(
-        INSTRUMENT_TAX_PROFILES.map((profile) => [profile.id, true])
+        INSTRUMENT_TAX_PROFILES.map((profile) => [
+          profile.id,
+          DEFAULT_SELECTED_IDS.has(profile.id),
+        ])
       )
   );
 
@@ -46,6 +55,7 @@ export default function TaxTreatmentComparisonTool() {
 
   return (
     <CalculatorShell
+      defaultOpen={defaultOpen}
       title="Tax treatment comparison tool"
       intro="Side-by-side reference on how common NRI investment types are taxed in India: income tax on ongoing returns, capital gains treatment, TDS withheld at source, and repatriation rules. General information, not tax advice — pick the instruments you hold to compare."
     >
@@ -53,6 +63,10 @@ export default function TaxTreatmentComparisonTool() {
         <legend className="mb-1 text-stone-700 dark:text-primary-100">
           Instruments to compare
         </legend>
+        <p className="col-span-full -mt-1 mb-1 text-xs text-stone-500 dark:text-primary-300/60">
+          NRE and NRO accounts are checked by default — check or uncheck any
+          instrument to change the comparison.
+        </p>
         {INSTRUMENT_TAX_PROFILES.map((profile) => (
           <CheckboxField
             key={profile.id}

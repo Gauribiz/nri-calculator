@@ -12,7 +12,11 @@ const usdFormatter = new Intl.NumberFormat("en-US", {
   maximumFractionDigits: 0,
 });
 
-export default function PficFilingChecker() {
+export default function PficFilingChecker({
+  defaultOpen = false,
+}: {
+  defaultOpen?: boolean;
+} = {}) {
   const [aggregatePficValueUsd, setAggregatePficValueUsd] = useState(0);
   const [filingStatus, setFilingStatus] = useState<
     "single_or_other" | "married_filing_jointly"
@@ -33,6 +37,7 @@ export default function PficFilingChecker() {
 
   return (
     <CalculatorShell
+      defaultOpen={defaultOpen}
       title="US tax treatment of Indian mutual funds: PFIC explainer"
       intro="Most Indian mutual funds are treated as PFICs (Passive Foreign Investment Companies) for US tax purposes, triggering the Section 1291 default tax-and-interest regime and annual Form 8621 reporting unless a de minimis exception applies. This tool only checks the Form 8621 filing exception — it does not compute any tax owed."
     >

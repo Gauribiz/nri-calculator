@@ -25,7 +25,11 @@ const STATUS_LABEL: Record<string, string> = {
 // calculation below still applies 182 days; see indiaResidency.ts's header.
 const FA2020_INCOME_THRESHOLD_INR = 1_500_000;
 
-export default function IndiaResidencyCalculator() {
+export default function IndiaResidencyCalculator({
+  defaultOpen = false,
+}: {
+  defaultOpen?: boolean;
+} = {}) {
   const [currentYearDays, setCurrentYearDays] = useState(0);
   const [precedingFourYearsDays, setPrecedingFourYearsDays] = useState(0);
   const [isCitizenOrPioVisiting, setIsCitizenOrPioVisiting] = useState(false);
@@ -47,6 +51,7 @@ export default function IndiaResidencyCalculator() {
 
   return (
     <CalculatorShell
+      defaultOpen={defaultOpen}
       title="India residential status & RNOR tool"
       intro="Applies the two basic tests under Income Tax Act section 6, then checks the RNOR refinement. Does NOT model the Finance Act 2020 deemed-residency rule, the income-linked 120-day threshold for citizens/PIOs with India income over Rs 15 lakh, or year-specific CBDT travel relaxations."
     >

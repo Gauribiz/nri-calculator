@@ -29,7 +29,11 @@ const percentFormatter = new Intl.NumberFormat("en-US", {
   signDisplay: "exceptZero",
 });
 
-export default function SipXirrCalculator() {
+export default function SipXirrCalculator({
+  defaultOpen = false,
+}: {
+  defaultOpen?: boolean;
+} = {}) {
   const [monthlySipAmount, setMonthlySipAmount] = useState(0);
   const [startDate, setStartDate] = useState("");
   const [currentValueInr, setCurrentValueInr] = useState(0);
@@ -44,6 +48,7 @@ export default function SipXirrCalculator() {
 
   return (
     <CalculatorShell
+      defaultOpen={defaultOpen}
       title="SIP / mutual fund XIRR calculator"
       intro="Estimates the annualised return (XIRR) on a regular monthly SIP, given the monthly amount, the start date, and the current value of the holding. Assumes a fixed monthly amount with no top-ups, withdrawals, or step-ups."
     >
