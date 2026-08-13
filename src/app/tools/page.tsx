@@ -6,11 +6,12 @@ import SipXirrCalculator from "@/components/calculators/SipXirrCalculator";
 import FdRdMaturityCalculator from "@/components/calculators/FdRdMaturityCalculator";
 import LoanPrepaymentCalculator from "@/components/calculators/LoanPrepaymentCalculator";
 import TaxTreatmentComparisonTool from "@/components/calculators/TaxTreatmentComparisonTool";
+import FxRateHistoryTool from "@/components/calculators/FxRateHistoryTool";
 
 export const metadata: Metadata = {
   title: "Financial Tools",
   description:
-    "General-purpose financial calculators for NRIs: currency impact, SIP/mutual fund XIRR, FD/RD maturity, loan prepayment impact, and a tax treatment comparison across common investment types.",
+    "General-purpose financial calculators for NRIs: currency impact, SIP/mutual fund XIRR, FD/RD maturity, loan prepayment impact, a tax treatment comparison across common investment types, and USD/INR FX rate history.",
 };
 
 export default function ToolsPage() {
@@ -46,6 +47,9 @@ export default function ToolsPage() {
         </div>
         <div id="tax-treatment-comparison">
           <TaxTreatmentComparisonTool />
+        </div>
+        <div id="fx-rate-history">
+          <FxRateHistoryTool />
         </div>
       </div>
     </div>

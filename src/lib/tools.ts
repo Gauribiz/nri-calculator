@@ -35,4 +35,10 @@ export const tools: Tool[] = [
     description:
       "Side-by-side reference on how common NRI investment types are taxed in India.",
   },
+  {
+    slug: "fx-rate-history",
+    title: "USD/INR FX rate history",
+    description:
+      "Current USD/INR exchange rate with a 1-month to 5-year historical trend chart, from the ECB's daily reference rates.",
+  },
 ];
