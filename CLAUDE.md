@@ -10,11 +10,14 @@ Owner: Ajinkya's wife. Repo: `Gauribiz/nri-calculator`. Live at nriledger.com.
 Next.js (App Router, TypeScript, Tailwind CSS), server-rendered pages for
 SEO — not a client SPA. No database: calculators are client-side logic
 only, deliberately stateless. Deployed on Vercel, domain via Cloudflare Registrar.
-One exception as of `nric-012`: `src/app/api/fxhistory/route.ts`, a stateless
-server-side proxy to frankfurter.dev (ECB FX rates) — needed because that API
-blocks direct browser calls via CORS, not a database or persistence layer.
-The first (and so far only) server-side code in this repo; see ADR 0019
-before assuming any other calculator has, or should get, one.
+Exceptions as of `nric-012`/`nric-011`: `src/app/api/fxhistory/route.ts`
+(a stateless server-side proxy to frankfurter.dev, needed because that API
+blocks direct browser calls via CORS) and `src/lib/fx.ts`/`src/lib/gold.ts`
+(shared fetchers for the site-wide price banner, `src/components/PriceBanner.tsx`,
+an async Server Component wired into the root layout — no client JS, no new
+route). None of this is a database or persistence layer — every call is a
+stateless passthrough to a live external source. See ADR 0019/0021 before
+assuming any calculator itself has, or should get, server-side code of its own.
 ## Operating rules (non-negotiable)
 1. **Staging-only/guard-enforced pattern.** PreToolUse guard
    (`.claude/hooks/pretooluse-guard.sh` + `deny-patterns.json`) is wired up.
@@ -79,4 +82,7 @@ Treatment Comparison, USD/INR FX Rate History, CAS Statement Diff); a shared des
 accent, `ResultRow` status-badge pattern, tabular-nums, `HowCalculated`/
 `SourceCitation`/`VerifiedStamp` components); PDF and Excel export on
 every numeric calculator sitewide; site-wide search, FAQ accordion,
-back-to-top; domain purchased, DNS connected, live in production.
+back-to-top; a quiet site-wide USD/INR + gold price banner beneath the
+nav on every page (`nric-011`, ADR 0021 -- not a tool, passive/non-interactive,
+fails quiet if either or both prices are unavailable); domain purchased,
+DNS connected, live in production.
