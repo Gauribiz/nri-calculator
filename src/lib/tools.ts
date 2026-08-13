@@ -41,4 +41,10 @@ export const tools: Tool[] = [
     description:
       "Current USD/INR exchange rate with a 1-month to 5-year historical trend chart, from the ECB's daily reference rates.",
   },
+  {
+    slug: "nav-gold-price",
+    title: "Live NAV & gold price lookup",
+    description:
+      "Search a mutual fund's latest published NAV, or check the current international gold spot price converted to INR.",
+  },
 ];

@@ -2,6 +2,41 @@
 
 All notable changes to NRI Calculator, in reverse chronological order.
 
+## 2026-08-13 -- Live NAV & gold price lookup tool (nric-011)
+
+New 7th tool in `/tools`: search a mutual fund's latest published NAV by
+name, or check the current international gold spot price converted to
+INR (`src/components/calculators/NavGoldPriceLookup.tsx`), registered in
+`src/lib/tools.ts` and `/tools/page.tsx`. Two new server-side proxy
+routes — `src/app/api/navprice/route.ts` (AMFI daily NAV data) and
+`src/app/api/goldprice/route.ts` (live gold spot + USD/INR conversion,
+reusing `/api/fxhistory`'s frankfurter.dev host for the FX leg) — the
+second and third pieces of server-side code in this repo after
+`nric-012`'s fxhistory route. See ADR 0020.
+
+The task asked to reuse Family Ledger's existing price-fetch logic where
+possible; this session's GitHub access doesn't include that repo, so
+this was built independently instead — flagged in ADR 0020, not silently
+glossed over.
+
+**Neither new upstream API could be confirmed live from this session** —
+this sandbox's outbound network policy returned 403 on every external
+host tried, including `frankfurter.dev` itself (which `/api/fxhistory`
+already calls successfully in production). Built from documented
+response shapes with defensive error handling instead of a live-verified
+integration; flagged in CLAUDE.md's "Known open items" as needing an
+actual production check before being treated as fully working.
+
+PDF/Excel export via the existing `DownloadResultsButton` on both lookup
+modes, matching ADR 0017's sitewide export coverage. `npx tsc --noEmit`,
+`npm run lint`, and `npm run build` all pass clean; a local `npm run
+start` smoke test confirmed the `/tools` page renders both modes and
+both new routes return well-formed JSON errors (rather than crashing)
+when the upstream calls 403 from this sandbox.
+
+`nric-009` (multi-currency overlay) remains untouched and paused —
+out of scope for this task.
+
 ## 2026-08-13 -- USD/INR FX rate history tool (nric-012)
 
 New 6th tool in `/tools`: current USD/INR rate as a headline figure, with

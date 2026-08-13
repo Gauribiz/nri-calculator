@@ -10,11 +10,14 @@ Owner: Ajinkya's wife. Repo: `Gauribiz/nri-calculator`. Live at nriledger.com.
 Next.js (App Router, TypeScript, Tailwind CSS), server-rendered pages for
 SEO — not a client SPA. No database: calculators are client-side logic
 only, deliberately stateless. Deployed on Vercel, domain via Cloudflare Registrar.
-One exception as of `nric-012`: `src/app/api/fxhistory/route.ts`, a stateless
-server-side proxy to frankfurter.dev (ECB FX rates) — needed because that API
-blocks direct browser calls via CORS, not a database or persistence layer.
-The first (and so far only) server-side code in this repo; see ADR 0019
-before assuming any other calculator has, or should get, one.
+Three exceptions, all stateless server-side proxies (not a database or
+persistence layer): `src/app/api/fxhistory/route.ts` (`nric-012`, ADR
+0019, frankfurter.dev ECB FX rates) and, as of `nric-011`,
+`src/app/api/navprice/route.ts` (AMFI mutual fund NAV) and
+`src/app/api/goldprice/route.ts` (live gold spot price + USD/INR
+conversion) — see ADR 0020. All three exist only because the upstream
+APIs block direct browser calls via CORS. See ADR 0019/0020 before
+assuming any other calculator has, or should get, one.
 ## Operating rules (non-negotiable)
 1. **Staging-only/guard-enforced pattern.** PreToolUse guard
    (`.claude/hooks/pretooluse-guard.sh` + `deny-patterns.json`) is wired up.
@@ -57,12 +60,24 @@ before assuming any other calculator has, or should get, one.
   returned HTTP 403). Several batches are explicitly flagged as still
   needing a human fact-verification pass — check each ADR's own
   "needs verification" notes before treating a figure as final.
+- **`nric-011`'s NAV/gold price proxies (`/api/navprice`, `/api/goldprice`)
+  could not be live-tested from the session that built them** — the
+  sandbox's own outbound network policy returned 403 on every external
+  host tried, including `frankfurter.dev`, which the already-shipped
+  `/api/fxhistory` route calls live in production today. Built from
+  documented/reverse-engineered response shapes (see ADR 0020) with
+  defensive parsing that fails to a clean error rather than crashing, but
+  neither endpoint's real response has been confirmed against live code.
+  Needs an actual verification pass (open `/tools` in production, try a
+  fund search, check the gold price loads) before treating this as
+  fully working, not just "builds and lints clean."
 ## Already completed
 Next.js scaffold; four category pages (DTAA/tax residency, NRE/NRO-TDS,
 investments-repatriation, real-estate-capital-gains) each with 2-3 real
-calculators; a fifth `/tools` hub with 6 general-purpose calculators
+calculators; a fifth `/tools` hub with 7 general-purpose calculators
 (Currency Impact, SIP/XIRR, FD/RD Maturity, Loan Prepayment, Tax
-Treatment Comparison, USD/INR FX Rate History); a shared design system (navy/indigo + single gold
+Treatment Comparison, USD/INR FX Rate History, Live NAV & Gold Price
+Lookup); a shared design system (navy/indigo + single gold
 accent, `ResultRow` status-badge pattern, tabular-nums, `HowCalculated`/
 `SourceCitation`/`VerifiedStamp` components); PDF and Excel export on
 every numeric calculator sitewide; site-wide search, FAQ accordion,
