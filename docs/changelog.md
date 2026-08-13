@@ -2,6 +2,58 @@
 
 All notable changes to NRI Calculator, in reverse chronological order.
 
+## 2026-08-13 -- CAS statement diff tool (nric-013)
+
+New 7th tool in `/tools`: upload two CAS (Consolidated Account Statement —
+the combined mutual-fund holdings statement CAMS/KFintech issue on behalf
+of Indian AMCs) PDFs and see what changed between them — new transactions
+per folio since the older statement, folios that only appear in one of
+the two, and the unit-balance change per matched folio
+(`src/components/calculators/CasDiffTool.tsx`), registered in
+`src/lib/tools.ts` and `/tools/page.tsx`.
+
+Entirely client-side, matching this site's stateless design: both PDFs
+are read via `pdfjs-dist` directly in the browser (new dependency, no
+`npm audit` regressions — same 5 pre-existing advisories as before,
+confirmed by diffing `npm audit` output before/after adding it), never
+uploaded anywhere, including when a PDF is password-protected (a common
+case for real CAS statements — user enters the password client-side,
+same trust boundary as everything else on this page). Deliberately
+**pinned pdfjs-dist to 4.10.38, not the latest 6.x** — while testing the
+password-protected path, 6.x's decryption code threw
+`UnknownErrorException: ...getOrInsertComputed is not a function` against
+this environment's Chromium (a JS engine method new enough not to be
+universally available yet); 4.x doesn't use it. Re-check this
+compatibility gap before ever bumping the dependency.
+
+Text extraction reconstructs lines from pdf.js's text-layer item
+positions (grouped by y-coordinate, sorted by x), then a regex-based
+parser (`src/lib/calculators/casStatement.ts`) splits that into per-folio
+transaction lists, tuned to the CAMS/KFintech consolidated CAS layout
+specifically. **This is a scoped first version, not exhaustive RTA
+coverage** — see ADR 0020 for the full reasoning, but in short: the diff
+itself (`src/lib/calculators/casDiff.ts`) compares each transaction's
+*normalized raw line text*, not its re-parsed fields, so the core "what
+changed" answer stays correct even where column parsing (amount / units /
+NAV) is imperfect; and if no `Folio No` markers are found at all in a
+PDF, the tool shows a clear "couldn't find any recognizable transactions"
+error rather than silently misreading the document — a diff tool on a
+financial site has to fail loud, not guess. NSDL/CDSL demat-style CAS and
+scanned/image-only PDFs are not supported yet and will hit that same
+error path.
+
+Verified with `npx tsc --noEmit`, `npx eslint .`, `npm run build` (all
+clean), and a headless Playwright smoke test against the production
+build using synthetic CAS-shaped PDFs generated for this pass (two
+folios with new transactions between an "older" and "newer" synthetic
+statement, one folio only in the "newer" one, plus a separately
+password-protected copy) — covering the successful-diff path, the
+unrecognized-format error path, and all three password
+states (missing / wrong / correct). **No real CAS files were available
+to test against** (synthetic fixtures only) — flagged for Ajinkya to
+spot-check against actual statements before treating this as reliable
+for every real-world CAS's exact formatting quirks.
+
 ## 2026-08-13 -- USD/INR FX rate history tool (nric-012)
 
 New 6th tool in `/tools`: current USD/INR rate as a headline figure, with

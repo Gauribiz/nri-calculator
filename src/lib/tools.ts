@@ -41,4 +41,10 @@ export const tools: Tool[] = [
     description:
       "Current USD/INR exchange rate with a 1-month to 5-year historical trend chart, from the ECB's daily reference rates.",
   },
+  {
+    slug: "cas-diff",
+    title: "CAS statement diff tool",
+    description:
+      "Compares two mutual fund CAS (Consolidated Account Statement) PDFs and shows what's changed — new transactions and any folios only present in one statement.",
+  },
 ];
