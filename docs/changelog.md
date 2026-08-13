@@ -2,6 +2,59 @@
 
 All notable changes to NRI Calculator, in reverse chronological order.
 
+## 2026-08-13 -- USD/INR FX rate history tool (nric-012)
+
+New 6th tool in `/tools`: current USD/INR rate as a headline figure, with
+a 1M/3M/6M/1Y/5Y trend chart below it (`src/components/calculators/
+FxRateHistoryTool.tsx`), registered in `src/lib/tools.ts` (auto-wires
+into site search per the existing `nric-008` pattern -- no separate
+search-index edit needed) and `/tools/page.tsx`.
+
+Data comes from a new `src/app/api/fxhistory/route.ts` -- **the first
+server-side code in this repo** (every other calculator here is pure
+client-side; flagged prominently rather than treated as routine, see ADR
+0019). Proxies the European Central Bank's daily reference rates via
+frankfurter.dev (confirmed live before writing any code that
+`api.frankfurter.app`, the domain originally named for this task, now
+permanently redirects to `api.frankfurter.dev/v1/...` -- fetches the new
+host directly instead of eating that redirect on every request), since
+calling it directly from the browser fails CORS. Cached for 1 hour
+(judgment call, not a published rate limit -- ECB only republishes once
+per business day; see ADR 0019).
+
+Added `recharts` for the chart -- no new advisories from it in `npm
+audit` (same 3 pre-existing ones as before: postcss/sharp/xlsx). Styled
+with this site's own `primary`/`gold` design tokens (ADR 0004) rather
+than recharts' defaults, including a dark-mode-aware line/fill via
+scoped CSS custom properties, since recharts needs real color values,
+not Tailwind classes. PDF/Excel export via the existing
+`DownloadResultsButton` fits without modification (latest rate + window
++ % change; the full series isn't exported -- that would need real
+extra work, so skipped per the task's own instruction rather than
+expanding scope).
+
+**This directly resolves the infrastructure blocker CLAUDE.md's "Known
+open items" recorded for `nric-009`** (multi-currency overlay, paused
+for "no live exchange-rate/FX data source anywhere in the codebase") --
+a live, cached USD/INR rate now exists behind `/api/fxhistory`.
+`nric-009` itself still needs its own scoping pass (which calculators
+get a 3rd-currency overlay, UI placement) and isn't built by this
+change; CLAUDE.md's note is updated to reflect that the *source* is no
+longer the blocker.
+
+Verified: `npx tsc --noEmit` (clean, after fixing a recharts `Tooltip`
+formatter type mismatch), `npm run lint` (clean, after restructuring the
+fetch effect's loading/error state to avoid a synchronous `setState`
+inside the effect -- `react-hooks/set-state-in-effect`), `npm run build`
+(85 routes, up from 84 -- `/api/fxhistory` is correctly dynamic, every
+other route including `/tools` itself stays static), and a live
+`npm run dev` smoke test against the real API: headline rate, chart,
+and 1Y→5Y window-switching all confirmed via the actual network
+request and DOM, not mocked.
+
+Added `docs/decisions/0019-fx-rate-history-tool.md`.
+
+
 ## 2026-08-12 -- Real estate / layout pass (nric-014)
 
 Bundled UX/layout fixes from Ajinkya's 2026-08-11 full-site review, all
