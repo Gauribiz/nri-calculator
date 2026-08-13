@@ -46,6 +46,19 @@ before assuming any other calculator has, or should get, one.
   spreadsheets it generates itself, so neither is currently exploitable
   here, but re-evaluate this choice before ever adding a "parse an
   uploaded spreadsheet" feature.
+- **CAS statement diff tool** (`/tools#cas-diff`, `nric-013`, see ADR 0020)
+  only recognizes the CAMS/KFintech consolidated CAS text layout —
+  scanned/image-only PDFs and other RTA formats (e.g. NSDL/CDSL demat CAS)
+  show a clear error rather than a guessed result, they are not "not yet
+  supported but silently wrong." Parsing logic hasn't been verified against
+  real-world CAS files (only synthetic test fixtures); treat it as a
+  starting point for a user, not a source of truth, until spot-checked
+  against real statements. Also the first feature here to add a new
+  dependency (`pdfjs-dist`) purely for a client-side parsing task -- pinned
+  to the 4.x line deliberately (not latest 6.x), since 6.x's PDF decryption
+  path calls JS engine methods (`Map.prototype.getOrInsertComputed`) new
+  enough that this repo's own CI/test Chromium didn't support them yet;
+  re-check that compatibility gap before ever bumping this dependency.
 - No database — fully client-side/stateless by design; adding one is a
   real product decision, not something to infer from any single task.
 - AdSense not yet applied for.
@@ -60,9 +73,9 @@ before assuming any other calculator has, or should get, one.
 ## Already completed
 Next.js scaffold; four category pages (DTAA/tax residency, NRE/NRO-TDS,
 investments-repatriation, real-estate-capital-gains) each with 2-3 real
-calculators; a fifth `/tools` hub with 6 general-purpose calculators
+calculators; a fifth `/tools` hub with 7 general-purpose calculators
 (Currency Impact, SIP/XIRR, FD/RD Maturity, Loan Prepayment, Tax
-Treatment Comparison, USD/INR FX Rate History); a shared design system (navy/indigo + single gold
+Treatment Comparison, USD/INR FX Rate History, CAS Statement Diff); a shared design system (navy/indigo + single gold
 accent, `ResultRow` status-badge pattern, tabular-nums, `HowCalculated`/
 `SourceCitation`/`VerifiedStamp` components); PDF and Excel export on
 every numeric calculator sitewide; site-wide search, FAQ accordion,
