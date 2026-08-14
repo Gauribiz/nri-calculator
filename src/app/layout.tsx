@@ -4,6 +4,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { categories } from "@/lib/categories";
 import BackToTop from "@/components/BackToTop";
 import SiteSearch from "@/components/SiteSearch";
+import PriceBanner from "@/components/PriceBanner";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -80,6 +81,8 @@ export default function RootLayout({
             </div>
           </nav>
         </header>
+
+        <PriceBanner />
 
         <main className="flex flex-1 flex-col">{children}</main>
 

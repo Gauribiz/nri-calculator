@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { FRANKFURTER_BASE } from "@/lib/fx";
 
 // nric-012: the FIRST server-side code in this repo (see ADR 0019). Every
 // other calculator here is pure client-side per CLAUDE.md's "no database,
@@ -10,7 +11,10 @@ import { NextRequest, NextResponse } from "next/server";
 // frankfurter.app (the domain named in the original task) now permanently
 // redirects (301) to frankfurter.dev/v1/... -- confirmed live via curl
 // before writing this. Fetching the new host directly server-side avoids
-// an extra redirect hop on every request.
+// an extra redirect hop on every request. nric-011's site-wide price
+// banner needs only the latest rate (not a full range), so it uses its
+// own lean fetcher in src/lib/fx.ts rather than this route -- both share
+// the FRANKFURTER_BASE host constant from there instead of duplicating it.
 
 const WINDOW_DAYS: Record<string, number> = {
   "1M": 30,
@@ -55,7 +59,7 @@ export async function GET(request: NextRequest) {
   const start = new Date(end);
   start.setDate(start.getDate() - days);
 
-  const upstreamUrl = `https://api.frankfurter.dev/v1/${formatDate(start)}..${formatDate(end)}?base=USD&symbols=INR`;
+  const upstreamUrl = `${FRANKFURTER_BASE}/${formatDate(start)}..${formatDate(end)}?base=USD&symbols=INR`;
 
   let upstream: Response;
   try {
