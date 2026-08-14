@@ -174,7 +174,7 @@ export default function NriPropertySaleTdsCalculator({
         </p>
         <p className="mt-2">
           Not modeled: surcharge, the buyer&apos;s TAN requirement, and Form
-          27Q filing mechanics — see the ADR for this tool.
+          27Q filing mechanics.
         </p>
       </HowCalculated>
 

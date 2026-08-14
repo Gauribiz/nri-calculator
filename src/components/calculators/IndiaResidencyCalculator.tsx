@@ -230,7 +230,7 @@ export default function IndiaResidencyCalculator({
         <p className="mt-2">
           Not modeled: the Finance Act 2020 deemed-residency rule for
           citizens with no tax domicile elsewhere, and year-specific CBDT
-          travel relaxations — see ADR 0002 and ADR 0003.
+          travel relaxations.
         </p>
       </HowCalculated>
 

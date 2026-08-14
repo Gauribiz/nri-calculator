@@ -187,7 +187,7 @@ export default function RealEstateCapitalGainsCalculator({
         <p className="mt-2">
           Not modeled: indexation, Section 50C/43CA stamp-duty-value
           substitution, Section 54/54EC/54F exemptions, surcharge, cess, and
-          foreign-currency conversion rules — see the ADR for this tool.
+          foreign-currency conversion rules.
         </p>
       </HowCalculated>
 
