@@ -31,6 +31,19 @@ assuming any calculator itself has, or should get, server-side code of its own.
    Locked, non-negotiable. Every category page renders the full
    `Disclaimer` component near the top, in addition to the footer link.
 4. **Never add unrequested features.** Build exactly what's asked.
+5. **Acronym expansion in titles/headings, going forward.** Per Ajinkya,
+   2026-08-12 (standing rule, not retroactive): every calculator/tool
+   page's title or heading must include the acronym's full form in
+   brackets, e.g. "DTAA (Double Taxation Avoidance Agreement)" — even
+   where the short form is already explained elsewhere in that
+   calculator's own body text. Applies to new/changed titles only; no
+   full-site retroactive pass on existing titles unless separately asked.
+6. **No internal engineering references (ADR numbers, "this repository",
+   PR/task IDs) in user-facing copy.** A site visitor has no access to or
+   understanding of what those mean. Cite public sources
+   (`SourceCitation`) and describe what a tool does/doesn't model in plain
+   language instead; keep ADR references in code comments only. See
+   `nric-015` / ADR 0022.
 ## Known open items
 - **A live USD/INR rate source now exists** (`/api/fxhistory`, `nric-012`,
   see ADR 0019) — `CurrencyImpactCalculator.tsx`'s "Current exchange rate"

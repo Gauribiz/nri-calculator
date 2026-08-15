@@ -198,7 +198,7 @@ export default function RepatriationLimitCalculator({
           Not modeled: the RBI-permission route for amounts above the
           ceiling, the separate cap limiting repatriation of residential
           property sale proceeds to a maximum of two properties, and Form
-          15CA/15CB mechanics — see ADR 0009.
+          15CA/15CB mechanics.
         </p>
       </HowCalculated>
 

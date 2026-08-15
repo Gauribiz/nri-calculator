@@ -145,7 +145,7 @@ export default function DtaaReliefEstimator({
           Not modeled: income-basket/resourcing rules, India&apos;s Rule 128
           procedural requirements (e.g. Form 67 filing deadline), US Form
           1116 category limitations, PFIC treatment of Indian mutual funds,
-          or carryover of unused credit — see ADR 0002.
+          or carryover of unused credit.
         </p>
       </HowCalculated>
 

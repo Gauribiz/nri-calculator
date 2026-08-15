@@ -166,9 +166,7 @@ export default function PficFilingChecker({
         <p className="mt-2">
           Not modeled: whether the fund is a PFIC in the first place,
           Section 1291 excess-distribution tax and interest computation,
-          and QEF/mark-to-market election mechanics and eligibility — see
-          ADR 0009 for why this tool deliberately stops at the filing
-          question.
+          and QEF/mark-to-market election mechanics and eligibility.
         </p>
       </HowCalculated>
 

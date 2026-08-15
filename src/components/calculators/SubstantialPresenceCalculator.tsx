@@ -130,7 +130,7 @@ export default function SubstantialPresenceCalculator({
           Not modeled: &quot;exempt individual&quot; days (certain F/J/M/Q
           visa statuses don&apos;t count toward the test) and the
           closer-connection-to-a-foreign-country exception, either of which
-          can change the real outcome — see ADR 0002.
+          can change the real outcome.
         </p>
       </HowCalculated>
 

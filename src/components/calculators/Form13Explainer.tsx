@@ -140,8 +140,7 @@ export default function Form13Explainer({
         </p>
         <p className="mt-2">
           Not modeled: whether a certificate would actually be granted at
-          any particular rate, and processing-time — see the ADR for this
-          tool.
+          any particular rate, and processing-time.
         </p>
       </HowCalculated>
 

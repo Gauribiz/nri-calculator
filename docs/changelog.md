@@ -2,6 +2,36 @@
 
 All notable changes to NRI Calculator, in reverse chronological order.
 
+## 2026-08-14 -- Remove internal ADR/repository references from user-facing copy (nric-015)
+
+Queued 2026-08-12 by Ajinkya via live-site review: the DTAA/tax-residency
+page's verification disclosure named "ADR 0006 in this repository" in
+copy visible to site visitors, who have no access to or understanding of
+what that means. Audited the whole site for the same defect class (not
+just the originally-reported page) and found 9 instances total, all
+trailing "— see ADR NNNN[...]" clauses appended to otherwise-fine
+"Not modeled" notes or the one page-level disclosure:
+`dtaa-tax-residency/page.tsx` plus `DtaaReliefEstimator`,
+`SubstantialPresenceCalculator`, `IndiaResidencyCalculator`,
+`RepatriationLimitCalculator`, `PficFilingChecker`,
+`NriPropertySaleTdsCalculator`, `RealEstateCapitalGainsCalculator`, and
+`Form13Explainer`. Surgical removal only in every case -- the ADR clause
+cut, the substantive claim (what's cross-checked, what a tool
+does/doesn't model) left exactly as written. See ADR 0022, which also
+notes that the task's original assumption about `nric-002`/`003`/`004`
+carrying their own copy of this pattern didn't match the current repo --
+no page-level disclosure paragraph with an ADR reference exists on those
+three pages today, so nothing further to fix there.
+
+Also added two new CLAUDE.md operating rules, per Ajinkya's 2026-08-12
+direction: (5) every calculator/tool page's title/heading must spell out
+an acronym's full form in brackets going forward (not retroactive -- no
+existing titles changed by this task), and (6) no internal engineering
+references in user-facing copy generally, as a standing guardrail.
+
+`npm run lint` and `npm run build` both pass; route count unchanged (85).
+No calculator logic, figures, or thresholds changed -- copy-only.
+
 ## 2026-08-13 -- Site-wide USD/INR + gold price banner (nric-011)
 
 **Scope pivot, decided directly with Ajinkya 2026-08-13**: `nric-011`'s
